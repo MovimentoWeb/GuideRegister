@@ -46,21 +46,6 @@
                             </div>  
                     </div>
                     <ul class="nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                Aluno
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li >
-                                    <a href="#">Início</a>
-                                </li>
-                                <li><a href="#">Link</a></li>
-                                <li><a href="#">Link</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <ul class="nav">
                         <li class="active">
                             <a href="#">Início</a>
                         </li>
