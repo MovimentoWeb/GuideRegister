@@ -23,7 +23,7 @@
                     </a>
 
                     <!-- Tenha certeza de deixar a marca se você quer que ela seja mostrada -->
-                    <a class="brand" href="#">Guide Register</a>
+                    <a class="brand" href="#">Nome do projeto</a>
 
                     <!-- Tudo que você queira escondido em 940px ou menos, coloque aqui -->
                     <div class="nav-collapse">
