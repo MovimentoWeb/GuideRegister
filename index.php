@@ -31,7 +31,7 @@
                         <ul class="nav">
                             <div class="btn-group">
                                 <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
-                                    Ação
+                                    Aluno
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
@@ -44,14 +44,77 @@
                                     <li><a href="#">Link</a></li>
                                 </ul>
                             </div>  
+                        </ul> 
+
+                        <ul class="nav">
+                            <div class="btn-group">
+                                <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
+                                    Professor
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- Links de menu dropdown -->
+
+                                    <li >
+                                        <a href="#">Início</a>
+                                    </li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                </ul>
+                            </div>  
+                        </ul>  
+                        <ul class="nav">
+                            <div class="btn-group">
+                                <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
+                                    Turmas
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- Links de menu dropdown -->
+
+                                    <li >
+                                        <a href="#">Início</a>
+                                    </li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                </ul>
+                            </div>  
+                        </ul> 
+                        <ul class="nav">
+                            <div class="btn-group">
+                                <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
+                                    Relatórios
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- Links de menu dropdown -->
+
+                                    <li >
+                                        <a href="#">Início</a>
+                                    </li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                </ul>
+                            </div>  
+                        </ul>  
+                        <ul class="nav">
+                            <div class="btn-group">
+                                <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
+                                    Avisos
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <!-- Links de menu dropdown -->
+
+                                    <li >
+                                        <a href="#">Início</a>
+                                    </li>
+                                    <li><a href="#">Link</a></li>
+                                    <li><a href="#">Link</a></li>
+                                </ul>
+                            </div>  
+                        </ul>  
                     </div>
-                    <ul class="nav">
-                        <li class="active">
-                            <a href="#">Início</a>
-                        </li>
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                    </ul>
                     <form class="navbar-search pull-left">
                         <input type="text" class="search-query" placeholder="Busca">
                     </form>
