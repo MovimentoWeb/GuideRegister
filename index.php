@@ -23,7 +23,7 @@
                     </a>
 
                     <!-- Tenha certeza de deixar a marca se você quer que ela seja mostrada -->
-                    <a class="brand" href="#">Nome do projeto</a>
+                    <a class="brand" href="#">Guide Register</a>
 
                     <!-- Tudo que você queira escondido em 940px ou menos, coloque aqui -->
                     <div class="nav-collapse">
@@ -31,17 +31,21 @@
                         <ul class="nav">
                             <div class="btn-group">
                                 <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
-                                    Aluno
+                                    <i class="icon-user icon-white"></i> Aluno
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- Links de menu dropdown -->
 
-                                    <li >
-                                        <a href="#">Início</a>
+                                    <li ><a href="#">Início</a> </li>
+                                    <li class="dropdown-submenu">
+                                        <a tabindex="-1" href="#"><i class="icon-search"></i> Pesquisar</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="">Pesquisa do Aluno</a></li>
+                                            <li><a href="">Editar Aluno</a></li>
+                                            <li><a href="">Status do Aluno</a></li>
+                                        </ul>
                                     </li>
-                                    <li><a href="#">Link</a></li>
-                                    <li><a href="#">Link</a></li>
                                 </ul>
                             </div>  
                         </ul> 
@@ -49,73 +53,65 @@
                         <ul class="nav">
                             <div class="btn-group">
                                 <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
-                                    Professor
+                                   <i class="icon-book icon-white"></i> Professor
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- Links de menu dropdown -->
 
-                                    <li >
-                                        <a href="#">Início</a>
+                                    <li ><a href="#"><i class="icon-plus"></i> Cadastrar</a> </li>
+                                    <li class="dropdown-submenu">
+                                        <a tabindex="-1" href="#"><i class="icon-list-alt"></i> Listar</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="">Listas</a></li>
+                                            <li><a href="">Pesquisa do Professor</a></li>
+                                            <li><a href="">Resultados</a></li>
+                                        </ul>
                                     </li>
-                                    <li><a href="#">Link</a></li>
-                                    <li><a href="#">Link</a></li>
                                 </ul>
                             </div>  
                         </ul>  
                         <ul class="nav">
                             <div class="btn-group">
                                 <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
-                                    Turmas
+                                    <i class="icon-home icon-white"></i> Turmas
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- Links de menu dropdown -->
 
-                                    <li >
-                                        <a href="#">Início</a>
+                                    <li ><a href="#"> <i class="icon-plus"></i> Cadastrar</a> </li>
+                                    <li class="dropdown-submenu">
+                                        <a tabindex="-1" href="#"><i class="icon-list-alt"></i> Listar</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="">Listas</a></li>
+                                            <li><a href="">Pesquisa da Turma</a></li>
+                                            <li><a href="">Resultados</a></li>
+                                        </ul>
                                     </li>
-                                    <li><a href="#">Link</a></li>
-                                    <li><a href="#">Link</a></li>
                                 </ul>
                             </div>  
                         </ul> 
                         <ul class="nav">
                             <div class="btn-group">
                                 <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
-                                    Relatórios
+                                    <i class="icon-folder-open icon-white"></i> Relatórios
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- Links de menu dropdown -->
 
-                                    <li >
-                                        <a href="#">Início</a>
-                                    </li>
-                                    <li><a href="#">Link</a></li>
-                                    <li><a href="#">Link</a></li>
+                                    <li ><a href="#">Pesquisa das Disciplinas</a> </li>
+                                    <li ><a href="#">Ata dos Alunos</a> </li>
+                                   
                                 </ul>
                             </div>  
                         </ul>  
                         <ul class="nav">
-                            <div class="btn-group">
-                                <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
-                                    Avisos
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <!-- Links de menu dropdown -->
-
-                                    <li >
-                                        <a href="#">Início</a>
-                                    </li>
-                                    <li><a href="#">Link</a></li>
-                                    <li><a href="#">Link</a></li>
-                                </ul>
-                            </div>  
+                            <a class="btn btn-inverse" href=""><i class="icon-exclamation-sign icon-white"></i> Aviso</a> 
                         </ul>  
                     </div>
-                    <form class="navbar-search pull-left">
+                    <form class="navbar-search pull-right">
                         <input type="text" class="search-query" placeholder="Busca">
                     </form>
                 </div>
