@@ -1,1 +1,0 @@
-eu amo diogo e ele é meu amor
