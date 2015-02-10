@@ -137,7 +137,7 @@
             <div class="control-group">
                 <div class="controls">
                     <label class="checkbox">
-                        <input type="checkbox"> Esqueceu sua senha?
+                         <a href="">Esqueceu sua senha ?</a> 
                     </label>
                     <button type="submit" class="btn">Entrar</button>
                 </div>
