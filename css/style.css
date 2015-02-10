@@ -1,13 +1,7 @@
 .form-horizontal{
-    width: 100%;
-    background: url("")
-}
-.form-horizontal img{
-    width: 40%;
-    margin-left: 30%;
-    margin-bottom: 2%;
-    padding: 1%;
-    
+    max-width: 320px;
+    margin: 0 auto;
+    background: url("../");
 }
 .control-label{
     margin-bottom: 1%;
