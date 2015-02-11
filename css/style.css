@@ -1,10 +1,29 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 04/02/2015, 21:28:15
-    Author     : Reginaldo
-*/
+/*Página de LOGIN*/
+#login{
+    background: url("../img/bg.fw.png");
+    margin: 0 auto;
+}
 
+.form-horizontal{
+    max-width: 320px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+.controls a{
+    float: right;
+}
+.controls input{
+    margin-top: 5px;
+}
+.control-label{
+        margin-right: 5px;
+        margin-bottom: 2px;
+}
+.control-group{
+    margin: 0 auto;  
+}
+
+body{height:100%;
+ background: url("../img/bg.fw.png");
+
+}
