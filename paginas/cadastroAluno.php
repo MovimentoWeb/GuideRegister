@@ -119,7 +119,7 @@
             </div>
             <!--<Cadastro do aluno> Inicio da pagina cadastro do aluno-->
             <div class="conteinerAluno">
-                <h3>Cadastro de Aluno</h3>
+                <h3 class="span5">Cadastro de Aluno</h3>
                 <input type="text" class="span5" placeholder="Nome">
                 <input type="text" class="span5" placeholder="Data de Nascimento">
                 <input type="text" class="span5" placeholder="RG">
