@@ -120,20 +120,22 @@
             <!--<Cadastro do aluno> Inicio da pagina cadastro do aluno-->
             <div class="conteinerAluno">
                 <h3>Cadastro de Aluno</h3>
-                <input type="text" placeholder="Nome">
-                <input type="text" placeholder="Data de Nascimento">
-                <input type="text" placeholder="RG">
-                <input type="text" placeholder="CPF">
-                <select>
+                <input type="text" class="span5" placeholder="Nome">
+                <input type="text" class="span5" placeholder="Data de Nascimento">
+                <input type="text" class="span5" placeholder="RG">
+                <input type="text" class="span5" placeholder="CPF">
+                <select class="span5">
                     <option>Turno</option>
                     <option>2</option>
                     <option>3</option>
                 </select>
-                <select>
+                <select class="span5">
                     <option>Curso</option>
                     <option>2</option>
                     <option>3</option>
                 </select>
+                
+                <button class="btn btn-large span5" type="button">Cadastrar</button>
             </div>
         </div>
 

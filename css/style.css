@@ -38,11 +38,6 @@ body{height:100%;
     text-align: center;
     line-height: 60px;
 }
-.conteinerAluno input{
-   width: 100%;
-   max-width: 100%;
-}
-.conteinerAluno select{
-   width: 100%;
-   max-width: 100%;
+.conteinerAluno button{
+   margin: 0;
 }
