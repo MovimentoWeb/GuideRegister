@@ -1,18 +1,29 @@
-.form-horizontal{
-    width: 100%;
-    background: url("")
+/*Página de LOGIN*/
+#login{
+    background: url("../img/bg.fw.png");
+    margin: 0 auto;
 }
-.form-horizontal img{
-    width: 40%;
-    margin-left: 30%;
-    margin-bottom: 2%;
-    padding: 1%;
-    
+
+.form-horizontal{
+    max-width: 320px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+.controls a{
+    float: right;
+}
+.controls input{
+    margin-top: 5px;
 }
 .control-label{
-    margin-bottom: 1%;
-    margin-left: 30%;  
+        margin-right: 5px;
+        margin-bottom: 2px;
 }
-.control-group .controls{
-    margin-left: 47%;
+.control-group{
+    margin: 0 auto;  
+}
+
+body{height:100%;
+ background: url("../img/bg.fw.png");
+
 }
