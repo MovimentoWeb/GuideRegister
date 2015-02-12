@@ -47,8 +47,9 @@
                                             <a tabindex="-1" href="#"><i class="icon-search"></i> Pesquisar</a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="">Pesquisa do Aluno</a></li>
-                                                <li><a href="">Editar Aluno</a></li>
-                                                <li><a href="">Status do Aluno</a></li>
+                                                <li><a href="">Ata de turmas</a></li>
+                                                <li><a href="">Pesquisa de disciplina</a></li>
+                                                
                                             </ul>
                                         </li>
                                     </ul>
@@ -106,7 +107,7 @@
                                     <ul class="dropdown-menu">
                                         <!-- Links de menu dropdown -->
 
-                                        <li ><a href="#">Pesquisa do Aluno</a> </li>
+                                        <li ><a href="?selecionar=relatorios">Pesquisa do Aluno</a> </li>
                                         <li ><a href="#">Ata dos Turmas</a> </li>
                                         <li ><a href="#">Pesquisa das Disciplinas</a> </li>
                                     </ul>
