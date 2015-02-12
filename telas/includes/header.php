@@ -47,11 +47,12 @@
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
 
-                            <li ><a href="#"><span class="fa-user-add"></span> Cadastrar Professor</a> </li>
+                            <li ><a href="?pg=cadastrarprofessor"><span class="fa-user-add"></span> Cadastrar</a> </li>
+                            <li><a href="?pg=pesquisarprofessor"><span class="fa-search3"></span> Pesquisar</a></li>
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><span class="fa-list2"></span> Listar</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="">Listas</a></li>
+                                    <li><a href="?pg=listasdeprofessor">Listas</a></li>
                                     <li><a href="">Pesquisa do Professor</a></li>
                                     <li><a href="">Resultados</a></li>
                                 </ul>
@@ -68,13 +69,13 @@
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
 
-                            <li ><a href="#"> <i class="fa-plus"></i> Cadastrar</a> </li>
+                            <li ><a href="?pg=turmaCadastrar"> <i class="fa-plus"></i> Cadastrar</a> </li>
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><i class="fa-list2"></i> Listar</a>
                                 <ul class="dropdown-menu">
                                    
-                                    <li><a href="">Pesquisa da Turma</a></li>
-                                    <li><a href="">Resultados</a></li>
+                                    <li><a href="?pg=pesquisaTurma">Pesquisa da Turma</a></li>
+                                    <li><a href="?pg=resultadoDados">Resultados</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -99,17 +100,10 @@
 
                     <div class="btn-group">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
-                            <i class="fa-help"></i> Ajuda
+                            <i class="fa-help"></i> Aviso
                             <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <!-- Links de menu dropdown -->
-
-                            <li ><a href="?pg=relatorios"><span class="fa-help"></span> Sobre o Sistema</a> </li>
-                            <li ><a href="#"><span class="fa-mail5"></span> Fazer uma pergunta</a> </li>
-                            <li class="divider" > </li>
-                            <li ><a href="#"><span class="fa-settings3"></span> Equipe de desenvolvimento</a> </li>
-                        </ul>
+                       
                     </div>  
                 </ul>  
             </div>
