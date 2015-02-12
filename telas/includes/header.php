@@ -1,5 +1,4 @@
 <header id="header-menu" class="navbar navbar-fixed-top navbar-inverse">
-
     <div class="navbar-inner">
         <div class="container">
             <!-- .btn-navbar é usado como alternador para conteúdo de barra de navegação colapsável -->
@@ -24,16 +23,8 @@
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
 
-                            <li ><a href="#"><span class="fa-user-add"></span> Cadastrar Aluno</a> </li>
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="#"><i class="fa-search"></i> Pesquisar</a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="">Pesquisa do Aluno</a></li>
-                                    <li><a href="">Ata de turmas</a></li>
-                                    <li><a href="">Pesquisa de disciplina</a></li>
-
-                                </ul>
-                            </li>
+                            <li ><a href="?pg=cadastrarAluno"><span class="fa-user-add"></span> Cadastrar</a> </li>
+                            <li ><a href="?pg=pesquisarAluno"><span class="fa-search3"></span> Pesquisar</a> </li>
                         </ul>
                     </div>  
                 </ul> 

@@ -15,14 +15,30 @@
     <title>Guide Register</title>
 </head>
 <body>
-    <?php include_once './paginas/includes/header.php';?>
+    <?php include_once './telas/includes/header.php'; ?>
     <div class="container paginas">
-                <?php 
-                
-                ?>
+        <?php
+        if (!isset($_GET['pg'])) {
+            
+        } else {
+            switch ($_GET['pg']) {
+                case 'cadastrarAluno':
+                    include_once './telas/aluno/cadastroAluno.php';
+
+                    break;
+
+                case 'pesquisarAluno':
+                    include_once './telas/aluno/pesquisarAluno.php';
+
+                    break;
+                default:
+                    break;
+            }
+        }
+        ?>
     </div><!--    Fim container página-->
-    <?php 
-                include_once './paginas/includes/footer.php';
+    <?php
+    include_once './telas/includes/footer.php';
     ?>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
