@@ -47,11 +47,11 @@
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
 
-                            <li ><a href="#"><span class="fa-user-add"></span> Cadastrar Professor</a> </li>
+                            <li ><a href="?pg=cadastrarprofessor"><span class="fa-user-add"></span> Cadastrar Professor</a> </li>
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><span class="fa-list2"></span> Listar</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="">Listas</a></li>
+                                    <li><a href="?pg=listasdeprofessor">Listas</a></li>
                                     <li><a href="">Pesquisa do Professor</a></li>
                                     <li><a href="">Resultados</a></li>
                                 </ul>
@@ -99,17 +99,10 @@
 
                     <div class="btn-group">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
-                            <i class="fa-help"></i> Ajuda
+                            <i class="fa-help"></i> Aviso
                             <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <!-- Links de menu dropdown -->
-
-                            <li ><a href="?pg=relatorios"><span class="fa-help"></span> Sobre o Sistema</a> </li>
-                            <li ><a href="#"><span class="fa-mail5"></span> Fazer uma pergunta</a> </li>
-                            <li class="divider" > </li>
-                            <li ><a href="#"><span class="fa-settings3"></span> Equipe de desenvolvimento</a> </li>
-                        </ul>
+                       
                     </div>  
                 </ul>  
             </div>

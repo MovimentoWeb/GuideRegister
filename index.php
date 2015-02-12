@@ -32,10 +32,18 @@
 
                 case 'relatorios':
                     include_once './telas/relatorios/relatorios.php';
-                    break;
+                    break;  
 
                 case 'listaAvisos':
                     include_once './telas/avisos/listaAvisos.php';
+                    break;
+                
+                case 'listasdeprofessor':
+                    include_once './telas/professores/listas.php';
+                    break;
+                
+                case 'cadastrarprofessor':
+                    include_once './telas/professores/professores.php';
                     break;
                 
                 default:
