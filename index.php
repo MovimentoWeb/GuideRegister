@@ -24,13 +24,20 @@
             switch ($_GET['pg']) {
                 case 'cadastrarAluno':
                     include_once './telas/aluno/cadastroAluno.php';
-
                     break;
 
                 case 'pesquisarAluno':
                     include_once './telas/aluno/pesquisarAluno.php';
-
                     break;
+
+                case 'relatorios':
+                    include_once './telas/relatorios/relatorios.php';
+                    break;
+
+                case 'listaAvisos':
+                    include_once './telas/avisos/listaAvisos.php';
+                    break;
+                
                 default:
                     break;
             }
