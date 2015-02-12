@@ -47,7 +47,8 @@
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
 
-                            <li ><a href="?pg=cadastrarprofessor"><span class="fa-user-add"></span> Cadastrar Professor</a> </li>
+                            <li ><a href="?pg=cadastrarprofessor"><span class="fa-user-add"></span> Cadastrar</a> </li>
+                            <li><a href="?pg=pesquisarprofessor"><span class="fa-search3"></span> Pesquisar</a></li>
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><span class="fa-list2"></span> Listar</a>
                                 <ul class="dropdown-menu">
@@ -68,13 +69,13 @@
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
 
-                            <li ><a href="#"> <i class="fa-plus"></i> Cadastrar</a> </li>
+                            <li ><a href="?pg=turmaCadastrar"> <i class="fa-plus"></i> Cadastrar</a> </li>
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><i class="fa-list2"></i> Listar</a>
                                 <ul class="dropdown-menu">
                                    
-                                    <li><a href="">Pesquisa da Turma</a></li>
-                                    <li><a href="">Resultados</a></li>
+                                    <li><a href="?pg=pesquisaTurma">Pesquisa da Turma</a></li>
+                                    <li><a href="?pg=resultadoDados">Resultados</a></li>
                                 </ul>
                             </li>
                         </ul>

@@ -45,6 +45,23 @@
                 case 'cadastrarprofessor':
                     include_once './telas/professores/professores.php';
                     break;
+                case 'pesquisarprofessor':
+                    
+                    include_once './telas/professores/Pesquisar.php';
+                    break;
+                
+                case 'turmaCadastrar':
+                    include_once './telas/turmas/turmaCadastrar.php';
+                    break;
+                
+                case 'pesquisaTurma':
+                    include_once './telas/turmas/pesquisaTurma.php';
+                    break;
+                
+                case 'resultadoDados':
+                    include_once './telas/turmas/resultadoDados.php';
+                    break;
+                
                 
                 default:
                     break;
