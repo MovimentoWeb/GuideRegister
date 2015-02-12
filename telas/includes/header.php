@@ -19,6 +19,13 @@
                 <!-- .nav, .navbar-search, .navbar-form, etc -->
                 <ul class="nav">
                     <div class="btn-group">
+                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                            <i class="fa-user"></i> login teste
+                        </a>
+                    </div>  
+                </ul> 
+                <ul class="nav">
+                    <div class="btn-group">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
                             <i class="fa-user"></i> Aluno
                             <span class="caret"></span>
