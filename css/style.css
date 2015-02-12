@@ -16,14 +16,29 @@
     margin-top: 5px;
 }
 .control-label{
-        margin-right: 5px;
-        margin-bottom: 2px;
+    margin-right: 5px;
+    margin-bottom: 2px;
 }
 .control-group{
     margin: 0 auto;  
 }
 
 body{height:100%;
- background: url("../img/bg.fw.png");
+    background: url("../img/bg.fw.png");
 
+}
+/*    Gabriel Cadastro de aluno*/
+.conteinerAluno {
+    color:  #000;
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.conteinerAluno h3{
+    text-align: center;
+    line-height: 60px;
+    margin: 0;
+}
+.conteinerAluno button{
+   margin: 0;
 }
