@@ -1,13 +1,4 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="../../css/bootstrap.css" />
-        <link rel="stylesheet" href="../../css/bootstrap-responsive.css" />
-        <link rel="stylesheet" href="../../css/style.css" />
-        <title></title>
-    </head>
-    <body>
+
         <div class="container">
             <div class="professores well">
                 <form class="form-horizontal">
@@ -22,5 +13,3 @@
                 </form>
             </div>
         </div>
-    </body>
-</html>
