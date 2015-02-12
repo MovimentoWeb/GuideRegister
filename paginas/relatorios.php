@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width" />
 
         <!--        arquivos das fontes icomoon-->
-        <link type="text/css" rel="stylesheet" href="css/styleIcomoon.css" />
+        <link type="text/css" rel="stylesheet" href="../css/styleIcomoon.css" />
     </head>
 
     <!--    arquivos do bootstrap-->
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
-    <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css" />
-    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap-responsive.css" />
+    <link type="text/css" rel="stylesheet" href="../css/style.css" />
     <title>Guide Register</title>
 </head>
 <body>
@@ -49,7 +49,7 @@
                                                 <li><a href="">Pesquisa do Aluno</a></li>
                                                 <li><a href="">Ata de turmas</a></li>
                                                 <li><a href="">Pesquisa de disciplina</a></li>
-                                                
+
                                             </ul>
                                         </li>
                                     </ul>
@@ -107,7 +107,7 @@
                                     <ul class="dropdown-menu">
                                         <!-- Links de menu dropdown -->
 
-                                        <li ><a href="?selecionar=relatorios">Pesquisa do Aluno</a> </li>
+                                        <li ><a href="#">Pesquisa do Aluno</a> </li>
                                         <li ><a href="#">Ata dos Turmas</a> </li>
                                         <li ><a href="#">Pesquisa das Disciplinas</a> </li>
                                     </ul>
@@ -120,11 +120,59 @@
                     </div>
                 </div>
             </div>
+
+            <!-- ---------------------- Inicio ------------------------------------------- -->
         </div> 
+        <div class="container relatorios1"> 
+
+            <form class="form-horizontal ">
+                <img src="../img/capa.jpg" alt="" />
+                
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail"></label>
+                    <div class="controls">
+                        <input type="text" id="inputEmail" placeholder="Email">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </div>
+                </div>
+            </form> 
+
+        </div>
+        
+        <div class="container relatorios2">
+            
+                <form class="form-horizontal">
+                    <img src="../img/capa.jpg" alt="" />
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">Nova senha</label>
+                        <div class="controls">
+                            <input type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword">Confirmar senha</label>
+                        <div class="controls">
+                            <input type="password" id="inputPassword" placeholder="Senha">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn">Entrar</button>
+                        </div>
+                    </div>
+                </form>
+            
+        </div>
     </div> 
-<script type="text/javascript" src="js/jquery.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<!--<script type="text/javascript" src="js/demo.js"></script>-->
+    <!-- ---------------------- Fim ---------------------------------------------- -->  
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <!--<script type="text/javascript" src="js/demo.js"></script>-->
 
 </body>
 </html>
