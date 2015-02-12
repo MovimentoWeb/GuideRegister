@@ -1,3 +1,11 @@
+
+/*CSS PARA TODAS AS PÁGINAS*/
+
+.paginas{
+    margin: 60px auto;
+}
+
+
 /*Página de LOGIN*/
 #login{
     background: url("../img/bg.fw.png");
@@ -16,14 +24,41 @@
     margin-top: 5px;
 }
 .control-label{
-        margin-right: 5px;
-        margin-bottom: 2px;
+    margin-right: 5px;
+    margin-bottom: 2px;
 }
 .control-group{
     margin: 0 auto;  
 }
 
 body{height:100%;
- background: url("../img/bg.fw.png");
+     background: url("../img/bg.fw.png");
 
 }
+/*    Gabriel Cadastro de aluno*/
+.conteinerAluno form ul{
+    list-style: none;
+    margin-left: 0;
+}
+/*    Gabriel Pesquisa de aluno*/
+/*.PesquisarAluno form {
+    max-width: 600px;
+    margin: 0 auto;
+}*/
+.PesquisarAluno form ul{
+    list-style: none;
+    margin-left: 0;
+}
+
+/* ------------------ Taynara - Relatórios ------------------------*/
+
+.relatorios1 form {
+    max-width: 600px;
+    text-align: center;
+}
+.relatorios1 img {
+    width: 100px;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
