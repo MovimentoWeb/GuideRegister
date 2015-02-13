@@ -89,10 +89,12 @@
                         </a>
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
-
-                            <li ><a href="?pg=relatorios">Pesquisar por aluno</a> </li>
-                            <li ><a href="#">Ata por turmas</a> </li>
-                            <li ><a href="#">Pesquisar por disciplinas</a> </li>
+                            
+ <!------------------------------- Relatorios - Taynara ------------------------------------> 
+ 
+                            <li ><a href="?pg=relPesquisarAluno">Pesquisar por aluno</a> </li>
+                            <li ><a href="?pg=relAtaAluno">Ata por turmas</a> </li>
+                            <li ><a href="?pg=relDisciplina">Pesquisar por disciplinas</a> </li>
                         </ul>
                     </div>  
                 </ul>  

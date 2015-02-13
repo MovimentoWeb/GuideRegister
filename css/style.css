@@ -52,15 +52,24 @@ body{height:100%;
 
 /* ------------------ Taynara - Relatórios ------------------------*/
 
-.relatorios1 form {
-    max-width: 600px;
+.relatorios form {
+    max-width: 1052px;
     text-align: center;
+    
 }
-.relatorios1 img {
-    width: 100px;
-    margin-top: 100px;
-    margin-bottom: 30px;
+.relatorios input{
+    width: 450px;
 }
 
+.pesquisardisciplina form{
+   max-width: 1052px;
+   text-align: center; 
+}
+.pesquisardisciplina select{
+    width: 500px;
+}
+.pesquisardisciplina button, select{
+      margin-top: 50px;
+}
 /*-------------------Alexsander - Professores -----------------------*/
 
