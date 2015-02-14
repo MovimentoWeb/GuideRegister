@@ -22,65 +22,73 @@
             
         } else {
             switch ($_GET['pg']) {
+
+// -------------------------------- Alisson - Tela de login -------------------------                  
+
+                case 'login':
+                    include_once './telas/login/login.php';
+                    break;
+
+// -------------------------------- Alisson - Tela de login -------------------------   
+
                 case 'cadastrarAluno':
                     include_once './telas/aluno/cadastroAluno.php';
                     break;
-                
+
                 case 'dadosAluno':
                     include_once './telas/aluno/dadosAluno.php';
                     break;
-                
+
                 case 'pesquisarAluno':
                     include_once './telas/aluno/pesquisarAluno.php';
                     break;
 
                 case 'relatorios':
                     include_once './telas/relatorios/relatorios.php';
-                    break;  
+                    break;
 
                 case 'listaAvisos':
                     include_once './telas/avisos/listaAvisos.php';
                     break;
-                
+
                 case 'listasdeprofessor':
                     include_once './telas/professores/listas.php';
                     break;
-                
+
                 case 'cadastrarprofessor':
                     include_once './telas/professores/professores.php';
                     break;
                 case 'pesquisarprofessor':
-                    
                     include_once './telas/professores/Pesquisar.php';
                     break;
-                
+
                 case 'turmaCadastrar':
                     include_once './telas/turmas/turmaCadastrar.php';
                     break;
-                
+
                 case 'pesquisaTurma':
                     include_once './telas/turmas/pesquisaTurma.php';
                     break;
-                
+
                 case 'resultadoDados':
                     include_once './telas/turmas/resultadoDados.php';
                     break;
-                
+
 // -------------------------------- Taynara - Relatorios Inicio -------------------------              
-                 case 'relPesquisarAluno':
+                case 'relPesquisarAluno':
                     include_once './telas/relatorios/relatorios.php';
                     break;
-                
-                 case 'relAtaAluno':
+
+                case 'relAtaAluno':
                     include_once './telas/relatorios/relatorios1.php';
                     break;
-                
-                 case 'relDisciplina':
+
+                case 'relDisciplina':
                     include_once './telas/relatorios/relatorios2.php';
                     break;
-                
+
 //--------------------------------- Taynara - Relatorios Fim -----------------------------    
-                
+
                 default:
                     break;
             }

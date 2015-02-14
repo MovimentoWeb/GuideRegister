@@ -12,17 +12,17 @@
     margin: 0 auto;
 }
 
-.form-horizontal{
+#login .form-horizontal{
     margin: 0 auto;
     margin-top: 5px;
 }
-.controls a{
+#login .controls a{
     float: right;
 }
-.controls input{
+#login .controls input{
     margin-top: 5px;
 }
-.control-label{
+#login .control-label{
     margin-right: 5px;
     margin-bottom: 2px;
 }
