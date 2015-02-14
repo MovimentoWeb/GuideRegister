@@ -25,7 +25,11 @@
                 case 'cadastrarAluno':
                     include_once './telas/aluno/cadastroAluno.php';
                     break;
-
+                
+                case 'dadosAluno':
+                    include_once './telas/aluno/dadosAluno.php';
+                    break;
+                
                 case 'pesquisarAluno':
                     include_once './telas/aluno/pesquisarAluno.php';
                     break;
