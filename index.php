@@ -62,6 +62,20 @@
                     include_once './telas/turmas/resultadoDados.php';
                     break;
                 
+// -------------------------------- Taynara - Relatorios Inicio -------------------------              
+                 case 'relPesquisarAluno':
+                    include_once './telas/relatorios/relatorios.php';
+                    break;
+                
+                 case 'relAtaAluno':
+                    include_once './telas/relatorios/relatorios1.php';
+                    break;
+                
+                 case 'relDisciplina':
+                    include_once './telas/relatorios/relatorios2.php';
+                    break;
+                
+//--------------------------------- Taynara - Relatorios Fim -----------------------------    
                 
                 default:
                     break;
