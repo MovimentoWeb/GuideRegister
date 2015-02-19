@@ -76,6 +76,9 @@ body{
 .pesquisardisciplina button, select{
     margin-top: 50px;
 }
+.ataturmas input{
+      width: 450px; 
+}
 /*-------------------Alexsander - Professores -----------------------*/
 
 .container .professores{
@@ -93,3 +96,13 @@ body{
     list-style: none;
     margin-left: 0; 
 }
+
+/*-------------------Marcelo - Turma -----------------------*/
+.meioTurma{margin:0auto
+}
+
+.meioTurma input{margin-top:1%}
+
+.meioTurma label{margin-top:1%}
+
+.meioTurma textArea{margin-top:3%}
