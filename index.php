@@ -6,7 +6,6 @@
 
         <!--        arquivos das fontes icomoon-->
         <link type="text/css" rel="stylesheet" href="css/styleIcomoon.css" />
-    </head>
 
     <!--    arquivos do bootstrap-->
     <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />

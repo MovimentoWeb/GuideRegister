@@ -66,6 +66,9 @@ body{height:100%;
 .pesquisardisciplina button, select{
       margin-top: 50px;
 }
+.ataturmas input{
+      width: 450px; 
+}
 /*-------------------Alexsander - Professores -----------------------*/
 
 .container .professores{
