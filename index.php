@@ -73,7 +73,11 @@
                 case 'resultadoDados':
                     include_once './telas/turmas/resultadoDados.php';
                     break;
-
+                
+                case 'listaAvisos':
+                    include_once './telas/avisos/listaAvisos.php';
+                    break;
+                    
 // -------------------------------- Taynara - Relatorios Inicio -------------------------              
                 case 'relPesquisarAluno':
                     include_once './telas/relatorios/relatorios.php';
