@@ -1,49 +1,43 @@
 
 <!-- ---------------------- Inicio ------------------------------------------- -->
-</div> 
-<div class="container relatorios1"> 
-
-    <form class="form-horizontal ">
-        <img src="../img/capa.jpg" alt="" />
-
-        <div class="control-group">
-            <label class="control-label" for="inputEmail"></label>
-            <div class="controls">
-                <input type="text" id="inputEmail" placeholder="Email">
+</div>
+<div class="well">
+    
+    <div class="container relatorios"> 
+        <legend><span class="fa-user-add"></span> Pesquisar por Aluno</legend>
+        <form class="form-search">
+            <div class="input-append">
+                <input type="text" class="span2 search-query">
+                <button type="submit" class="btn">Pesquisar</button>
             </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <button type="submit" class="btn btn-primary">Entrar</button>
-            </div>
-        </div>
-    </form> 
+        </form>  
+    </div>
+
+    <div class=" container tabelas">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Sobrenome</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td>Funéria</td>
+                    <td></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
 
 </div>
 
-<div class="container relatorios2">
-
-    <form class="form-horizontal">
-        <img src="../img/capa.jpg" alt="" />
-        <div class="control-group">
-            <label class="control-label" for="inputEmail">Nova senha</label>
-            <div class="controls">
-                <input type="text" placeholder="">
-            </div>
-        </div>
-        <div class="control-group">
-            <label class="control-label" for="inputPassword">Confirmar senha</label>
-            <div class="controls">
-                <input type="password" id="inputPassword" placeholder="Senha">
-            </div>
-        </div>
-        <div class="control-group">
-            <div class="controls">
-                <button type="submit" class="btn">Entrar</button>
-            </div>
-        </div>
-    </form>
-
-</div>
 </div> 
 <!-- ---------------------- Fim ---------------------------------------------- -->  
