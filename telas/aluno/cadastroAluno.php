@@ -12,19 +12,19 @@
                 <input type="text" class="input-block-level" placeholder="Nome">
             </li>
             <li>
-                <label>Nome do título</label>
+                <label>Data de Nascimento</label>
                 <input type="text" class="input-block-level" placeholder="Data de Nascimento">
             </li>
             <li>
-                <label>Nome do título</label>
+                <label>RG</label>
                 <input type="text" class="input-block-level" placeholder="RG">
             </li>
             <li>
-                <label>Nome do título</label>
+                <label>CPF</label>
                 <input type="text" class="input-block-level" placeholder="CPF">
             </li>
             <li>
-                <label>Nome do título</label>
+                <label>Informe o turno</label>
                 <select >
                     <option>Selecione um turno</option>
                     <option>Manhã</option>
@@ -33,7 +33,7 @@
                 </select>
             </li>
             <li>
-                <label>Nome do título</label>
+                <label>Informe o curso</label>
                 <select>
                     <option>Selecione um curso</option>
                     <option>2</option>

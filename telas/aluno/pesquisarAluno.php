@@ -8,7 +8,8 @@
                 <li>
                     <div class="input-append">
                         <input type="text" class="search-query input-block-level">
-                        <button type="submit" class="btn btn-primary">Busca</button>
+<!--                        <button type="submit" class="btn btn-primary">Busca</button>-->
+                        <a href="?pg=dadosAluno" class="btn btn-primary"> Buscar</a>
                     </div>
                 </li>
             </ul>  
