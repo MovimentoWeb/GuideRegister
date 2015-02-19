@@ -108,7 +108,7 @@
                 <ul class="nav">
 
                     <div class="btn-group">
-                        <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
+                        <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="?pg=listaAvisos">
                             <i class="fa-help"></i> Aviso
                             <span class="caret"></span>
                         </a>
