@@ -9,31 +9,34 @@ if (!isset($_GET['opcao'])) {
             ?>
             <div class="container" id="login">
                 <!--<alisssoonnnnnnnnnnnnnnnnn> -->
-                <form class = "form-horizontal well">
-                <img src = "img/Capa.jpg" alt = "capa" /><!--<input type = "text" id = "" -->
-                    <div class = "control-group">
-                        <label class = "control-label" for = "inputEmail"></label>
-                        <div class = "input-prepend">
-                            <span class = "add-on"><i class = "icon-envelope"></i></span>
-                            <input class = "span2" id = "inputEmail" type = "text" placeholder = "Email">
-                        </div>
+                <div class="well">
+                    <form class = "form-horizontal">
+                    <img src = "img/Capa.jpg" alt = "capa" /><!--<input type = "text" id = "" -->
                         <div class = "control-group">
-                            <label class = "control-label" for = "inputPassword"></label>
-                            <div class = "controls">
-                                <input type = "password" id = "inputPassword" placeholder = "Senha">
+                            <label class = "control-label" for = "inputEmail"></label>
+                            <div class = "input-prepend">
+                                <span class = "add-on"><i class = "fa-envelope"></i></span>
+                                <input class="input-xlarge" id="inputEmail" type="text" placeholder="E-mail">
+                            </div>
+                            <div class = "control-group">
+                                <label class = "control-label" for = "inputPassword"></label>
+                                <div class = "input-prepend">
+                                    <span class = "add-on"><i class = "fa-key2"></i></span>
+                                    <input class="input-xlarge" id="inputSenha" type="text" placeholder="Senha">
+                                </div>
                             </div>
                         </div>
                         <div class = "control-group">
                             <div class = "controls">
 
                                 <a href = "">Esqueceu sua senha ?</a>
-
-                                <button class = "btn btn-large btn-block btn-primary" type = "button">Entrar</button>
-                                <button class = "btn btn-large btn-block btn-primary" type = "button">Cadastrar</button>
+                                <button class = "btn btn-block btn-primary" type = "button">Entrar</button>
+                                <button class = "btn btn-block btn-primary" type = "button">Cadastrar</button>
                             </div>
                         </div>
-                    </div>
-                </form>
+                </div>
+            </form>
+            </div>
             </div>
             <?php
             break;

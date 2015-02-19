@@ -11,13 +11,15 @@
     background: url("../img/bg.fw.png");
     margin: 0 auto;
 }
-
 #login .form-horizontal{
     margin: 0 auto;
-    margin-top: 5px;
+    text-align: center;
+
 }
-#login .controls a{
-    float: right;
+#login .form-horizontal img{
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
 }
 #login .controls input{
     margin-top: 5px;
@@ -26,13 +28,21 @@
     margin-right: 5px;
     margin-bottom: 2px;
 }
-.control-group{
-    margin: 0 auto;  
+#login .control-group{
+    margin: 0 auto;
+    max-width: 320px;
+}
+#login .controls {
+    margin: 0 auto;
+}
+#login .controls {
+    display: block;
+    text-align: right;
 }
 
-body{height:100%;
-     background: url("../img/bg.fw.png");
-
+body{
+    height:100%;
+    background: url("../img/bg.fw.png");
 }
 /*    Gabriel Cadastro de aluno*/
 .conteinerAluno form ul{
@@ -50,21 +60,21 @@ body{height:100%;
 .relatorios form {
     max-width: 1052px;
     text-align: center;
-    
+
 }
 .relatorios input{
     width: 450px;
 }
 
 .pesquisardisciplina form{
-   max-width: 1052px;
-   text-align: center; 
+    max-width: 1052px;
+    text-align: center; 
 }
 .pesquisardisciplina select{
     width: 500px;
 }
 .pesquisardisciplina button, select{
-      margin-top: 50px;
+    margin-top: 50px;
 }
 /*-------------------Alexsander - Professores -----------------------*/
 
