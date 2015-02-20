@@ -11,13 +11,20 @@
     background: url("../img/bg.fw.png");
     margin: 0 auto;
 }
-
+#login h3{
+    text-align: center;
+    font-family: arial;
+    color: #777777;
+}
 #login .form-horizontal{
     margin: 0 auto;
-    margin-top: 5px;
+    text-align: center;
+
 }
-#login .controls a{
-    float: right;
+#login .form-horizontal img{
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
 }
 #login .controls input{
     margin-top: 5px;
@@ -26,13 +33,97 @@
     margin-right: 5px;
     margin-bottom: 2px;
 }
-.control-group{
-    margin: 0 auto;  
+#login .control-group{
+    margin: 0 auto;
+    max-width: 320px;
+}
+#login .controls {
+    margin: 0 auto;
+}
+#login .controls {
+    display: block;
+    text-align: right;
 }
 
-body{height:100%;
-     background: url("../img/bg.fw.png");
+body{
+    height:100%;
+    background: url("../img/bg.fw.png");
+}
+/*Página de ESQUECEU MINHA SENHA*/
+#esqueceuminhasenha{
+    background: url("../img/bg.fw.png");
+    margin: 0 auto;
+}
+#esqueceuminhasenha h3{
+    text-align: center;
+    font-family: arial;
+    color: #777777;
+}
+#esqueceuminhasenha .form-horizontal{
+    margin: 0 auto;
+    text-align: center;
 
+}
+#esqueceuminhasenha .form-horizontal img{
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+}
+#esqueceuminhasenha .controls input{
+    margin-top: 5px;
+}
+#esqueceuminhasenha .control-label{
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+#esqueceuminhasenha .control-group{
+    margin: 0 auto;
+    max-width: 320px;
+}
+#esqueceuminhasenha .controls {
+    margin:5px 5px 0 0;
+}
+body{
+    height:100%;
+    background: url("../img/bg.fw.png");
+}
+/*Página de NOVA SENHA*/
+#novasenha{
+    background: url("../img/bg.fw.png");
+    margin: 0 auto;
+}
+#novasenha h3{
+    text-align: center;
+    font-family: arial;
+    color: #777777;
+}
+#novasenha .form-horizontal{
+    margin: 0 auto;
+    text-align: center;
+
+}
+#novasenha .form-horizontal img{
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+}
+#novasenha .controls input{
+    margin-top: 5px;
+}
+#novasenha .control-label{
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+#novasenha .control-group{
+    margin: 0 auto;
+    max-width: 320px;
+}
+#novasenha .controls {
+    margin:5px 5px 0 0;
+}
+body{
+    height:100%;
+    background: url("../img/bg.fw.png");
 }
 /*    Gabriel Cadastro de aluno*/
 .conteinerAluno form ul{
@@ -50,21 +141,21 @@ body{height:100%;
 .relatorios form {
     max-width: 1052px;
     text-align: center;
-    
+
 }
 .relatorios input{
     width: 450px;
 }
 
 .pesquisardisciplina form{
-   max-width: 1052px;
-   text-align: center; 
+    max-width: 1052px;
+    text-align: center; 
 }
 .pesquisardisciplina select{
     width: 500px;
 }
 .pesquisardisciplina button, select{
-      margin-top: 50px;
+    margin-top: 50px;
 }
 .ataturmas input{
       width: 450px; 
