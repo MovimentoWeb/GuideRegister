@@ -53,7 +53,7 @@ if (!isset($_GET['opcao'])) {
                     </h3>
                     <form class = "form-horizontal">
                     <img src = "img/Capa.jpg" alt = "capa" /><!--<input type = "text" id = "" -->
-                        <div class = "control-group">
+                        <div class = "control-group"> 
                             <label class = "control-label" for = "inputEmail"></label>
                             <div class = "input-prepend">
                                 <span class = "add-on"><i class = "fa-envelope"></i></span>
