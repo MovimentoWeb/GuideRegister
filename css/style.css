@@ -1,12 +1,189 @@
-.form-horizontal{
+
+/*CSS PARA TODAS AS PÁGINAS*/
+
+.paginas{
+    margin: 60px auto;
+}
+
+
+/*Página de LOGIN*/
+#login{
+    background: url("../img/bg.fw.png");
+    margin: 0 auto;
+}
+#login h3{
+    text-align: center;
+    font-family: arial;
+    color: #777777;
+}
+#login .form-horizontal{
+    margin: 0 auto;
+    text-align: center;
+
+}
+#login .form-horizontal img{
     max-width: 320px;
     margin: 0 auto;
-    background: url("../");
+    text-align: center;
 }
-.control-label{
-    margin-bottom: 1%;
-    margin-left: 30%;  
+#login .controls input{
+    margin-top: 5px;
 }
-.control-group .controls{
-    margin-left: 47%;
+#login .control-label{
+    margin-right: 5px;
+    margin-bottom: 2px;
 }
+#login .control-group{
+    margin: 0 auto;
+    max-width: 320px;
+}
+#login .controls {
+    margin: 0 auto;
+}
+#login .controls {
+    display: block;
+    text-align: right;
+}
+
+body{
+    height:100%;
+    background: url("../img/bg.fw.png");
+}
+/*Página de ESQUECEU MINHA SENHA*/
+#esqueceuminhasenha{
+    background: url("../img/bg.fw.png");
+    margin: 0 auto;
+}
+#esqueceuminhasenha h3{
+    text-align: center;
+    font-family: arial;
+    color: #777777;
+}
+#esqueceuminhasenha .form-horizontal{
+    margin: 0 auto;
+    text-align: center;
+
+}
+#esqueceuminhasenha .form-horizontal img{
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+}
+#esqueceuminhasenha .controls input{
+    margin-top: 5px;
+}
+#esqueceuminhasenha .control-label{
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+#esqueceuminhasenha .control-group{
+    margin: 0 auto;
+    max-width: 320px;
+}
+#esqueceuminhasenha .controls {
+    margin:5px 5px 0 0;
+}
+body{
+    height:100%;
+    background: url("../img/bg.fw.png");
+}
+/*Página de NOVA SENHA*/
+#novasenha{
+    background: url("../img/bg.fw.png");
+    margin: 0 auto;
+}
+#novasenha h3{
+    text-align: center;
+    font-family: arial;
+    color: #777777;
+}
+#novasenha .form-horizontal{
+    margin: 0 auto;
+    text-align: center;
+
+}
+#novasenha .form-horizontal img{
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+}
+#novasenha .controls input{
+    margin-top: 5px;
+}
+#novasenha .control-label{
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+#novasenha .control-group{
+    margin: 0 auto;
+    max-width: 320px;
+}
+#novasenha .controls {
+    margin:5px 5px 0 0;
+}
+body{
+    height:100%;
+    background: url("../img/bg.fw.png");
+}
+/*    Gabriel Cadastro de aluno*/
+.conteinerAluno form ul{
+    list-style: none;
+    margin-left: 0;
+}
+/*    Gabriel Pesquisa de aluno*/
+.PesquisarAluno form ul{
+    list-style: none;
+    margin-left: 0;
+}
+
+/* ------------------ Taynara - Relatórios ------------------------*/
+
+.relatorios form {
+    max-width: 1052px;
+    text-align: center;
+
+}
+.relatorios input{
+    width: 450px;
+}
+
+.pesquisardisciplina form{
+    max-width: 1052px;
+    text-align: center; 
+}
+.pesquisardisciplina select{
+    width: 500px;
+}
+.pesquisardisciplina button, select{
+    margin-top: 50px;
+}
+.ataturmas input{
+      width: 450px; 
+}
+/*-------------------Alexsander - Professores -----------------------*/
+
+.container .professores{
+    margin: left;
+}
+.container .professores form ul{
+    list-style: none;
+    margin: 0 0 10px;
+    margin-top: 10px;
+}
+.container .professores select{
+    margin-top: 0; 
+}
+.PesquisarProfessor ul{
+    list-style: none;
+    margin-left: 0; 
+}
+
+/*-------------------Marcelo - Turma -----------------------*/
+.meioTurma{margin:0auto
+}
+
+.meioTurma input{margin-top:1%}
+
+.meioTurma label{margin-top:1%}
+
+.meioTurma textArea{margin-top:3%}
