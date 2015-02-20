@@ -1,7 +1,7 @@
 <div id="ListadeAvisos" class="meioTurma well">
     <form class="">
         <legend><span class="fa-notification"></span> Avisos</legend>
-        <span class="help-block">Preencha corretamente os acampos abaixo </span>
+        <span class="help-block">Preencha corretamente os campos abaixo </span>
 
 
         <div class="row-fluid">
@@ -14,7 +14,7 @@
                     <option>Professor5</option>
                 </select>
             </div>
-            <div class="span6">   
+            <div class="span6 justifica">   
                 <select class>
                     <option>Just.Aluno</option>
                     <option>Just.Aluno2</option>
