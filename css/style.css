@@ -103,12 +103,21 @@ ListadeAvisos{
 
 .meioTurma textArea{
     margin-top:3%;
-  
+
 }
 
 
 
 #ListadeAvisos form{
- max-width: 400PX;    
- margin: 0 auto;
+    max-width: 400PX;    
+    margin: 0 auto;
+}
+#ListadeAvisos .row-fluid{
+}
+.row-fluid .justifica{
+    padding-left: 50px;
+}
+form textArea{
+    resize: none;
+   // padding-right: 50px;
 }
