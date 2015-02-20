@@ -50,24 +50,24 @@ body{height:100%;
 .relatorios form {
     max-width: 1052px;
     text-align: center;
-    
+
 }
 .relatorios input{
     width: 450px;
 }
 
 .pesquisardisciplina form{
-   max-width: 1052px;
-   text-align: center; 
+    max-width: 1052px;
+    text-align: center; 
 }
 .pesquisardisciplina select{
     width: 500px;
 }
 .pesquisardisciplina button, select{
-      margin-top: 50px;
+    margin-top: 50px;
 }
 .ataturmas input{
-      width: 450px; 
+    width: 450px; 
 }
 /*-------------------Alexsander - Professores -----------------------*/
 
@@ -88,11 +88,25 @@ body{height:100%;
 }
 
 /*-------------------Marcelo - Turma -----------------------*/
-.meioTurma{margin:0auto
+ListadeAvisos{
+    text-align:center;
+}
+.meioTurma{
+    margin:0auto;
 }
 
-.meioTurma input{margin-top:1%}
+.meioTurma input{
 
-.meioTurma label{margin-top:1%}
+    margin-top:1%;
+}
+.meioTurma label{
+    margin-top:1%
+}
+.meioTurma textArea{
+    margin-top:3%;
+}
+#ListadeAvisos form{
+    max-width: 400PX;    
+    margin: 0 auto;
+}
 
-.meioTurma textArea{margin-top:3%}
