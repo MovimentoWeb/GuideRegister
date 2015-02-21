@@ -8,48 +8,43 @@ $errosValidacao = array();
 
 $exibirTabela = TRUE;
 if (temPost()) {
-    $tarefa = array();
+    $varificacao = array();
 
-//ValidaÃ§Ã£o do NOME
-    if (isset($_POST['nome']) && strlen($_POST['nome']) > 0) {
-        $tarefa['nome'] = $_POST['nome'];
+//Validação do E-MAIL
+    if (isset($_POST['email']) && strlen($_POST['email']) > 0) {
+        $varificacao['email'] = $_POST['nome'];
     } else {
         $temErros = true;
-        $errosValidacao['nome'] = 'O nome da tarefa Ã© obrigatÃ³rio!';
+        $errosValidacao['email'] = 'O email de login é obrigatório!';
     }
 
-//ValidaÃ§Ã£o da DESCRIÃ‡ÃƒO  
-    if (isset($_POST['descricao']) && strlen($_POST['descricao']) > 0) {
-        $tarefa['descricao'] = $_POST['descricao'];
+//Validação da SENHA  
+    if (isset($_POST['senha']) && strlen($_POST['senha']) > 0) {
+        $verificacao['senha'] = $_POST['senha'];
     } else {
         $temErros = true;
-        $errosValidacao['descricao'] = 'A descriÃ§Ã£o da tarefa Ã© obrigatÃ³ria!';
+        $errosValidacao['senha'] = 'A senha de login é obrigatória!';
     }
-    $tarefa['prioridade'] = $_POST['prioridade'];
+    $verificacao['prioridade'] = $_POST['prioridade'];
     if (isset($_POST['concluida'])) {
-        $tarefa['concluida'] = 1;
+        $verificacao['concluida'] = 1;
     } else {
-        $tarefa['concluida'] = 0;
+        $verificacao['concluida'] = 0;
     }
 
     if (!$temErros) {
-        inserirTarefa($conexao, $tarefa);
-        header('Location: tarefa.php');
+        inserirTarefa($conexao, $verificacao);
+        header('Location: validacaologin.php');
         die();
     }
 }
 
-$lista_tarefas = buscarTarefas($conexao);
+$lista_validacaologins = buscarTarefas($conexao);
 
-$tarefa = array(
+$verificacao = array(
     'id' => 0,
-    'nome' => (isset($_POST['nome'])) ?
-            $_POST['nome'] : '',
-    'descricao' => (isset($_POST['descricao'])) ? $_POST['descricao'] : '',
-    'prazo' => (isset($_POST['prazo'])) ? $_POST['prazo'] : '',
-    'prioridade' => (isset($_POST['prioridade'])) ?
-            $_POST['prioridade'] : 1,
-    'concluida' => (isset($_POST['concluida'])) ?
-            $_POST['concluida'] : ''
+    'email' => (isset($_POST['email'])) ?
+            $_POST['email'] : '',
+    'senha' => (isset($_POST['senha'])) ? $_POST['senha'] : ''
 );
 include "template.php";
