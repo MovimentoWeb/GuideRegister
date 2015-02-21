@@ -5,24 +5,30 @@
             <span class="help-block">Preencha corretamente os acampos abaixo com os  dados do professor</span>
             <ul>
                 <li>
-                    <label for="">Nome do professor:</label>
-                    <input class="input-block-level" type="text" placeholder="Nome"  />
+                    <label for="">Nome do professor:
+
+                        <input class="input-block-level" type="text" placeholder="Nome"  />
+                    </label>
                 </li>
                 <li>
-                    <label for="">Data de Nascimento:</label>
-                    <input class="input-block-level" type="text" placeholder="Data de nascimento"  />
+                    <label for="">Data de Nascimento:
+                        <input class="input-block-level" type="text" placeholder="Data de nascimento"  />
+                    </label>
                 </li>
                 <li>
-                    <label for="">Rg:</label>
-                    <input class="input-block-level" type="text" placeholder="RG"  />
+                    <label for="">Rg:
+                        <input class="input-block-level" type="text" placeholder="RG"  />
+                    </label>
                 </li>
                 <li>
-                    <label for="">CPF:</label>
-                    <input class="input-block-level" type="text" placeholder="CPF"  />
+                    <label for="">CPF:
+                        <input class="input-block-level" type="text" placeholder="CPF"  />
+                    </label>
                 </li>
                 <li>
-                    <label for="">Data de admissão:</label>
-                    <input class="input-block-level" type="text" placeholder="Data de admissão"  />
+                    <label for="">Data de admissão:
+                        <input class="input-block-level" type="text" placeholder="Data de admissão"  />
+                    </label>
                 </li>
                 <li>
                     <label>Turno</label>
