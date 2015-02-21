@@ -1,8 +1,9 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+//Esta função verifica se o botão submit do formulário foi clicado
+function temPost() {
+    if (count($_POST) > 0) {
+        return true;
+    }
+    return false;
+}
