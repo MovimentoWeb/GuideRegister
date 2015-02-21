@@ -1,6 +1,10 @@
 
 /*CSS PARA TODAS AS PÁGINAS*/
-
+.erro{
+    font-family: arial;
+    font-size: 12px;
+    color: #FF0000;
+}
 .paginas{
     margin: 60px auto;
 }
@@ -155,7 +159,7 @@ body{
     width: 500px;
 }
 .pesquisardisciplina button, select{
-    margin-top: 50px;
+    ;
 }
 .ataturmas input{
       width: 450px; 
