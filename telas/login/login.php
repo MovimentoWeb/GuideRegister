@@ -32,13 +32,13 @@ if (!isset($_GET['opcao'])) {
                         <div class = "control-group">
                             <div class = "controls">
 
-                                <a href = "">Esqueceu sua senha ?</a>
+                                <a href="?">Esqueceu sua senha?</a>
                                 <button class = "btn btn-block btn-info" type = "button">Entrar</button>
-                                <button class = "btn btn-block btn-primary" type = "button">Cadastrar</button>
                             </div>
-                        </div>
+                        </div>  
+                    </form>
                 </div>
-            </form>
+
             </div>
             <?php
             break;
@@ -48,6 +48,8 @@ if (!isset($_GET['opcao'])) {
             <div class="container" id="esqueceuminhasenha">
                 <!--<alisssoonnnnnnnnnnnnnnnnn> -->
                 <div class="well">
+                    
+                    <h1>Alisson - Retire todos os espaços dos atributos de tag ex: <strong class="label label-important"> src = "..."</strong><br />Devem ser escritos assim <br /><strong class="label label-success"> src="..."</strong></h1>
                     <h3>
                         Esqueceu minha senha
                     </h3>
@@ -62,7 +64,7 @@ if (!isset($_GET['opcao'])) {
                         </div>
                         <div class = "control-group">
                             <div class = "controls">
-                                <button class = "btn btn-block btn-primary" type = "button">Enviar</button>
+                                <button class = "btn btn-block btn-primary" type="button">Recuperar senha agora!</button>
                             </div>
                         </div>
                 </div>
@@ -96,7 +98,7 @@ if (!isset($_GET['opcao'])) {
                         <div class = "control-group">
                             <div class = "controls">
                                 <button class = "btn btn-block btn-primary" type = "button">Enviar</button>
-                                
+
                             </div>
                         </div>
                 </div>

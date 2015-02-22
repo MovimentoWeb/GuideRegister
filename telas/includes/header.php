@@ -9,7 +9,7 @@
             </a>
 
             <!-- Tenha certeza de deixar a marca se você quer que ela seja mostrada -->
-            <a class="brand" href="#"><span class="fa-home3"></span> <span class="hidden-phone">Guide Register</span></a>
+            <a class="brand" href="index.php"><span class="fa-home3"></span> <span class="hidden-phone">Guide Register</span></a>
 
             <ul class="nav">
                 <li><a class="brand"  href="?pg=listaAvisos"><span class="fa-bell"></span></a></li>
@@ -30,8 +30,6 @@
                             <li ><a href="?pg=login&opcao=novasenha"><span class="fa-key3"></span> Nova senha</a> </li>
                         </ul>
                     </div>
-                </ul> 
-                <ul class="nav">
                     <div class="btn-group">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
                             <i class="fa-user"></i> Aluno
@@ -43,9 +41,7 @@
                             <li ><a href="?pg=pesquisarAluno"><span class="fa-search3"></span> Pesquisar</a> </li>
                         </ul>
                     </div>  
-                </ul> 
 
-                <ul class="nav">
                     <div class="btn-group">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
                             <span class="fa-users4"></span> Professores
@@ -66,8 +62,6 @@
                             </li>
                         </ul>
                     </div>  
-                </ul>  
-                <ul class="nav">
                     <div class="btn-group">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
                             <i class="fa-folder-open"></i> Turmas
@@ -76,7 +70,7 @@
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
 
-                            <li ><a href="?pg=turmaCadastrar"> <i class="fa-plus"></i> Cadastrar</a> </li>
+                            <li ><a href="?pg=turmaCadastrar"> <i class="fa-plus"></i> Cadastrar turmas</a></li>
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><i class="fa-list2"></i> Listar</a>
                                 <ul class="dropdown-menu">
@@ -87,8 +81,8 @@
                             </li>
                         </ul>
                     </div>  
-                </ul> 
-                <ul class="nav">
+
+                    <!------------------------------- Relatorios - Taynara ------------------------------------> 
                     <div class="btn-group">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
                             <i class="fa-file-powerpoint"></i> Relatórios
@@ -96,23 +90,26 @@
                         </a>
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
-
-                            <!------------------------------- Relatorios - Taynara ------------------------------------> 
-
                             <li ><a href="?pg=relPesquisarAluno">Pesquisar por aluno</a> </li>
                             <li ><a href="?pg=relAtaAluno">Ata por turmas</a> </li>
                             <li ><a href="?pg=relDisciplina">Pesquisar por disciplinas</a> </li>
                         </ul>
                     </div>  
-                </ul>  
-                <ul class="nav">
+
+                    <!-------------------------------Fim Relatorios - Taynara ------------------------------------> 
+
 
                     <div class="btn-group">
-                        <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="?pg=listaAvisos">
-                            <i class="fa-help"></i> Aviso
+                        <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
+                            <i class="fa-help"></i> Avisos e Justificativas 
                             <span class="caret"></span>
                         </a>
+                        <ul class="dropdown-menu">
+                            <!-- Links de menu dropdown -->
 
+                            <li><a href="?pg=turmaCadastrar"> <span class="fa-plus"></span> Novo Aviso</a></li>
+                            <li><a href="?pg=turmaCadastrar"> <span class="fa-warning"></span> Justificativa de falta</a></li>
+                        </ul>
                     </div>  
                 </ul>  
             </div>

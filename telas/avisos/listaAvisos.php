@@ -14,15 +14,7 @@
                     <option>Professor5</option>
                 </select>
             </div>
-            <div class="span6 justifica">   
-                <select class>
-                    <option>Just.Aluno</option>
-                    <option>Just.Aluno2</option>
-                    <option>Just.Aluno3</option>
-                    <option>Just.Aluno4</option>
-                    <option>Just.Aluno5</option>
-                </select>
-            </div>
+            <div class="span6 justifica"></div>
         </div>
 
 
