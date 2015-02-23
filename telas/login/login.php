@@ -1,44 +1,41 @@
 
-
 <?php
 if (!isset($_GET['opcao'])) {
     
 } else {
     switch ($_GET['opcao']) {
         case'loginInicial':
-            ?>
+            include_once 'telas/login/validacaologin.php';
+?>
             <div class="container" id="login">
-                <!--<alisssoonnnnnnnnnnnnnnnnn> -->
                 <div class="well">
                     <h3>
                         Login Inicial
                     </h3>
-                    <form class = "form-horizontal">
-                    <img src = "img/Capa.jpg" alt = "capa" /><!--<input type = "text" id = "" -->
-                        <div class = "control-group">
-                            <label class = "control-label" for = "inputEmail"></label>
-                            <div class = "input-prepend">
-                                <span class = "add-on"><i class = "fa-envelope"></i></span>
-                                <input class="input-xlarge" id="inputEmail" type="text" placeholder="E-mail">
+                    <form method="post" class="form-horizontal">
+                        <img src="img/Capa.jpg" alt="capa" />
+                        <div class="control-group">
+                            <label class="control-label" for="inputEmail"></label>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="fa-envelope"></i></span>
+                                <input class="input-xlarge" id="inputEmail" name="email" type="text" placeholder="E-mail">
                             </div>
-                            <div class = "control-group">
-                                <label class = "control-label" for = "inputPassword"></label>
-                                <div class = "input-prepend">
-                                    <span class = "add-on"><i class = "fa-key2"></i></span>
-                                    <input class="input-xlarge" id="inputSenha" type="text" placeholder="Senha">
+                            <div class="control-group">
+                                <label class="control-label" for="inputPassword"></label>
+                                <div class="input-prepend">
+                                    <span class="add-on"><i class="fa-key2"></i></span>
+                                    <input class="input-xlarge" id="inputSenha" name="senha" type="text" placeholder="Senha">
                                 </div>
                             </div>
                         </div>
-                        <div class = "control-group">
-                            <div class = "controls">
-
+                        <div class="control-group">
+                            <div class="controls">
                                 <a href="?">Esqueceu sua senha?</a>
-                                <button class = "btn btn-block btn-info" type = "button">Entrar</button>
+                                <button class = "btn btn-block btn-info" type="button">Entrar</button>
                             </div>
                         </div>  
                     </form>
                 </div>
-
             </div>
             <?php
             break;
@@ -46,14 +43,11 @@ if (!isset($_GET['opcao'])) {
         case'esqueciMinhaSenha':
             ?>
             <div class="container" id="esqueceuminhasenha">
-                <!--<alisssoonnnnnnnnnnnnnnnnn> -->
                 <div class="well">
-                    
-                    
                     <h3>
                         Esqueceu minha senha
                     </h3>
-                    <form class="form-horizontal">
+                    <form method="post" class="form-horizontal">
                     <img src="img/Capa.jpg" alt="capa"/><!--<input type = "text" id = "" -->
                         <div class="control-group"> 
                             <label class="control-label" for="inputEmail"></label>
@@ -79,8 +73,8 @@ if (!isset($_GET['opcao'])) {
                 <!--<alisssoonnnnnnnnnnnnnnnnn> -->
                 <div class="well">
                     <h3>Nova Senha</h3>
-                    <form class="form-horizontal">
-                    <img src="img/Capa.jpg" alt="capa" /><!--<input type = "text" id = "" -->
+                    <form method="post" class="form-horizontal">
+                        <img src="img/Capa.jpg" alt="capa" /><!--<input type = "text" id = "" -->
                         <div class="control-group">
                             <label class="control-label" for="inputEmail"></label>
                             <div class="input-prepend">
@@ -100,8 +94,8 @@ if (!isset($_GET['opcao'])) {
                                 <button class="btn btn-block btn-primary" type="button">Enviar</button>
                             </div>
                         </div>
+                    </form>
                 </div>
-            </form>
             </div>
             <?php
             break;
@@ -110,4 +104,3 @@ if (!isset($_GET['opcao'])) {
             break;
     }
 }
-?>
