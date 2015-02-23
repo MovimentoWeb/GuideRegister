@@ -49,22 +49,22 @@ if (!isset($_GET['opcao'])) {
                 <!--<alisssoonnnnnnnnnnnnnnnnn> -->
                 <div class="well">
                     
-                    <h1>Alisson - Retire todos os espaços dos atributos de tag ex: <strong class="label label-important"> src = "..."</strong><br />Devem ser escritos assim <br /><strong class="label label-success"> src="..."</strong></h1>
+                    
                     <h3>
                         Esqueceu minha senha
                     </h3>
-                    <form class = "form-horizontal">
-                    <img src = "img/Capa.jpg" alt = "capa" /><!--<input type = "text" id = "" -->
-                        <div class = "control-group"> 
-                            <label class = "control-label" for = "inputEmail"></label>
-                            <div class = "input-prepend">
-                                <span class = "add-on"><i class = "fa-envelope"></i></span>
+                    <form class="form-horizontal">
+                    <img src="img/Capa.jpg" alt="capa"/><!--<input type = "text" id = "" -->
+                        <div class="control-group"> 
+                            <label class="control-label" for="inputEmail"></label>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class="fa-envelope"></i></span>
                                 <input class="input-xlarge" id="inputEmail" type="text" placeholder="E-mail">
                             </div>
                         </div>
-                        <div class = "control-group">
-                            <div class = "controls">
-                                <button class = "btn btn-block btn-primary" type="button">Recuperar senha agora!</button>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button class="btn btn-block btn-primary" type="button">Recuperar senha agora!</button>
                             </div>
                         </div>
                 </div>
@@ -79,26 +79,25 @@ if (!isset($_GET['opcao'])) {
                 <!--<alisssoonnnnnnnnnnnnnnnnn> -->
                 <div class="well">
                     <h3>Nova Senha</h3>
-                    <form class = "form-horizontal">
-                    <img src = "img/Capa.jpg" alt = "capa" /><!--<input type = "text" id = "" -->
-                        <div class = "control-group">
-                            <label class = "control-label" for = "inputEmail"></label>
-                            <div class = "input-prepend">
-                                <span class = "add-on"><i class = "fa-key"></i></span>
+                    <form class="form-horizontal">
+                    <img src="img/Capa.jpg" alt="capa" /><!--<input type = "text" id = "" -->
+                        <div class="control-group">
+                            <label class="control-label" for="inputEmail"></label>
+                            <div class="input-prepend">
+                                <span class="add-on"><i class = "fa-key"></i></span>
                                 <input class="input-xlarge" id="inputEmail" type="text" placeholder="Nova Senha">
                             </div>
-                            <div class = "control-group">
-                                <label class = "control-label" for = "inputPassword"></label>
-                                <div class = "input-prepend">
-                                    <span class = "add-on"><i class = "fa-key2"></i></span>
+                            <div class="control-group">
+                                <label class="control-label" for="inputPassword"></label>
+                                <div class="input-prepend">
+                                    <span class="add-on"><i class="fa-key2"></i></span>
                                     <input class="input-xlarge" id="inputConfirmarSenha" type="text" placeholder="Confirmar Senha">
                                 </div>
                             </div>
                         </div>
-                        <div class = "control-group">
-                            <div class = "controls">
-                                <button class = "btn btn-block btn-primary" type = "button">Enviar</button>
-
+                        <div class="control-group">
+                            <div class="controls">
+                                <button class="btn btn-block btn-primary" type="button">Enviar</button>
                             </div>
                         </div>
                 </div>
