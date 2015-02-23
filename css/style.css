@@ -147,8 +147,9 @@ body{
     text-align: center;
 
 }
-.relatorios input{
-    width: 450px;
+.relatorios form ul{
+    list-style: none;
+    margin-left: 0;
 }
 
 .pesquisardisciplina form{
@@ -158,11 +159,9 @@ body{
 .pesquisardisciplina select{
     width: 500px;
 }
-.pesquisardisciplina button, select{
-    ;
-}
-.ataturmas input{
-    width: 450px; 
+.ataturmas form ul{
+    list-style: none;
+    margin-left: 0;
 }
 /*-------------------Alexsander - Professores -----------------------*/
 
