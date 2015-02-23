@@ -74,6 +74,7 @@ include_once 'telas/aluno/validacaoAluno.php';
             </li>
             
         </ul>
-        <button type="submit" class="btn btn-primary"> Cadastrar</button>
+        <a href="index.php" class="btn btn-warning"><span class="fa-home"></span> Voltar a página inicial</a>
+        <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
     </form>
 </div>

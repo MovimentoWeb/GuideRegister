@@ -13,7 +13,12 @@ if (temPost()) {
         $projeto['nome'] = $_POST['nome'];
     } else {
         $temErros = true;
-        $errosValidacao['nome'] = 'O nome inválido!';
+        $errosValidacao['nome'] = ''
+                 . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>Nome de aluno inválido!</h4>'
+                . 'Digite corretamente o nome do aluno'
+                . '</div>';
     }
 
     //Validação data nascimento
@@ -21,7 +26,12 @@ if (temPost()) {
         $projeto['dtNascimento'] = $_POST['dtNascimento'];
     } else {
         $temErros = true;
-        $errosValidacao['dtNascimento'] = 'Data de nascimento deve seguir esse formato 00/00/0000';
+        $errosValidacao['dtNascimento'] = ''
+                . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>Data de nascimento inválida!</h4>'
+                . 'Data de nascimento deve seguir o formato: <strong>00/00/0000</strong>'
+                . '</div>';
     }
 
     //Validação rg
@@ -29,7 +39,12 @@ if (temPost()) {
         $projeto['rg'] = $_POST['rg'];
     } else {
         $temErros = TRUE;
-        $errosValidacao['rg'] = 'RG inválido!';
+        $errosValidacao['rg'] = ''
+                . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>RG inválido!</h4>'
+                . 'Digite um número de RG no formato: <strong>999.888.777</strong>'
+                . '</div>';
     }
 
     //Validação cpf
@@ -37,11 +52,16 @@ if (temPost()) {
         $projeto['cpf'] = $_POST['cpf'];
     } else {
         $temErros = TRUE;
-        $errosValidacao['cpf'] = 'CPF inválido!';
+        $errosValidacao['cpf'] = ''
+                . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>CPF inválido!</h4>'
+                . 'CPF inválido! Digite um número de RG no formato: <strong>111.999.888-77</strong>'
+                . '</div>';
     }
 
     //Validação Select Turno
-    if (isset($_POST['selectTurno']) && strlen($_POST['selectTurno']) == 11) {
+    if (isset($_POST['selectTurno'])) {
         $projeto['selectTurno'] = $_POST['selectTurno'];
     } else {
         $temErros = TRUE;
@@ -49,7 +69,7 @@ if (temPost()) {
     }
 
     //Validação Select Curso
-    if (isset($_POST['selectCurso']) && strlen($_POST['selectCurso']) == 11) {
+    if (isset($_POST['selectCurso'])) {
         $projeto['selectCurso'] = $_POST['selectCurso'];
     } else {
         $temErros = TRUE;
