@@ -77,7 +77,6 @@ if (temPost()) {
     }
 
     if (!$temErros) {
-        inserirContato($conexao, $projeto);
         header('Location: index.php?pg=cadastrarAluno');
         die();
     }
