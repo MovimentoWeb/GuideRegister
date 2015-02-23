@@ -3,7 +3,7 @@
         <div class="container">
             <ul class="nav pull-right">
                 <li>
-                    <a href="#">&COPY; Copy right | Todos os direitos reservadoss</a>
+                    <a href="#">&COPY; Copyright | Todos os direitos reservados</a>
                 </li>
             </ul>
         </div>

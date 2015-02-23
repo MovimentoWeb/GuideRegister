@@ -6,22 +6,22 @@
                <legend><span class="fa-user-add"></span> Pesquisar por disciplinas</legend>
                
             <select>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+                <option>Tecnico em Informática</option>
+                <option>Tecnico em Enfermagem</option>
+                <option>Tecnico em Redes de computadores</option>
+                <option>Tecnico em Estetica</option>
+             
             </select>
-            <button type="submit" class="btn">Pesquisar</button>
+               
+            <button type="submit" class="btn-primary">Pesquisar</button>
         </form>
         
-        <div class=" container tabelas2">
+        <div class=" tabelas2">
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>PA</th>
-                        <th>Título</th>
+                        <th>Disciplina</th>
                         <th>Carga Horária</th>
                     </tr>
                 </thead>
@@ -29,9 +29,19 @@
                 <tbody>
 
                     <tr>
-                        <td>1</td>
-                        <td></td>
-                        <td></td>
+                        <td>00000</td>
+                        <td>Programação</td>
+                        <td>1200 Horas</td>
+                    </tr>
+                     <tr>
+                        <td>00001</td>
+                        <td>Etica</td>
+                        <td>600 Horas</td>
+                    </tr>
+                     <tr>
+                        <td>00002</td>
+                        <td>BDA</td>
+                        <td>200 Horas</td>
                     </tr>
 
                 </tbody>
