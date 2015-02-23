@@ -1,47 +1,114 @@
-<!DOCTYPE HTML>
-<html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
 
-        <!--        arquivos das fontes icomoon-->
-        <link type="text/css" rel="stylesheet" href="css/styleIcomoon.css" />
-    </head>
 
-    <!--    arquivos do bootstrap-->
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
-    <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css" />
-    <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <title>Guide Register</title>
-</head>
-<body>
-    <div class="container" id="login">
-        <!--<alisssoonnnnnnnnnnnnnnnnn>-->
-        <form class="form-horizontal well">
-            <img src="img/Capa.jpg" alt="capa" /><!--                        <input type="text"  id="" -->
-            <div class="control-group">
-                <label class="control-label" for="inputEmail"></label>
-                <div class="input-prepend">
-                    <span class="add-on"><i class="icon-envelope"></i></span>
-                    <input class="span2" id="inputEmail" type="text" placeholder="Email">
+<?php
+if (!isset($_GET['opcao'])) {
+    
+} else {
+    switch ($_GET['opcao']) {
+        case'loginInicial':
+            ?>
+            <div class="container" id="login">
+                <!--<alisssoonnnnnnnnnnnnnnnnn> -->
+                <div class="well">
+                    <h3>
+                        Login Inicial
+                    </h3>
+                    <form class = "form-horizontal">
+                    <img src = "img/Capa.jpg" alt = "capa" /><!--<input type = "text" id = "" -->
+                        <div class = "control-group">
+                            <label class = "control-label" for = "inputEmail"></label>
+                            <div class = "input-prepend">
+                                <span class = "add-on"><i class = "fa-envelope"></i></span>
+                                <input class="input-xlarge" id="inputEmail" type="text" placeholder="E-mail">
+                            </div>
+                            <div class = "control-group">
+                                <label class = "control-label" for = "inputPassword"></label>
+                                <div class = "input-prepend">
+                                    <span class = "add-on"><i class = "fa-key2"></i></span>
+                                    <input class="input-xlarge" id="inputSenha" type="text" placeholder="Senha">
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "control-group">
+                            <div class = "controls">
+
+                                <a href="?">Esqueceu sua senha?</a>
+                                <button class = "btn btn-block btn-info" type = "button">Entrar</button>
+                            </div>
+                        </div>  
+                    </form>
                 </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputPassword"></label>
-                    <div class="controls">
-                        <input type="password" id="inputPassword" placeholder="Senha">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="controls">
 
-                        <a href="">Esqueceu sua senha ?</a> 
-
-                        <button class="btn btn-large btn-block btn-primary" type="button">Entrar</button>
-                        <button class="btn btn-large btn-block btn-primary" type="button">Cadastrar</button>
-                    </div>
-                </div>
             </div>
-        </form>
-    </div>
-</body>
-</html>
+            <?php
+            break;
+
+        case'esqueciMinhaSenha':
+            ?>
+            <div class="container" id="esqueceuminhasenha">
+                <!--<alisssoonnnnnnnnnnnnnnnnn> -->
+                <div class="well">
+                    
+                    <h1>Alisson - Retire todos os espaços dos atributos de tag ex: <strong class="label label-important"> src = "..."</strong><br />Devem ser escritos assim <br /><strong class="label label-success"> src="..."</strong></h1>
+                    <h3>
+                        Esqueceu minha senha
+                    </h3>
+                    <form class = "form-horizontal">
+                    <img src = "img/Capa.jpg" alt = "capa" /><!--<input type = "text" id = "" -->
+                        <div class = "control-group"> 
+                            <label class = "control-label" for = "inputEmail"></label>
+                            <div class = "input-prepend">
+                                <span class = "add-on"><i class = "fa-envelope"></i></span>
+                                <input class="input-xlarge" id="inputEmail" type="text" placeholder="E-mail">
+                            </div>
+                        </div>
+                        <div class = "control-group">
+                            <div class = "controls">
+                                <button class = "btn btn-block btn-primary" type="button">Recuperar senha agora!</button>
+                            </div>
+                        </div>
+                </div>
+            </form>
+            </div>
+            <?php
+            break;
+
+        case'novasenha':
+            ?>
+            <div class="container" id="novasenha">
+                <!--<alisssoonnnnnnnnnnnnnnnnn> -->
+                <div class="well">
+                    <h3>Nova Senha</h3>
+                    <form class = "form-horizontal">
+                    <img src = "img/Capa.jpg" alt = "capa" /><!--<input type = "text" id = "" -->
+                        <div class = "control-group">
+                            <label class = "control-label" for = "inputEmail"></label>
+                            <div class = "input-prepend">
+                                <span class = "add-on"><i class = "fa-key"></i></span>
+                                <input class="input-xlarge" id="inputEmail" type="text" placeholder="Nova Senha">
+                            </div>
+                            <div class = "control-group">
+                                <label class = "control-label" for = "inputPassword"></label>
+                                <div class = "input-prepend">
+                                    <span class = "add-on"><i class = "fa-key2"></i></span>
+                                    <input class="input-xlarge" id="inputConfirmarSenha" type="text" placeholder="Confirmar Senha">
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "control-group">
+                            <div class = "controls">
+                                <button class = "btn btn-block btn-primary" type = "button">Enviar</button>
+
+                            </div>
+                        </div>
+                </div>
+            </form>
+            </div>
+            <?php
+            break;
+
+        default:
+            break;
+    }
+}
+?>
