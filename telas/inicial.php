@@ -31,7 +31,7 @@
             <a class="btn btn-danger" href="#"><span class="fa-remove2"></span> Rejeitar</a>
         </p>
     </div>
-    <!--    fim do código-->
+    fim do código
 
     <br />
     <span class="label label-info">Exemplo de recebimento de Avisos</span>
@@ -42,7 +42,7 @@
         <span class="label label-important">De: <strng>Reginaldo Lima</strng></span><br />
         <span class="label label-important">Para: <strng>PA da turma</strng></span><br />
         <div class="well">
-            <p>Detalhes da justificativa</p>
+            <p>Detalhes Aviso</p>
             <small>
                 Mussum ipsum cacilds, vidis litro abertis. Consetis 
                 adipiscings elitis. Pra lá , depois divoltis porris, 
@@ -55,8 +55,8 @@
             </small>
         </div>
         <p>
-            <a class="btn btn-success" href="#"><span class="fa-add "></span> OK</a> 
-            <a class="btn btn-danger" href="#"><span class="fa-comments"></span> Comentar este aviso</a>
+            <a class="btn btn-success" href="#"><span class="fa-add "></span> OK - Fechar aviso</a> 
+            <a class="btn btn-warning" href="#"><span class="fa-comments"></span> Criar aviso</a>
         </p>
     </div>
     <!--    fim do código-->
