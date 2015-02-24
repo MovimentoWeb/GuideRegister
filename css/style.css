@@ -129,7 +129,8 @@ body{
     height:100%;
     background: url("../img/bg.fw.png");
 }
-/*    Gabriel Cadastro de aluno*/
+/* ------------------ Gabriel Cadastro de aluno ------------------------*/
+
 .conteinerAluno form ul{
     list-style: none;
     margin-left: 0;
@@ -142,39 +143,30 @@ body{
 
 /* ------------------ Taynara - Relatórios ------------------------*/
 
-.relatorios form {
-    max-width: 1052px;
-    text-align: center;
-
-}
-.relatorios input{
-    width: 450px;
+.relatorios form ul{
+    list-style: none;
+    margin-left: 0;
 }
 
-.pesquisardisciplina form{
-    max-width: 1052px;
-    text-align: center; 
-}
 .pesquisardisciplina select{
     width: 500px;
 }
-.pesquisardisciplina button, select{
-    ;
+.ataturmas form ul{
+    list-style: none;
+    margin-left: 0;
 }
-.ataturmas input{
-    width: 450px; 
+.pesquisardisciplina form ul {
+    list-style: outside none none;
+    margin-left: 0;
 }
 /*-------------------Alexsander - Professores -----------------------*/
 
-.container .professores{
-    margin: left;
-}
-.container .professores form ul{
+.professores form ul{
     list-style: none;
     margin: 0 0 10px;
     margin-top: 10px;
 }
-.container .professores select{
+.professores select{
     margin-top: 0; 
 }
 .PesquisarProfessor ul{
@@ -206,9 +198,5 @@ ListadeAvisos{
 }
 .row-fluid .justifica{
     padding-left: 50px;
-}
-form textArea{
-    resize: none;
-   // padding-right: 50px;
 }
 

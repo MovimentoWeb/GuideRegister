@@ -30,7 +30,7 @@ if (temPost()) {
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>Data de nascimento inválida!</h4>'
-                . 'Data de nascimento deve seguir o formato: <strong>00/00/0000</strong>'
+                . 'Data de nascimento deve seguir o formato: <strong>01/01/2001</strong>'
                 . '</div>';
     }
 
@@ -43,7 +43,7 @@ if (temPost()) {
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>RG inválido!</h4>'
-                . 'Digite um número de RG no formato: <strong>999.888.777</strong>'
+                . 'Digite um número de RG no formato: <strong>1.111.111</strong>'
                 . '</div>';
     }
 
@@ -56,7 +56,7 @@ if (temPost()) {
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>RG inválido!</h4>'
-                . 'Digite um número de RG no formato: <strong>999.888.777-77</strong>'
+                . 'Digite um número de RG no formato: <strong>111.111.111-11</strong>'
                 . '</div>';
     }
 
