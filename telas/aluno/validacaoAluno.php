@@ -1,5 +1,6 @@
 <?php
 
+include_once 'crud/crud.php';
 include_once 'telas/includes/funcoesDeApoio.php';
 
 $temErros = false;
@@ -14,7 +15,7 @@ if (temPost()) {
     } else {
         $temErros = true;
         $errosValidacao['nome'] = ''
-                 . '<div class="alert alert-error">'
+                . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>Nome de aluno inválido!</h4>'
                 . 'Digite corretamente o nome do aluno'
@@ -35,7 +36,7 @@ if (temPost()) {
     }
 
     //Validação rg
-    if (isset($_POST['rg']) && strlen($_POST['rg']) == 7) {
+    if (isset($_POST['rg']) && strlen($_POST['rg']) >= 5) {
         $projeto['rg'] = $_POST['rg'];
     } else {
         $temErros = TRUE;
@@ -48,7 +49,7 @@ if (temPost()) {
     }
 
     //Validação cpf
-    if (isset($_POST['cpf']) && strlen($_POST['cpf']) == 11) {
+    if (isset($_POST['cpf']) && strlen($_POST['cpf']) == 14) {
         $projeto['cpf'] = $_POST['cpf'];
     } else {
         $temErros = TRUE;
@@ -77,10 +78,13 @@ if (temPost()) {
     }
 
     if (!$temErros) {
-        header('Location: index.php?pg=cadastrarAluno');
+        // Função de inserir no banco de dados
+        inserirAluno($conexao, $projeto);
+        header('Location: index.php?pg=login&opcao=loginInicial');
         die();
     }
 }
+
 $projeto = array(
     'id' => 0,
     'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',
@@ -91,5 +95,4 @@ $projeto = array(
     'selectCurso' => (isset($_POST['selectCurso'])) ? $_POST['selectCurso'] : '',
 );
 
-include_once 'telas/aluno/cadastroAluno.php';
 
