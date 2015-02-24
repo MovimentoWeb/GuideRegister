@@ -92,3 +92,4 @@ $projeto = array(
 );
 
 include_once 'telas/aluno/cadastroAluno.php';
+
