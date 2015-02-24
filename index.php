@@ -3,104 +3,100 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-
+        <link rel="icon" href="img/GuideRegister-Icon.ico" sizes="64x64 32x32 24x24 16x16" />
         <!--        arquivos das fontes icomoon-->
         <link type="text/css" rel="stylesheet" href="css/styleIcomoon.css" />
-    </head>
 
-    <!--    arquivos do bootstrap-->
-    <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
-    <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css" />
-    <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <title>Guide Register</title>
-</head>
-<body>
-    <?php include_once './telas/includes/header.php'; ?>
-    <div class="container paginas">
-        <?php
-        if (!isset($_GET['pg'])) {
-            
-        } else {
-            switch ($_GET['pg']) {
+        <!--    arquivos do bootstrap-->
+        <link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
+        <link type="text/css" rel="stylesheet" href="css/bootstrap-responsive.css" />
+        <link type="text/css" rel="stylesheet" href="css/style.css" />
+        <title>Guide Register</title>
+    </head>
+    <body>
+        <?php include_once './telas/includes/header.php'; ?>
+        <div class="container paginas">
+            <?php
+            if (!isset($_GET['pg'])) {
+                include_once 'telas/inicial.php';
+            } else {
+                switch ($_GET['pg']) {
 
 // -------------------------------- Alisson - Tela de login -------------------------                  
 
-                case 'login':
-                    include_once './telas/login/login.php';
-                    break;
+                    case 'login':
+                        include_once './telas/login/login.php';
+                        break;
 
-// -------------------------------- Alisson - Tela de login -------------------------   
+// -------------------------------- Tela aluno -------------------------   
 
-                case 'cadastrarAluno':
-                    include_once './telas/aluno/cadastroAluno.php';
-                    break;
+                    case 'aluno':
+                        include_once './telas/aluno/aluno.php';
+                        break;
 
-                case 'dadosAluno':
-                    include_once './telas/aluno/dadosAluno.php';
-                    break;
 
-                case 'pesquisarAluno':
-                    include_once './telas/aluno/pesquisarAluno.php';
-                    break;
+// -------------------------------- Avisos e Justificativas ------------------------- 
 
-                case 'relatorios':
-                    include_once './telas/relatorios/relatorios.php';
-                    break;
+                    case 'listasdeprofessor':
+                        include_once './telas/professores/listas.php';
+                        break;
 
-                case 'listaAvisos':
-                    include_once './telas/avisos/listaAvisos.php';
-                    break;
+                    case 'cadastrarprofessor':
+                        include_once './telas/professores/professores.php';
+                        break;
 
-                case 'listasdeprofessor':
-                    include_once './telas/professores/listas.php';
-                    break;
+                    case 'pesquisarprofessor':
+                        include_once './telas/professores/Pesquisar.php';
+                        break;
 
-                case 'cadastrarprofessor':
-                    include_once './telas/professores/professores.php';
-                    break;
-                case 'pesquisarprofessor':
-                    include_once './telas/professores/Pesquisar.php';
-                    break;
+                    case 'turmaCadastrar':
+                        include_once './telas/turmas/turmaCadastrar.php';
+                        break;
 
-                case 'turmaCadastrar':
-                    include_once './telas/turmas/turmaCadastrar.php';
-                    break;
+                    case 'pesquisaTurma':
+                        include_once './telas/turmas/pesquisaTurma.php';
+                        break;
 
-                case 'pesquisaTurma':
-                    include_once './telas/turmas/pesquisaTurma.php';
-                    break;
+                    case 'resultadoDados':
+                        include_once './telas/turmas/resultadoDados.php';
+                        break;
 
-                case 'resultadoDados':
-                    include_once './telas/turmas/resultadoDados.php';
-                    break;
+                    case 'listaAvisos':
+                        include_once './telas/avisos/listaAvisos.php';
+                        break;
 
-// -------------------------------- Taynara - Relatorios Inicio -------------------------              
-                case 'relPesquisarAluno':
-                    include_once './telas/relatorios/relatorios.php';
-                    break;
+// -------------------------------- Taynara - Relatorios Inicio -------------------------       
 
-                case 'relAtaAluno':
-                    include_once './telas/relatorios/relatorios1.php';
-                    break;
+                    case 'relatorios':
+                        include_once './telas/relatorios/relatorios.php';
+                        break;
+                    
+                    
+//--------------------------------- Taynara - Justificativas Inicio -----------------------------
+                    case 'justificativa':
+                        include_once './telas/justificativa/justificativa.php';
+                        break;
 
-                case 'relDisciplina':
-                    include_once './telas/relatorios/relatorios2.php';
-                    break;
+                    case 'listaAvisos':
+                        include_once './telas/avisos/listaAvisos.php';
+                        break;
 
-//--------------------------------- Taynara - Relatorios Fim -----------------------------    
+// -------------------------------- Taynara - Justificativas Fim ---------------------------------               
 
-                default:
-                    break;
+
+                    default:
+                        include_once 'telas/inicial.php';
+                        break;
+                }
             }
-        }
+            ?>
+        </div><!--    Fim container página-->
+        <?php
+        include_once './telas/includes/footer.php';
         ?>
-    </div><!--    Fim container página-->
-    <?php
-    include_once './telas/includes/footer.php';
-    ?>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
-    <!--<script type="text/javascript" src="js/demo.js"></script>-->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <!--<script type="text/javascript" src="js/demo.js"></script>-->
 
-</body>
+    </body>
 </html>
