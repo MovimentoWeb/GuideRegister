@@ -1,6 +1,5 @@
 <?php
 
-include_once 'crud/crud.php';
 include_once 'telas/includes/funcoesDeApoio.php';
 
 $temErros = false;
@@ -9,7 +8,7 @@ $errosValidacao = array();
 if (temPost()) {
     $projeto = array();
 
-    //Validação  NOME
+//Validação  NOME
     if (isset($_POST['nome']) && strlen($_POST['nome']) > 5) {
         $projeto['nome'] = $_POST['nome'];
     } else {
@@ -17,12 +16,12 @@ if (temPost()) {
         $errosValidacao['nome'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno inválido!</h4>'
-                . 'Digite corretamente o nome do aluno'
+                . '<h4>Nome do professor inválido!</h4>'
+                . 'Digite corretamente o nome do professor'
                 . '</div>';
     }
 
-    //Validação data nascimento
+//Validação data nascimento
     if (isset($_POST['dtNascimento']) && strlen($_POST['dtNascimento']) >= 10) {
         $projeto['dtNascimento'] = $_POST['dtNascimento'];
     } else {
@@ -31,46 +30,59 @@ if (temPost()) {
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>Data de nascimento inválida!</h4>'
-                . 'Data de nascimento deve seguir o formato: <strong>00/00/0000</strong>'
+                . 'Data de nascimento deve seguir o formato: <strong>01/01/2001</strong>'
                 . '</div>';
     }
 
-    //Validação rg
-    if (isset($_POST['rg']) && strlen($_POST['rg']) >= 5) {
+//Validação rg
+    if (isset($_POST['rg']) && strlen($_POST['rg']) == 7) {
         $projeto['rg'] = $_POST['rg'];
     } else {
         $temErros = TRUE;
-        $errosValidacao['rg'] = ''
+        $errosValidacao['rg'] = ' '
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>RG inválido!</h4>'
-                . 'Digite um número de RG no formato: <strong>999.888.777</strong>'
+                . 'Digite um número de RG no formato: <strong>1.111.111</strong>'
                 . '</div>';
     }
 
-    //Validação cpf
-    if (isset($_POST['cpf']) && strlen($_POST['cpf']) == 14) {
+//Validação cpf
+    if (isset($_POST['cpf']) && strlen($_POST['cpf']) == 11) {
         $projeto['cpf'] = $_POST['cpf'];
     } else {
         $temErros = TRUE;
-        $errosValidacao['cpf'] = ''
+        $errosValidacao['cpf'] = ' '
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>CPF inválido!</h4>'
-                . 'CPF inválido! Digite um número de RG no formato: <strong>111.999.888-77</strong>'
+                . '<h4>RG inválido!</h4>'
+                . 'Digite um número de RG no formato: <strong>111.111.111-11</strong>'
                 . '</div>';
     }
 
-    //Validação Select Turno
-    if (isset($_POST['selectTurno'])) {
+//validação data de admissão
+    if (isset($_POST['dtAdmissao']) && strlen($_POST['dtAdmissao']) == 8) {
+        $projeto['dtAdmissao'] = $_POST['dtAdmissao'];
+    } else {
+        $temErros = TRUE;
+        $errosValidacao['dtAdmissao'] = ' '
+                . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>RG inválido!</h4>'
+                . 'Digite a Data de admissão: <strong>01/01/2001</strong>'
+                . '</div>';
+    }
+
+//Validação Select Turno
+    if (isset($_POST['selectTurno']) && strlen($_POST['selectTurno']) == 11) {
         $projeto['selectTurno'] = $_POST['selectTurno'];
     } else {
         $temErros = TRUE;
         $errosValidacao['selectTurno'] = 'Selecione um Turno!';
     }
 
-    //Validação Select Curso
-    if (isset($_POST['selectCurso'])) {
+//Validação Select Curso
+    if (isset($_POST['selectCurso']) && strlen($_POST['selectCurso']) == 11) {
         $projeto['selectCurso'] = $_POST['selectCurso'];
     } else {
         $temErros = TRUE;
@@ -78,13 +90,10 @@ if (temPost()) {
     }
 
     if (!$temErros) {
-        // Função de inserir no banco de dados
-        inserirAluno($conexao, $projeto);
-        header('Location: index.php?pg=login&opcao=loginInicial');
+        header('Location: index.php?pg=cadastrarprofessor');
         die();
     }
 }
-
 $projeto = array(
     'id' => 0,
     'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',
@@ -92,7 +101,8 @@ $projeto = array(
     'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
     'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
     'selectTurno' => (isset($_POST['selectTurno'])) ? $_POST['selectTurno'] : '',
-    'selectCurso' => (isset($_POST['selectCurso'])) ? $_POST['selectCurso'] : '',
+    'dtAdmissao' => (isset($_POST['dtAdmissao'])) ? $_POST['dtAdmissao'] : '',
 );
 
 
+include_once 'telas/professores/professores.php';
