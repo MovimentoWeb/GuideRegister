@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
-
+        <link rel="icon" href="img/GuideRegister-Icon.ico" sizes="64x64 32x32 24x24 16x16" />
         <!--        arquivos das fontes icomoon-->
         <link type="text/css" rel="stylesheet" href="css/styleIcomoon.css" />
 
@@ -28,27 +28,14 @@
                         include_once './telas/login/login.php';
                         break;
 
-// -------------------------------- Alisson - Tela de login -------------------------   
+// -------------------------------- Tela aluno -------------------------   
 
-                    case 'cadastrarAluno':
-                        include_once './telas/aluno/cadastroAluno.php';
+                    case 'aluno':
+                        include_once './telas/aluno/aluno.php';
                         break;
 
-                    case 'dadosAluno':
-                        include_once './telas/aluno/dadosAluno.php';
-                        break;
 
-                    case 'pesquisarAluno':
-                        include_once './telas/aluno/pesquisarAluno.php';
-                        break;
-
-                    case 'relatorios':
-                        include_once './telas/relatorios/relatorios.php';
-                        break;
-
-                    case 'listaAvisos':
-                        include_once './telas/avisos/listaAvisos.php';
-                        break;
+// -------------------------------- Avisos e Justificativas ------------------------- 
 
                     case 'listasdeprofessor':
                         include_once './telas/professores/listas.php';
@@ -57,7 +44,7 @@
                     case 'cadastrarprofessor':
                         include_once './telas/professores/professores.php';
                         break;
-                    
+
                     case 'pesquisarprofessor':
                         include_once './telas/professores/Pesquisar.php';
                         break;
@@ -78,27 +65,25 @@
                         include_once './telas/avisos/listaAvisos.php';
                         break;
 
-// -------------------------------- Taynara - Relatorios Inicio -------------------------              
-                    case 'relPesquisarAluno':
+// -------------------------------- Taynara - Relatorios Inicio -------------------------       
+
+                    case 'relatorios':
                         include_once './telas/relatorios/relatorios.php';
                         break;
-
-                    case 'relAtaAluno':
-                        include_once './telas/relatorios/relatorios1.php';
-                        break;
-
-                    case 'relDisciplina':
-                        include_once './telas/relatorios/relatorios2.php';
-                        break;
-
-//--------------------------------- Taynara - Relatorios Fim -----------------------------    
-//
-//
+                    
+                    
 //--------------------------------- Taynara - Justificativas Inicio -----------------------------
                     case 'justificativa':
                         include_once './telas/justificativa/justificativa.php';
                         break;
-// -------------------------------- Taynara - Justificativas Fim ---------------------------------                     
+
+                    case 'listaAvisos':
+                        include_once './telas/avisos/listaAvisos.php';
+                        break;
+
+// -------------------------------- Taynara - Justificativas Fim ---------------------------------               
+
+
                     default:
                         include_once 'telas/inicial.php';
                         break;

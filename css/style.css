@@ -142,25 +142,20 @@ body{
 
 /* ------------------ Taynara - Relatórios ------------------------*/
 
-.relatorios form {
-    max-width: 1052px;
-    text-align: center;
-
-}
 .relatorios form ul{
     list-style: none;
     margin-left: 0;
 }
 
-.pesquisardisciplina form{
-    max-width: 1052px;
-    text-align: center; 
-}
 .pesquisardisciplina select{
     width: 500px;
 }
 .ataturmas form ul{
     list-style: none;
+    margin-left: 0;
+}
+.pesquisardisciplina form ul {
+    list-style: outside none none;
     margin-left: 0;
 }
 /*-------------------Alexsander - Professores -----------------------*/
@@ -208,6 +203,6 @@ ListadeAvisos{
 }
 form textArea{
     resize: none;
-   // padding-right: 50px;
+    // padding-right: 50px;
 }
 
