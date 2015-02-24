@@ -91,7 +91,13 @@
                         break;
 
 //--------------------------------- Taynara - Relatorios Fim -----------------------------    
-
+//
+//
+//--------------------------------- Taynara - Justificativas Inicio -----------------------------
+                    case 'justificativa':
+                        include_once './telas/justificativa/justificativa.php';
+                        break;
+// -------------------------------- Taynara - Justificativas Fim ---------------------------------                     
                     default:
                         include_once 'telas/inicial.php';
                         break;
