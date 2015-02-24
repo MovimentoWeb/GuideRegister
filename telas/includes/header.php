@@ -108,7 +108,7 @@
                             <!-- Links de menu dropdown -->
 
                             <li><a href="?pg=turmaCadastrar"> <span class="fa-plus"></span> Novo Aviso</a></li>
-                            <li><a href="?pg=turmaCadastrar"> <span class="fa-warning"></span> Justificativa de falta</a></li>
+                            <li><a href="?pg=justificativa"> <span class="fa-warning"></span> Justificativa de falta</a></li>
                         </ul>
                     </div>  
                 </ul>  
