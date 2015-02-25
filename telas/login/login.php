@@ -10,7 +10,7 @@ if (!isset($_GET['opcao'])) {
                 <div class="well">
                     <form method="post" class="form-horizontal">
                         <legend><span class="fa-key"></span>Login Inicial</legend>
-                        <img src="img/Capa.jpg" alt="capa" />
+                        <img class="img img-polaroid" src="img/Capa.jpg" alt="capa" />
                         <div class="control-group">
                             <label class="control-label" for="inputEmail"></label>
                             <?php if ($temErros && isset($errosValidacao['email'])) : ?>
@@ -57,7 +57,7 @@ if (!isset($_GET['opcao'])) {
                 <div class="well">
                     <form method="post" class="form-horizontal">
                         <legend><span class="fa-key2"></span> Esqueceu minha senha</legend>
-                        <img src="img/Capa.jpg" alt="capa"/><!--<input type = "text" id = "" -->
+                        <img class="img img-polaroid" src="img/Capa.jpg" alt="capa"/><!--<input type = "text" id = "" -->
                         <div class="control-group"> 
                             <label class="control-label" for="inputEmail"></label>
                             <?php if ($temErros && isset($errosValidacao['email'])) : ?>
@@ -87,7 +87,7 @@ if (!isset($_GET['opcao'])) {
                 <div class="well">
                     <form method="post" class="form-horizontal">
                         <legend><span class="fa-key3"></span>Nova Senha</legend>
-                        <img src="img/Capa.jpg" alt="capa" />
+                        <img class="img img-polaroid" src="img/Capa.jpg" alt="capa" />
                         <div class="control-group">
                             <label class="control-label" for="inputEmail"></label>
                             <?php if ($temErros && isset($errosValidacao['novasenha'])) : ?>
