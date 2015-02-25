@@ -39,11 +39,11 @@ if (!isset($_GET['opcao'])) {
         case'meusAvisos':
             ?>
             <form action="" method="post">
-                <div class="alert alert-block alert-success fade in">
+                <div id="AvisosMeus" class="alert alert-block alert-success fade in">
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                     <h4 class="alert-heading">Aviso! - Nome aviso</h4>
-                    <span class="label label-important">De: <strng>Reginaldo Lima</strng></span><br />
-                    <span class="label label-important">Para: <strng>PA da turma</strng></span><br />
+                    <span class="label label-info">De: <strng>Reginaldo Lima</strng></span>
+                    <span class="label label-info">Para: <strng>PA da turma</strng></span><br />
                     <div class="well">
                         <p>Detalhes Aviso</p>
                         <small>
@@ -133,13 +133,13 @@ if (!isset($_GET['opcao'])) {
         case 'minhasJustificativas':
             ?>
             <!--    inicio do código-->
-            <div class="alert alert-block alert-error fade in">
+            <div id="JustificativasMinha" class="alert alert-block alert-error fade in">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <span class="label">Criado em <strong>22 de fevereiro de 2015.</strong></span> <br />
                 <h4 class="">Justificativa de falta! </h4>
 
                 <div class="row-fluid">
-                    <div class="span3"><span class="alert ">Aluno: <strng>Reginaldo Lima</strng></span><br /></div>
+                    <div class="span3"><span class="alert alert-info">Aluno: <strng>Reginaldo Lima</strng></span><br /></div>
                     <div class="span3"><span class="alert alert-info">Turma: <strng>PA da turma</strng></span><br /></div>
                     <div class="span3"><span class="alert alert-info">Curso: <strng>Nome do curso</strng></span><br /></div>
                     <div class="span3"><span class="alert alert-info">Professor: <strng>Nome professor</strng></span><br /></div>
