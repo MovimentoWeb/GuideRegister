@@ -110,8 +110,8 @@
                             <li><a href="?pg=avisosEjustificativas&opcao=novoAviso"> <span class="fa-plus"></span> Novo Aviso</a></li>
                             <li><a href="?pg=avisosEjustificativas&opcao=meusAvisos"> <span class="fa-screen3"></span> Ver meus avisos</a></li>
                             <li class="divider"></li>
-                            <li><a href="?pg=avisosEjustificativas&opcao=justificativaDeFaltas"> <span class="fa-comment"></span> Justificativa de falta</a></li>
-                            <li><a href="?pg=avisosEjustificativas&opcao=meusAvisos"> <span class="fa-warning"></span> Justificativa de falta</a></li>
+                            <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa"> <span class="fa-comment"></span> Nova justificativa</a></li>
+                            <li><a href="?pg=avisosEjustificativas&opcao=minhasJustificativas"> <span class="fa-warning"></span> Ver todas as Justificativas</a></li>
                         </ul>
                     </div>  
                 </ul>  
