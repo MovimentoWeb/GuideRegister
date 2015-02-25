@@ -10,11 +10,11 @@ if (temPost()) {
     $projeto = array();
 
     //Validação  NOME
-    if (isset($_POST['nome']) && strlen($_POST['nome']) > 5) {
-        $projeto['nome'] = $_POST['nome'];
+    if (isset($_POST['nomeAluno']) && strlen($_POST['nomeAluno']) > 5) {
+        $projeto['nomeAluno'] = $_POST['nomeAluno'];
     } else {
         $temErros = true;
-        $errosValidacao['nome'] = ''
+        $errosValidacao['nomeAluno'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>Nome de aluno inválido!</h4>'
@@ -22,6 +22,19 @@ if (temPost()) {
                 . '</div>';
     }
 
+    //Validação matricula
+    if (isset($_POST['matricula']) && strlen($_POST['matricula']) >=2) {
+        $projeto['matricula'] = $_POST['matricula'];
+    } else {
+        $temErros = TRUE;
+        $errosValidacao['matricula'] = ''
+                . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>Matrícula inválido!</h4>'
+                . 'Digite um número de matricula correto'
+                . '</div>';
+    }
+    
     //Validação data nascimento
     if (isset($_POST['dtNascimento']) && strlen($_POST['dtNascimento']) >= 10) {
         $projeto['dtNascimento'] = $_POST['dtNascimento'];
@@ -49,7 +62,7 @@ if (temPost()) {
     }
 
     //Validação cpf
-    if (isset($_POST['cpf']) && strlen($_POST['cpf']) == 14) {
+    if (isset($_POST['cpf']) && strlen($_POST['cpf']) == 11) {
         $projeto['cpf'] = $_POST['cpf'];
     } else {
         $temErros = TRUE;
@@ -87,12 +100,11 @@ if (temPost()) {
 
 $projeto = array(
     'id' => 0,
-    'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',
+    'nomeAluno' => (isset($_POST['nomeAluno'])) ? $_POST['nomeAluno'] : '',
     'dtNascimento' => (isset($_POST['dtNascimento'])) ? $_POST['dtNascimento'] : '',
     'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
     'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
+    'matricula' => (isset($_POST['matricula'])) ? $_POST['matricula'] : '',
     'selectTurno' => (isset($_POST['selectTurno'])) ? $_POST['selectTurno'] : '',
     'selectCurso' => (isset($_POST['selectCurso'])) ? $_POST['selectCurso'] : '',
 );
-
-

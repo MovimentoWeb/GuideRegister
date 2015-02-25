@@ -13,12 +13,12 @@ if (!isset($_GET['opcao'])) {
                     <ul>
                         <li>
                             <label>Nome do aluno<br />
-                                <?php if ($temErros && isset($errosValidacao['nome'])) : ?>
+                                <?php if ($temErros && isset($errosValidacao['nomeAluno'])) : ?>
                                     <span class="erro">
-                                        <?php echo $errosValidacao['nome']; ?>
+                                        <?php echo $errosValidacao['nomeAluno']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="nome" class="input-block-level" value="<?php echo $projeto['nome']; ?>" placeholder="Nome"></label>
+                                <input type="text" name="nomeAluno" class="input-block-level" value="<?php echo $projeto['nomeAluno']; ?>" placeholder="Nome"></label>
                             </label>
                         </li>
                         <li class="row-fluid">
@@ -28,7 +28,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['matricula']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $projeto['dtNascimento']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" name="matricula" class="input-block-level" value="<?php echo $projeto['matricula']; ?>" placeholder="Data de Nascimento">
                             </label>
                             <label class="span3">Data de Nascimento<br />
                                 <?php if ($temErros && isset($errosValidacao['dtNascimento'])) : ?>
