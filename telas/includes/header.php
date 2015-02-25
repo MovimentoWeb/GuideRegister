@@ -12,7 +12,7 @@
             <a class="brand" href="index.php"><img src="img/GuideRegister-Icon.ico" height="30px" alt="Página inicial" title="Página inicial"/> Guide Register</a>
 
             <ul class="nav">
-                <li><a class="brand"  href="?pg=listaAvisos"><span class="fa-bell"></span></a></li>
+                <li><a class="brand"  href="?pg=avisosEjustificativas&opcao=meusAvisos"><span class="fa-bell"></span></a></li>
             </ul>
             <!-- Tudo que você queira escondido em 940px ou menos, coloque aqui -->
             <div class="nav-collapse pull-right">
@@ -37,8 +37,9 @@
                         </a>
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
-                            <li ><a href="?pg=aluno&opcao=cadastrar"><span class="fa-user-add"></span> Cadastrar</a> </li>
-                            <li ><a href="?pg=aluno&opcao=pesquisar"><span class="fa-search3"></span> Pesquisar</a> </li>
+                            <li><a href="?pg=aluno&opcao=AtaFrequencia"><span class="fa-list3"></span> Fazer frequência de aluno</a></li>
+                            <li><a href="?pg=aluno&opcao=cadastrar"><span class="fa-user-add"></span> Cadastrar</a> </li>
+                            <li><a href="?pg=aluno&opcao=pesquisar"><span class="fa-search3"></span> Pesquisar</a> </li>
                         </ul>
                     </div>  
 
@@ -107,8 +108,11 @@
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
 
-                            <li><a href="?pg=turmaCadastrar"> <span class="fa-plus"></span> Novo Aviso</a></li>
-                            <li><a href="?pg=justificativa"> <span class="fa-warning"></span> Justificativa de falta</a></li>
+                            <li><a href="?pg=avisosEjustificativas&opcao=novoAviso"> <span class="fa-plus"></span> Novo Aviso</a></li>
+                            <li><a href="?pg=avisosEjustificativas&opcao=meusAvisos"> <span class="fa-screen3"></span> Ver meus avisos</a></li>
+                            <li class="divider"></li>
+                            <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa"> <span class="fa-comment"></span> Nova justificativa</a></li>
+                            <li><a href="?pg=avisosEjustificativas&opcao=minhasJustificativas"> <span class="fa-warning"></span> Ver todas as Justificativas</a></li>
                         </ul>
                     </div>  
                 </ul>  
