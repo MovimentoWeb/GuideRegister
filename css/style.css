@@ -177,4 +177,13 @@ body{
     margin-left: 0; 
 }
 /*------------------pagina ver meus avisos---------*/
-
+#AvisosMeus .label{
+    margin-bottom: 5px;
+}
+/*--------pagina minhas justificativas---------------*/
+#JustificativasMinha .row-fluid{
+    margin-top: 10px;
+}
+#JustificativasMinha .label{
+    margin-bottom: 5px;
+}
