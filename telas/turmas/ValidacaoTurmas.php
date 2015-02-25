@@ -9,15 +9,15 @@ if (temPost()) {
     $projeto = array();
 
 //Validação  NOME
-    if (isset($_POST['curso']) && strlen($_POST['curso']) > 5) {
-        $projeto['curso'] = $_POST['curso'];
+    if (isset($_POST['nome']) && strlen($_POST['nome']) > 5) {
+        $projeto['curso'] = $_POST['nome'];
     } else {
         $temErros = true;
-        $errosValidacao['curso'] = ''
+        $errosValidacao['nome'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>Nome de aluno inválido!</h4>'
-                . 'Digite corretamente o nome do Curso'
+                . 'Digite corretamente o nome do aluno'
                 . '</div>';
     }
 
@@ -100,22 +100,10 @@ if (temPost()) {
                 . '<h4>Nome de aluno inválido!</h4>'
                 . 'Digite corretamente o nome do Curso'
                 . '</div>';
-    }    
-    
+    }
 }
-$projeto = array(
-    'id' => 0,
-    'curso' => (isset($_POST['curso'])) ? $_POST['curso'] : '',
-    'professor' => (isset($_POST['professor'])) ? $_POST['professor'] : '',
-    'codigot' => (isset($_POST['codigot'])) ? $_POST['codigot'] : '',
-    'CargaH' => (isset($_POST['CargaH'])) ? $_POST['CargaH'] : '',
-    'Turno' => (isset($_POST['Turno'])) ? $_POST['Turno'] : '',
-    'Periodo' => (isset($_POST['Periodo'])) ? $_POST['Periodo'] : '',
-    'pesq' => (isset($_POST['pesq'])) ? $_POST['pesq'] : '',
-);
 
-
-
+//Validação da pesquisa
 if (temPost() && isset($_POST['pesquisaTurma'])) {
     $pesquisa = array();
     if (isset($_POST['pesquisaTurma']) && strlen($_POST['pesquisaTurma']) > 5) {
@@ -130,3 +118,14 @@ if (temPost() && isset($_POST['pesquisaTurma'])) {
                 . '</div>';
     }
 }
+
+$projeto = array(
+    'id' => 0,
+    'curso' => (isset($_POST['curso'])) ? $_POST['curso'] : '',
+    'professor' => (isset($_POST['professor'])) ? $_POST['professor'] : '',
+    'codigot' => (isset($_POST['codigot'])) ? $_POST['codigot'] : '',
+    'CargaH' => (isset($_POST['CargaH'])) ? $_POST['CargaH'] : '',
+    'Turno' => (isset($_POST['Turno'])) ? $_POST['Turno'] : '',
+    'Periodo' => (isset($_POST['Periodo'])) ? $_POST['Periodo'] : '',
+    'pesq' => (isset($_POST['pesq'])) ? $_POST['pesq'] : '',
+);

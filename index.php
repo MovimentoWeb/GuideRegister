@@ -35,13 +35,13 @@
                         break;
 
 
-// -------------------------------- Avisos e Justificativas ------------------------- 
+// -------------------------------- Tela Professor -------------------------  
 
                     case 'listasdeprofessor':
                         include_once './telas/professores/listas.php';
                         break;
 
-                    case 'cadastrarprofessor':
+                    case 'professores':
                         include_once './telas/professores/professores.php';
                         break;
 
@@ -49,20 +49,11 @@
                         include_once './telas/professores/Pesquisar.php';
                         break;
 
-                    case 'turmaCadastrar':
-                        include_once './telas/turmas/turmaCadastrar.php';
-                        break;
 
-                    case 'pesquisaTurma':
-                        include_once './telas/turmas/pesquisaTurma.php';
-                        break;
+// -------------------------------- Tela aluno -------------------------   
 
-                    case 'resultadoDados':
-                        include_once './telas/turmas/resultadoDados.php';
-                        break;
-
-                    case 'listaAvisos':
-                        include_once './telas/avisos/listaAvisos.php';
+                    case 'turmas':
+                        include_once './telas/turmas/turmas.php';
                         break;
 
 // -------------------------------- Taynara - Relatorios Inicio -------------------------       
@@ -70,19 +61,15 @@
                     case 'relatorios':
                         include_once './telas/relatorios/relatorios.php';
                         break;
-                    
-                    
+
+
 //--------------------------------- Taynara - Justificativas Inicio -----------------------------
-                    case 'justificativa':
-                        include_once './telas/justificativa/justificativa.php';
+
+                    case 'avisosEjustificativas':
+                        include_once './telas/avisosEjustificativas/avisosEjustificativas.php';
                         break;
 
-                    case 'listaAvisos':
-                        include_once './telas/avisos/listaAvisos.php';
-                        break;
-
-// -------------------------------- Taynara - Justificativas Fim ---------------------------------               
-
+// -------------------------------- Default ---------------------------------               
 
                     default:
                         include_once 'telas/inicial.php';

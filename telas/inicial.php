@@ -31,7 +31,7 @@
             <a class="btn btn-danger" href="#"><span class="fa-remove2"></span> Rejeitar</a>
         </p>
     </div>
-    fim do código
+
 
     <br />
     <span class="label label-info">Exemplo de recebimento de Avisos</span>
