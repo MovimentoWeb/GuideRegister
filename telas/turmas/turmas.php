@@ -89,21 +89,27 @@ if (!isset($_GET['opcao'])) {
 
         case'pesquisar':
             ?>
-            <div class="PesquisarAluno">
+            <div class="PesquisarTurmas">
                 <div class="well">  
-                    <form class="form-search">
+                    <form class="form-search" method="post">
+                        <?php if ($temErros && isset($errosValidacao['pesq'])) : ?>
+                            <span class="erro">
+                                <?php echo $errosValidacao['pesq']; ?>
+                            </span>
+                        <?php endif; ?>
                         <legend><span class="fa-search3"></span>  Pesquisar Turmas</legend>
                         <span class="help-block">Digite a PA da turma para pesquisa</span>
 
                         <ul>
                             <li>
                                 <div class="input-append">
-                                    <input type="text" class="search-query input-block-level">
+                                    <input name="pesquisaTurma" type="text" class="search-query input-block-level" />
                                     <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                                 </div>
                             </li>
                         </ul>  
                     </form>
+
                     <table class="table table-hover">
                         <caption>Título dos resultados</caption>
                         <thead>
@@ -183,11 +189,7 @@ if (!isset($_GET['opcao'])) {
                     </table>
                 </div>
             </div>
-            <?php if ($temErros && isset($errosValidacao['pesq'])) : ?>
-                <span class="erro">
-                    <?php echo $errosValidacao['pesq']; ?>
-                </span>
-            <?php endif; ?>
+
             <?php
             break;
 
