@@ -59,7 +59,7 @@ if (!isset($_GET['opcao'])) {
                     </div>
                     <p>
                         <a class="btn btn-primary" href="#"><span class="fa-add "></span> OK - Fechar aviso</a> 
-                        <a class="btn btn-warning" href="?pg=avisosEjustificativas&opcao=novoAviso"><span class="fa-comments"></span> Novo aviso</a>
+                        <a class="btn btn-info" href="?pg=avisosEjustificativas&opcao=novoAviso"><span class="fa-comments"></span> Novo aviso</a>
                     </p>
                 </div>
             </form>
