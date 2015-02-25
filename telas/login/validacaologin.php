@@ -37,8 +37,8 @@ if (temPost()) {
                 . '</div>';
     }
     if (!$temErros) {
-        header('Location: index.php?pg=login&opcao=loginInicial');
-        die();
+       // header('Location: index.php?pg=login&opcao=loginInicial');
+       // die();
     }
 //Validação formulário - ESQUECI MINHA SENHA
     if (temPost() && isset($_POST['email'])) {

@@ -35,13 +35,13 @@
                         break;
 
 
-// -------------------------------- Avisos e Justificativas ------------------------- 
+// -------------------------------- Tela Professor -------------------------  
 
                     case 'listasdeprofessor':
                         include_once './telas/professores/listas.php';
                         break;
 
-                    case 'cadastrarprofessor':
+                    case 'professores':
                         include_once './telas/professores/professores.php';
                         break;
 
@@ -49,6 +49,10 @@
                         include_once './telas/professores/Pesquisar.php';
                         break;
 
+
+// -------------------------------- Tela aluno -------------------------   
+
+                    
                     case 'turmaCadastrar':
                         include_once './telas/turmas/turmaCadastrar.php';
                         break;

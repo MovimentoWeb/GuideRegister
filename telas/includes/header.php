@@ -50,12 +50,12 @@
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
 
-                            <li ><a href="?pg=cadastrarprofessor"><span class="fa-user-add"></span> Cadastrar</a> </li>
+                            <li ><a href="?pg=professores"><span class="fa-user-add"></span> Cadastrar</a> </li>
                             <li><a href="?pg=pesquisarprofessor"><span class="fa-search3"></span> Pesquisar</a></li>
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><span class="fa-list2"></span> Listar</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="?pg=listasdeprofessor">Listas</a></li>
+                                    <li><a href="?pg=professores&opcao=lista">Listas</a></li>
                                     <li><a href="">Pesquisa do Professor</a></li>
                                     <li><a href="">Resultados</a></li>
                                 </ul>

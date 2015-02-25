@@ -9,15 +9,15 @@ if (temPost()) {
     $projeto = array();
 
 //Validação  NOME
-    if (isset($_POST['curso']) && strlen($_POST['curso']) > 5) {
-        $projeto['curso'] = $_POST['curso'];
+    if (isset($_POST['nome']) && strlen($_POST['nome']) > 5) {
+        $projeto['curso'] = $_POST['nome'];
     } else {
         $temErros = true;
-        $errosValidacao['curso'] = ''
+        $errosValidacao['nome'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>Nome de aluno inválido!</h4>'
-                . 'Digite corretamente o nome do Curso'
+                . 'Digite corretamente o nome do aluno'
                 . '</div>';
     }
 

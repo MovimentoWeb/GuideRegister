@@ -95,7 +95,7 @@ if (!isset($_GET['opcao'])) {
                     <form class="form-search" method="POST">
                         <legend><span class="fa-search3"></span>  Pesquisar Alunos</legend>
                         <span class="help-block">Digite um nome de aluno para pesquisa</span>
-                        <ul>
+                         <ul>
                             <li>
                                 <div class="input-append">
                                     <input type="text" class="search-query input-block-level">
