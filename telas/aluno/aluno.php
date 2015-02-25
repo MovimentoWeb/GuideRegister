@@ -28,7 +28,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['matricula']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $projeto['dtNascimento']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" name="matricula" class="input-block-level" value="<?php echo $projeto['matricula']; ?>" placeholder="Data de Nascimento">
                             </label>
                             <label class="span3">Data de Nascimento<br />
                                 <?php if ($temErros && isset($errosValidacao['dtNascimento'])) : ?>
