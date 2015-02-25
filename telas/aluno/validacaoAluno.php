@@ -22,6 +22,19 @@ if (temPost()) {
                 . '</div>';
     }
 
+    //Validação matricula
+    if (isset($_POST['matricula']) && strlen($_POST['matricula']) >=2) {
+        $projeto['matricula'] = $_POST['matricula'];
+    } else {
+        $temErros = TRUE;
+        $errosValidacao['matricula'] = ''
+                . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>Matrícula inválido!</h4>'
+                . 'Digite um número de matricula correto'
+                . '</div>';
+    }
+    
     //Validação data nascimento
     if (isset($_POST['dtNascimento']) && strlen($_POST['dtNascimento']) >= 10) {
         $projeto['dtNascimento'] = $_POST['dtNascimento'];
@@ -91,8 +104,7 @@ $projeto = array(
     'dtNascimento' => (isset($_POST['dtNascimento'])) ? $_POST['dtNascimento'] : '',
     'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
     'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
+    'matricula' => (isset($_POST['matricula'])) ? $_POST['matricula'] : '',
     'selectTurno' => (isset($_POST['selectTurno'])) ? $_POST['selectTurno'] : '',
     'selectCurso' => (isset($_POST['selectCurso'])) ? $_POST['selectCurso'] : '',
 );
-
-

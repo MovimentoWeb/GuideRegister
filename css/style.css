@@ -26,9 +26,10 @@
 
 }
 #login .form-horizontal img{
-    max-width: 320px;
+    max-width: 160px;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 15px;
 }
 #login .controls input{
     margin-top: 5px;
@@ -69,9 +70,10 @@ body{
 
 }
 #esqueceuminhasenha .form-horizontal img{
-    max-width: 320px;
+    max-width: 160px;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 15px;
 }
 #esqueceuminhasenha .controls input{
     margin-top: 5px;
@@ -107,9 +109,10 @@ body{
 
 }
 #novasenha .form-horizontal img{
-    max-width: 320px;
+    max-width: 160px;
     margin: 0 auto;
     text-align: center;
+    margin-bottom: 15px;
 }
 #novasenha .controls input{
     margin-top: 5px;
@@ -173,3 +176,5 @@ body{
     list-style: none;
     margin-left: 0; 
 }
+/*------------------pagina ver meus avisos---------*/
+
