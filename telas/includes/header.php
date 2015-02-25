@@ -18,18 +18,18 @@
             <div class="nav-collapse pull-right">
                 <!-- .nav, .navbar-search, .navbar-form, etc -->
                 <ul class="nav">
-                    <div class="btn-group ">
-                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                            Telas de Login
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- Links de menu dropdown -->
-                            <li ><a href="?pg=login&opcao=loginInicial"><span class="fa-key"></span> Login Inicial</a> </li>
-                            <li ><a href="?pg=login&opcao=esqueciMinhaSenha"><span class="fa-key2"></span> Esqueci minha senha</a> </li>
-                            <li ><a href="?pg=login&opcao=novasenha"><span class="fa-key3"></span> Nova senha</a> </li>
-                        </ul>
-                    </div>
+                    <!--                    <div class="btn-group ">
+                                            <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                                Telas de Login
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                 Links de menu dropdown 
+                                                <li ><a href="?pg=login&opcao=loginInicial"><span class="fa-key"></span> Login Inicial</a> </li>
+                                                <li ><a href="?pg=login&opcao=esqueciMinhaSenha"><span class="fa-key2"></span> Esqueci minha senha</a> </li>
+                                                <li ><a href="?pg=login&opcao=novasenha"><span class="fa-key3"></span> Nova senha</a> </li>
+                                            </ul>
+                                        </div>-->
                     <div class="btn-group">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
                             <i class="fa-user"></i> Aluno
@@ -42,7 +42,6 @@
                             <li><a href="?pg=aluno&opcao=pesquisar"><span class="fa-search3"></span> Pesquisar</a> </li>
                         </ul>
                     </div>  
-
                     <div class="btn-group">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
                             <span class="fa-users4"></span> Professores
@@ -71,15 +70,8 @@
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
 
-                            <li ><a href="?pg=turmaCadastrar"> <i class="fa-plus"></i> Cadastrar turmas</a></li>
-                            <li class="dropdown-submenu">
-                                <a tabindex="-1" href="#"><i class="fa-list2"></i> Listar</a>
-                                <ul class="dropdown-menu">
-
-                                    <li><a href="?pg=pesquisaTurma">Pesquisa da Turma</a></li>
-                                    <li><a href="?pg=resultadoDados">Resultados</a></li>
-                                </ul>
-                            </li>
+                            <li ><a href="?pg=turmas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar turmas</a></li>
+                            <li><a href="?pg=turmas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
                         </ul>
                     </div>  
 
