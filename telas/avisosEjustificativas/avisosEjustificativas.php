@@ -1,15 +1,16 @@
 <?php
-include_once 'telas/login/validacaologin.php';
+include_once './telas/avisosEjustificativas/ValidacaoJustificativa.php';
 if (!isset($_GET['opcao'])) {
-    
+    include_once 'telas/inicial.php';
 } else {
     switch ($_GET['opcao']) {
+        
         case'novoAviso':
             ?>
             <div id="ListadeAvisos" class="meioTurma well">
                 <form class="">
-                    <legend><span class="fa-notification"></span> Avisos</legend>
-                    <span class="help-block">Selecione um grupo de usuário ou um usuário específico</span>
+                    <legend><span class="fa-notification"></span> Novo Aviso</legend>
+                    <span class="help-block">Selecione um grupo de usuário ou um usuário específico pra quem você deseja enviar o aviso.</span>
                     <div class="row-fluid">
                         <div class="span6"> 
                             <select>
@@ -27,8 +28,8 @@ if (!isset($_GET['opcao'])) {
                         <div class="span6 justifica"></div>
                     </div>
                     <span class="help-block">Escreva o conteúdo do aviso.</span>
-                    <textarea placeholder="Digite aqui seu aviso" rows="5" class="input-block-level"></textarea><br />
-                    <button type="submit" class="btn btn-primary"><span class="fa-checkmark"></span> Enviar aviso</button>
+                    <textarea placeholder="Conteúdo..." rows="5" class="input-block-level"></textarea><br />
+                    <button type="submit" class="btn btn-success"><span class="fa-checkmark"></span> Enviar aviso</button>
 
                 </form>
             </div>
@@ -102,10 +103,13 @@ if (!isset($_GET['opcao'])) {
 
             <?php
             break;
+            
         case '':
             ?>
-        <?php
+        
+                <?php
         default:
+            include_once 'telas/inicial.php';
             break;
     }
 }

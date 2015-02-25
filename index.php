@@ -76,7 +76,7 @@
 
 //--------------------------------- Taynara - Justificativas Inicio -----------------------------
                     case 'avisosEjustificativas':
-                        include_once './telas/avisos/avisosEjustificativas.php';
+                        include_once './telas/avisosEjustificativas/avisosEjustificativas.php';
                         break;
 
                     case 'justificativa':
