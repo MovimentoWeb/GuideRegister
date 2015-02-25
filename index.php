@@ -65,8 +65,6 @@
                         include_once './telas/turmas/resultadoDados.php';
                         break;
 
-
-
 // -------------------------------- Taynara - Relatorios Inicio -------------------------       
 
                     case 'relatorios':
@@ -75,20 +73,12 @@
 
 
 //--------------------------------- Taynara - Justificativas Inicio -----------------------------
+
                     case 'avisosEjustificativas':
                         include_once './telas/avisosEjustificativas/avisosEjustificativas.php';
                         break;
 
-                    case 'justificativa':
-                        include_once './telas/justificativa/justificativa.php';
-                        break;
-
-                    case 'listaAvisos':
-                        include_once './telas/avisos/listaAvisos.php';
-                        break;
-
-// -------------------------------- Taynara - Justificativas Fim ---------------------------------               
-
+// -------------------------------- Default ---------------------------------               
 
                     default:
                         include_once 'telas/inicial.php';

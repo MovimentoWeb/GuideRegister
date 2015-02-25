@@ -37,8 +37,9 @@
                         </a>
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
-                            <li ><a href="?pg=aluno&opcao=cadastrar"><span class="fa-user-add"></span> Cadastrar</a> </li>
-                            <li ><a href="?pg=aluno&opcao=pesquisar"><span class="fa-search3"></span> Pesquisar</a> </li>
+                            <li><a href="?pg=aluno&opcao=AtaFrequencia"><span class="fa-list3"></span> Fazer frequência de aluno</a></li>
+                            <li><a href="?pg=aluno&opcao=cadastrar"><span class="fa-user-add"></span> Cadastrar</a> </li>
+                            <li><a href="?pg=aluno&opcao=pesquisar"><span class="fa-search3"></span> Pesquisar</a> </li>
                         </ul>
                     </div>  
 
