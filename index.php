@@ -52,7 +52,7 @@
 
 // -------------------------------- Tela aluno -------------------------   
 
-                    
+
                     case 'turmaCadastrar':
                         include_once './telas/turmas/turmaCadastrar.php';
                         break;
@@ -65,18 +65,20 @@
                         include_once './telas/turmas/resultadoDados.php';
                         break;
 
-                    case 'listaAvisos':
-                        include_once './telas/avisos/listaAvisos.php';
-                        break;
+
 
 // -------------------------------- Taynara - Relatorios Inicio -------------------------       
 
                     case 'relatorios':
                         include_once './telas/relatorios/relatorios.php';
                         break;
-                    
-                    
+
+
 //--------------------------------- Taynara - Justificativas Inicio -----------------------------
+                    case 'avisosEjustificativas':
+                        include_once './telas/avisos/avisosEjustificativas.php';
+                        break;
+
                     case 'justificativa':
                         include_once './telas/justificativa/justificativa.php';
                         break;
