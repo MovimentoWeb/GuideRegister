@@ -1,7 +1,7 @@
 <?php
 include_once 'telas/aluno/validacaoAluno.php';
 if (!isset($_GET['opcao'])) {
-    
+    include_once 'telas/inicial.php';
 } else {
     switch ($_GET['opcao']) {
         case'cadastrar':
@@ -299,7 +299,69 @@ if (!isset($_GET['opcao'])) {
             <?php
             break;
 
+        case 'AtaFrequencia':
+            ?>
+            <div class="well frequencia">
+                <legend><span class="fa-user-add"></span> Ata de frequência</legend> <span class="label">Exibir Nome curso - exibir dia</span>
+                <form action="">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Mat</th>
+                                <th>Nome</th>
+                                <th><span class="fa-checkmark2"></span></th>
+                                <th><span class="fa-blocked"></span></th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>556</td>
+                                <td>Reginaldo José</td>
+                                <td>
+                                    <label class="radio">
+                                        <input type="radio" name="compareceu" value="">
+
+                                    </label>
+                                </td>
+                                <td>
+                                    <label class="radio">
+                                        <input type="radio" name="faltou"  value="" >
+                                    </label>
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="label" data-toggle="dropdown" href="#">
+                                            <span class="fa-comments"></span>
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="?pg=aluno&opcao=dadosAluno" class="fa-delicious"> Ver detalhes</a></li>
+                                            <li><a href="#" class="fa-remove"> Desativar Aluno</a></li>
+                                            <li><a href="#" class="fa-aid"> Adicionar justificativa</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <label for="">
+                        <button type="submit" class="btn btn-block btn-success"><span class="fa-checkmark"></span> Finalizar frequência</button>
+                    </label>
+                </form>
+
+            </div>
+            <?php
+            break;
+
+        case 'AtaFrequencia':
+            ?>
+            <?php
+            break;
+
         default :
+            include_once 'telas/inicial.php';
             break;
     }
 }
