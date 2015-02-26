@@ -16,8 +16,8 @@ if (temPost()) {
         $errosValidacao['nome'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno!</h4>'
-                . 'Digite corretamente o nome do aluno'
+                . '<h4>Digite uma PA valida!</h4>'
+                . 'Digite corretamente a PA do aluno'
                 . '</div>';
     }
 
@@ -29,7 +29,7 @@ if (temPost()) {
         $errosValidacao['professor'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno inválido!</h4>'
+                . '<h4>Nome do professor inválido!</h4>'
                 . 'Digite corretamente o nome do Professor'
                 . '</div>';
     }
@@ -54,7 +54,7 @@ if (temPost()) {
         $errosValidacao['CargaH'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno inválido!</h4>'
+                . '<h4>Digite a carga Horaria!</h4>'
                 . 'Digite a carga horaria do curso determinado'
                 . '</div>';
     }
@@ -99,8 +99,8 @@ if (isset($_POST['pesquisaTurma']) && strlen($_POST['pesquisaTurma']) > 5) {
         $errosValidacao['pesquisaTurma'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno!</h4>'
-                . 'Digite corretamente o nome do aluno'
+                . '<h4>Pesquisa invalida!</h4>'
+                . 'Digite sua pesquisa nos campos abaixo'
                 . '</div>';
     }
 }
