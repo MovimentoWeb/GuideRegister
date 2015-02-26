@@ -4,6 +4,7 @@ if (!isset($_GET['opcao'])) {
     include_once 'telas/inicial.php';
 } else {
     switch ($_GET['opcao']) {
+        
         case'cadastrar':
             ?>
             <div class="conteinerAluno">
@@ -18,7 +19,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['nomeAluno']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="nomeAluno" class="input-block-level" value="<?php echo $projeto['nomeAluno']; ?>" placeholder="Nome"></label>
+                                <input type="text" name="nomeAluno" class="input-block-level" value="<?php echo $dadosAluno['nomeAluno']; ?>" placeholder="Nome"></label>
                             </label>
                         </li>
                         <li class="row-fluid">
@@ -28,7 +29,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['matricula']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="matricula" class="input-block-level" value="<?php echo $projeto['matricula']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" name="matricula" class="input-block-level" value="<?php echo $dadosAluno['matricula']; ?>" placeholder="Data de Nascimento">
                             </label>
                             <label class="span3">Data de Nascimento<br />
                                 <?php if ($temErros && isset($errosValidacao['dtNascimento'])) : ?>
@@ -36,7 +37,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['dtNascimento']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $projeto['dtNascimento']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $dadosAluno['dtNascimento']; ?>" placeholder="Data de Nascimento">
                             </label>
                             <label class="span3">RG<br />
                                 <?php if ($temErros && isset($errosValidacao['rg'])) : ?>
@@ -44,7 +45,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['rg']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="rg" class="input-block-level" value="<?php echo $projeto['rg']; ?>" placeholder="RG">
+                                <input type="text" name="rg" class="input-block-level" value="<?php echo $dadosAluno['rg']; ?>" placeholder="RG">
                             </label>
 
 
@@ -55,7 +56,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['cpf']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="cpf" class="input-block-level" value="<?php echo $projeto['cpf']; ?>" placeholder="CPF">
+                                <input type="text" name="cpf" class="input-block-level" value="<?php echo $dadosAluno['cpf']; ?>" placeholder="CPF">
                             </label>
                         </li>
 
@@ -102,7 +103,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['nome']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="nome" class="input-block-level" value="<?php echo $projeto['nome']; ?>" placeholder="Nome"></label>
+                                <input type="text" name="nome" class="input-block-level" value="<?php echo $dadosAluno['nome']; ?>" placeholder="Nome"></label>
                             </label>
                         </li>
                         <li class="row-fluid">
@@ -112,7 +113,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['matricula']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $projeto['dtNascimento']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $dadosAluno['dtNascimento']; ?>" placeholder="Data de Nascimento">
                             </label>
                             <label class="span3">Data de Nascimento<br />
                                 <?php if ($temErros && isset($errosValidacao['dtNascimento'])) : ?>
@@ -120,7 +121,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['dtNascimento']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $projeto['dtNascimento']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $dadosAluno['dtNascimento']; ?>" placeholder="Data de Nascimento">
                             </label>
                             <label class="span3">RG<br />
                                 <?php if ($temErros && isset($errosValidacao['rg'])) : ?>
@@ -128,7 +129,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['rg']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="rg" class="input-block-level" value="<?php echo $projeto['rg']; ?>" placeholder="RG">
+                                <input type="text" name="rg" class="input-block-level" value="<?php echo $dadosAluno['rg']; ?>" placeholder="RG">
                             </label>
 
 
@@ -139,7 +140,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['cpf']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="cpf" class="input-block-level" value="<?php echo $projeto['cpf']; ?>" placeholder="CPF">
+                                <input type="text" name="cpf" class="input-block-level" value="<?php echo $dadosAluno['cpf']; ?>" placeholder="CPF">
                             </label>
                         </li>
 
