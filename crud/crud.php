@@ -1,6 +1,6 @@
 <?php
 
-include_once 'crud/conecao.php';
+include_once 'crud/conexcao.php';
 
 function listarAluno($conexao, $id) {
     $sqlBuscar = 'SELECT * FROM aluno WHERE id =';
@@ -53,8 +53,8 @@ function listarTurma($conexao, $id) {
 }
 
 function inserirAluno($conexao, $dados) {
-    $sqlInserir = "insert into aluno (nomeAluno, matricula, telefone, endereco, cpf, rg)"
-            . "VALUES('{$dados['nomeAluno']}','{$dados['matricula']}','{$dados['endereco']}','{$dados['cpf']}','{$dados ['rg']}')";
+    $sqlInserir = "insert into aluno (nomeAluno, matricula, dtNascimento, cpf, rg)"
+            . "VALUES('{$dados['nomeAluno']}','{$dados['matricula']}','{$dados['dtNascimento']}','{$dados['cpf']}','{$dados ['rg']}')";
     mysqli_query($conexao, $sqlInserir);
 }
 
