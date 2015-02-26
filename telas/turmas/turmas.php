@@ -24,15 +24,7 @@ if (!isset($_GET['opcao'])) {
                     
                    
 
-<!--                    <label for="professor">
-                        Professor: 
-                        <?php// if ($temErros && isset($errosValidacao['professor'])) : ?>
-                            <span class="erro">
-                                <?php// echo $errosValidacao['professor']; ?>
-                            </span>
-                        <?php// endif; ?>
-                        <input type="text" id="professor" name="professor" class="input-block-level" placeholder="Professor" value="<?php echo $projeto['professor']; ?>"><br />
-                    </label>-->
+                    
 
                     <div class="row-fluid">
                         <div class="span4">
@@ -62,7 +54,7 @@ if (!isset($_GET['opcao'])) {
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadrastrar</button>
+                    <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
             </di
             <?php
@@ -197,6 +189,55 @@ if (!isset($_GET['opcao'])) {
                 </div>
             </div>
 
+            <?php
+            break;
+            
+            case'Disciplina':
+            ?>
+            <div class="meioTurma ">
+                <form class="well" method="POST">
+                    <legend><span class="fa-user-add"></span> Cadastrar Disciplina</legend>
+                    
+                    <label for="nome">
+                        Nome disciplina: 
+                        <?php if ($temErros && isset($errosValidacao['nomeDisciplina'])) : ?>
+                            <span class="erro">
+                                <?php echo $errosValidacao['nomeDisciplina']; ?>
+                            </span>
+                        <?php endif; ?>
+                        <input type="text" id="nomeDisciplina" class="input-block-level" placeholder="Nome disciplina" name="nomeDisciplina" value="<?php echo $projeto['nomeDisciplina']; ?>"><br />
+                    </label>
+                    
+                   
+
+
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <label for="cargaHoraria">
+                                Carga Horaria: 
+                                <?php if ($temErros && isset($errosValidacao['CargaH'])) : ?>
+                                    <span class="erro">
+                                        <?php echo $errosValidacao['CargaH']; ?>
+                                    </span>
+                                <?php endif; ?>
+                                <input type="text" id="cargaHoraria" class="input-block-level" placeholder="Carga Horaria" name="CargaH" value="<?php echo $projeto['CargaH']; ?>" ><br />
+                            </label>
+                        </div>
+                        <div class="span4">
+                            <label for="cargaHoraria">
+                                Codigo da disciplina: 
+                                <?php if ($temErros && isset($errosValidacao['codigoDisciplina'])) : ?>
+                                    <span class="erro">
+                                        <?php echo $errosValidacao['codigoDisciplina']; ?>
+                                    </span>
+                                <?php endif; ?>
+                                <input type="text" id="codigoDisciplina" class="input-block-level" placeholder="Codigo da disciplina" name="codigoDisciplina" value="<?php echo $projeto['codigoDisciplina']; ?>" ><br />
+                            </label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
+                </form>
+            </di
             <?php
             break;
 
