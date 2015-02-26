@@ -24,15 +24,15 @@ if (!isset($_GET['opcao'])) {
                     
                    
 
-                    <label for="professor">
+<!--                    <label for="professor">
                         Professor: 
-                        <?php if ($temErros && isset($errosValidacao['professor'])) : ?>
+                        <?php// if ($temErros && isset($errosValidacao['professor'])) : ?>
                             <span class="erro">
-                                <?php echo $errosValidacao['professor']; ?>
+                                <?php// echo $errosValidacao['professor']; ?>
                             </span>
-                        <?php endif; ?>
+                        <?php// endif; ?>
                         <input type="text" id="professor" name="professor" class="input-block-level" placeholder="Professor" value="<?php echo $projeto['professor']; ?>"><br />
-                    </label>
+                    </label>-->
 
                     <div class="row-fluid">
                         <div class="span4">
@@ -62,7 +62,7 @@ if (!isset($_GET['opcao'])) {
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Enviar</button>
+                    <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadrastrar</button>
                 </form>
             </di
             <?php
