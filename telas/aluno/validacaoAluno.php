@@ -6,15 +6,16 @@ include_once 'telas/includes/funcoesDeApoio.php';
 $temErros = false;
 $errosValidacao = array();
 
+// Validaçao Cadastro de aluno
 if (temPost()) {
-    $projeto = array();
+    $dadosAlunos = array();
 
     //Validação  NOME
-    if (isset($_POST['nome']) && strlen($_POST['nome']) > 5) {
-        $projeto['nome'] = $_POST['nome'];
+    if (isset($_POST['nomeAluno']) && strlen($_POST['nomeAluno']) > 5) {
+        $dadosAlunos['nomeAluno'] = $_POST['nomeAluno'];
     } else {
         $temErros = true;
-        $errosValidacao['nome'] = ''
+        $errosValidacao['nomeAluno'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>Nome de aluno inválido!</h4>'
@@ -24,7 +25,7 @@ if (temPost()) {
 
     //Validação matricula
     if (isset($_POST['matricula']) && strlen($_POST['matricula']) >=2) {
-        $projeto['matricula'] = $_POST['matricula'];
+        $dadosAlunos['matricula'] = $_POST['matricula'];
     } else {
         $temErros = TRUE;
         $errosValidacao['matricula'] = ''
@@ -37,7 +38,7 @@ if (temPost()) {
     
     //Validação data nascimento
     if (isset($_POST['dtNascimento']) && strlen($_POST['dtNascimento']) >= 10) {
-        $projeto['dtNascimento'] = $_POST['dtNascimento'];
+        $dadosAlunos['dtNascimento'] = $_POST['dtNascimento'];
     } else {
         $temErros = true;
         $errosValidacao['dtNascimento'] = ''
@@ -50,7 +51,7 @@ if (temPost()) {
 
     //Validação rg
     if (isset($_POST['rg']) && strlen($_POST['rg']) >= 5) {
-        $projeto['rg'] = $_POST['rg'];
+        $dadosAlunos['rg'] = $_POST['rg'];
     } else {
         $temErros = TRUE;
         $errosValidacao['rg'] = ''
@@ -62,8 +63,8 @@ if (temPost()) {
     }
 
     //Validação cpf
-    if (isset($_POST['cpf']) && strlen($_POST['cpf']) == 14) {
-        $projeto['cpf'] = $_POST['cpf'];
+    if (isset($_POST['cpf']) && strlen($_POST['cpf']) == 11) {
+        $dadosAlunos['cpf'] = $_POST['cpf'];
     } else {
         $temErros = TRUE;
         $errosValidacao['cpf'] = ''
@@ -76,7 +77,7 @@ if (temPost()) {
 
     //Validação Select Turno
     if (isset($_POST['selectTurno'])) {
-        $projeto['selectTurno'] = $_POST['selectTurno'];
+        $dadosAlunos['selectTurno'] = $_POST['selectTurno'];
     } else {
         $temErros = TRUE;
         $errosValidacao['selectTurno'] = 'Selecione um Turno!';
@@ -84,7 +85,7 @@ if (temPost()) {
 
     //Validação Select Curso
     if (isset($_POST['selectCurso'])) {
-        $projeto['selectCurso'] = $_POST['selectCurso'];
+        $dadosAlunos['selectCurso'] = $_POST['selectCurso'];
     } else {
         $temErros = TRUE;
         $errosValidacao['selectCurso'] = 'Selecione um Curso!';
@@ -92,15 +93,15 @@ if (temPost()) {
 
     if (!$temErros) {
         // Função de inserir no banco de dados
-        inserirAluno($conexao, $projeto);
-        header('Location: index.php?pg=login&opcao=loginInicial');
+        inserirAluno($conexao, $dadosAlunos);
         die();
     }
-}
+}  
 
-$projeto = array(
+//Recuperar campos Preenchidos
+$dadosAluno = array(
     'id' => 0,
-    'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',
+    'nomeAluno' => (isset($_POST['nomeAluno'])) ? $_POST['nomeAluno'] : '',
     'dtNascimento' => (isset($_POST['dtNascimento'])) ? $_POST['dtNascimento'] : '',
     'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
     'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
