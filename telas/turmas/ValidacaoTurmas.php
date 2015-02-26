@@ -10,14 +10,14 @@ if (temPost()) {
 
 //Validação  NOME
     if (isset($_POST['nome']) && strlen($_POST['nome']) > 5) {
-        $projeto['curso'] = $_POST['nome'];
+        $projeto['nome'] = $_POST['nome'];
     } else {
         $temErros = true;
         $errosValidacao['nome'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno inválido!</h4>'
-                . 'Digite corretamente o nome do aluno'
+                . '<h4>Digite uma PA valida!</h4>'
+                . 'Digite corretamente a PA do aluno'
                 . '</div>';
     }
 
@@ -29,7 +29,7 @@ if (temPost()) {
         $errosValidacao['professor'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno inválido!</h4>'
+                . '<h4>Nome do professor inválido!</h4>'
                 . 'Digite corretamente o nome do Professor'
                 . '</div>';
     }
@@ -54,7 +54,7 @@ if (temPost()) {
         $errosValidacao['CargaH'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno inválido!</h4>'
+                . '<h4>Digite a carga Horaria!</h4>'
                 . 'Digite a carga horaria do curso determinado'
                 . '</div>';
     }
@@ -89,44 +89,28 @@ if (temPost()) {
         die();
     }
 
-//Validação Pesquisa Aluno
-    if (isset($_POST['pesq']) && strlen($_POST['pesq']) > 5) {
-        $projeto['pesq'] = $_POST['pesq'];
-    } else {
-        $temErros = true;
-        $errosValidacao['pesq'] = ''
-                . '<div class="alert alert-error">'
-                . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno inválido!</h4>'
-                . 'Digite corretamente o nome do Curso'
-                . '</div>';
-    }    
-    
-}
-$projeto = array(
-    'id' => 0,
-    'curso' => (isset($_POST['curso'])) ? $_POST['curso'] : '',
-    'professor' => (isset($_POST['professor'])) ? $_POST['professor'] : '',
-    'codigot' => (isset($_POST['codigot'])) ? $_POST['codigot'] : '',
-    'CargaH' => (isset($_POST['CargaH'])) ? $_POST['CargaH'] : '',
-    'Turno' => (isset($_POST['Turno'])) ? $_POST['Turno'] : '',
-    'Periodo' => (isset($_POST['Periodo'])) ? $_POST['Periodo'] : '',
-    'pesq' => (isset($_POST['pesq'])) ? $_POST['pesq'] : '',
-);
 
 
-
-if (temPost() && isset($_POST['pesquisaTurma'])) {
-    $pesquisa = array();
-    if (isset($_POST['pesquisaTurma']) && strlen($_POST['pesquisaTurma']) > 5) {
-        $pesquisa['pesquisaTurma'] = $_POST['pesquisaTurma'];
+//Validação da pesquisa
+if (isset($_POST['pesquisaTurma']) && strlen($_POST['pesquisaTurma']) > 5) {
+        $projeto['pesquisaTurma'] = $_POST['pesquisaTurma'];
     } else {
         $temErros = true;
         $errosValidacao['pesquisaTurma'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno inválido!</h4>'
-                . 'Digite corretamente o nome do Curso'
+                . '<h4>Pesquisa invalida!</h4>'
+                . 'Digite sua pesquisa nos campos abaixo'
                 . '</div>';
     }
 }
+$projeto = array(
+    'id' => 0,
+    'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',
+    'professor' => (isset($_POST['professor'])) ? $_POST['professor'] : '',
+    'codigot' => (isset($_POST['codigot'])) ? $_POST['codigot'] : '',
+    'CargaH' => (isset($_POST['CargaH'])) ? $_POST['CargaH'] : '',
+    'Turno' => (isset($_POST['Turno'])) ? $_POST['Turno'] : '',
+    'Periodo' => (isset($_POST['Periodo'])) ? $_POST['Periodo'] : '',
+    'pesquisaTurma' => (isset($_POST['pesquisaTurma'])) ? $_POST['pesquisaTurma'] : '',
+);

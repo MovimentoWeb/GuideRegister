@@ -11,26 +11,28 @@ if (!isset($_GET['opcao'])) {
             <div class="meioTurma ">
                 <form class="well" method="POST">
                     <legend><span class="fa-user-add"></span> Cadastrar Turma</legend>
-
-                    <label for="curso">
-                        PA da turma: 
-                        <input type="text" id="curso" name="curso" class="input-block-level" placeholder="Nome do Curso" value="<?php echo $projeto['curso']; ?>"><br />
-                        <?php if ($temErros && isset($errosValidacao['curso'])) : ?>
+                    
+                    <label for="nome">
+                        PA da Turma: 
+                        <?php if ($temErros && isset($errosValidacao['nome'])) : ?>
                             <span class="erro">
-                                <?php echo $errosValidacao['curso']; ?>
+                                <?php echo $errosValidacao['nome']; ?>
                             </span>
                         <?php endif; ?>
+                        <input type="text" id="nome" class="input-block-level" placeholder="PA da turma" name="nome" value="<?php echo $projeto['nome']; ?>"><br />
                     </label>
+                    
+                   
 
-                    <label for="professor">
+<!--                    <label for="professor">
                         Professor: 
-                        <?php if ($temErros && isset($errosValidacao['professor'])) : ?>
+                        <?php// if ($temErros && isset($errosValidacao['professor'])) : ?>
                             <span class="erro">
-                                <?php echo $errosValidacao['professor']; ?>
+                                <?php// echo $errosValidacao['professor']; ?>
                             </span>
-                        <?php endif; ?>
+                        <?php// endif; ?>
                         <input type="text" id="professor" name="professor" class="input-block-level" placeholder="Professor" value="<?php echo $projeto['professor']; ?>"><br />
-                    </label>
+                    </label>-->
 
                     <div class="row-fluid">
                         <div class="span4">
@@ -47,16 +49,20 @@ if (!isset($_GET['opcao'])) {
                         <div class="span4">
                             <label for="Turno">
                                 Turno: 
-                                <?php if ($temErros && isset($errosValidacao['Turno'])) : ?>
-                                    <span class="erro">
-                                        <?php echo $errosValidacao['Turno']; ?>
-                                    </span>
-                                <?php endif; ?>
-                                <input type="text" id="Turno" class="input-block-level" placeholder="Turno" name="Turno" value="<?php echo $projeto['Turno']; ?>" ><br />
+
+
+                                <select  id="Turno" class="input-block-level" placeholder="Turno" name="Turno">
+                                    <option> -- Selecione o turno --</option>
+                                    <option>Manhã</option>
+                                    <option>Tarde</option>
+                                    <option>Noite</option>
+                                </select>
+
+                                <br />
                             </label>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Enviar</button>
+                    <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadrastrar</button>
                 </form>
             </di
             <?php
@@ -89,21 +95,28 @@ if (!isset($_GET['opcao'])) {
 
         case'pesquisar':
             ?>
-            <div class="PesquisarAluno">
+            <div class="PesquisarTurmas">
                 <div class="well">  
-                    <form class="form-search">
+                    <form class="form-search" method="post">
+                        <?php if ($temErros && isset($errosValidacao['pesquisaTurma'])) : ?>
+                            <span class="erro">
+                                <?php echo $errosValidacao['pesquisaTurma']; ?>
+                            </span>
+                        <?php endif; ?>
+                        
                         <legend><span class="fa-search3"></span>  Pesquisar Turmas</legend>
                         <span class="help-block">Digite a PA da turma para pesquisa</span>
 
                         <ul>
                             <li>
                                 <div class="input-append">
-                                    <input type="text" class="search-query input-block-level">
+                                    <input id="" name="pesquisaTurma" type="text" class="search-query input-block-level" value="<?php echo $projeto['pesquisaTurma']; ?>" />
                                     <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                                 </div>
                             </li>
                         </ul>  
                     </form>
+
                     <table class="table table-hover">
                         <caption>Título dos resultados</caption>
                         <thead>
@@ -183,11 +196,7 @@ if (!isset($_GET['opcao'])) {
                     </table>
                 </div>
             </div>
-            <?php if ($temErros && isset($errosValidacao['pesq'])) : ?>
-                <span class="erro">
-                    <?php echo $errosValidacao['pesq']; ?>
-                </span>
-            <?php endif; ?>
+
             <?php
             break;
 
