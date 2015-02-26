@@ -93,7 +93,6 @@ if (temPost()) {
     if (!$temErros) {
         // Função de inserir no banco de dados
         inserirAluno($conexao, $projeto);
-        header('Location: index.php?pg=login&opcao=loginInicial');
         die();
     }
 }
