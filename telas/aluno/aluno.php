@@ -81,7 +81,7 @@ if (!isset($_GET['opcao'])) {
                         </li>
 
                     </ul>
-                    <a href="index.php" class="btn btn-warning"><span class="fa-home"></span> Voltar a página inicial</a>
+                    <a href="index.php" class="btn btn-info"><span class="fa-home"></span> Voltar a página inicial</a>
                     <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
             </div>
