@@ -53,7 +53,7 @@ function listarTurma($conexao, $id) {
 }
 
 function inserirAluno($conexao, $dados) {
-    $sqlInserir = "insert into aluno (nomeAluno, matricula, telefone, dtNascimento, cpf, rg)"
+    $sqlInserir = "insert into aluno (nomeAluno, matricula, dtNascimento, cpf, rg)"
             . "VALUES('{$dados['nomeAluno']}','{$dados['matricula']}','{$dados['dtNascimento']}','{$dados['cpf']}','{$dados ['rg']}')";
     mysqli_query($conexao, $sqlInserir);
 }

@@ -28,7 +28,12 @@ if (!isset($_GET['opcao'])) {
                         <div class="span6 justifica"></div>
                     </div>
                     <span class="help-block">Escreva o conteúdo do aviso.</span>
-                    <textarea placeholder="Conteúdo..." rows="5" class="input-block-level"></textarea><br />
+                    <?php if ($temErros && isset($errosValidacao['conteudoAviso'])) : ?>
+                        <span class="erro">
+                            <?php echo $errosValidacao['conteudoAviso']; ?>
+                        </span>
+                    <?php endif; ?>
+                    <textarea placeholder="Conteúdo..." rows="5" name="conteudoAviso" class="input-block-level"></textarea><br />
                     <button type="submit" class="btn btn-success"><span class="fa-checkmark"></span> Enviar aviso</button>
 
                 </form>
