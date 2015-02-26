@@ -103,6 +103,34 @@ if (isset($_POST['pesquisaTurma']) && strlen($_POST['pesquisaTurma']) > 5) {
                 . 'Digite sua pesquisa nos campos abaixo'
                 . '</div>';
     }
+    
+  //Validação da nome disciplina
+if (isset($_POST['nomeDisciplina']) && strlen($_POST['nomeDisciplina']) > 5) {
+        $projeto['nomeDisciplina'] = $_POST['nomeDisciplina'];
+    } else {
+        $temErros = true;
+        $errosValidacao['nomeDisciplina'] = ''
+                . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>Nome invalido!</h4>'
+                . 'Digite um nome com mais de 5 caracteres'
+                . '</div>';
+    }
+    
+      //Validação da codigo disciplina
+if (isset($_POST['codigoDisciplina']) && strlen($_POST['codigoDisciplina']) > 5) {
+        $projeto['codigoDisciplina'] = $_POST['codigoDisciplina'];
+    } else {
+        $temErros = true;
+        $errosValidacao['codigoDisciplina'] = ''
+                . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>Codigo invalido!</h4>'
+                . 'Digite um codigo Valido'
+                . '</div>';
+    }
+    
+    
 }
 $projeto = array(
     'id' => 0,
@@ -113,4 +141,6 @@ $projeto = array(
     'Turno' => (isset($_POST['Turno'])) ? $_POST['Turno'] : '',
     'Periodo' => (isset($_POST['Periodo'])) ? $_POST['Periodo'] : '',
     'pesquisaTurma' => (isset($_POST['pesquisaTurma'])) ? $_POST['pesquisaTurma'] : '',
+    'nomeDisciplina' => (isset($_POST['nomeDisciplina'])) ? $_POST['nomeDisciplina'] : '',
+    'codigoDisciplina' => (isset($_POST['codigoDisciplina'])) ? $_POST['codigoDisciplina'] : '',
 );
