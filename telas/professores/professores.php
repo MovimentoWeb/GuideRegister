@@ -60,16 +60,7 @@ if (!isset($_GET['opcao'])) {
                                 <?php endif; ?>
                                 <input class="input-block-level" id="dtAdmissao" name="dtAdmissao" value="<?php echo $projeto['dtAdmissao'] ?>" type="text" placeholder="Data de admissão"  />
                             </label>
-                        </li>
-                        <li>
-                            <label>Turno</label>
-                            <select>
-                                <option value="">Selecione um turno</option>
-                                <option value="">Manhã</option>
-                                <option value="">Tarde</option>
-                                <option value="">Noite</option>
-                            </select>
-                        </li>               
+                        </li>              
                     </ul>
                     <input class="btn btn-primary " type="submit" value="Enviar" />
                 </form>
