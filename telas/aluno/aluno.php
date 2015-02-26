@@ -181,6 +181,8 @@ if (!isset($_GET['opcao'])) {
                         <legend><span class="fa-search3"></span>  Pesquisar Alunos</legend>
                         <span class="help-block">Digite um nome de aluno para pesquisa</span>
                         <ul>
+                            
+                            
                             <li>
                                 <div class="input-append">
                                     <input type="text" class="search-query input-block-level">
@@ -193,90 +195,97 @@ if (!isset($_GET['opcao'])) {
 
 
                     <!--        Resultado das pesquisas-->
+                    <?php
+                    if ($exibirTabela == TRUE) {
+                        ?>
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Detalhes</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Resultado 4</td>
+                                    <td>Detalhes do resultado 4</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                                Ação
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
+                                                <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
+                                                <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
+                                                <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Resultado 4</td>
+                                    <td>Detalhes do resultado 4</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                                Ação
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
+                                                <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
+                                                <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
+                                                <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Resultado 4</td>
+                                    <td>Detalhes do resultado 4</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                                Ação
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
+                                                <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
+                                                <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
+                                                <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Resultado 4</td>
+                                    <td>Detalhes do resultado 4</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                                Ação
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
+                                                <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
+                                                <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
+                                                <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <?php
+                    }
+                    ?>
 
-                    <table class="table table-hover table-striped">
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Detalhes</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Resultado 4</td>
-                                <td>Detalhes do resultado 4</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
-                                            <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
-                                            <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
-                                            <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Resultado 4</td>
-                                <td>Detalhes do resultado 4</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
-                                            <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
-                                            <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
-                                            <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Resultado 4</td>
-                                <td>Detalhes do resultado 4</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
-                                            <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
-                                            <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
-                                            <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Resultado 4</td>
-                                <td>Detalhes do resultado 4</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
-                                            <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
-                                            <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
-                                            <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
                 </div>
             </div>
             <?php

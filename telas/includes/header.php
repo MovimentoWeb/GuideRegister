@@ -71,7 +71,7 @@
                             <!-- Links de menu dropdown -->
 
                             <li ><a href="?pg=turmas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar Turmas</a></li>
-                            <li ><a href="?pg=turmas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar Disciplina</a></li>
+                            <li ><a href="?pg=turmas&opcao=Disciplina"> <i class="fa-plus"></i> Cadastrar Disciplina</a></li>
                             <li><a href="?pg=turmas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
                         </ul>
                     </div>  

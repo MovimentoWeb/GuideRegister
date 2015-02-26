@@ -5,6 +5,7 @@ include_once 'telas/includes/funcoesDeApoio.php';
 
 $temErros = false;
 $errosValidacao = array();
+$exibirTabela= FALSE;
 
 // Validaçao Cadastro de aluno
 if (temPost()) {
