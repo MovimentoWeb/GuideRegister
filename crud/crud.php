@@ -1,6 +1,6 @@
 <?php
 
-include_once 'crud/conexcao.php';
+include_once 'crud/conexao.php';
 
 function listarAluno($conexao, $id) {
     $sqlBuscar = 'SELECT * FROM aluno WHERE id =';

@@ -98,6 +98,14 @@ if (temPost()) {
     }
 }  
 
+
+//Validação Pesquisa de Aluno
+
+if (temPost() && $_POST['pesquisar']) {
+    
+}
+
+
 //Recuperar campos Preenchidos
 $dadosAluno = array(
     'id' => 0,

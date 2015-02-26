@@ -4,7 +4,7 @@ if (!isset($_GET['opcao'])) {
     include_once 'telas/inicial.php';
 } else {
     switch ($_GET['opcao']) {
-        
+
         case'cadastrar':
             ?>
             <div class="conteinerAluno">
@@ -184,6 +184,7 @@ if (!isset($_GET['opcao'])) {
                             <li>
                                 <div class="input-append">
                                     <input type="text" class="search-query input-block-level">
+                                    <input type="hidden" name="pesquisar"/>
                                     <button type="submit" class="btn btn-primary">Busca</button>
                                 </div>
                             </li>
@@ -368,7 +369,7 @@ if (!isset($_GET['opcao'])) {
 
         case 'desativar':
             ?>
-desativar aluno
+            desativar aluno
             <?php
             break;
 
