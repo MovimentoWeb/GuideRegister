@@ -242,22 +242,21 @@ if (!isset($_GET['opcao'])) {
             <?php
             break;
 
-        case 'dadosAluno':
-
         case 'listas';
             ?>
             <div class="well">
+                <legend><span class="fa-user-add"></span> Lista de Professores</legend>
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr>                            
-                            <th>Primeiro name</th>
+                            <th>Nome do Professor</th>
                             <th>Detalhes</th>
                             <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
+                            <td>Reginaldo</td>
                             <td>Mark</td>
                             <td>
                                 <div class="btn-group">
@@ -276,7 +275,7 @@ if (!isset($_GET['opcao'])) {
                             </td>
                         </tr>
                         <tr>
-                            <td>2</td>
+                            <td>Sidney</td>
                             <td>Jacob</td>
                             <td>
                                 <div class="btn-group">
@@ -295,7 +294,7 @@ if (!isset($_GET['opcao'])) {
                             </td>
                         </tr>
                         <tr>
-                            <td>3</td>
+                            <td>Altemar</td>
                             <td>Larry</td>
                             <td>
                                 <div class="btn-group">
@@ -317,6 +316,8 @@ if (!isset($_GET['opcao'])) {
                 </table>
             </div>
         <?php
+            break;
+        
         case 'detalhes':
             ?>
             <div id="detalhesMeus" class="containerAluno ">
