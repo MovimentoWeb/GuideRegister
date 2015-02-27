@@ -83,6 +83,7 @@ if (!isset($_GET['opcao'])) {
 
                     </ul>
                     <a href="index.php" class="btn btn-info"><span class="fa-home"></span> Voltar a página inicial</a>
+                    <input type="hidden" name="cadAluno"/>
                     <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
             </div>
@@ -179,15 +180,19 @@ if (!isset($_GET['opcao'])) {
                 <div class="well">  
                     <form class="form-search" method="POST">
                         <legend><span class="fa-search3"></span>  Pesquisar Alunos</legend>
+                        <?php if ($temErros && isset($errosValidacao['nomeAlunoPesquisa'])) : ?>
+                            <span class="erro">
+                                <?php echo $errosValidacao['nomeAlunoPesquisa']; ?>
+                            </span>
+                        <?php endif; ?>
                         <span class="help-block">Digite um nome de aluno para pesquisa</span>
                         <ul>
-                            
-                            
                             <li>
                                 <div class="input-append">
-                                    <input type="text" class="search-query input-block-level">
+                                    <input name="nomeAlunoPesquisa" placeholder="Digite um nome para pesquisa..." type="text" class="search-query input-block-level">
+
                                     <input type="hidden" name="pesquisar"/>
-                                    <button type="submit" class="btn btn-primary">Busca</button>
+                                    <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                                 </div>
                             </li>
                         </ul>  

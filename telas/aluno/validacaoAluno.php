@@ -5,10 +5,14 @@ include_once 'telas/includes/funcoesDeApoio.php';
 
 $temErros = false;
 $errosValidacao = array();
-$exibirTabela= FALSE;
+$exibirTabela = FALSE;
+$listaAluno;
 
-// Validaçao Cadastro de aluno
-if (temPost()) {
+
+
+//-------- Validaçao Cadastro de aluno -----------
+
+if (temPost() && isset($_POST['cadAluno'])) {
     $dadosAlunos = array();
 
     //Validação  NOME
@@ -25,7 +29,7 @@ if (temPost()) {
     }
 
     //Validação matricula
-    if (isset($_POST['matricula']) && strlen($_POST['matricula']) >=2) {
+    if (isset($_POST['matricula']) && strlen($_POST['matricula']) >= 2) {
         $dadosAlunos['matricula'] = $_POST['matricula'];
     } else {
         $temErros = TRUE;
@@ -36,7 +40,7 @@ if (temPost()) {
                 . 'Digite um número de matricula correto'
                 . '</div>';
     }
-    
+
     //Validação data nascimento
     if (isset($_POST['dtNascimento']) && strlen($_POST['dtNascimento']) >= 10) {
         $dadosAlunos['dtNascimento'] = $_POST['dtNascimento'];
@@ -95,15 +99,33 @@ if (temPost()) {
     if (!$temErros) {
         // Função de inserir no banco de dados
         inserirAluno($conexao, $dadosAlunos);
+
         die();
     }
-}  
+}
 
 
 //Validação Pesquisa de Aluno
 
-if (temPost() && $_POST['pesquisar']) {
-    
+if (temPost() && isset($_POST['pesquisar'])) {
+
+    //Validação  NOME
+    if (isset($_POST['nomeAlunoPesquisa']) && strlen($_POST['nomeAlunoPesquisa']) > 2) {
+        $dadosAlunos['nomeAlunoPesquisa'] = $_POST['nomeAlunoPesquisa'];
+        echo 'adicionou o conteúdo';
+    } else {
+        $temErros = true;
+        $errosValidacao['nomeAlunoPesquisa'] = ''
+                . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>Nome de aluno inválido!</h4>'
+                . 'Digite corretamente o nome do aluno'
+                . '</div>';
+    }
+    if (!$temErros) {
+        // Select no banco de dados
+        $listaAluno = listarAluno($conexao);
+    }
 }
 
 

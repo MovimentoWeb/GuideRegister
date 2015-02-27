@@ -2,15 +2,29 @@
 
 include_once 'crud/conexao.php';
 
-function listarAluno($conexao, $id) {
-    $sqlBuscar = 'SELECT * FROM aluno WHERE id =';
-    $resultado = msyqli_query($conexao, $sqlBuscar);
-    $projeto = array();
-    while ($projeto = mysqli_fetch_assoc($resultado)) {
-        $projeto[] = $projeto;
-    }
-    return $projeto;
+//--------------------Funções  ALUNO -------------------
+
+function inserirAluno($conexao, $dados) {
+    $sqlInserir = "insert into aluno (nomeAluno, matricula, dtNascimento, cpf, rg)"
+            . "VALUES('{$dados['nomeAluno']}','{$dados['matricula']}','{$dados['dtNascimento']}','{$dados['cpf']}','{$dados ['rg']}')";
+    mysqli_query($conexao, $sqlInserir);
+    unset($_POST);
 }
+
+function listarAluno($conexao) {
+    $sqlBuscar = 'SELECT * FROM aluno';
+    $resultado = msyqli_query($conexao, $sqlBuscar);
+    $resAluno = array();
+    while ($registro = mysqli_fetch_assoc($resultado)) {
+        $resAluno[] = $registro;
+    }
+    return $resAluno;
+}
+
+//--------------------Funções  PROFESSOR -------------------
+//--------------------Funções  PROFESSOR -------------------
+
+
 
 function listarAviso($conexao, $id) {
     $sqlBuscar = 'SELECT * FROM aviso WHERE id = ';
@@ -50,12 +64,6 @@ function listarTurma($conexao, $id) {
         $projeto[] = $projeto;
     }
     return $projeto;
-}
-
-function inserirAluno($conexao, $dados) {
-    $sqlInserir = "insert into aluno (nomeAluno, matricula, dtNascimento, cpf, rg)"
-            . "VALUES('{$dados['nomeAluno']}','{$dados['matricula']}','{$dados['dtNascimento']}','{$dados['cpf']}','{$dados ['rg']}')";
-    mysqli_query($conexao, $sqlInserir);
 }
 
 function inserirAviso($conexao, $projeto) {
