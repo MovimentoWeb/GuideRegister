@@ -55,9 +55,9 @@
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><span class="fa-list2"></span> Listar</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="?pg=professores&opcao=lista">Listas</a></li>
+                                    <li><a href="?pg=professores&opcao=listas">Listas</a></li>
                                     <li><a href="">Pesquisa do Professor</a></li>
-                                    <li><a href="">Resultados</a></li>
+                                    <li><a href="?pg=professores&opcao=detalhes">Detalhe do professor</a></li>
                                 </ul>
                             </li>
                         </ul>
