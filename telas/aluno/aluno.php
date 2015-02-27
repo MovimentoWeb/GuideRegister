@@ -4,6 +4,7 @@ if (!isset($_GET['opcao'])) {
     include_once 'telas/inicial.php';
 } else {
     switch ($_GET['opcao']) {
+
         case'cadastrar':
             ?>
             <div class="conteinerAluno">
@@ -12,23 +13,23 @@ if (!isset($_GET['opcao'])) {
                     <span class="help-block">Preencha corretamente os campos abaixo com os dados do aluno. </span>
                     <ul>
                         <li>
-                            <label>Nome do aluno<br />
-                                <?php if ($temErros && isset($errosValidacao['nome'])) : ?>
+                            <label for="nomeAluno">Nome do aluno<br />
+                                <?php if ($temErros && isset($errosValidacao['nomeAluno'])) : ?>
                                     <span class="erro">
-                                        <?php echo $errosValidacao['nome']; ?>
+                                        <?php echo $errosValidacao['nomeAluno']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="nome" class="input-block-level" value="<?php echo $projeto['nome']; ?>" placeholder="Nome"></label>
+                                <input type="text" id="nomeAluno" name="nomeAluno" autofocus="" class="input-block-level" value="<?php echo $dadosAluno['nomeAluno']; ?>" placeholder="Nome">
                             </label>
                         </li>
                         <li class="row-fluid">
-                            <label class="span3">Matrícula<br />
+                            <label class="span3" for="matricula">Matrícula<br />
                                 <?php if ($temErros && isset($errosValidacao['matricula'])) : ?>
                                     <span class="erro">
                                         <?php echo $errosValidacao['matricula']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="matricula" class="input-block-level" value="<?php echo $projeto['matricula']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" id="matricula" name="matricula" class="input-block-level" value="<?php echo $dadosAluno['matricula']; ?>" placeholder="Data de Nascimento">
                             </label>
                             <label class="span3">Data de Nascimento<br />
                                 <?php if ($temErros && isset($errosValidacao['dtNascimento'])) : ?>
@@ -36,7 +37,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['dtNascimento']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $projeto['dtNascimento']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $dadosAluno['dtNascimento']; ?>" placeholder="Data de Nascimento">
                             </label>
                             <label class="span3">RG<br />
                                 <?php if ($temErros && isset($errosValidacao['rg'])) : ?>
@@ -44,7 +45,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['rg']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="rg" class="input-block-level" value="<?php echo $projeto['rg']; ?>" placeholder="RG">
+                                <input type="text" name="rg" class="input-block-level" value="<?php echo $dadosAluno['rg']; ?>" placeholder="RG">
                             </label>
 
 
@@ -55,7 +56,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['cpf']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="cpf" class="input-block-level" value="<?php echo $projeto['cpf']; ?>" placeholder="CPF">
+                                <input type="text" name="cpf" class="input-block-level" value="<?php echo $dadosAluno['cpf']; ?>" placeholder="CPF">
                             </label>
                         </li>
 
@@ -81,14 +82,17 @@ if (!isset($_GET['opcao'])) {
                         </li>
 
                     </ul>
-                    <a href="index.php" class="btn btn-warning"><span class="fa-home"></span> Voltar a página inicial</a>
+                    <a href="index.php" class="btn btn-info"><span class="fa-home"></span> Voltar a página inicial</a>
+                    <input type="hidden" name="cadAluno"/>
                     <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
             </div>
             <?php
             break;
 
-        case'editarAluno':
+        case'editar':
+
+            $dadosAluno = listarAlunoPorId($conexao, $_GET['idAluno']);
             ?>
             <div class="conteinerAluno">
                 <form class="well" method="post">
@@ -96,23 +100,23 @@ if (!isset($_GET['opcao'])) {
                     <span class="help-block">Preencha corretamente os campos abaixo com os dados do aluno. </span>
                     <ul>
                         <li>
-                            <label>Nome do aluno<br />
-                                <?php if ($temErros && isset($errosValidacao['nome'])) : ?>
+                            <label for="nomeAluno">Nome do aluno<br />
+                                <?php if ($temErros && isset($errosValidacao['nomeAluno'])) : ?>
                                     <span class="erro">
-                                        <?php echo $errosValidacao['nome']; ?>
+                                        <?php echo $errosValidacao['nomeAluno']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="nome" class="input-block-level" value="<?php echo $projeto['nome']; ?>" placeholder="Nome"></label>
+                                <input type="text" id="nomeAluno" name="nomeAluno" autofocus="" class="input-block-level" value="<?php echo $dadosAluno['nomeAluno']; ?>" placeholder="Nome">
                             </label>
                         </li>
                         <li class="row-fluid">
-                            <label class="span3">Matrícula<br />
+                            <label class="span3" for="matricula">Matrícula<br />
                                 <?php if ($temErros && isset($errosValidacao['matricula'])) : ?>
                                     <span class="erro">
                                         <?php echo $errosValidacao['matricula']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $projeto['dtNascimento']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" id="matricula" name="matricula" class="input-block-level" value="<?php echo $dadosAluno['matricula']; ?>" placeholder="Data de Nascimento">
                             </label>
                             <label class="span3">Data de Nascimento<br />
                                 <?php if ($temErros && isset($errosValidacao['dtNascimento'])) : ?>
@@ -120,7 +124,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['dtNascimento']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $projeto['dtNascimento']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $dadosAluno['dtNascimento']; ?>" placeholder="Data de Nascimento">
                             </label>
                             <label class="span3">RG<br />
                                 <?php if ($temErros && isset($errosValidacao['rg'])) : ?>
@@ -128,7 +132,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['rg']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="rg" class="input-block-level" value="<?php echo $projeto['rg']; ?>" placeholder="RG">
+                                <input type="text" name="rg" class="input-block-level" value="<?php echo $dadosAluno['rg']; ?>" placeholder="RG">
                             </label>
 
 
@@ -139,7 +143,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['cpf']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="cpf" class="input-block-level" value="<?php echo $projeto['cpf']; ?>" placeholder="CPF">
+                                <input type="text" name="cpf" class="input-block-level" value="<?php echo $dadosAluno['cpf']; ?>" placeholder="CPF">
                             </label>
                         </li>
 
@@ -165,7 +169,8 @@ if (!isset($_GET['opcao'])) {
                         </li>
 
                     </ul>
-                    <a href="index.php" class="btn btn-warning"><span class="fa-home"></span> Voltar a página inicial</a>
+                    <a href="index.php" class="btn btn-info"><span class="fa-home"></span> Voltar a página inicial</a>
+                    <input type="hidden" name="EditAluno"/>
                     <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
             </div>
@@ -178,12 +183,19 @@ if (!isset($_GET['opcao'])) {
                 <div class="well">  
                     <form class="form-search" method="POST">
                         <legend><span class="fa-search3"></span>  Pesquisar Alunos</legend>
+                        <?php if ($temErros && isset($errosValidacao['nomeAlunoPesquisa'])) : ?>
+                            <span class="erro">
+                                <?php echo $errosValidacao['nomeAlunoPesquisa']; ?>
+                            </span>
+                        <?php endif; ?>
                         <span class="help-block">Digite um nome de aluno para pesquisa</span>
                         <ul>
                             <li>
                                 <div class="input-append">
-                                    <input type="text" class="search-query input-block-level">
-                                    <button type="submit" class="btn btn-primary">Busca</button>
+                                    <input name="nomeAlunoPesquisa" placeholder="Digite um nome para pesquisa..." type="text" class="search-query input-block-level" autofocus="">
+
+                                    <input type="hidden" name="pesquisar"/>
+                                    <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                                 </div>
                             </li>
                         </ul>  
@@ -191,103 +203,75 @@ if (!isset($_GET['opcao'])) {
 
 
                     <!--        Resultado das pesquisas-->
+                    <?php
+                    if ($exibirTabela == TRUE) {
+                        ?>
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Detalhes</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($listarAluno as $aluno):
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $aluno['nomeAluno'] ?></td>
+                                        <td>Detalhes do resultado 4</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                                    Ação
+                                                    <span class="caret"></span>
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="?pg=aluno&opcao=detalhes&detalhes=<?php echo $aluno['idAluno'] ?>" class="fa-delicious"> Ver detalhes</a></li>
+                                                    <li><a href="?pg=aluno&opcao=desativar&desativar=<?php echo $aluno['idAluno'] ?>"  class="fa-remove"> Desativar Aluno</a></li>
+                                                    <li><a href="?pg=aluno&opcao=editar&edit=<?php echo $aluno['idAluno'] ?>" class="fa-pencil"> Editar aluno</a></li>
+                                                    <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa&just=<?php echo 'idAluno'; ?>"  class="fa-aid"> Adicionar justificativa</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>    
+                                    <?php
+                                endforeach;
+                                ?>
+                            </tbody>
+                        </table>
+                        <?php
+                    }else {
 
-                    <table class="table table-hover">
-                        <caption>Título dos resultados</caption>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Detalhes</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Resultado 1</td>
-                                <td>
-                                    <p><strong>Turma:</strong> Nome da turma + PA</p>
-                                </td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <!-- Links de menu dropdown -->
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Resultado 2</td>
-                                <td>Detalhes do resultado 2</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <!-- Links de menu dropdown -->
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Resultado 3</td>
-                                <td>Detalhes do resultado 3</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <!-- Links de menu dropdown -->
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Resultado 4</td>
-                                <td>Detalhes do resultado 4</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="?pg=aluno&opcao=dadosAluno" class="fa-delicious"> Ver detalhes</a></li>
-                                            <li><a href="#" class="fa-remove"> Desativar Aluno</a></li>
-                                            <li><a href="#" class="fa-aid"> Adicionar justificativa</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                        echo '0 - Resultados encontrados';
+                    }
+                    ?>
 
-                        </tbody>
-                    </table>
+
                 </div>
             </div>
             <?php
             break;
 
-        case 'dadosAluno':
+        case 'detalhes':
             ?>
             <div class="containerAluno ">
                 <form class="well">
-                    <legend><span class="icon-tasks"></span> Dados Da Turma</legend>
-                    Turma:
-                    <label for=""></label>
-                    Professor:
+                    <legend><span class="icon-tasks"></span> Dados do aluno</legend>
+
+                    <label for="">
+                        Nome do aluno:
+                        <input type="" name="nomeAluno" disabled=""/>
+                    </label>
+
+                    Disciplina:
                     <label for=""></label>
                     Codigo da Turma:
                     <label for=""></label>
-                    Carga Horaria: 
+                    Curso: 
                     <label for=""></label>
-                    Turno: 
+                    Matr: 
                     <label for=""></label>
                     Periodo: 
                     <label for=""></label>
@@ -355,10 +339,13 @@ if (!isset($_GET['opcao'])) {
             <?php
             break;
 
-        case 'AtaFrequencia':
+        case 'desativar':
             ?>
+            desativar aluno
             <?php
             break;
+
+
 
         default :
             include_once 'telas/inicial.php';

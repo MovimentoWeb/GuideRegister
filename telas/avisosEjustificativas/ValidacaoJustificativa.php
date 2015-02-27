@@ -9,7 +9,7 @@ if (temPost()) {
     $projeto = array();
 
     /// Nome //
-    
+
     if (isset($_POST['nome']) && strlen($_POST['nome']) > 5) {
         $projeto['nome'] = $_POST['nome'];
     } else {
@@ -21,9 +21,9 @@ if (temPost()) {
                 . 'Digite corretamente seu nome!'
                 . '</div>';
     }
-    
+
     // Turma //
-    
+
     if (isset($_POST['Turma']) && strlen($_POST['Turma']) > 5) {
         $projeto['Turma'] = $_POST['Turma'];
     } else {
@@ -34,10 +34,10 @@ if (temPost()) {
                 . '<h4>Nome de turma inválido!</h4>'
                 . 'Digite corretamente o nome da turma'
                 . '</div>';
-        }
-        // Curso //
-        
-         if (isset($_POST['Curso']) && strlen($_POST['Curso']) > 5) {
+    }
+    // Curso //
+
+    if (isset($_POST['Curso']) && strlen($_POST['Curso']) > 5) {
         $projeto['Curso'] = $_POST['Curso'];
     } else {
         $temErros = true;
@@ -49,7 +49,7 @@ if (temPost()) {
                 . '</div>';
     }
     // Nome do professor //
-        if (isset($_POST['NomeP']) && strlen($_POST['NomeP']) > 5) {
+    if (isset($_POST['NomeP']) && strlen($_POST['NomeP']) > 5) {
         $projeto['NomeP'] = $_POST['NomeP'];
     } else {
         $temErros = true;
@@ -61,8 +61,8 @@ if (temPost()) {
                 . '</div>';
     }
     // Justificativas //
-     
-       if (isset($_POST['Just']) && strlen($_POST['Just']) > 5) {
+
+    if (isset($_POST['Just']) && strlen($_POST['Just']) > 5) {
         $projeto['Just'] = $_POST['Just'];
     } else {
         $temErros = true;
@@ -74,11 +74,27 @@ if (temPost()) {
                 . '</div>';
     }
 }
-    $projeto = array(
+
+if (temPost()) {
+    $projeto = array();
+
+    if (isset($_POST['conteudoAviso']) && strlen($_POST['conteudoAviso']) > 0) {
+        $projeto['conteudoAviso'] = $_POST['conteudoAviso'];
+    } else {
+        $temErros = true;
+        $errosValidacao['conteudoAviso'] = ''
+                . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>Sem Conteúdo!</h4>'
+                . 'Digite algo no conteúdo!'
+                . '</div>';
+    }
+}
+
+$projeto = array(
     'id' => 0,
     'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',
     'Turma' => (isset($_POST['Turma'])) ? $_POST['Turma'] : '',
     'Curso' => (isset($_POST['Curso'])) ? $_POST['Curso'] : '',
     'NomeP' => (isset($_POST['NomeP'])) ? $_POST['NomeP'] : '',
-    'Just' => (isset($_POST['Just'])) ? $_POST['Just'] : '', );
-    
+    'Just' => (isset($_POST['Just'])) ? $_POST['Just'] : '',);
