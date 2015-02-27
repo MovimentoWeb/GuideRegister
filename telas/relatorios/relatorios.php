@@ -1,6 +1,6 @@
 
 <?php
-include_once 'telas/aluno/validacaoAluno.php';
+include_once 'telas/relatorios/ValidacaoRelatorio.php';
 if (!isset($_GET['opcao'])) {
     
 } else {
@@ -9,24 +9,25 @@ if (!isset($_GET['opcao'])) {
             ?>
 
             <div class="well">
-
                 <div class="relatorios"> 
-                    <legend><span class="fa-search3"></span>  Pesquisar Alunos</legend>
-
-                    <form class="form-search"> 
-
+                    <form class="form-search" method="POST">
+                        <legend><span class="fa-search3"></span>  Pesquisar Alunos</legend>
+                        <?php if ($temErros && isset($errosValidacao['dadosRelatorio'])) : ?>
+                            <span class="erro">
+                                <?php echo $errosValidacao['dadosRelatorio']; ?>
+                            </span>
+                        <?php endif; ?>
                         <span class="help-block">Digite um nome de aluno para pesquisa</span>
-
                         <ul>
                             <li>
                                 <div class="input-append">
-                                    <input type="text" class="search-query input-block-level">
-                                    <!--                        <button type="submit" class="btn btn-primary">Busca</button>-->
-                                    <a href="?pg=dadosAluno" class="btn btn-primary"> Buscar</a>
+                                    <input name="dadosRelatorio" placeholder="Digite um nome para pesquisa..." type="text" class="search-query input-block-level" autofocus="">
+
+                                    <input type="hidden" name="relatorios"/>
+                                    <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                                 </div>
                             </li>
-                        </ul> 
-
+                        </ul>  
                     </form>  
 
                 </div>
@@ -79,17 +80,24 @@ if (!isset($_GET['opcao'])) {
                     <div class="ataturmas">
 
                         <legend><span class="fa-user-add"></span> Ata por Turmas </legend>
-                        <form class="form-search">
-                            <span class="help-block">Digite o numero da turma para pesquisa</span>
+                        <form class="form-search" method="POST">
+
+                            <?php if ($temErros && isset($errosValidacao['ataturma'])) : ?>
+                                <span class="erro">
+                                    <?php echo $errosValidacao['ataturma']; ?>
+                                </span>
+                            <?php endif; ?>
+                            <span class="help-block">Digite um nome de aluno para pesquisa</span>
                             <ul>
                                 <li>
                                     <div class="input-append">
-                                        <input type="text" class="search-query input-block-level">
-                                        <!--                        <button type="submit" class="btn btn-primary">Busca</button>-->
-                                        <a href="?pg=dadosAluno" class="btn btn-primary"> Buscar</a>
+                                        <input id="ataturma" name="ataturma" placeholder="Digite um nome para pesquisa..." type="text" class="search-query input-block-level" autofocus=""  value="<?php echo $dadosRelatorio['ataturma']; ?>">
+
+
+                                        <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                                     </div>
                                 </li>
-                            </ul> 
+                            </ul>  
                         </form>  
                         <div>
 
@@ -211,18 +219,25 @@ if (!isset($_GET['opcao'])) {
             <div class="container pesquisardisciplina">
 
                 <div class="well">
-                    <form class="form-search" method="POST">
-                        <legend><span class="fa-search3"></span> Pesquisar disciplinas</legend>
-                        <span class="help-block">Digite o nome da disciplina para pesquisa</span>
-                        <ul>
-                            <li>
-                                <div class="input-append">
-                                    <input type="text" class="search-query input-block-level">
-                                    <button nm type="submit" class="btn btn-primary">Pesuisar</button>
-                                </div>
-                            </li>
-                        </ul>  
-                    </form>
+                   <form class="form-search" method="POST">
+
+                            <?php if ($temErros && isset($errosValidacao['atadisciplina'])) : ?>
+                                <span class="erro">
+                                    <?php echo $errosValidacao['atadisciplina']; ?>
+                                </span>
+                            <?php endif; ?>
+                            <span class="help-block">Digite um nome da disciplina</span>
+                            <ul>
+                                <li>
+                                    <div class="input-append">
+                                        <input id="ataturma" name="atadisciplina" placeholder="Digite um nome para pesquisa..." type="text" class="search-query input-block-level" autofocus=""  value="<?php echo $dadosRelatorio['atadisciplina']; ?>">
+
+
+                                        <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
+                                    </div>
+                                </li>
+                            </ul>  
+                        </form>  
 
                     <div class=" tabelas2">
                         <table class="table table-striped">
