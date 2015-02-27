@@ -48,6 +48,9 @@
                     case 'pesquisarprofessor':
                         include_once './telas/professores/Pesquisar.php';
                         break;
+                    case 'detalhes':
+                        include_once './telas/professores/professores.php';
+                        break;
 
 
 // -------------------------------- Tela aluno -------------------------   

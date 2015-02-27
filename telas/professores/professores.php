@@ -316,35 +316,47 @@ if (!isset($_GET['opcao'])) {
                     </tbody>
                 </table>
             </div>
-            <?php
+        <?php
+        case 'detalhes':
             ?>
             <div class="containerAluno ">
                 <form class="well">
-                    <legend><span class="icon-tasks"></span> Dados Da Turma</legend>
-                    Turma:
-                    <label for=""></label>
-                    Professor:
-                    <label for=""></label>
-                    Codigo da Turma:
-                    <label for=""></label>
-                    Carga Horaria: 
-                    <label for=""></label>
-                    Turno: 
-                    <label for=""></label>
-                    Periodo: 
-                    <label for=""></label>
+                    <legend><span class="icon-tasks"></span> Dados do aluno</legend>
+                    <div class="row-fluid">
+                        <label for="">
+                            Nome do aluno:
+                            <input type="" name="nomeAluno" disabled=""/>
+                        </label>
 
-                    <input type="button" class=" btn btn-primary span2" value="Enviar" />
+
+                        <label for="">
+                            Disciplina:
+                            <input type="" name="nomeAluno" disabled=""/>
+                        </label>
+
+                        <label for="">
+                            Codigo da Turma:
+                            <input type="" name="nomeAluno" disabled=""/>
+                        </label>
+
+                        <label for="">
+                            Curso:
+                            <input type="" name="nomeAluno" disabled=""/>
+                        </label>
+
+                        <label for="">
+                            Matricula:
+                            <input type="" name="nomeAluno" disabled=""/>
+                        </label>
+
+                        <label for="">
+                            Periodo:
+                            <input type="" name="nomeAluno" disabled=""/>
+                        </label>
+                        <input type="button" class=" btn btn-primary span2" value="Enviar" />
+                    </div>
                 </form>
             </div>
-            </div>
-            </div>
-            <?php
-            break;
-
-        default
-            ?>
-            <h1>ahsiahusas</h1>
             <?php
             break;
     }
