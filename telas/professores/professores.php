@@ -319,41 +319,35 @@ if (!isset($_GET['opcao'])) {
         <?php
         case 'detalhes':
             ?>
-            <div class="containerAluno ">
-                <form class="well">
+            <div id="detalhesMeus" class="containerAluno ">
+                <form method="post" class="well">
                     <legend><span class="icon-tasks"></span> Dados do aluno</legend>
                     <div class="row-fluid">
-                        <label for="">
+                        <label class="edicao">
                             Nome do aluno:
                             <input type="" name="nomeAluno" disabled=""/>
                         </label>
-
-
-                        <label for="">
+                        <label class="edicao1">
                             Disciplina:
                             <input type="" name="nomeAluno" disabled=""/>
                         </label>
-
-                        <label for="">
-                            Codigo da Turma:
+                        <label class="edicao2">
+                            ID da Turma:
                             <input type="" name="nomeAluno" disabled=""/>
                         </label>
-
-                        <label for="">
+                        <label class="edicao3">
                             Curso:
                             <input type="" name="nomeAluno" disabled=""/>
                         </label>
-
-                        <label for="">
+                        <label class="edicao4">
                             Matricula:
                             <input type="" name="nomeAluno" disabled=""/>
                         </label>
-
-                        <label for="">
+                        <label class="edicao5">
                             Periodo:
                             <input type="" name="nomeAluno" disabled=""/>
                         </label>
-                        <input type="button" class=" btn btn-primary span2" value="Enviar" />
+                        <input type="button" class="btn btn-primary span2" value="Voltar" />
                     </div>
                 </form>
             </div>
