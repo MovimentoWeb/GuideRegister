@@ -12,14 +12,25 @@ function inserirAluno($conexao, $dados) {
 }
 
 function listarAluno($conexao) {
-    $sqlBuscar = 'SELECT * FORM aluo';
-    $resultado = mysql_query($conexao,$sqlBuscar);
-
+    $sqlBuscar = 'SELECT * FROM aluno';
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    
     $resAluno = array();
     while ($registro = mysqli_fetch_assoc($resultado)) {
         $resAluno[] = $registro;
     }
     return $resAluno;
+}
+
+function buscarTarefas($conexao) {
+    $sqlBusca = 'SELECT * FROM tarefas';
+    $resultado = mysqli_query($conexao, $sqlBusca);
+    
+    $conjuntoDeTarefas = array();
+    while ($tarefa = mysqli_fetch_assoc($resultado)) {
+        $conjuntoDeTarefas[] = $tarefa;
+    }
+    return $conjuntoDeTarefas;
 }
 
 //--------------------Funções  PROFESSOR -------------------

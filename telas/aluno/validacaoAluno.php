@@ -124,6 +124,7 @@ if (temPost() && isset($_POST['pesquisar'])) {
     if (!$temErros) {
         // Select no banco de dados
         $listarAluno = listarAluno($conexao);
+        $exibirTabela = TRUE;
     }
 }
 
