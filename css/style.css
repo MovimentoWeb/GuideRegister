@@ -216,3 +216,21 @@ body{
 #JustificativasMinha .label{
     margin-bottom: 5px;
 }
+/*------------------Creditos---------------------*/
+.creditos img{
+    width: 20%;
+    height: 15%;
+}
+.creditos h2{
+    padding: 2% 24%;
+}
+.creditos a{
+    text-decoration: underline;
+}
+.creditos p{
+    padding: 0 24%;
+}
+.creditos hr{
+    background: #000;
+    height: 2px;
+}
