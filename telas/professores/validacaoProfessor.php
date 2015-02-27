@@ -93,9 +93,9 @@ if (temPost()) {
         header('Location: index.php?pg=cadastrarprofessor');
         die();
     }
-    
-      //Validação da nome disciplina
-if (isset($_POST['pesquisaProfessor']) && strlen($_POST['pesquisaProfessor']) > 5) {
+
+    //Validação da nome disciplina
+    if (isset($_POST['pesquisaProfessor']) && strlen($_POST['pesquisaProfessor']) > 5) {
         $projeto['pesquisaProfessor'] = $_POST['pesquisaProfessor'];
     } else {
         $temErros = true;
@@ -105,7 +105,7 @@ if (isset($_POST['pesquisaProfessor']) && strlen($_POST['pesquisaProfessor']) > 
                 . '<h4>Pesquisa invalida!</h4>'
                 . 'Digite sua pesquisa nos campos abaixo'
                 . '</div>';
-    
+    }
 }
 $projeto = array(
     'id' => 0,
@@ -117,7 +117,3 @@ $projeto = array(
     'dtAdmissao' => (isset($_POST['dtAdmissao'])) ? $_POST['dtAdmissao'] : '',
     'pesquisaProfessor' => (isset($_POST['pesquisaProfessor'])) ? $_POST['pesquisaProfessor'] : '',
 );
-
-
-
-}
