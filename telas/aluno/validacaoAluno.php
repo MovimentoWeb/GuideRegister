@@ -111,7 +111,7 @@ if (temPost() && isset($_POST['pesquisar'])) {
 
     //Validação  NOME
     if (isset($_POST['nomeAlunoPesquisa']) && strlen($_POST['nomeAlunoPesquisa']) > 2) {
-        $dadosAlunos['nomeAlunoPesquisa'] = $_POST['nomeAlunoPesquisa'];
+        $dadosAlunos = $_POST['nomeAlunoPesquisa'];
     } else {
         $temErros = true;
         $errosValidacao['nomeAlunoPesquisa'] = ''
@@ -123,7 +123,7 @@ if (temPost() && isset($_POST['pesquisar'])) {
     }
     if (!$temErros) {
         // Select no banco de dados
-        $listarAluno = listarAluno($conexao);
+        $listarAluno = listarAluno($conexao, $dadosAlunos);
         $exibirTabela = TRUE;
     }
 }

@@ -11,10 +11,10 @@ function inserirAluno($conexao, $dados) {
     unset($_POST);
 }
 
-function listarAluno($conexao) {
-    $sqlBuscar = 'SELECT * FROM aluno';
+function listarAluno($conexao, $dadosAluno) {
+    $sqlBuscar = "SELECT * FROM aluno WHERE nomeAluno LIKE '%" . $dadosAluno . "%'";
     $resultado = mysqli_query($conexao, $sqlBuscar);
-    
+
     $resAluno = array();
     while ($registro = mysqli_fetch_assoc($resultado)) {
         $resAluno[] = $registro;
@@ -23,9 +23,9 @@ function listarAluno($conexao) {
 }
 
 function buscarTarefas($conexao) {
-    $sqlBusca = 'SELECT * FROM tarefas';
+    $sqlBusca = ' SELECT * FROM tarefas';
     $resultado = mysqli_query($conexao, $sqlBusca);
-    
+
     $conjuntoDeTarefas = array();
     while ($tarefa = mysqli_fetch_assoc($resultado)) {
         $conjuntoDeTarefas[] = $tarefa;
@@ -69,7 +69,7 @@ function listarRelatorio($conexao, $id) {
 }
 
 function listarTurma($conexao, $id) {
-    $sqlBuscar = 'SELECT * FROM turma WHERE id =';
+    $sqlBuscar = 'SELECT * FROM turma WHERE id = ';
     $resultado = msyqli_query($conexao, $sqlBuscar);
     $projeto = array();
     while ($projeto = mysqli_fetch_assoc($resultado)) {
@@ -81,77 +81,48 @@ function listarTurma($conexao, $id) {
 function inserirAviso($conexao, $projeto) {
     $sqlInserir = "insert into aviso("
             . "aviso)"
-            . "VALUES ('{$projeto['aviso']}')";
-    mysqli_query($conexao, $sqlInserir);
-}
+            . "VALUES ('{$projeto['aviso']}
 
-function inserirProfessor($conexao, $projeto) {
-    $sqlInserir = "INSERT INTO professor ("
-            . "nome, telefone, endereco, rg, cpf) "
-            . "VALUES('{$projeto['nome']}','{$projeto['telefone']}','"
-            . "{$projeto['endereco']}','{$projeto['rg']}','"
-            . "{$projeto['cpf']}')";
+    ')";
     mysqli_query($conexao, $sqlInserir);
-}
-
-function inserirRelatorio($conexao, $projeto) {
-    $sqlInserir = "insert into relatorio ("
-            . "nomerelatorio,tiporelatrio)"
-            . "VALUES('{$projeto['nomerelatorio']}','{$projeto['tiporelatorio']}','";
-    mysqli_query($conexao, $sqlInserir);
-}
-
-function inserirTurma($conexao, $projeto) {
-    $sqlInserir = "insert into turma("
-            . "nomerelatorio,tiporelatorio)"
-            . "VALUES('{$projeto['nomerelatorio']}','{$projeto['tiporelatorio']}','";
-    mysqli_query($conexao, $sqlInserir);
-}
-
-function editarAluno($conexao, $projeto) {
-    $sqlAtualizar = "UPDATE Aluno SET"
-            . "matricula = '{$projeto['matricula']},"
-            . "nome ='{$projeto['nome']},"
-            . "telefone =' {$projeto['telefone']},"
-            . "endereco =' {$projeto['endereco']},"
-            . "cpf = '{$projeto['cpf']},"
-            . "rg ='{$projeto['rg']},"
-            . "WHERE idAluno ='{$projeto['idAluno']},";
-    mysqli_query($conexao, $sqlAtualizar);
 }
 
 function editarAviso($conexao, $projeto) {
     $sqlAtualizar = "UPDATE Aviso SET "
             . "Aviso = '{$projeto['Aviso']},"
-            . "WHERE idAviso ='{$projeto['idAviso']},";
-    mysqli_query($conexao, $sqlAtualizar);
+            . "WHERE idAviso ='{$projeto['idAviso']}
+
+    , ";
+    mysqli_query($conexao, $sqlAtualizar
+    );
 }
 
 function editarProfessor($conexao, $projeto) {
     $sqlAtualizar = "UPDATE Professor SET"
             . "nome = '{$projeto['nome']},"
-            . "telefone = '{$projeto['telefone']},"
-            . "endereco = '{$projeto['endereco']},"
-            . "rg ='{$projeto['rg']},"
-            . "cpf ='{$projeto['cpf']},"
-            . "WHERE idProfessor ='{$projeto['idProfessor']},";
-    mysqli_query($conexao, $sqlAtualizar);
+            . "telefone = '{$projeto['telefone']}
+
+    , "
+            . "endereco  = '{$projeto['endereco']},"
+            . "rg ='{$projeto['rg']}
+
+    , "
+            . " 
+
+     cpf 
+
+      =  
+
+     '{$projeto['cpf']},"
+            . "WHERE idProfessor ='{$projeto['idProfessor']}, ";
+    mysqli_query($conexao, $sqlAtualizar
+    );
 }
 
 function editarRelatorio($conexao, $projeto) {
     $sqlAtualizar = "UPDATE Relatorio SET"
-            . "nomerelatorio ='{$projeto['nomerelatorio']},"
-            . "tiporelatorio ='{$projeto['tiporelatorio']},"
-            . "WHERE idRelatorio = '{$projeto['idRelatorio']},";
+            . "nomerelatorio = '{$projeto['nomerelatorio']},"
+            . "tiporelatorio ='{$projeto['tiporelatorio']}, "
+            . "WHERE idRelatorio = '{$projeto['idRelatorio ']},";
     mysqli_query($conexao, $sqlAtualizar);
 }
-
-function editarTurma($conexao, $projeto) {
-    $sqlAtualizar = "UPDATE Turma SET"
-            . "idaluno ='{$projeto['idaluno']},"
-            . "idprofessor ='{$projeto['idprofessor']},"
-            . "WHERE idTurma ='{$projeto['idTurma']},";
-    mysqli_query($conexao, $sqlAtualizar);
-}
-
-?>
