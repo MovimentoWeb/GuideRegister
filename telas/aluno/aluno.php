@@ -13,23 +13,23 @@ if (!isset($_GET['opcao'])) {
                     <span class="help-block">Preencha corretamente os campos abaixo com os dados do aluno. </span>
                     <ul>
                         <li>
-                            <label>Nome do aluno<br />
+                            <label for="nomeAluno">Nome do aluno<br />
                                 <?php if ($temErros && isset($errosValidacao['nomeAluno'])) : ?>
                                     <span class="erro">
                                         <?php echo $errosValidacao['nomeAluno']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="nomeAluno" class="input-block-level" value="<?php echo $dadosAluno['nomeAluno']; ?>" placeholder="Nome"></label>
+                                <input type="text" id="nomeAluno" name="nomeAluno" autofocus="" class="input-block-level" value="<?php echo $dadosAluno['nomeAluno']; ?>" placeholder="Nome">
                             </label>
                         </li>
                         <li class="row-fluid">
-                            <label class="span3">Matrícula<br />
+                            <label class="span3" for="matricula">Matrícula<br />
                                 <?php if ($temErros && isset($errosValidacao['matricula'])) : ?>
                                     <span class="erro">
                                         <?php echo $errosValidacao['matricula']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="matricula" class="input-block-level" value="<?php echo $dadosAluno['matricula']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" id="matricula" name="matricula" class="input-block-level" value="<?php echo $dadosAluno['matricula']; ?>" placeholder="Data de Nascimento">
                             </label>
                             <label class="span3">Data de Nascimento<br />
                                 <?php if ($temErros && isset($errosValidacao['dtNascimento'])) : ?>
@@ -189,7 +189,7 @@ if (!isset($_GET['opcao'])) {
                         <ul>
                             <li>
                                 <div class="input-append">
-                                    <input name="nomeAlunoPesquisa" placeholder="Digite um nome para pesquisa..." type="text" class="search-query input-block-level">
+                                    <input name="nomeAlunoPesquisa" placeholder="Digite um nome para pesquisa..." type="text" class="search-query input-block-level" autofocus="">
 
                                     <input type="hidden" name="pesquisar"/>
                                     <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>

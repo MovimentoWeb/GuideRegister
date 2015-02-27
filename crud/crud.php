@@ -12,8 +12,9 @@ function inserirAluno($conexao, $dados) {
 }
 
 function listarAluno($conexao) {
-    $sqlBuscar = 'SELECT * FROM aluno';
-    $resultado = msyqli_query($conexao, $sqlBuscar);
+    $sqlBuscar = 'SELECT * FORM aluo';
+    $resultado = mysql_query($conexao,$sqlBuscar);
+
     $resAluno = array();
     while ($registro = mysqli_fetch_assoc($resultado)) {
         $resAluno[] = $registro;
@@ -22,7 +23,7 @@ function listarAluno($conexao) {
 }
 
 //--------------------Funções  PROFESSOR -------------------
-//--------------------Funções  PROFESSOR -------------------
+//--------------------Funções  TURMA -------------------
 
 
 
