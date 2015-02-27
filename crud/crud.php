@@ -22,6 +22,22 @@ function listarAluno($conexao, $dadosAluno) {
     return $resAluno;
 }
 
+function listarAlunoPorId($conexao,$dadosAluno) {
+    $sqlBuscar = "SELECT * FROM aluno WHERE idAluno = {$dadosAluno['idAluno']}";
+}
+
+function editarAluno($conexao,$dadosAluno) {
+    $sqlAtualizar = "UPdate aluno SET "
+            . "nomeAluno = '{$dadosAluno['nomeAluno']}', "
+            . "nomeAluno = '{$dadosAluno['matricula']}', "
+            . "dtNascimento = '{$dadosAluno['dtNascimento']}', "
+            . "rg = '{$dadosAluno['rg']}', "
+            . "cpf = '{$dadosAluno['cpf']}', "
+            . "turno = '{$dadosAluno['turno']}', "
+            . "curso = '{$dadosAluno['curso']}', "
+            . "WHERE idAluno = {$dadosAluno['idAluno']}";
+}
+
 function buscarTarefas($conexao) {
     $sqlBusca = ' SELECT * FROM tarefas';
     $resultado = mysqli_query($conexao, $sqlBusca);
