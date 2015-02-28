@@ -52,7 +52,7 @@
                             <!-- Links de menu dropdown -->
 
                             <li ><a href="?pg=professores&opcao=cadastrar"><span class="fa-user-add"></span> Cadastrar</a> </li>
-                            <li><a href="?pg=pesquisarprofessor"><span class="fa-search3"></span> Pesquisar</a></li>
+                            <li><a href="?pg=professores&opcao=pesquisar"><span class="fa-search3"></span> Pesquisar</a></li>
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><span class="fa-list2"></span> Listar</a>
                                 <ul class="dropdown-menu">

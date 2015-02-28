@@ -11,11 +11,11 @@ if (temPost() && isset($_POST['cadProfessor'])) {
     $dadosProfessor = array();
 
 //Validação  NOME
-    if (isset($_POST['nome']) && strlen($_POST['nome']) > 5) {
-        $dadosProfessor['nome'] = $_POST['nome'];
+    if (isset($_POST['nomeProfessor']) && strlen($_POST['nomeProfessor']) > 5) {
+        $dadosProfessor['nomeProfessor'] = $_POST['nomeProfessor'];
     } else {
         $temErros = true;
-        $errosValidacao['nome'] = ''
+        $errosValidacao['nomeProfessor'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>Nome do professor inválido!</h4>'
@@ -84,14 +84,14 @@ if (temPost() && isset($_POST['cadProfessor'])) {
 
 //-------- Validaçao Pesquisar professor -----------
 
-if (temPost() && isset($_POST['pesquisar'])) {
+if (temPost() && isset($_POST['pesquisa'])) {
     
 //Validação da nome professor
-    if (isset($_POST['pesquisaProfessor']) && strlen($_POST['pesquisaProfessor']) > 5) {
-        $dadosProfessor['pesquisaProfessor'] = $_POST['pesquisaProfessor'];
+    if (isset($_POST['nomeProfessorPesquisa']) && strlen($_POST['nomeProfessorPesquisa']) > 2) {
+        $dadosProfessor = $_POST['nomeProfessorPesquisa'];
     } else {
         $temErros = true;
-        $errosValidacao['pesquisaProfessor'] = ''
+        $errosValidacao['nomeProfessorPesquisa'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>Pesquisa invalida!</h4>'
@@ -100,13 +100,13 @@ if (temPost() && isset($_POST['pesquisar'])) {
     }
     if (!$temErros) {
         // Select no banco de dados
-        $listarProfessor = listarProfessor($conexao, $dadosAlunos);
+        $listarProfessor = listarProfessor($conexao, $dadosProfessor);
         $exibirTabela = TRUE;
     }
 }
 $dadosProfessor = array(
     'id' => 0,
-    'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',
+    'nomeProfessor' => (isset($_POST['nomeProfessor'])) ? $_POST['nomeProfessor'] : '',
     'dtNascimento' => (isset($_POST['dtNascimento'])) ? $_POST['dtNascimento'] : '',
     'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
     'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',

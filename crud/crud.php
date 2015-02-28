@@ -55,14 +55,14 @@ function editarAluno($conexao,$dadosAluno) {
 
 function inserirProfessor($conexao, $dados) {
     $sqlInserir = "insert into professor ("
-            . "nome, "
+            . "nomeProfessor, "
             . "dtNascimento, "
             . "rg, "
             . "cpf, "
             . "dtAdmissao"
             . ")"
             . "VALUES('"
-            . "{$dados['nome']}','"
+            . "{$dados['nomeProfessor']}','"
             . "{$dados['dtNascimento']}','"
             . "{$dados['rg']}','"
             . "{$dados['cpf']}','"
@@ -71,14 +71,18 @@ function inserirProfessor($conexao, $dados) {
     unset($_POST);
 }
 
+function listarProfessorPorId($conexao, $dadosProfessor) {
+    $sqlBuscar = "SELECT * FROM professor WHERE idProfessor = {$dadosProfessor['idProfessor']}";
+}
+
 function listarProfessor($conexao, $dadosProfessor) {
-    $sqlBuscar = "SELECT * FROM aluno WHERE nomeAluno LIKE '%" . $dadosProfessor . "%'";
+    $sqlBuscar = "SELECT * FROM professor WHERE nomeProfessor LIKE '%" . $dadosProfessor . "%'";
     $resultado = mysqli_query($conexao, $sqlBuscar);
-    $resAluno = array();
+    $resProfessor = array();
     while ($registro = mysqli_fetch_assoc($resultado)) {
-        $resAluno[] = $registro;
+        $resProfessor[] = $registro;
     }
-    return $resAluno;
+    return $resProfessor;
 }
 
 //--------------------Funções  TURMA -------------------

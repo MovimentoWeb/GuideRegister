@@ -193,7 +193,6 @@ if (!isset($_GET['opcao'])) {
                             <li>
                                 <div class="input-append">
                                     <input name="nomeAlunoPesquisa" placeholder="Digite um nome para pesquisa..." type="text" class="search-query input-block-level" autofocus="">
-
                                     <input type="hidden" name="pesquisar"/>
                                     <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                                 </div>
@@ -247,8 +246,6 @@ if (!isset($_GET['opcao'])) {
                         echo '0 - Resultados encontrados';
                     }
                     ?>
-
-
                 </div>
             </div>
             <?php

@@ -5,6 +5,7 @@ if (!isset($_GET['opcao'])) {
     
 } else {
     switch ($_GET['opcao']) {
+        
         case'cadastrar':
             ?>
             <div class="professores well">
@@ -14,12 +15,12 @@ if (!isset($_GET['opcao'])) {
                     <ul>
                         <li>
                             <label for="nome">Nome do professor:
-                                <?php if ($temErros && isset($errosValidacao['nome'])) : ?>
+                                <?php if ($temErros && isset($errosValidacao['nomeProfessor'])) : ?>
                                     <span class="erro">
-                                        <?php echo $errosValidacao['nome']; ?>
+                                        <?php echo $errosValidacao['nomeProfessor']; ?>
                                     </span>
                                 <?php endif; ?>    
-                                <input class="input-block-level" id="nome" name="nome" type="text" value="<?php echo $dadosProfessor['nome'] ?>" placeholder="Nome"  />
+                                <input class="input-block-level" id="nomeProfessor" name="nomeProfessor" type="text" value="<?php echo $dadosProfessor['nomeProfessor'] ?>" placeholder="Nome"  />
                             </label>
                         </li>
                         <li>
@@ -81,12 +82,12 @@ if (!isset($_GET['opcao'])) {
                     <ul>
                         <li>
                             <label for="">Nome do professor:
-                                <?php if ($temErros && isset($errosValidacao['nome'])) : ?>
+                                <?php if ($temErros && isset($errosValidacao['nomeProfessor'])) : ?>
                                     <span class="erro">
-                                        <?php echo $errosValidacao['nome']; ?>
+                                        <?php echo $errosValidacao['nomeProfessor']; ?>
                                     </span>
                                 <?php endif; ?>    
-                                <input class="input-block-level" name="nome" type="text" value="<?php echo $dadosProfessor['nome'] ?>" placeholder="Nome"  />
+                                <input class="input-block-level" name="nomeProfessor" type="text" value="<?php echo $dadosProfessor['nomeProfessor'] ?>" placeholder="Nome"  />
                             </label>
                         </li>
                         <li>
@@ -147,263 +148,112 @@ if (!isset($_GET['opcao'])) {
 
         case 'pesquisar':
             ?>
-            <!--<Cadastro do aluno> Inicio da pagina cadastro do aluno-->
             <div class="PesquisarProfessor">
                 <div class="well">  
-                    <form class="form-search">
+                    <form class="form-search" method="post">
                         <legend><span class="fa-search3"></span>  Pesquisar Professor</legend>
-                        <?php if ($temErros && isset($errosValidacao['pesquisaProfessor'])) : ?>
+                        <?php if ($temErros && isset($errosValidacao['nomeProfessorPesquisa'])) : ?>
                             <span class="erro">
-                                <?php echo $errosValidacao['pesquisaProfessor']; ?>
+                                <?php echo $errosValidacao['nomeProfessorPesquisa']; ?>
                             </span>
                         <?php endif; ?>
                         <span class="help-block">Digite um nome de professor para pesquisa</span>
                         <ul>
                             <li>
                                 <div class="input-append">
-                                    <input name="pesquisaProfessor" type="text" class="search-query input-block-level">
-                                    <input type="hidden" name="pesquisar"/>
+                                    <input name="nomeProfessorPesquisa" placeholder="Digite um nome para pesquisa..." type="text" class="search-query input-block-level" autofocus="">
+                                    <input type="hidden" name="pesquisa"/>
                                     <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                                 </div>
                             </li>
                         </ul>  
                     </form>
-                    <table class="table table-hover">
-                        <caption>Título dos resultados</caption>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Detalhes</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Resultado 1</td>
-                                <td>
-                                    <p><strong>Turma:</strong> Nome da turma + PA</p>
-                                </td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <!-- Links de menu dropdown -->
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Resultado 2</td>
-                                <td>Detalhes do resultado 2</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <!-- Links de menu dropdown -->
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Resultado 3</td>
-                                <td>Detalhes do resultado 3</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <!-- Links de menu dropdown -->
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Resultado 4</td>
-                                <td>Detalhes do resultado 4</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                                            Ação
-                                            <span class="caret"></span>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="?pg=aluno&opcao=dadosAluno" class="fa-delicious"> Ver detalhes</a></li>
-                                            <li><a href="#" class="fa-remove"> Desativar Aluno</a></li>
-                                            <li><a href="#" class="fa-aid"> Adicionar justificativa</a></li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
+                    
+                    <!--        Resultado das pesquisas-->
+                    <?php
+                    if ($exibirTabela == TRUE) {
+                        ?>
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Detalhes</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($listarProfessor as $professor):
+                                    ?>
+                                    <tr>
+                                        <td><?php echo $professor['nomeProfessor'] ?></td>
+                                        <td>Detalhes do resultado 4</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                                    Ação
+                                                    <span class="caret"></span>
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="?pg=professorer&opcao=detalhes&detalhes=<?php echo $professor['idProfessor'] ?>" class="fa-delicious"> Ver detalhes</a></li>
+                                                    <li><a href="?pg=professorer&opcao=desativar&desativar=<?php echo $professor['idProfessor'] ?>"  class="fa-remove"> Desativar Aluno</a></li>
+                                                    <li><a href="?pg=professorer&opcao=editar&edit=<?php echo $professor['idProfessor'] ?>" class="fa-pencil"> Editar aluno</a></li>
+                                                    <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa&just=<?php echo 'idProfessor'; ?>"  class="fa-aid"> Adicionar justificativa</a></li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>    
+                                    <?php
+                                endforeach;
+                                ?>
+                            </tbody>
+                        </table>
+                        <?php
+                    }else {
 
-                        </tbody>
-                    </table>
+                        echo '0 - Resultados encontrados';
+                    }
+                    ?>
                 </div>
             </div>
-            <?php
-            break;
-
-        case 'listas';
-            ?>
-            <div class="well">
-                <legend><span class="fa-user-add"></span> Lista de Professores</legend>
-                <table class="table table-striped table-hover">
-                    <thead>
-                        <tr>                            
-                            <th>Nome do Professor</th>
-                            <th>Detalhes</th>
-                            <th>Ações</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Reginaldo</td>
-                            <td>Mark</td>
-                            <td>
-                                <div class="btn-group">
-                                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
-                                        Ação
-                                        <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <!-- Links de menu dropdown -->
-                                        <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
-                                        <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
-                                        <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
-                                        <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Sidney</td>
-                            <td>Jacob</td>
-                            <td>
-                                <div class="btn-group">
-                                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
-                                        Ação
-                                        <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <!-- Links de menu dropdown -->                    
-                                        <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
-                                        <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
-                                        <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
-                                        <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
-                                    </ul>                                 
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Altemar</td>
-                            <td>Larry</td>
-                            <td>
-                                <div class="btn-group">
-                                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
-                                        Ação
-                                        <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <!-- Links de menu dropdown -->
-                                        <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
-                                        <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
-                                        <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
-                                        <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
-                                    </ul>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
             <?php
             break;
 
         case 'detalhes':
             
             ?>
-            <div id="detalhesMeus" class="containerAluno ">
-                <form method="post" class="well">
+            <div class="containerAluno ">
+                <form class="well">
                     <legend><span class="icon-tasks"></span> Dados do aluno</legend>
-                    <div class="row-fluid">
-                        <label class="edicao">
-                            <div class="span3">Nome do aluno:</div>
-                            <div class="span9 control-group info">
-                                <div class="controls">
-                                    <span class="help-inline"> Nome do aluno</span>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="row-fluid">
-                        <label class="edicao">
-                            <div class="span3">Disciplina:</div>
-                            <div class="span9 control-group info">
-                                <div class="controls">
-                                    <span class="help-inline"> Nome do aluno</span>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="row-fluid">
-                        <label class="edicao">
-                            <div class="span3">Código da turma:</div>
-                            <div class="span9 control-group info">
-                                <div class="controls">
-                                    <span class="help-inline"> Nome do aluno</span>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="row-fluid">
-                        <label class="edicao">
-                            <div class="span3">Curso:</div>
-                            <div class="span9 control-group info">
-                                <div class="controls">
-                                    <span class="help-inline"> Nome do aluno</span>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="row-fluid">
-                        <label class="edicao">
-                            <div class="span3">Matricula:</div>
-                            <div class="span9 control-group info">
-                                <div class="controls">
-                                    <span class="help-inline"> Nome do aluno</span>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
 
-                    <div class="row-fluid">
-                        <label class="edicao">
-                            <div class="span3">Periodo:</div>
-                            <div class="span9 control-group info">
-                                <div class="controls">
-                                    <span class="help-inline"> Nome do aluno</span>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
+                    <label for="">
+                        Nome do Professor:
+                        <input type="" name="nomeProfessor" disabled=""/>
+                    </label>
 
-                    <div class="input">
-                        <input type="submit" class="btn btn-primary" value="Voltar" />
-                    </div>
-            </div>
-            </form>
+                    Disciplina:
+                    <label for=""></label>
+                    Codigo da Turma:
+                    <label for=""></label>
+                    Curso: 
+                    <label for=""></label>
+                    Matr: 
+                    <label for=""></label>
+                    Periodo: 
+                    <label for=""></label>
+
+                    <input type="button" class=" btn btn-primary span2" value="Enviar" />
+                </form>
             </div>
             <?php
             break;
     
+        case 'desativar':
+            ?>
+            desativar aluno
+            <?php
+            break;
+        
         default :
             include_once 'telas/inicial.php';
             break;
