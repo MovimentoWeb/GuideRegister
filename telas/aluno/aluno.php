@@ -91,10 +91,11 @@ if (!isset($_GET['opcao'])) {
             break;
 
         case'editar':
+
+            $dadosAluno = listarAlunoPorId($conexao, $_GET['idAluno']);
             ?>
             <div class="conteinerAluno">
                 <form class="well" method="post">
-
                     <legend><span class="fa-user-add"></span> Cadastro de alunos</legend>
                     <span class="help-block">Preencha corretamente os campos abaixo com os dados do aluno. </span>
                     <ul>
@@ -226,7 +227,7 @@ if (!isset($_GET['opcao'])) {
                                                     <span class="caret"></span>
                                                 </a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="?pg=aluno&opcao=detalhes&idAluno=<?php echo $aluno['idAluno'] ?>" class="fa-delicious"> Ver detalhes</a></li>
+                                                    <li><a href="?pg=aluno&opcao=detalhes&detalhes=<?php echo $aluno['idAluno'] ?>" class="fa-delicious"> Ver detalhes</a></li>
                                                     <li><a href="?pg=aluno&opcao=desativar&desativar=<?php echo $aluno['idAluno'] ?>"  class="fa-remove"> Desativar Aluno</a></li>
                                                     <li><a href="?pg=aluno&opcao=editar&edit=<?php echo $aluno['idAluno'] ?>" class="fa-pencil"> Editar aluno</a></li>
                                                     <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa&just=<?php echo 'idAluno'; ?>"  class="fa-aid"> Adicionar justificativa</a></li>
@@ -254,24 +255,24 @@ if (!isset($_GET['opcao'])) {
             ?>
             <div class="containerAluno ">
                 <form class="well">
-                    <legend><span class="fa-user3"></span> Dados do aluno</legend>
-                 
-                        <label for="">
-                            Nome do aluno:
-                            <input type="" name="nomeAluno" disabled="" value="<?php echo $AlunoId['nomeAluno']?>"/>
-                        </label>
+                    <legend><span class="icon-tasks"></span> Dados do aluno</legend>
 
-                        Disciplina:
-                        <label for=""></label>
-                        Codigo da Turma:
-                        <label for=""></label>
-                        Curso: 
-                        <label for=""></label>
-                        Matr: 
-                        <label for=""></label>
-                        Periodo: 
-                        <label for=""></label>
-                   
+                    <label for="">
+                        Nome do aluno:
+                        <input type="" name="nomeAluno" disabled=""/>
+                    </label>
+
+                    Disciplina:
+                    <label for=""></label>
+                    Codigo da Turma:
+                    <label for=""></label>
+                    Curso: 
+                    <label for=""></label>
+                    Matr: 
+                    <label for=""></label>
+                    Periodo: 
+                    <label for=""></label>
+
                     <input type="button" class=" btn btn-primary span2" value="Enviar" />
                 </form>
             </div>

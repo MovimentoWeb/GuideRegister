@@ -6,7 +6,7 @@ include_once 'telas/includes/funcoesDeApoio.php';
 $temErros = false;
 $errosValidacao = array();
 $exibirTabela = FALSE;
-
+$listaAluno;
 
 
 
@@ -219,13 +219,6 @@ if (temPost() && isset($_POST['EditAluno'])) {
 }
 
 //-------- Validaçao Excluir Aluno-----------
-//-------- Detalhes Aluno-----------
-
-if (isset($_GET['idAluno']) && isset($_GET['idAluno']) != '') {
-    $AlunoId = array();
-    $AlunoId['idAluno'] = $_GET['idAluno'];
-}
-$AlunoId = listarAlunoPorId($conexao, $AlunoId['idAluno']);
 
 
 
