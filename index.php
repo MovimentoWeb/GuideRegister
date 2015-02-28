@@ -71,7 +71,13 @@
                     case 'avisosEjustificativas':
                         include_once './telas/avisosEjustificativas/avisosEjustificativas.php';
                         break;
-
+                    
+//--------------------------------- Gabriel - Creditos-----------------------------
+                    
+                    case 'creditos':
+                        include_once './telas/includes/creditos.php';
+                        break;
+                    
 // -------------------------------- Default ---------------------------------               
 
                     default:

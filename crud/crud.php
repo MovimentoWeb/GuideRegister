@@ -5,8 +5,19 @@ include_once 'crud/conexao.php';
 //--------------------Funções  ALUNO -------------------
 
 function inserirAluno($conexao, $dados) {
-    $sqlInserir = "insert into aluno (nomeAluno, matricula, dtNascimento, cpf, rg)"
-            . "VALUES('{$dados['nomeAluno']}','{$dados['matricula']}','{$dados['dtNascimento']}','{$dados['cpf']}','{$dados ['rg']}')";
+    $sqlInserir = "insert into aluno ("
+            . "nomeAluno, "
+            . "matricula, "
+            . "dtNascimento, "
+            . "cpf, "
+            . "rg"
+            . ")"
+            . "VALUES('"
+            . "{$dados['nomeAluno']}','"
+            . "{$dados['matricula']}','"
+            . "{$dados['dtNascimento']}','"
+            . "{$dados['cpf']}','"
+            . "{$dados ['rg']}')";
     mysqli_query($conexao, $sqlInserir);
     unset($_POST);
 }
@@ -38,18 +49,12 @@ function editarAluno($conexao,$dadosAluno) {
             . "WHERE idAluno = {$dadosAluno['idAluno']}";
 }
 
-function buscarTarefas($conexao) {
-    $sqlBusca = ' SELECT * FROM tarefas';
-    $resultado = mysqli_query($conexao, $sqlBusca);
-
-    $conjuntoDeTarefas = array();
-    while ($tarefa = mysqli_fetch_assoc($resultado)) {
-        $conjuntoDeTarefas[] = $tarefa;
-    }
-    return $conjuntoDeTarefas;
-}
 
 //--------------------Funções  PROFESSOR -------------------
+
+
+
+
 //--------------------Funções  TURMA -------------------
 
 
