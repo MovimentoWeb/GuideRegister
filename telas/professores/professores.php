@@ -1,4 +1,5 @@
 <?php
+include_once 'crud/crud.php';
 include_once 'telas/professores/validacaoProfessor.php';
 if (!isset($_GET['opcao'])) {
     
@@ -18,7 +19,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['nome']; ?>
                                     </span>
                                 <?php endif; ?>    
-                                <input class="input-block-level" id="nome" name="nome" type="text" value="<?php echo $projeto['nome'] ?>" placeholder="Nome"  />
+                                <input class="input-block-level" id="nome" name="nome" type="text" value="<?php echo $dadosProfessor['nome'] ?>" placeholder="Nome"  />
                             </label>
                         </li>
                         <li>
@@ -28,7 +29,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['dtNascimento']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input class="input-block-level" id="dtNascimento" name="dtNascimento" value="<?php echo $projeto['dtNascimento'] ?>" type="text" placeholder="Data de nascimento"  />
+                                <input class="input-block-level" id="dtNascimento" name="dtNascimento" value="<?php echo $dadosProfessor['dtNascimento'] ?>" type="text" placeholder="Data de nascimento"  />
                             </label>
                         </li>
                         <li>
@@ -38,7 +39,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['rg']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input class="input-block-level" id="rg" name="rg" value="<?php echo $projeto['rg'] ?>" type="text" placeholder="RG"  />
+                                <input class="input-block-level" id="rg" name="rg" value="<?php echo $dadosProfessor['rg'] ?>" type="text" placeholder="RG"  />
                             </label>
                         </li>
                         <li>
@@ -48,7 +49,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['cpf']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input class="input-block-level" id="cpf" name="cpf" value="<?php echo $projeto['rg'] ?>" type="text" placeholder="CPF"  />
+                                <input class="input-block-level" id="cpf" name="cpf" value="<?php echo $dadosProfessor['cpf'] ?>" type="text" placeholder="CPF"  />
                             </label>
                         </li>
                         <li>
@@ -58,11 +59,13 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['dtAdmissao']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input class="input-block-level" id="dtAdmissao" name="dtAdmissao" value="<?php echo $projeto['dtAdmissao'] ?>" type="text" placeholder="Data de admissão"  />
+                                <input class="input-block-level" id="dtAdmissao" name="dtAdmissao" value="<?php echo $dadosProfessor['dtAdmissao'] ?>" type="text" placeholder="Data de admissão"  />
                             </label>
                         </li>              
                     </ul>
-                    <input class="btn btn-primary " type="submit" value="Enviar" />
+                    <a href="index.php" class="btn btn-info"><span class="fa-home"></span> Voltar a página inicial</a>
+                    <input type="hidden" name="cadProfessor"/>
+                    <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
             </div>
             <?php
@@ -83,7 +86,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['nome']; ?>
                                     </span>
                                 <?php endif; ?>    
-                                <input class="input-block-level" name="nome" type="text" value="<?php echo $projeto['nome'] ?>" placeholder="Nome"  />
+                                <input class="input-block-level" name="nome" type="text" value="<?php echo $dadosProfessor['nome'] ?>" placeholder="Nome"  />
                             </label>
                         </li>
                         <li>
@@ -93,7 +96,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['dtNascimento']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input class="input-block-level" name="dtNascimento" value="<?php echo $projeto['dtNascimento'] ?>" type="text" placeholder="Data de nascimento"  />
+                                <input class="input-block-level" name="dtNascimento" value="<?php echo $dadosProfessor['dtNascimento'] ?>" type="text" placeholder="Data de nascimento"  />
                             </label>
                         </li>
                         <li>
@@ -103,7 +106,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['rg']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input class="input-block-level" name="rg" value="<?php echo $projeto['rg'] ?> "type="text" placeholder="RG"  />
+                                <input class="input-block-level" name="rg" value="<?php echo $dadosProfessor['rg'] ?> "type="text" placeholder="RG"  />
                             </label>
                         </li>
                         <li>
@@ -113,7 +116,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['cpf']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input class="input-block-level" name="cpf" value="<?php echo $projeto['rg'] ?>" type="text" placeholder="CPF"  />
+                                <input class="input-block-level" name="cpf" value="<?php echo $dadosProfessor['rg'] ?>" type="text" placeholder="CPF"  />
                             </label>
                         </li>
                         <li>
@@ -123,7 +126,7 @@ if (!isset($_GET['opcao'])) {
                                         <?php echo $errosValidacao['dtAdmissao']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input class="input-block-level" name="dtAdmissao" value="<?php echo $projeto['dtAdmissao'] ?>" type="text" placeholder="Data de admissão"  />
+                                <input class="input-block-level" name="dtAdmissao" value="<?php echo $dadosProfessor['dtAdmissao'] ?>" type="text" placeholder="Data de admissão"  />
                             </label>
                         </li>
                         <li>
@@ -149,13 +152,18 @@ if (!isset($_GET['opcao'])) {
                 <div class="well">  
                     <form class="form-search">
                         <legend><span class="fa-search3"></span>  Pesquisar Professor</legend>
+                        <?php if ($temErros && isset($errosValidacao['pesquisaProfessor'])) : ?>
+                            <span class="erro">
+                                <?php echo $errosValidacao['pesquisaProfessor']; ?>
+                            </span>
+                        <?php endif; ?>
                         <span class="help-block">Digite um nome de professor para pesquisa</span>
                         <ul>
                             <li>
                                 <div class="input-append">
-                                    <input type="text" class="search-query input-block-level">
-                                    <!--<button type="submit" class="btn btn-primary">Busca</button>-->
-                                    <a href="?pg=dadosAluno" class="btn btn-primary"> Buscar</a>
+                                    <input name="pesquisaProfessor" type="text" class="search-query input-block-level">
+                                    <input type="hidden" name="pesquisar"/>
+                                    <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                                 </div>
                             </li>
                         </ul>  
@@ -394,6 +402,10 @@ if (!isset($_GET['opcao'])) {
             </form>
             </div>
             <?php
+            break;
+    
+        default :
+            include_once 'telas/inicial.php';
             break;
     }
 }

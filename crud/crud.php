@@ -53,7 +53,33 @@ function editarAluno($conexao,$dadosAluno) {
 //--------------------Funções  PROFESSOR -------------------
 
 
+function inserirProfessor($conexao, $dados) {
+    $sqlInserir = "insert into professor ("
+            . "nome, "
+            . "dtNascimento, "
+            . "rg, "
+            . "cpf, "
+            . "dtAdmissao"
+            . ")"
+            . "VALUES('"
+            . "{$dados['nome']}','"
+            . "{$dados['dtNascimento']}','"
+            . "{$dados['rg']}','"
+            . "{$dados['cpf']}','"
+            . "{$dados ['dtAdmissao']}')";
+    mysqli_query($conexao, $sqlInserir);
+    unset($_POST);
+}
 
+function listarProfessor($conexao, $dadosProfessor) {
+    $sqlBuscar = "SELECT * FROM aluno WHERE nomeAluno LIKE '%" . $dadosProfessor . "%'";
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    $resAluno = array();
+    while ($registro = mysqli_fetch_assoc($resultado)) {
+        $resAluno[] = $registro;
+    }
+    return $resAluno;
+}
 
 //--------------------Funções  TURMA -------------------
 
@@ -61,16 +87,6 @@ function editarAluno($conexao,$dadosAluno) {
 
 function listarAviso($conexao, $id) {
     $sqlBuscar = 'SELECT * FROM aviso WHERE id = ';
-    $resultado = msyqli_query($conexao, $sqlBuscar);
-    $projeto = array();
-    while ($projeto = mysqli_fetch_assoc($resultado)) {
-        $projeto[] = $projeto;
-    }
-    return $projeto;
-}
-
-function listarProfessor($conexao, $id) {
-    $sqlBuscar = 'SELECT * FROM professor WHERE id = ';
     $resultado = msyqli_query($conexao, $sqlBuscar);
     $projeto = array();
     while ($projeto = mysqli_fetch_assoc($resultado)) {
