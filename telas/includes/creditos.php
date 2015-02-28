@@ -1,4 +1,7 @@
 <div class="well creditos">
+    <legend>
+        <h1 class="fa-user"> Desenvolvedores Do Sistema</h1>
+    </legend>
     <div class="row-fluid">
         <img src="img/alexsander.jpg" class="img img-polaroid img-rounded span3">
         <h2>Alexsander André Da Silva</h2>
@@ -103,7 +106,7 @@
         <h2>Taynara Maria Vieira Cavalcanti</h2>
         <p>Facebook: <a href="https://www.facebook.com/TayCavalcanti?fref=ts">Taynara</a></p>
         <p>Telefone: (81) 9715-6839</p>
-        <p>E-mail: taynara.maria.cavalcanti@hotmail.com</p>  
+        <p>E-mail: taynara.maria.cavalcanti@hotmail.com</p>
     </div>
     <hr />
     <!------------------------proxima pessoa--------------------------------------->
@@ -115,5 +118,4 @@
         <p>Site: <a href="http://www.movimentoweb.com.br/">Movimento Web</a></p>
         <p>E-mail: reginaldo_963@gmail.com</p>  
     </div>
-    <hr />
 </div>
