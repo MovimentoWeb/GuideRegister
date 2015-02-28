@@ -315,6 +315,7 @@ if (!isset($_GET['opcao'])) {
                     </tbody>
                 </table>
             </div>
+
         <?php
             break;
         
@@ -325,30 +326,56 @@ if (!isset($_GET['opcao'])) {
                     <legend><span class="icon-tasks"></span> Dados do aluno</legend>
                     <div class="row-fluid">
                         <label class="edicao">
-                            Nome do aluno:
-                            <input type="" name="nomeAluno" disabled=""/>
+                            <div class="span3">Nome do aluno:</div>
+                            <div class="control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                </div>
+                            </div>
                         </label>
-                        <label class="edicao1">
-                            Disciplina:
-                            <input type="" name="nomeAluno" disabled=""/>
+                        <label class="edicao">
+                            <div class="span3">Disciplina:</div>
+                            <div class="control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                </div>
+                            </div>
                         </label>
-                        <label class="edicao2">
-                            ID da Turma:
-                            <input type="" name="nomeAluno" disabled=""/>
+                        <label class="edicao">
+                            <div class="span3">Código da turma:</div>
+                            <div class="control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                </div>
+                            </div>
                         </label>
-                        <label class="edicao3">
-                            Curso:
-                            <input type="" name="nomeAluno" disabled=""/>
+                        <label class="edicao">
+                            <div class="span3">Curso:</div>
+                            <div class="control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                </div>
+                            </div>
                         </label>
-                        <label class="edicao4">
-                            Matricula:
-                            <input type="" name="nomeAluno" disabled=""/>
+                        <label class="edicao">
+                            <div class="span3">Matricula:</div>
+                            <div class="control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                </div>
+                            </div>
                         </label>
-                        <label class="edicao5">
-                            Periodo:
-                            <input type="" name="nomeAluno" disabled=""/>
+                        <label class="edicao">
+                            <div class="span3">Periodo:</div>
+                            <div class="control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                </div>
+                            </div>
                         </label>
-                        <input type="button" class="btn btn-primary span2" value="Voltar" />
+                        <div class="input">
+                            <input type="submit" class="btn-block" value="Voltar" />
+                        </div>
                     </div>
                 </form>
             </div>
