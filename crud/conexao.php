@@ -5,7 +5,7 @@ $bdSenha = '';
 $bdBanco = 'guideregister';
 $conexao = mysqli_connect($bdServidor, $bdUsario, $bdSenha, $bdBanco);
 
-if (mysqli_connect_errno($conexao)) {
+if (mysqli_connect_error($conexao)) {
     echo"Problemas para conectar no banco.Verifique os dados!";
 }
 

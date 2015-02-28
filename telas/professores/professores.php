@@ -60,16 +60,7 @@ if (!isset($_GET['opcao'])) {
                                 <?php endif; ?>
                                 <input class="input-block-level" id="dtAdmissao" name="dtAdmissao" value="<?php echo $projeto['dtAdmissao'] ?>" type="text" placeholder="Data de admissão"  />
                             </label>
-                        </li>
-                        <li>
-                            <label>Turno</label>
-                            <select>
-                                <option value="">Selecione um turno</option>
-                                <option value="">Manhã</option>
-                                <option value="">Tarde</option>
-                                <option value="">Noite</option>
-                            </select>
-                        </li>               
+                        </li>              
                     </ul>
                     <input class="btn btn-primary " type="submit" value="Enviar" />
                 </form>
@@ -251,36 +242,157 @@ if (!isset($_GET['opcao'])) {
             <?php
             break;
 
-        case 'dadosAluno':
+        case 'listas';
             ?>
-            <div class="containerAluno ">
-                <form class="well">
-                    <legend><span class="icon-tasks"></span> Dados Da Turma</legend>
-                    Turma:
-                    <label for=""></label>
-                    Professor:
-                    <label for=""></label>
-                    Codigo da Turma:
-                    <label for=""></label>
-                    Carga Horaria: 
-                    <label for=""></label>
-                    Turno: 
-                    <label for=""></label>
-                    Periodo: 
-                    <label for=""></label>
+            <div class="well">
+                <legend><span class="fa-user-add"></span> Lista de Professores</legend>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>                            
+                            <th>Nome do Professor</th>
+                            <th>Detalhes</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Reginaldo</td>
+                            <td>Mark</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+                                        Ação
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <!-- Links de menu dropdown -->
+                                        <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
+                                        <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
+                                        <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
+                                        <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sidney</td>
+                            <td>Jacob</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+                                        Ação
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <!-- Links de menu dropdown -->                    
+                                        <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
+                                        <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
+                                        <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
+                                        <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
+                                    </ul>                                 
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Altemar</td>
+                            <td>Larry</td>
+                            <td>
+                                <div class="btn-group">
+                                    <a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="#">
+                                        Ação
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <!-- Links de menu dropdown -->
+                                        <li><a href="?pg=aluno&opcao=detalhes" class="fa-delicious"> Ver detalhes</a></li>
+                                        <li><a href="?pg=aluno&opcao=desativar" class="fa-remove"> Desativar Aluno</a></li>
+                                        <li><a href="?pg=aluno&opcao=editar" class="fa-pencil"> Editar aluno</a></li>
+                                        <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa" class="fa-aid"> Adicionar justificativa</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                    <input type="button" class=" btn btn-primary span2" value="Enviar" />
-                </form>
-            </div>
-            </div>
-            </div>
             <?php
             break;
 
-
-        default :
+        case 'detalhes':
+            
             ?>
-            <h1>ahsiahusas</h1>
+            <div id="detalhesMeus" class="containerAluno ">
+                <form method="post" class="well">
+                    <legend><span class="icon-tasks"></span> Dados do aluno</legend>
+                    <div class="row-fluid">
+                        <label class="edicao">
+                            <div class="span3">Nome do aluno:</div>
+                            <div class="span9 control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"> Nome do aluno</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="row-fluid">
+                        <label class="edicao">
+                            <div class="span3">Disciplina:</div>
+                            <div class="span9 control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"> Nome do aluno</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="row-fluid">
+                        <label class="edicao">
+                            <div class="span3">Código da turma:</div>
+                            <div class="span9 control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"> Nome do aluno</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="row-fluid">
+                        <label class="edicao">
+                            <div class="span3">Curso:</div>
+                            <div class="span9 control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"> Nome do aluno</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="row-fluid">
+                        <label class="edicao">
+                            <div class="span3">Matricula:</div>
+                            <div class="span9 control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"> Nome do aluno</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="row-fluid">
+                        <label class="edicao">
+                            <div class="span3">Periodo:</div>
+                            <div class="span9 control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"> Nome do aluno</span>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="input">
+                        <input type="submit" class="btn btn-primary" value="Voltar" />
+                    </div>
+            </div>
+            </form>
+            </div>
             <?php
             break;
     }

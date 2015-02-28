@@ -13,6 +13,7 @@
 
             <ul class="nav">
                 <li><a class="brand"  href="?pg=avisosEjustificativas&opcao=meusAvisos"><span class="fa-bell"></span></a></li>
+                <li><a class="brand"  href="?pg=creditos"><span class="fa-coin"></span></a></li>
             </ul>
             <!-- Tudo que você queira escondido em 940px ou menos, coloque aqui -->
             <div class="nav-collapse pull-right">
@@ -55,9 +56,9 @@
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><span class="fa-list2"></span> Listar</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="?pg=professores&opcao=lista">Listas</a></li>
+                                    <li><a href="?pg=professores&opcao=listas">Listas</a></li>
                                     <li><a href="">Pesquisa do Professor</a></li>
-                                    <li><a href="">Resultados</a></li>
+                                    <li><a href="?pg=professores&opcao=detalhes">Detalhe do professor</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -70,7 +71,8 @@
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
 
-                            <li ><a href="?pg=turmas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar turmas</a></li>
+                            <li ><a href="?pg=turmas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar Turmas</a></li>
+                            <li ><a href="?pg=turmas&opcao=Disciplina"> <i class="fa-plus"></i> Cadastrar Disciplina</a></li>
                             <li><a href="?pg=turmas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
                         </ul>
                     </div>  
@@ -83,9 +85,8 @@
                         </a>
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
-                            <li ><a href="?pg=relatorios&opcao=pesquisarPorAluno">Pesquisar por aluno</a> </li>
-                            <li ><a href="?pg=relatorios&opcao=atasPorTurmas">Ata por turmas</a> </li>
-                            <li ><a href="?pg=relatorios&opcao=pesquisarDisciplinas">Pesquisar por disciplinas</a> </li>
+                            <li ><a href="?pg=relatorios&opcao=atasPorTurmas"><span class="fa-list" ></span>   Ata por turmas</a> </li>
+                            <li ><a href="?pg=relatorios&opcao=pesquisarDisciplinas"><span class="fa-search3"></span> Pesquisar por disciplinas</a> </li>
                         </ul>
                     </div>  
 

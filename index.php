@@ -48,6 +48,9 @@
                     case 'pesquisarprofessor':
                         include_once './telas/professores/Pesquisar.php';
                         break;
+                    case 'detalhes':
+                        include_once './telas/professores/professores.php';
+                        break;
 
 
 // -------------------------------- Tela aluno -------------------------   
@@ -68,7 +71,13 @@
                     case 'avisosEjustificativas':
                         include_once './telas/avisosEjustificativas/avisosEjustificativas.php';
                         break;
-
+                    
+//--------------------------------- Gabriel - Creditos-----------------------------
+                    
+                    case 'creditos':
+                        include_once './telas/includes/creditos.php';
+                        break;
+                    
 // -------------------------------- Default ---------------------------------               
 
                     default:
