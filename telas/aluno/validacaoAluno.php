@@ -98,7 +98,6 @@ if (temPost() && isset($_POST['cadAluno'])) {
     if (!$temErros) {
         // Função de inserir no banco de dados
         inserirAluno($conexao, $dadosAlunos);
-
         die();
     }
 }
