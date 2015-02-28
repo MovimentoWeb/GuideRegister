@@ -316,10 +316,11 @@ if (!isset($_GET['opcao'])) {
                 </table>
             </div>
 
-        <?php
+            <?php
             break;
-        
+
         case 'detalhes':
+            
             ?>
             <div id="detalhesMeus" class="containerAluno ">
                 <form method="post" class="well">
@@ -327,57 +328,70 @@ if (!isset($_GET['opcao'])) {
                     <div class="row-fluid">
                         <label class="edicao">
                             <div class="span3">Nome do aluno:</div>
-                            <div class="control-group info">
+                            <div class="span9 control-group info">
                                 <div class="controls">
-                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                    <span class="help-inline"> Nome do aluno</span>
                                 </div>
                             </div>
                         </label>
+                    </div>
+                    <div class="row-fluid">
                         <label class="edicao">
                             <div class="span3">Disciplina:</div>
-                            <div class="control-group info">
+                            <div class="span9 control-group info">
                                 <div class="controls">
-                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                    <span class="help-inline"> Nome do aluno</span>
                                 </div>
                             </div>
                         </label>
+                    </div>
+                    <div class="row-fluid">
                         <label class="edicao">
                             <div class="span3">Código da turma:</div>
-                            <div class="control-group info">
+                            <div class="span9 control-group info">
                                 <div class="controls">
-                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                    <span class="help-inline"> Nome do aluno</span>
                                 </div>
                             </div>
                         </label>
+                    </div>
+                    <div class="row-fluid">
                         <label class="edicao">
                             <div class="span3">Curso:</div>
-                            <div class="control-group info">
+                            <div class="span9 control-group info">
                                 <div class="controls">
-                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                    <span class="help-inline"> Nome do aluno</span>
                                 </div>
                             </div>
                         </label>
+                    </div>
+                    <div class="row-fluid">
                         <label class="edicao">
                             <div class="span3">Matricula:</div>
-                            <div class="control-group info">
+                            <div class="span9 control-group info">
                                 <div class="controls">
-                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                    <span class="help-inline"> Nome do aluno</span>
                                 </div>
                             </div>
                         </label>
+                    </div>
+
+                    <div class="row-fluid">
                         <label class="edicao">
                             <div class="span3">Periodo:</div>
-                            <div class="control-group info">
+                            <div class="span9 control-group info">
                                 <div class="controls">
-                                    <span class="help-inline"><input class="input-block-level" type="text" disabled=""></span>
+                                    <span class="help-inline"> Nome do aluno</span>
                                 </div>
                             </div>
                         </label>
-                        <div class="input">
-                            <input type="submit" class="btn-block" value="Voltar" />
-                        </div>
                     </div>
-                </form>
+
+                    <div class="input">
+                        <input type="submit" class="btn btn-primary" value="Voltar" />
+                    </div>
+            </div>
+            </form>
             </div>
             <?php
             break;

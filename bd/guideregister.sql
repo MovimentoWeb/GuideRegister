@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-02-27 19:17:20
+Date: 2015-02-28 11:22:13
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,7 +35,7 @@ CREATE TABLE `aluno` (
   `disciplina` varchar(255) DEFAULT NULL,
   `ativo` bit(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`idAluno`,`cpf`,`matricula`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of aluno
@@ -112,6 +112,7 @@ INSERT INTO `aluno` VALUES ('69', '123456', 'Fuinha MendonÃ§a de lima', '0000-
 INSERT INTO `aluno` VALUES ('70', '123456', 'Fuinha MendonÃ§a de lima', '0000-00-00', '2147483647', '2147483647', '2015-02-27 09:27:47', '0000-00-00 00:00:00', null, null, null, null, null, '');
 INSERT INTO `aluno` VALUES ('71', '123456', 'Fuinha', '0000-00-00', '2147483647', '2147483647', '2015-02-27 09:28:14', '0000-00-00 00:00:00', null, null, null, null, null, '');
 INSERT INTO `aluno` VALUES ('72', '123456', 'Fuinha', '0000-00-00', '2147483647', '2147483647', '2015-02-27 09:29:55', '0000-00-00 00:00:00', null, null, null, null, null, '');
+INSERT INTO `aluno` VALUES ('73', '123456', 'JoÃ£o Victor', '0000-00-00', '2147483647', '2147483647', '2015-02-27 21:13:02', '0000-00-00 00:00:00', null, null, null, null, null, '');
 
 -- ----------------------------
 -- Table structure for avisoejustificativa
@@ -132,6 +133,81 @@ CREATE TABLE `avisoejustificativa` (
 -- ----------------------------
 -- Records of avisoejustificativa
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for professor
+-- ----------------------------
+DROP TABLE IF EXISTS `professor`;
+CREATE TABLE `professor` (
+  `idprofessor` int(20) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(20) DEFAULT NULL,
+  `telefone` decimal(20,0) DEFAULT NULL,
+  `endereco` varchar(20) DEFAULT NULL,
+  `rg` decimal(20,0) DEFAULT NULL,
+  `cpf` decimal(20,0) DEFAULT NULL,
+  PRIMARY KEY (`idprofessor`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of professor
+-- ----------------------------
+INSERT INTO `professor` VALUES ('1', 'junior', '23342', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('2', 'junior', '23342', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('3', 'junior', '23342', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('4', 'junior', '23342', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('5', 'junior', '23342', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('6', 'junior', '23342', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('7', 'junior', '23342', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('8', 'junior', '23342', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('9', 'junior', '23342', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('10', 'junior', '23342', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('11', 'junior', '23342', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('12', 'junior', '23342', 'rua2', '12121', '12123');
+
+-- ----------------------------
+-- Table structure for relatorio
+-- ----------------------------
+DROP TABLE IF EXISTS `relatorio`;
+CREATE TABLE `relatorio` (
+  `idrelatorio` int(20) NOT NULL AUTO_INCREMENT,
+  `nomerelatorio` varchar(20) NOT NULL,
+  `tiporelatorio` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`idrelatorio`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of relatorio
+-- ----------------------------
+INSERT INTO `relatorio` VALUES ('1', 'casa', 'casa');
+INSERT INTO `relatorio` VALUES ('2', 'casa', 'casa');
+INSERT INTO `relatorio` VALUES ('3', 'casa', 'casa');
+INSERT INTO `relatorio` VALUES ('4', 'casa', 'casa');
+INSERT INTO `relatorio` VALUES ('5', 'casa', 'casa');
+
+-- ----------------------------
+-- Table structure for turma
+-- ----------------------------
+DROP TABLE IF EXISTS `turma`;
+CREATE TABLE `turma` (
+  `idturma` int(11) NOT NULL AUTO_INCREMENT,
+  `idaluno` int(11) NOT NULL,
+  `idprofessor` int(11) NOT NULL,
+  PRIMARY KEY (`idturma`,`idaluno`,`idprofessor`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of turma
+-- ----------------------------
+INSERT INTO `turma` VALUES ('1', '3216', '23121');
+INSERT INTO `turma` VALUES ('2', '3216', '23121');
+INSERT INTO `turma` VALUES ('3', '3216', '23121');
+INSERT INTO `turma` VALUES ('4', '3216', '23121');
+INSERT INTO `turma` VALUES ('5', '3216', '23121');
+INSERT INTO `turma` VALUES ('6', '3216', '23121');
+INSERT INTO `turma` VALUES ('7', '3216', '23121');
+INSERT INTO `turma` VALUES ('8', '3216', '23121');
+INSERT INTO `turma` VALUES ('9', '3216', '23121');
+INSERT INTO `turma` VALUES ('10', '3216', '23121');
 
 -- ----------------------------
 -- Table structure for usuarios
