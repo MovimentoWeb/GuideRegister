@@ -162,6 +162,9 @@ body{
     list-style: outside none none;
     margin-left: 0;
 }
+#butaozinho .btn{
+    margin-right: 50px;
+}
 /*-------------------Alexsander - Professores -----------------------*/
 
 .professores form ul{
@@ -177,33 +180,13 @@ body{
     margin-left: 0; 
 }
 #detalhesMeus .row-fluid{
-    width: 470px;
+    width: 475px;
 }
-#detalhesMeus .row-fluid input{
-    width: 470px;
+#detalhesMeus .row-fluid .input input{
+    width: 100px;
 }
-#detalhesMeus .edicao input{
-    width: 360px;
-}
-#detalhesMeus .edicao1 input{
-    width: 360px;
-    margin-left: 35px;
-}
-#detalhesMeus .edicao2 input{
-    width: 360px;
-    margin-left: 18px;
-}
-#detalhesMeus .edicao3 input{
-    width: 360px;
-    margin-left: 56px;
-}
-#detalhesMeus .edicao4 input{
-    width: 360px;
-    margin-left: 37px;
-}
-#detalhesMeus .edicao5 input{
-    width: 360px;
-    margin-left: 45px;
+#detalhesMeus .controls{
+    width: 200px;
 }
 /*------------------pagina ver meus avisos---------*/
 #AvisosMeus .label{
