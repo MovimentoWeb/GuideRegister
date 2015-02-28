@@ -162,6 +162,9 @@ body{
     list-style: outside none none;
     margin-left: 0;
 }
+#butaozinho .btn{
+    margin-right: 50px;
+}
 /*-------------------Alexsander - Professores -----------------------*/
 
 .professores form ul{
