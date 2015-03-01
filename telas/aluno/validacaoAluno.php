@@ -208,22 +208,6 @@ if (temPost() && isset($_POST['EditAluno'])) {
                 . '</div>';
     }
 
-    //Validação Select Turno
-    if (isset($_POST['selectTurno'])) {
-        $dadosAlunos['selectTurno'] = $_POST['selectTurno'];
-    } else {
-        $temErros = TRUE;
-        $errosValidacao['selectTurno'] = 'Selecione um Turno!';
-    }
-
-    //Validação Select Curso
-    if (isset($_POST['selectCurso'])) {
-        $dadosAlunos['selectCurso'] = $_POST['selectCurso'];
-    } else {
-        $temErros = TRUE;
-        $errosValidacao['selectCurso'] = 'Selecione um Curso!';
-    }
-
     if (!$temErros) {
         // Função de inserir no banco de dados
         editarAluno($conexao, $dadosAlunos);
