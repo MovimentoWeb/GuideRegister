@@ -74,8 +74,9 @@
                         </a>
                         <ul class="dropdown-menu">
                             <!-- Links de menu dropdown -->
-                            <li ><a href="?pg=relatorios&opcao=atasPorTurmas"><span class="fa-list" ></span>   Ata por turmas</a> </li>
-                            <li ><a href="?pg=relatorios&opcao=pesquisarDisciplinas"><span class="fa-search3"></span> Pesquisar por disciplinas</a> </li>
+                            <li ><a href="?pg=relatorios&opcao=atasPorTurmas"><span class="fa-list" ></span> Listar turma por PA</a> </li>
+                            <li ><a href="?pg=relatorios&opcao=listagemTurmas"><span class="fa-circle-full" ></span> Todas as turmas</a> </li>
+                            <li ><a href="?pg=relatorios&opcao=pesquisarDisciplinas"><span class="fa-search3"></span> Pesquisar disciplinas</a> </li>
                         </ul>
                     </div>  
 

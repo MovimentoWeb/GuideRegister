@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-02-28 11:22:13
+Date: 2015-03-01 01:03:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -35,7 +35,7 @@ CREATE TABLE `aluno` (
   `disciplina` varchar(255) DEFAULT NULL,
   `ativo` bit(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`idAluno`,`cpf`,`matricula`)
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of aluno
@@ -113,6 +113,8 @@ INSERT INTO `aluno` VALUES ('70', '123456', 'Fuinha MendonÃ§a de lima', '0000-
 INSERT INTO `aluno` VALUES ('71', '123456', 'Fuinha', '0000-00-00', '2147483647', '2147483647', '2015-02-27 09:28:14', '0000-00-00 00:00:00', null, null, null, null, null, '');
 INSERT INTO `aluno` VALUES ('72', '123456', 'Fuinha', '0000-00-00', '2147483647', '2147483647', '2015-02-27 09:29:55', '0000-00-00 00:00:00', null, null, null, null, null, '');
 INSERT INTO `aluno` VALUES ('73', '123456', 'JoÃ£o Victor', '0000-00-00', '2147483647', '2147483647', '2015-02-27 21:13:02', '0000-00-00 00:00:00', null, null, null, null, null, '');
+INSERT INTO `aluno` VALUES ('74', '123456', 'Gabriel Pessoa', '0000-00-00', '55555555', '2147483647', '2015-02-28 11:33:19', '0000-00-00 00:00:00', null, null, null, null, null, '');
+INSERT INTO `aluno` VALUES ('75', '123456', 'Angela', '0000-00-00', '6056218', '2147483647', '2015-02-28 19:43:14', '0000-00-00 00:00:00', null, null, null, null, null, '');
 
 -- ----------------------------
 -- Table structure for avisoejustificativa
@@ -133,36 +135,6 @@ CREATE TABLE `avisoejustificativa` (
 -- ----------------------------
 -- Records of avisoejustificativa
 -- ----------------------------
-
--- ----------------------------
--- Table structure for professor
--- ----------------------------
-DROP TABLE IF EXISTS `professor`;
-CREATE TABLE `professor` (
-  `idprofessor` int(20) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(20) DEFAULT NULL,
-  `telefone` decimal(20,0) DEFAULT NULL,
-  `endereco` varchar(20) DEFAULT NULL,
-  `rg` decimal(20,0) DEFAULT NULL,
-  `cpf` decimal(20,0) DEFAULT NULL,
-  PRIMARY KEY (`idprofessor`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of professor
--- ----------------------------
-INSERT INTO `professor` VALUES ('1', 'junior', '23342', 'rua2', '12121', '12123');
-INSERT INTO `professor` VALUES ('2', 'junior', '23342', 'rua2', '12121', '12123');
-INSERT INTO `professor` VALUES ('3', 'junior', '23342', 'rua2', '12121', '12123');
-INSERT INTO `professor` VALUES ('4', 'junior', '23342', 'rua2', '12121', '12123');
-INSERT INTO `professor` VALUES ('5', 'junior', '23342', 'rua2', '12121', '12123');
-INSERT INTO `professor` VALUES ('6', 'junior', '23342', 'rua2', '12121', '12123');
-INSERT INTO `professor` VALUES ('7', 'junior', '23342', 'rua2', '12121', '12123');
-INSERT INTO `professor` VALUES ('8', 'junior', '23342', 'rua2', '12121', '12123');
-INSERT INTO `professor` VALUES ('9', 'junior', '23342', 'rua2', '12121', '12123');
-INSERT INTO `professor` VALUES ('10', 'junior', '23342', 'rua2', '12121', '12123');
-INSERT INTO `professor` VALUES ('11', 'junior', '23342', 'rua2', '12121', '12123');
-INSERT INTO `professor` VALUES ('12', 'junior', '23342', 'rua2', '12121', '12123');
 
 -- ----------------------------
 -- Table structure for relatorio
@@ -190,24 +162,29 @@ INSERT INTO `relatorio` VALUES ('5', 'casa', 'casa');
 DROP TABLE IF EXISTS `turma`;
 CREATE TABLE `turma` (
   `idturma` int(11) NOT NULL AUTO_INCREMENT,
-  `idaluno` int(11) NOT NULL,
-  `idprofessor` int(11) NOT NULL,
-  PRIMARY KEY (`idturma`,`idaluno`,`idprofessor`)
+  `PAturma` varchar(20) NOT NULL,
+  `chTotal` int(5) DEFAULT NULL,
+  `turno` char(255) DEFAULT NULL,
+  `curso` varchar(50) DEFAULT NULL,
+  `dataCriacao` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `dataAlteracao` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `nomePessoaAlteracao` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idturma`,`PAturma`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of turma
 -- ----------------------------
-INSERT INTO `turma` VALUES ('1', '3216', '23121');
-INSERT INTO `turma` VALUES ('2', '3216', '23121');
-INSERT INTO `turma` VALUES ('3', '3216', '23121');
-INSERT INTO `turma` VALUES ('4', '3216', '23121');
-INSERT INTO `turma` VALUES ('5', '3216', '23121');
-INSERT INTO `turma` VALUES ('6', '3216', '23121');
-INSERT INTO `turma` VALUES ('7', '3216', '23121');
-INSERT INTO `turma` VALUES ('8', '3216', '23121');
-INSERT INTO `turma` VALUES ('9', '3216', '23121');
-INSERT INTO `turma` VALUES ('10', '3216', '23121');
+INSERT INTO `turma` VALUES ('1', '556', '1500', null, 'Redes', '2015-02-28 23:02:30', '2015-02-28 23:56:49', null);
+INSERT INTO `turma` VALUES ('2', '254', '1200', null, 'tecnico em informatica', '2015-02-28 23:02:30', '2015-02-28 23:56:51', null);
+INSERT INTO `turma` VALUES ('3', '249', '1300', null, 'Redes', '2015-02-28 23:02:30', '2015-02-28 23:56:52', null);
+INSERT INTO `turma` VALUES ('4', '689', '600', null, 'Cabelereiro', '2015-02-28 23:02:30', '2015-02-28 23:56:56', null);
+INSERT INTO `turma` VALUES ('5', '231', '640', null, 'Garsom', '2015-02-28 23:02:30', '2015-02-28 23:56:57', null);
+INSERT INTO `turma` VALUES ('6', '566', '820', null, 'Digitação', '2015-02-28 23:02:30', '2015-02-28 23:56:59', null);
+INSERT INTO `turma` VALUES ('7', '458', '730', null, 'Informática Básica', '2015-02-28 23:02:30', '2015-02-28 23:57:01', null);
+INSERT INTO `turma` VALUES ('8', '982', '400', null, 'Informática Avançada', '2015-02-28 23:02:30', '2015-02-28 23:57:03', null);
+INSERT INTO `turma` VALUES ('9', '314', '340', null, 'Massagem', '2015-02-28 23:02:30', '2015-02-28 23:57:04', null);
+INSERT INTO `turma` VALUES ('10', '524', '650', null, 'Estética', '2015-02-28 23:02:30', '2015-02-28 23:57:06', null);
 
 -- ----------------------------
 -- Table structure for usuarios
