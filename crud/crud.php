@@ -33,11 +33,13 @@ function listarAluno($conexao, $dadosAluno) {
     return $resAluno;
 }
 
-function listarAlunoPorId($conexao,$dadosAluno) {
-    $sqlBuscar = "SELECT * FROM aluno WHERE idAluno = {$dadosAluno['idAluno']}";
+function listarAlunoPorId($conexao, $id) {
+    $sqlBuscar = "SELECT * FROM aluno WHERE idAluno = " . $id;
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    return mysqli_fetch_assoc($resultado);
 }
 
-function editarAluno($conexao,$dadosAluno) {
+function editarAluno($conexao, $dadosAluno) {
     $sqlAtualizar = "UPdate aluno SET "
             . "nomeAluno = '{$dadosAluno['nomeAluno']}', "
             . "nomeAluno = '{$dadosAluno['matricula']}', "
@@ -49,48 +51,61 @@ function editarAluno($conexao,$dadosAluno) {
             . "WHERE idAluno = {$dadosAluno['idAluno']}";
 }
 
-
 //--------------------Funções  PROFESSOR -------------------
 
+function inserirProfessor($conexao, $dados) {
+    $sqlInserir = "insert into professor ("
+            . "nomeProfessor, "
+            . "dtNascimento, "
+            . "rg, "
+            . "cpf, "
+            . "dtAdmissao"
+            . ")"
+            . "VALUES('"
+            . "{$dados['nomeProfessor']}','"
+            . "{$dados['dtNascimento']}','"
+            . "{$dados['rg']}','"
+            . "{$dados['cpf']}','"
+            . "{$dados ['dtAdmissao']}')";
+    mysqli_query($conexao, $sqlInserir);
+    unset($_POST);
+}
 
+function listarProfessorPorId($conexao, $dadosProfessor) {
+    $sqlBuscar = "SELECT * FROM professor WHERE idProfessor = {$dadosProfessor['idProfessor']}";
+}
 
+function listarProfessor($conexao, $dadosProfessor) {
+    $sqlBuscar = "SELECT * FROM professor WHERE nomeProfessor LIKE '%" . $dadosProfessor . "%'";
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    $resProfessor = array();
+    while ($registro = mysqli_fetch_assoc($resultado)) {
+        $resProfessor[] = $registro;
+    }
+    return $resProfessor;
+}
 
 //--------------------Funções  TURMA -------------------
 
+function pesquisarTurmaID($conexao, $id) {
+    $sqlBuscar = "SELECT * FROM turma WHERE PAturma = " . $id;
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    return mysqli_fetch_assoc($resultado);
+}
+
+function listagemDeTurmas($conexao) {
+    $sqlBuscar = 'SELECT * FROM turma';
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    $resRelatorio = array();
+    while ($registro = mysqli_fetch_assoc($resultado)) {
+        $resRelatorio[] = $registro;
+    }
+    return $resRelatorio;
+}
 
 
 function listarAviso($conexao, $id) {
     $sqlBuscar = 'SELECT * FROM aviso WHERE id = ';
-    $resultado = msyqli_query($conexao, $sqlBuscar);
-    $projeto = array();
-    while ($projeto = mysqli_fetch_assoc($resultado)) {
-        $projeto[] = $projeto;
-    }
-    return $projeto;
-}
-
-function listarProfessor($conexao, $id) {
-    $sqlBuscar = 'SELECT * FROM professor WHERE id = ';
-    $resultado = msyqli_query($conexao, $sqlBuscar);
-    $projeto = array();
-    while ($projeto = mysqli_fetch_assoc($resultado)) {
-        $projeto[] = $projeto;
-    }
-    return $projeto;
-}
-
-function listarRelatorio($conexao, $id) {
-    $sqlBuscar = 'SELECT * FROM relatorio WHERE id = ';
-    $resultado = msyqli_query($conexao, $sqlBuscar);
-    $projeto = array();
-    while ($projeto = mysqli_fetch_assoc($resultado)) {
-        $projeto[] = $projeto;
-    }
-    return $projeto;
-}
-
-function listarTurma($conexao, $id) {
-    $sqlBuscar = 'SELECT * FROM turma WHERE id = ';
     $resultado = msyqli_query($conexao, $sqlBuscar);
     $projeto = array();
     while ($projeto = mysqli_fetch_assoc($resultado)) {
