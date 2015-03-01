@@ -11,14 +11,14 @@ if (temPost() && isset($_POST['cadProfessor'])) {
     $dadosProfessor = array();
 
 //Validação  NOME
-    if (isset($_POST['nomeProfessor']) && strlen($_POST['nomeProfessor']) > 5) {
-        $dadosProfessor['nomeProfessor'] = $_POST['nomeProfessor'];
+    if (isset($_POST['nomeUsuario']) && strlen($_POST['nomeUsuario']) > 5) {
+        $dadosProfessor['nomeUsuario'] = $_POST['nomeUsuario'];
     } else {
         $temErros = true;
-        $errosValidacao['nomeProfessor'] = ''
+        $errosValidacao['nomeUsuario'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome do professor inválido!</h4>'
+                . '<h4>Nome inválido!</h4>'
                 . 'Digite corretamente o nome do professor'
                 . '</div>';
     }
@@ -101,12 +101,24 @@ if (temPost() && isset($_POST['pesquisa'])) {
     if (!$temErros) {
         // Select no banco de dados
         $listarProfessor = listarProfessor($conexao, $dadosProfessor);
+        if ($listarProfessor != NULL) {
         $exibirTabela = TRUE;
+        }
     }
 }
+
+//-------- Detalhes do Professor -----------
+
+if (isset($_GET['idUsuario'])) {
+    $listaProfessor = array();
+    $listaProfessor['idUsuario'] = $_GET['idUsuario'];
+
+    $dadosAluno = listarAlunoPorId($conexao, $listaProfessor['idUsuario']);
+}
+
 $dadosProfessor = array(
     'id' => 0,
-    'nomeProfessor' => (isset($_POST['nomeProfessor'])) ? $_POST['nomeProfessor'] : '',
+    'nomeUsuario' => (isset($_POST['nomeUsuario'])) ? $_POST['nomeUsuario'] : '',
     'dtNascimento' => (isset($_POST['dtNascimento'])) ? $_POST['dtNascimento'] : '',
     'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
     'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
