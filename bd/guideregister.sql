@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-03-01 01:03:27
+Date: 2015-03-01 10:48:57
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -135,6 +135,37 @@ CREATE TABLE `avisoejustificativa` (
 -- ----------------------------
 -- Records of avisoejustificativa
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for professor
+-- ----------------------------
+DROP TABLE IF EXISTS `professor`;
+CREATE TABLE `professor` (
+  `idprofessor` int(20) NOT NULL AUTO_INCREMENT,
+  `nomeProfessor` varchar(20) DEFAULT NULL,
+  `dtNascimento` varchar(20) DEFAULT NULL,
+  `rg` varchar(20) DEFAULT NULL,
+  `cpf` decimal(20,0) DEFAULT NULL,
+  `dtAdmissao` decimal(20,0) DEFAULT NULL,
+  PRIMARY KEY (`idprofessor`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of professor
+-- ----------------------------
+INSERT INTO `professor` VALUES ('1', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('2', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('3', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('4', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('5', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('6', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('7', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('8', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('9', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('10', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('11', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('12', 'junior', '0000-00-00', 'rua2', '12121', '12123');
+INSERT INTO `professor` VALUES ('13', 'gabriel pessoa', '20/07/1997', '1234578', '12345678910', '20');
 
 -- ----------------------------
 -- Table structure for relatorio

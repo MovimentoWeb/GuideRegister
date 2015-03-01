@@ -13,6 +13,7 @@
 
             <ul class="nav">
                 <li><a class="brand"  href="?pg=avisosEjustificativas&opcao=meusAvisos"><span class="fa-bell"></span></a></li>
+
                 <li><a class="brand"  href="?pg=creditos"><span class="fa-coin"></span></a></li>
             </ul>
             <!-- Tudo que você queira escondido em 940px ou menos, coloque aqui -->
@@ -20,7 +21,19 @@
                 <!-- .nav, .navbar-search, .navbar-form, etc -->
                 <ul class="nav">
 
-                    <li>
+                   <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Aluno
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="?pg=aluno&opcao=AtaFrequencia"><span class="fa-list3"></span> Fazer frequência de aluno</a></li>
+                            <li><a href="?pg=aluno&opcao=cadastrar"><span class="fa-user-add"></span> Cadastrar</a> </li>
+                            <li><a href="?pg=aluno&opcao=pesquisar"><span class="fa-search3"></span> Pesquisar</a> </li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
                             <i class="fa-user"></i> Aluno
                             <span class="caret"></span>
