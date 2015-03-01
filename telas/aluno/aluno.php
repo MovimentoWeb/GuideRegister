@@ -117,14 +117,14 @@ if (!isset($_GET['opcao'])) {
                                 <?php endif; ?>
                                 <input type="text" id="matricula" name="matricula" class="input-block-level" value="<?php echo $dadosAluno['matricula']; ?>" placeholder="Data de Nascimento">
                             </label>
-<!--                            <label class="span3">Data de Nascimento<br />
+                            <label class="span3">Data de Nascimento<br />
                                 <?php if ($temErros && isset($errosValidacao['dtNascimento'])) : ?>
                                     <span class="erro">
                                         <?php echo $errosValidacao['dtNascimento']; ?>
                                     </span>
                                 <?php endif; ?>
                                 <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $dadosAluno['dtNascimento']; ?>" placeholder="Data de Nascimento">
-                            </label>-->
+                            </label>
                             <label for="rg" class="span3">RG<br />
                                 <?php if ($temErros && isset($errosValidacao['rg'])) : ?>
                                     <span class="erro">

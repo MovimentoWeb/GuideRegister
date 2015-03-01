@@ -198,7 +198,6 @@ if (temPost() && isset($_POST['EditAluno'])) {
     //Validação cpf
     if (isset($_POST['cpf']) && strlen($_POST['cpf']) == 11) {
         $dadosAlunos['cpf'] = $_POST['cpf'];
-        echo $dadosAlunos['cpf'];
     } else {
         $temErros = TRUE;
         $errosValidacao['cpf'] = ''
