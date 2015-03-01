@@ -19,18 +19,7 @@
             <div class="nav-collapse pull-right">
                 <!-- .nav, .navbar-search, .navbar-form, etc -->
                 <ul class="nav">
-                    <!--                    <div class="btn-group ">
-                                            <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
-                                                Telas de Login
-                                                <span class="caret"></span>
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                 Links de menu dropdown 
-                                                <li ><a href="?pg=login&opcao=loginInicial"><span class="fa-key"></span> Login Inicial</a> </li>
-                                                <li ><a href="?pg=login&opcao=esqueciMinhaSenha"><span class="fa-key2"></span> Esqueci minha senha</a> </li>
-                                                <li ><a href="?pg=login&opcao=novasenha"><span class="fa-key3"></span> Nova senha</a> </li>
-                                            </ul>
-                                        </div>-->
+
                     <div class="btn-group">
                         <a class="btn dropdown-toggle btn-inverse" data-toggle="dropdown" href="#">
                             <i class="fa-user"></i> Aluno
