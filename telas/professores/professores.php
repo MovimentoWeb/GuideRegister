@@ -188,8 +188,8 @@ if (!isset($_GET['opcao'])) {
                                                 </a>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="?pg=professores&opcao=detalhes&idUsuario=<?php echo $professor['idUsuario'] ?>" class="fa-delicious"> Ver detalhes</a></li>
-                                                    <li><a href="?pg=professores&opcao=desativar&idUsuario=<?php echo $professor['idUsuario'] ?>"  class="fa-remove"> Desativar Aluno</a></li>
-                                                    <li><a href="?pg=professores&opcao=editar&idUsuario=<?php echo $professor['idUsuario'] ?>" class="fa-pencil"> Editar aluno</a></li>
+                                                    <li><a href="?pg=professores&opcao=desativar&idUsuario=<?php echo $professor['idUsuario'] ?>"  class="fa-remove"> Desativar Professor</a></li>
+                                                    <li><a href="?pg=professores&opcao=editar&idUsuario=<?php echo $professor['idUsuario'] ?>" class="fa-pencil"> Editar Professor</a></li>
                                                     <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa&idUsuario=<?php echo 'idUsuario'; ?>"  class="fa-aid"> Adicionar justificativa</a></li>
                                                 </ul>
                                             </div>
@@ -223,6 +223,26 @@ if (!isset($_GET['opcao'])) {
                             <div class="control-group info">
                                 <div class="controls">
                                     <span class="help-inline"><strong><?php echo($dadosProfessor['nomeUsuario']); ?></strong></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <div class="row-fluid">
+                        <div class="span3">Status do Professor:</div>
+                        <div class="span8">
+                            <div class="control-group info">
+                                <div class="controls">
+                                    <?php
+                                        if($dadosProfessor['ativo'] == 1){
+                                            $dadosProfessor['ativo'] = 'Aluno Ativado';
+                                        } else {
+                                            $dadosProfessor['ativo'] = 'Aluno Desativado';
+                                        }
+                                                
+                                    ?>
+                                    <span class="help-inline"><strong><?php echo($dadosProfessor['ativo']); ?></strong></span>
                                 </div>
                             </div>
 
@@ -286,8 +306,9 @@ if (!isset($_GET['opcao'])) {
     
         case 'desativar':
             ?>
-            desativar aluno
             <?php
+            $id = $_GET['idUsuario'];
+            desativarProfessor($conexao, $id);
             break;
         
         default :

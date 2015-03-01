@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 01-Mar-2015 às 22:49
+-- Generation Time: 02-Mar-2015 às 00:39
 -- Versão do servidor: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `dtAdmissao` date NOT NULL,
   `email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
+  `ativo` bit(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`idUsuario`,`email`,`senha`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
 
@@ -42,10 +43,10 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`idUsuario`, `nomeUsuario`, `dtNascimento`, `rg`, `cpf`, `dtAdmissao`, `email`, `senha`) VALUES
-(1, 'gabriel pessoa', '1997-07-20', '7654321', '12345678910', '1997-07-20', '', ''),
-(2, 'reginho', '0000-00-00', '9876543', '12345678910', '1997-07-20', '', ''),
-(3, 'marcelo', '1997-07-20', '1234567', '12345678910', '1997-07-20', '', '');
+INSERT INTO `usuarios` (`idUsuario`, `nomeUsuario`, `dtNascimento`, `rg`, `cpf`, `dtAdmissao`, `email`, `senha`, `ativo`) VALUES
+(1, 'gabriel pessoa', '1997-07-20', '7654321', '12345678910', '1997-07-20', '', '', b'1'),
+(2, 'reginho', '1997-07-20', '9876543', '10265173469', '1997-07-20', '', '', b'0'),
+(3, 'marcelo', '1997-07-20', '1234567', '12345678910', '1997-07-20', '', '', b'1');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

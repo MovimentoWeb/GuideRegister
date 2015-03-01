@@ -116,6 +116,17 @@ function editarProfessor($conexao, $dadosProfessor) {
     }
 }
 
+function desativarProfessor($conexao, $id) {
+    $sqlAtualizar = "UPDATE usuarios SET "
+            . "ativo = 0 "
+            . "WHERE idUsuario = ". $id;
+    if (mysqli_query($conexao, $sqlAtualizar)) {
+        
+    } else {
+        echo mysqli_error($conexao);
+    }
+}
+
 //--------------------Funções  TURMA -------------------
 
 function pesquisarTurmaID($conexao, $id) {
