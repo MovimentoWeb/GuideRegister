@@ -91,12 +91,12 @@ if (!isset($_GET['opcao'])) {
             break;
 
         case'editar':
-
             $dadosAluno = listarAlunoPorId($conexao, $_GET['idAluno']);
+            echo $dadosAluno['idAluno'];
             ?>
             <div class="conteinerAluno">
                 <form class="well" method="post">
-                    <legend><span class="fa-user-add"></span> Cadastro de alunos</legend>
+                    <legend><span class="fa-user-add"></span> Atualizar aluno</legend>
                     <span class="help-block">Preencha corretamente os campos abaixo com os dados do aluno. </span>
                     <ul>
                         <li>
@@ -171,7 +171,7 @@ if (!isset($_GET['opcao'])) {
                     </ul>
                     <a href="index.php" class="btn btn-info"><span class="fa-home"></span> Voltar a página inicial</a>
                     <input type="hidden" name="EditAluno"/>
-                    <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
+                    <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Atualizar</button>
                 </form>
             </div>
             <?php
@@ -279,7 +279,7 @@ if (!isset($_GET['opcao'])) {
 
                         </div>
                     </div>
-                    
+
                     <div class="row-fluid">
                         <div class="span3">Data de Nascimento:</div>
                         <div class="span8">
@@ -291,7 +291,7 @@ if (!isset($_GET['opcao'])) {
 
                         </div>
                     </div>
-                    
+
                     <div class="row-fluid">
                         <div class="span3">RG:</div>
                         <div class="span8">
@@ -303,7 +303,7 @@ if (!isset($_GET['opcao'])) {
 
                         </div>
                     </div>
-                    
+
                     <div class="row-fluid">
                         <div class="span3">CPF:</div>
                         <div class="span8">
@@ -385,7 +385,7 @@ if (!isset($_GET['opcao'])) {
             desativar aluno
             <?php
             break;
-        
+
         default :
             include_once 'telas/inicial.php';
             break;

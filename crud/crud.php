@@ -40,15 +40,14 @@ function listarAlunoPorId($conexao, $id) {
 }
 
 function editarAluno($conexao, $dadosAluno) {
-    $sqlAtualizar = "UPdate aluno SET "
+    $sqlAtualizar = "UPDATE aluno SET "
             . "nomeAluno = '{$dadosAluno['nomeAluno']}', "
-            . "nomeAluno = '{$dadosAluno['matricula']}', "
+            . "matricula = '{$dadosAluno['matricula']}', "
             . "dtNascimento = '{$dadosAluno['dtNascimento']}', "
             . "rg = '{$dadosAluno['rg']}', "
             . "cpf = '{$dadosAluno['cpf']}', "
-            . "turno = '{$dadosAluno['turno']}', "
-            . "curso = '{$dadosAluno['curso']}', "
             . "WHERE idAluno = {$dadosAluno['idAluno']}";
+    mysqli_query($conexao, $sqlAtualizar);
 }
 
 //--------------------Funções  PROFESSOR -------------------
@@ -102,7 +101,6 @@ function listagemDeTurmas($conexao) {
     }
     return $resRelatorio;
 }
-
 
 function listarAviso($conexao, $id) {
     $sqlBuscar = 'SELECT * FROM aviso WHERE id = ';
