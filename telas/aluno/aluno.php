@@ -263,7 +263,7 @@ if (!isset($_GET['opcao'])) {
                     </div>
                     
                     <div class="row-fluid">
-                        <div class="span3">Ativado:</div>
+                        <div class="span3">Status do Aluno:</div>
                         <div class="span8">
                             <div class="control-group info">
                                 <div class="controls">
