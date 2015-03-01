@@ -22,10 +22,6 @@ $errosValidacao = array();
 $exibirTabela = FALSE;
 
 
-
-
-
-
 //-------- Validaçao Cadastro de aluno -----------
 if (temPost() && isset($_POST['cadAluno'])) {
     $dadosAlunos = array();
