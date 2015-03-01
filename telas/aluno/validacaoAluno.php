@@ -241,8 +241,10 @@ if (isset($_GET['idAluno'])) {
     $listaAluno = array();
     $listaAluno['idAluno'] = $_GET['idAluno'];
     echo $listaAluno['idAluno'];
+
+    $dadosAluno = listarAlunoPorId($conexao, $listaAluno['idAluno']);
 }
-$dadosAluno = listarAlunoPorId($conexao, $listaAluno['idAluno']);
+
 
 
 
