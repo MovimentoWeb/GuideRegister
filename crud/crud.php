@@ -54,6 +54,17 @@ function editarAluno($conexao, $dadosAluno) {
     }
 }
 
+function desativarAluno($conexao, $id) {
+    $sqlAtualizar = "UPDATE aluno SET "
+            . "ativo = 0 "
+            . "WHERE idAluno = ". $id;
+    if (mysqli_query($conexao, $sqlAtualizar)) {
+        
+    } else {
+        echo mysqli_error($conexao);
+    }
+}
+
 //--------------------Funções  PROFESSOR -------------------
 
 function inserirProfessor($conexao, $dados) {
