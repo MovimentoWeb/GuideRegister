@@ -1,5 +1,4 @@
 <?php
-
 include_once 'crud/crud.php';
 include_once 'telas/includes/funcoesDeApoio.php';
 
@@ -11,11 +10,7 @@ $dadosAluno = array(
     'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
     'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
     'matricula' => (isset($_POST['matricula'])) ? $_POST['matricula'] : '',
-    'selectTurno' => (isset($_POST['selectTurno'])) ? $_POST['selectTurno'] : '',
-    'selectCurso' => (isset($_POST['selectCurso'])) ? $_POST['selectCurso'] : '',
-);
-
-
+    );
 
 $temErros = false;
 $errosValidacao = array();
@@ -79,7 +74,7 @@ if (temPost() && isset($_POST['cadAluno'])) {
     }
 
     //Validação cpf
-    if (isset($_POST['cpf']) && strlen($_POST['cpf']) == 11) {
+    if (isset($_POST['cpf']) && strlen($_POST['cpf']) >= 8) {
         $dadosAlunos['cpf'] = $_POST['cpf'];
     } else {
         $temErros = TRUE;
@@ -89,22 +84,6 @@ if (temPost() && isset($_POST['cadAluno'])) {
                 . '<h4>CPF inválido!</h4>'
                 . 'CPF inválido! Digite um número de RG no formato: <strong>111.999.888-77</strong>'
                 . '</div>';
-    }
-
-    //Validação Select Turno
-    if (isset($_POST['selectTurno'])) {
-        $dadosAlunos['selectTurno'] = $_POST['selectTurno'];
-    } else {
-        $temErros = TRUE;
-        $errosValidacao['selectTurno'] = 'Selecione um Turno!';
-    }
-
-    //Validação Select Curso
-    if (isset($_POST['selectCurso'])) {
-        $dadosAlunos['selectCurso'] = $_POST['selectCurso'];
-    } else {
-        $temErros = TRUE;
-        $errosValidacao['selectCurso'] = 'Selecione um Curso!';
     }
 
     if (!$temErros) {

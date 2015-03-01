@@ -9,10 +9,8 @@ $dadosProfessor = array(
     'dtNascimento' => (isset($_POST['dtNascimento'])) ? $_POST['dtNascimento'] : '',
     'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
     'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
-    'selectTurno' => (isset($_POST['selectTurno'])) ? $_POST['selectTurno'] : '',
     'dtAdmissao' => (isset($_POST['dtAdmissao'])) ? $_POST['dtAdmissao'] : '',
-    'pesquisaProfessor' => (isset($_POST['pesquisaProfessor'])) ? $_POST['pesquisaProfessor'] : '',
-);
+    );
 
 $temErros = false;
 $errosValidacao = array();
@@ -48,7 +46,7 @@ if (temPost() && isset($_POST['cadProfessor'])) {
     }
 
 //Validação rg
-    if (isset($_POST['rg']) && strlen($_POST['rg']) == 7) {
+    if (isset($_POST['rg']) && strlen($_POST['rg']) >= 7) {
         $dadosProfessor['rg'] = $_POST['rg'];
     } else {
         $temErros = TRUE;
@@ -61,7 +59,7 @@ if (temPost() && isset($_POST['cadProfessor'])) {
     }
 
 //Validação cpf
-    if (isset($_POST['cpf']) && strlen($_POST['cpf']) == 11) {
+    if (isset($_POST['cpf']) && strlen($_POST['cpf']) >= 8) {
         $dadosProfessor['cpf'] = $_POST['cpf'];
     } else {
         $temErros = TRUE;
@@ -95,14 +93,14 @@ if (temPost() && isset($_POST['cadProfessor'])) {
 
 //-------- Validaçao Pesquisar professor -----------
 
-if (temPost() && isset($_POST['pesquisa'])) {
+if (temPost() && isset($_POST['pesquisar'])) {
     
 //Validação da nome professor
-    if (isset($_POST['nomeProfessorPesquisa']) && strlen($_POST['nomeProfessorPesquisa']) > 2) {
-        $dadosProfessor = $_POST['nomeProfessorPesquisa'];
+    if (isset($_POST['nomeUsuarioPesquisa']) && strlen($_POST['nomeUsuarioPesquisa']) > 2) {
+        $dadosProfessor = $_POST['nomeUsuarioPesquisa'];
     } else {
         $temErros = true;
-        $errosValidacao['nomeProfessorPesquisa'] = ''
+        $errosValidacao['nomeUsuarioPesquisa'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>Pesquisa invalida!</h4>'
@@ -119,17 +117,17 @@ if (temPost() && isset($_POST['pesquisa'])) {
 }
 
 
-//-------- Validaçao Editar  aluno -----------
-if (temPost() && isset($_POST['editProfessor'])) {
-    $dadosAlunos['idUsuario'] = $_GET['idUsuario'];
-    $dadosAlunos = array();
-
+//-------- Validaçao Editar  Professor -----------
+if (temPost() && isset($_POST['EditProfessor'])) {
+    $dadosProfessor = array();
+    $dadosProfessor['idUsuario'] = $_GET['idUsuario'];
+    
     //Validação  NOME
-    if (isset($_POST['nomeProfessor']) && strlen($_POST['nomeProfessor']) >= 3) {
-        $dadosAlunos['nomeProfessor'] = $_POST['nomeProfessor'];
+    if (isset($_POST['nomeUsuario']) && strlen($_POST['nomeUsuario']) >= 3) {
+        $dadosProfessor['nomeUsuario'] = $_POST['nomeUsuario'];
     } else {
         $temErros = true;
-        $errosValidacao['nomeProfessor'] = ''
+        $errosValidacao['nomeUsuario'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>Nome inválido!</h4>'
@@ -139,7 +137,7 @@ if (temPost() && isset($_POST['editProfessor'])) {
 
     //Validação data nascimento
     if (isset($_POST['dtNascimento']) && strlen($_POST['dtNascimento']) >= 8) {
-        $dadosAlunos['dtNascimento'] = $_POST['dtNascimento'];
+        $dadosProfessor['dtNascimento'] = $_POST['dtNascimento'];
     } else {
         $temErros = true;
         $errosValidacao['dtNascimento'] = ''
@@ -152,7 +150,7 @@ if (temPost() && isset($_POST['editProfessor'])) {
 
     //Validação rg
     if (isset($_POST['rg']) && strlen($_POST['rg']) >= 5) {
-        $dadosAlunos['rg'] = $_POST['rg'];
+        $dadosProfessor['rg'] = $_POST['rg'];
     } else {
         $temErros = TRUE;
         $errosValidacao['rg'] = ''
@@ -165,7 +163,7 @@ if (temPost() && isset($_POST['editProfessor'])) {
 
     //Validação cpf
     if (isset($_POST['cpf']) && strlen($_POST['cpf']) >= 11) {
-        $dadosAlunos['cpf'] = $_POST['cpf'];
+        $dadosProfessor['cpf'] = $_POST['cpf'];
     } else {
         $temErros = TRUE;
         $errosValidacao['cpf'] = ''
@@ -178,7 +176,7 @@ if (temPost() && isset($_POST['editProfessor'])) {
     
     //Validação data admissão
     if (isset($_POST['dtAdmissao']) && strlen($_POST['dtAdmissao']) >= 8) {
-        $dadosAlunos['dtAdmissao'] = $_POST['dtAdmissao'];
+        $dadosProfessor['dtAdmissao'] = $_POST['dtAdmissao'];
     } else {
         $temErros = TRUE;
         $errosValidacao['dtAdmissao'] = ''
@@ -187,22 +185,6 @@ if (temPost() && isset($_POST['editProfessor'])) {
                 . '<h4>CPF inválido!</h4>'
                 . 'CPF inválido! Digite um número de RG no formato: <strong>111.999.888-77</strong>'
                 . '</div>';
-    }
-    
-    //Validação Select Turno
-    if (isset($_POST['selectTurno'])) {
-        $dadosAlunos['selectTurno'] = $_POST['selectTurno'];
-    } else {
-        $temErros = TRUE;
-        $errosValidacao['selectTurno'] = 'Selecione um Turno!';
-    }
-
-    //Validação Select Curso
-    if (isset($_POST['selectCurso'])) {
-        $dadosAlunos['selectCurso'] = $_POST['selectCurso'];
-    } else {
-        $temErros = TRUE;
-        $errosValidacao['selectCurso'] = 'Selecione um Curso!';
     }
 
     if (!$temErros) {
@@ -218,8 +200,8 @@ if (temPost() && isset($_POST['editProfessor'])) {
 if (isset($_GET['idUsuario'])) {
     $listaProfessor = array();
     $listaProfessor['idUsuario'] = $_GET['idUsuario'];
-
-    $dadosAluno = listarAlunoPorId($conexao, $listaProfessor['idUsuario']);
+    
+    $dadosProfessor = listarProfessorPorId($conexao, $listaProfessor['idUsuario']);
 }
 
 
