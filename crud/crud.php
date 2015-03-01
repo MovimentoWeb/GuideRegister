@@ -54,15 +54,15 @@ function editarAluno($conexao, $dadosAluno) {
 //--------------------Funções  PROFESSOR -------------------
 
 function inserirProfessor($conexao, $dados) {
-    $sqlInserir = "insert into professor ("
-            . "nomeProfessor, "
+    $sqlInserir = "insert into usuarios ("
+            . "nomeUsuario, "
             . "dtNascimento, "
             . "rg, "
             . "cpf, "
             . "dtAdmissao"
             . ")"
             . "VALUES('"
-            . "{$dados['nomeProfessor']}','"
+            . "{$dados['nomeUsuario']}','"
             . "{$dados['dtNascimento']}','"
             . "{$dados['rg']}','"
             . "{$dados['cpf']}','"
@@ -72,11 +72,11 @@ function inserirProfessor($conexao, $dados) {
 }
 
 function listarProfessorPorId($conexao, $dadosProfessor) {
-    $sqlBuscar = "SELECT * FROM professor WHERE idProfessor = {$dadosProfessor['idProfessor']}";
+    $sqlBuscar = "SELECT * FROM usuarios WHERE idUsuario = {$dadosProfessor['idUsuario']}";
 }
 
 function listarProfessor($conexao, $dadosProfessor) {
-    $sqlBuscar = "SELECT * FROM professor WHERE nomeProfessor LIKE '%" . $dadosProfessor . "%'";
+    $sqlBuscar = "SELECT * FROM usuarios WHERE nomeUsuario LIKE '%" . $dadosProfessor . "%'";
     $resultado = mysqli_query($conexao, $sqlBuscar);
     $resProfessor = array();
     while ($registro = mysqli_fetch_assoc($resultado)) {

@@ -385,9 +385,7 @@ if (!isset($_GET['opcao'])) {
             desativar aluno
             <?php
             break;
-
-
-
+        
         default :
             include_once 'telas/inicial.php';
             break;

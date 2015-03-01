@@ -14,13 +14,13 @@ if (!isset($_GET['opcao'])) {
                     <span class="help-block">Preencha corretamente os acampos abaixo com os  dados do professor</span>
                     <ul>
                         <li>
-                            <label for="nome">Nome do professor:
-                                <?php if ($temErros && isset($errosValidacao['nomeProfessor'])) : ?>
+                            <label for="nomeUsuario">Nome do professor:
+                                <?php if ($temErros && isset($errosValidacao['nomeUsuario'])) : ?>
                                     <span class="erro">
-                                        <?php echo $errosValidacao['nomeProfessor']; ?>
+                                        <?php echo $errosValidacao['nomeUsuario']; ?>
                                     </span>
                                 <?php endif; ?>    
-                                <input class="input-block-level" id="nomeProfessor" name="nomeProfessor" type="text" value="<?php echo $dadosProfessor['nomeProfessor'] ?>" placeholder="Nome"  />
+                                <input class="input-block-level" id="nomeUsuario" name="nomeUsuario" type="text" value="<?php echo $dadosProfessor['nomeUsuario'] ?>" placeholder="Nome"  />
                             </label>
                         </li>
                         <li>
@@ -186,7 +186,7 @@ if (!isset($_GET['opcao'])) {
                                 foreach ($listarProfessor as $professor):
                                     ?>
                                     <tr>
-                                        <td><?php echo $professor['nomeProfessor'] ?></td>
+                                        <td><?php echo $professor['nomeUsuario'] ?></td>
                                         <td>Detalhes do resultado 4</td>
                                         <td>
                                             <div class="btn-group">
@@ -195,10 +195,10 @@ if (!isset($_GET['opcao'])) {
                                                     <span class="caret"></span>
                                                 </a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="?pg=professorer&opcao=detalhes&detalhes=<?php echo $professor['idProfessor'] ?>" class="fa-delicious"> Ver detalhes</a></li>
-                                                    <li><a href="?pg=professorer&opcao=desativar&desativar=<?php echo $professor['idProfessor'] ?>"  class="fa-remove"> Desativar Aluno</a></li>
-                                                    <li><a href="?pg=professorer&opcao=editar&edit=<?php echo $professor['idProfessor'] ?>" class="fa-pencil"> Editar aluno</a></li>
-                                                    <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa&just=<?php echo 'idProfessor'; ?>"  class="fa-aid"> Adicionar justificativa</a></li>
+                                                    <li><a href="?pg=professorer&opcao=detalhes&detalhes=<?php echo $professor['idUsuario'] ?>" class="fa-delicious"> Ver detalhes</a></li>
+                                                    <li><a href="?pg=professorer&opcao=desativar&desativar=<?php echo $professor['idUsuario'] ?>"  class="fa-remove"> Desativar Aluno</a></li>
+                                                    <li><a href="?pg=professorer&opcao=editar&edit=<?php echo $professor['idUsuario'] ?>" class="fa-pencil"> Editar aluno</a></li>
+                                                    <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa&just=<?php echo 'idUsuario'; ?>"  class="fa-aid"> Adicionar justificativa</a></li>
                                                 </ul>
                                             </div>
                                         </td>
@@ -228,7 +228,7 @@ if (!isset($_GET['opcao'])) {
 
                     <label for="">
                         Nome do Professor:
-                        <input type="" name="nomeProfessor" disabled=""/>
+                        <input type="" name="nomeUsuario" disabled=""/>
                     </label>
 
                     Disciplina:
