@@ -235,6 +235,12 @@ if (temPost() && isset($_POST['EditAluno'])) {
 }
 
 //-------- Validaçao Excluir Aluno-----------
+
+
+
+
+
+
 //-------- Detalhes do Aluno -----------
 
 if (isset($_GET['idAluno'])) {
