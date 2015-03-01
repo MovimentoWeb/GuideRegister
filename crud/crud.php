@@ -1,6 +1,7 @@
 <?php
 
 include_once 'crud/conexao.php';
+echo 'arquivo crud carregado';
 
 //--------------------Funções  ALUNO -------------------
 
@@ -51,7 +52,6 @@ function editarAluno($conexao, $dadosAluno) {
             . "WHERE idAluno = {$dadosAluno['idAluno']}";
 }
 
-
 //--------------------Funções  PROFESSOR -------------------
 
 function inserirProfessor($conexao, $dados) {
@@ -88,7 +88,12 @@ function listarProfessor($conexao, $dadosProfessor) {
 
 //--------------------Funções  TURMA -------------------
 
+function pesquisarTurmaID($conexao, $id) {
+    $sqlBuscar = "SELECT * FROM turma WHERE PAturma = " . $id;
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    return mysqli_fetch_assoc($resultado);
 
+}
 
 function listarAviso($conexao, $id) {
     $sqlBuscar = 'SELECT * FROM aviso WHERE id = ';
@@ -102,16 +107,6 @@ function listarAviso($conexao, $id) {
 
 function listarRelatorio($conexao, $id) {
     $sqlBuscar = 'SELECT * FROM relatorio WHERE id = ';
-    $resultado = msyqli_query($conexao, $sqlBuscar);
-    $projeto = array();
-    while ($projeto = mysqli_fetch_assoc($resultado)) {
-        $projeto[] = $projeto;
-    }
-    return $projeto;
-}
-
-function listarTurma($conexao, $id) {
-    $sqlBuscar = 'SELECT * FROM turma WHERE id = ';
     $resultado = msyqli_query($conexao, $sqlBuscar);
     $projeto = array();
     while ($projeto = mysqli_fetch_assoc($resultado)) {
