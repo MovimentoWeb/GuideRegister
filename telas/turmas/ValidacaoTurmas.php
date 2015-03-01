@@ -46,18 +46,7 @@ if (temPost()) {
                 . '</div>';
     }
 
-//Validação  Carga Horaria
-    if (isset($_POST['CargaH']) && strlen($_POST['CargaH']) > 5) {
-        $projeto['CargaH'] = $_POST['CargaH'];
-    } else {
-        $temErros = true;
-        $errosValidacao['CargaH'] = ''
-                . '<div class="alert alert-error">'
-                . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Digite a carga Horaria!</h4>'
-                . 'Digite a carga horaria do curso determinado'
-                . '</div>';
-    }
+
 
     //Validação  Turno
     if (isset($_POST['Turno']) && strlen($_POST['Turno']) > 5) {
@@ -92,7 +81,7 @@ if (temPost()) {
 
 
 //Validação da pesquisa
-if (isset($_POST['pesquisaTurma']) && strlen($_POST['pesquisaTurma']) > 5) {
+    if (isset($_POST['pesquisaTurma']) && strlen($_POST['pesquisaTurma']) > 5) {
         $projeto['pesquisaTurma'] = $_POST['pesquisaTurma'];
     } else {
         $temErros = true;
@@ -103,9 +92,14 @@ if (isset($_POST['pesquisaTurma']) && strlen($_POST['pesquisaTurma']) > 5) {
                 . 'Digite sua pesquisa nos campos abaixo'
                 . '</div>';
     }
-    
-  //Validação da nome disciplina
-if (isset($_POST['nomeDisciplina']) && strlen($_POST['nomeDisciplina']) > 5) {
+}
+
+
+//Validação  Cadastrar Disciplina
+if (temPost() && isset($_POST['cadDisciplina'])) {
+
+//Validação da nome disciplina
+    if (isset($_POST['nomeDisciplina']) && strlen($_POST['nomeDisciplina']) > 5) {
         $projeto['nomeDisciplina'] = $_POST['nomeDisciplina'];
     } else {
         $temErros = true;
@@ -116,9 +110,8 @@ if (isset($_POST['nomeDisciplina']) && strlen($_POST['nomeDisciplina']) > 5) {
                 . 'Digite um nome com mais de 5 caracteres'
                 . '</div>';
     }
-    
-      //Validação da codigo disciplina
-if (isset($_POST['codigoDisciplina']) && strlen($_POST['codigoDisciplina']) > 5) {
+    //Validação da codigo disciplina
+    if (isset($_POST['codigoDisciplina']) && strlen($_POST['codigoDisciplina']) > 5) {
         $projeto['codigoDisciplina'] = $_POST['codigoDisciplina'];
     } else {
         $temErros = true;
@@ -129,9 +122,23 @@ if (isset($_POST['codigoDisciplina']) && strlen($_POST['codigoDisciplina']) > 5)
                 . 'Digite um codigo Valido'
                 . '</div>';
     }
-    
-    
+    //Validação  Carga Horaria
+    if (isset($_POST['CargaH']) && strlen($_POST['CargaH']) > 5) {
+        $projeto['CargaH'] = $_POST['CargaH'];
+    } else {
+        $temErros = true;
+        $errosValidacao['CargaH'] = ''
+                . '<div class="alert alert-error">'
+                . '<button type="button" class="close" data-dismiss="alert">×</button>'
+                . '<h4>Digite a carga Horaria!</h4>'
+                . 'Digite a carga horaria do curso determinado'
+                . '</div>';
+    }
 }
+
+
+
+
 $projeto = array(
     'id' => 0,
     'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',

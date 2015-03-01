@@ -193,54 +193,75 @@ if (!isset($_GET['opcao'])) {
             <div class="meioTurma ">
                 <form class="well" method="POST">
                     <legend><span class="fa-user-add"></span> Cadastrar Disciplina</legend>
-
-                    <label for="nome">
-                        Nome disciplina: 
-                        <?php if ($temErros && isset($errosValidacao['nomeDisciplina'])) : ?>
-                            <span class="erro">
-                                <?php echo $errosValidacao['nomeDisciplina']; ?>
-                            </span>
-                        <?php endif; ?>
-                        <input type="text" id="nomeDisciplina" class="input-block-level" placeholder="Nome disciplina" name="nomeDisciplina" value="<?php echo $projeto['nomeDisciplina']; ?>"><br />
-                    </label>
-
                     <div class="row-fluid">
-                        <div class="span4">
-                            <label for="cargaHoraria">
-                                Carga Horaria: 
-                                <?php if ($temErros && isset($errosValidacao['CargaH'])) : ?>
+                        <div class="span8">  
+                            <label for="nomeDisciplina">
+                                Nome disciplina: 
+                                <?php if ($temErros && isset($errosValidacao['nomeDisciplina'])) : ?>
                                     <span class="erro">
-                                        <?php echo $errosValidacao['CargaH']; ?>
+                                        <?php echo $errosValidacao['nomeDisciplina']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" id="cargaHoraria" class="input-block-level" placeholder="Carga Horaria" name="CargaH" value="<?php echo $projeto['CargaH']; ?>" ><br />
+                                <input type="text" id="nomeDisciplina" class="input-block-level" placeholder="Nome disciplina" name="nomeDisciplina" value="<?php echo $projeto['nomeDisciplina']; ?>"><br />
                             </label>
                         </div>
-                        <div class="span4">
-                            <label for="cargaHoraria">
+                        <div class="span2">
+                            <label for="codigoDisciplina">
                                 Codigo da disciplina: 
                                 <?php if ($temErros && isset($errosValidacao['codigoDisciplina'])) : ?>
-                                    <span class="erro">
-                                        <?php echo $errosValidacao['codigoDisciplina']; ?>
-                                    </span>
+                                    <span class="erro"><?php echo $errosValidacao['codigoDisciplina']; ?></span>
                                 <?php endif; ?>
                                 <input type="text" id="codigoDisciplina" class="input-block-level" placeholder="Codigo da disciplina" name="codigoDisciplina" value="<?php echo $projeto['codigoDisciplina']; ?>" ><br />
                             </label>
                         </div>
+                        <div class="span2"> 
+                            <label for="cargaHoraria">
+                                Carga Horaria: 
+                                <?php if ($temErros && isset($errosValidacao['CargaH'])) : ?>
+                                    <span class="erro"><?php echo $errosValidacao['CargaH']; ?></span>
+                                <?php endif; ?>
+                                <input type="text" id="cargaHoraria" class="input-block-level" placeholder="Carga Horaria" name="CargaH" value="<?php echo $projeto['CargaH']; ?>" ><br />
+                            </label>
+                        </div>
                     </div>
+                    <div class="row-fluid">
+
+                        <label for="nome">
+                            Nome professro
+                            <?php if ($temErros && isset($errosValidacao['nomePofessor'])) : ?>
+                                <span class="erro"><?php echo $errosValidacao['nomePofessor']; ?></span>
+                            <?php endif; ?><br />
+                            <select name="nomePofessor">
+                                <option>Selecione</option>
+                                <option>Professor2</option>
+                                <option>Professor3</option>
+                                <option>Professor4</option>
+                                <option>Professor5</option>
+                                <option>Gerência</option>
+                                <option>Cooredenação</option>
+                                <option>Secretaria</option>
+                                <option>Professor</option>
+                            </select>
+                        </label>
+
+                    </div>
+                    <div class="row-fluid">
+
+                    </div>
+                    <input type="hidden" name="cadDisciplina" />
                     <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
-                </di
-                <?php
-                break;
+            </div>
+            <?php
+            break;
 
-            case'':
-                ?>
-                <?php
-                break;
+        case'':
+            ?>
+            <?php
+            break;
 
-            default:
-                include_once 'telas/inicial.php';
-                break;
-        }
+        default:
+            include_once 'telas/inicial.php';
+            break;
     }
+}
