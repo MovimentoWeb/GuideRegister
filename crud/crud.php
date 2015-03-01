@@ -33,11 +33,13 @@ function listarAluno($conexao, $dadosAluno) {
     return $resAluno;
 }
 
-function listarAlunoPorId($conexao,$dadosAluno) {
-    $sqlBuscar = "SELECT * FROM aluno WHERE idAluno = {$dadosAluno['idAluno']}";
+function listarAlunoPorId($conexao, $id) {
+    $sqlBuscar = "SELECT * FROM aluno WHERE idAluno = " . $id;
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    return mysqli_fetch_assoc($resultado);
 }
 
-function editarAluno($conexao,$dadosAluno) {
+function editarAluno($conexao, $dadosAluno) {
     $sqlAtualizar = "UPdate aluno SET "
             . "nomeAluno = '{$dadosAluno['nomeAluno']}', "
             . "nomeAluno = '{$dadosAluno['matricula']}', "
@@ -51,7 +53,6 @@ function editarAluno($conexao,$dadosAluno) {
 
 
 //--------------------Funções  PROFESSOR -------------------
-
 
 function inserirProfessor($conexao, $dados) {
     $sqlInserir = "insert into professor ("

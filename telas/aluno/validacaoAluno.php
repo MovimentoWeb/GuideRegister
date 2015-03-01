@@ -3,11 +3,23 @@
 include_once 'crud/crud.php';
 include_once 'telas/includes/funcoesDeApoio.php';
 
+//Recuperar campos Preenchidos
+$dadosAluno = array(
+    'id' => 0,
+    'nomeAluno' => (isset($_POST['nomeAluno'])) ? $_POST['nomeAluno'] : '',
+    'dtNascimento' => (isset($_POST['dtNascimento'])) ? $_POST['dtNascimento'] : '',
+    'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
+    'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
+    'matricula' => (isset($_POST['matricula'])) ? $_POST['matricula'] : '',
+    'selectTurno' => (isset($_POST['selectTurno'])) ? $_POST['selectTurno'] : '',
+    'selectCurso' => (isset($_POST['selectCurso'])) ? $_POST['selectCurso'] : '',
+);
+
+
+
 $temErros = false;
 $errosValidacao = array();
 $exibirTabela = FALSE;
-$listaAluno;
-
 
 
 //-------- Validaçao Cadastro de aluno -----------
@@ -120,7 +132,9 @@ if (temPost() && isset($_POST['pesquisar'])) {
     if (!$temErros) {
         // Select no banco de dados
         $listarAluno = listarAluno($conexao, $dadosAlunos);
-        $exibirTabela = TRUE;
+        if ($listarAluno != NULL) {
+            $exibirTabela = TRUE;
+        }
     }
 }
 
@@ -219,17 +233,15 @@ if (temPost() && isset($_POST['EditAluno'])) {
 }
 
 //-------- Validaçao Excluir Aluno-----------
+//-------- Detalhes do Aluno -----------
+
+if (isset($_GET['idAluno'])) {
+    $listaAluno = array();
+    $listaAluno['idAluno'] = $_GET['idAluno'];
+
+    $dadosAluno = listarAlunoPorId($conexao, $listaAluno['idAluno']);
+}
 
 
 
-//Recuperar campos Preenchidos
-$dadosAluno = array(
-    'id' => 0,
-    'nomeAluno' => (isset($_POST['nomeAluno'])) ? $_POST['nomeAluno'] : '',
-    'dtNascimento' => (isset($_POST['dtNascimento'])) ? $_POST['dtNascimento'] : '',
-    'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
-    'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
-    'matricula' => (isset($_POST['matricula'])) ? $_POST['matricula'] : '',
-    'selectTurno' => (isset($_POST['selectTurno'])) ? $_POST['selectTurno'] : '',
-    'selectCurso' => (isset($_POST['selectCurso'])) ? $_POST['selectCurso'] : '',
-);
+
