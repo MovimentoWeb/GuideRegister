@@ -51,8 +51,8 @@ function editarAluno($conexao, $dadosAluno) {
             . "WHERE idAluno = {$dadosAluno['idAluno']}";
 }
 
-//--------------------Funções  PROFESSOR -------------------
 
+//--------------------Funções  PROFESSOR -------------------
 
 function inserirProfessor($conexao, $dados) {
     $sqlInserir = "insert into professor ("

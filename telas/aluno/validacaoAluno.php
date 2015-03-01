@@ -136,7 +136,9 @@ if (temPost() && isset($_POST['pesquisar'])) {
     if (!$temErros) {
         // Select no banco de dados
         $listarAluno = listarAluno($conexao, $dadosAlunos);
-        $exibirTabela = TRUE;
+        if ($listarAluno != NULL) {
+            $exibirTabela = TRUE;
+        }
     }
 }
 
@@ -235,18 +237,11 @@ if (temPost() && isset($_POST['EditAluno'])) {
 }
 
 //-------- Validaçao Excluir Aluno-----------
-
-
-
-
-
-
 //-------- Detalhes do Aluno -----------
 
 if (isset($_GET['idAluno'])) {
     $listaAluno = array();
     $listaAluno['idAluno'] = $_GET['idAluno'];
-    echo $listaAluno['idAluno'];
 
     $dadosAluno = listarAlunoPorId($conexao, $listaAluno['idAluno']);
 }
