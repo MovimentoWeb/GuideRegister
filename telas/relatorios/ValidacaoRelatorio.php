@@ -16,7 +16,8 @@ $dadosRelatorio = array(
     'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
     'matricula' => (isset($_POST['matricula'])) ? $_POST['matricula'] : '',
     'selectTurno' => (isset($_POST['selectTurno'])) ? $_POST['selectTurno'] : '',
-    'selectCurso' => (isset($_POST['selectCurso'])) ? $_POST['selectCurso'] : '',
+    'ataturma' => (isset($_POST['ataturma'])) ? $_POST['ataturma'] : '',
+    
   
 );
 
@@ -42,7 +43,7 @@ if (temPost() && isset($_POST['atadisciplina'])) {
 if (temPost() && isset($_POST['ataturma'])) {
     if (strlen($_POST ['ataturma']) > 2) {
         $dadosRelatorios = $_POST['ataturma'];
-        echo 'está adicionando';
+    
     } else {
         $temErros = true;
         $errosValidacao['ataturma'] = ''
@@ -54,7 +55,7 @@ if (temPost() && isset($_POST['ataturma'])) {
     }
     if (!$temErros) {
         // Select no banco de dados
-        echo 'esta entrando aqui também';
+
         $dadosRelatorio = pesquisarTurmaID($conexao, $dadosRelatorios);
         if ($dadosRelatorio != NULL) {
             $exibirTabela = TRUE;

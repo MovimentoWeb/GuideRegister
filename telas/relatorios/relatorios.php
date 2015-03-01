@@ -19,7 +19,7 @@ if (!isset($_GET['opcao'])) {
                         <?php endif; ?>
                         <span class="help-block">Digite a PA da turma para pesquisar</span>
                         <div class="input-append">
-                            <input id="ataturma" name="ataturma" type="text" class="search-query input-block-level" autofocus=""  value="<?php echo $dadosRelatorio['PAturma']; ?>">
+                            <input id="ataturma" name="ataturma" type="text" class="search-query " autofocus=""  value="">
                             <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                         </div>
                     </form>  

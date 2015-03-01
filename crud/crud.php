@@ -1,7 +1,6 @@
 <?php
 
 include_once 'crud/conexao.php';
-echo 'arquivo crud carregado';
 
 //--------------------Funções  ALUNO -------------------
 
