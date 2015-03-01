@@ -261,7 +261,7 @@ if (!isset($_GET['opcao'])) {
                         <div class="span9">
                             <div class="control-group info">
                                 <div class="controls">
-                                    <span class="help-inline"><strong><?php print_r($dadosAluno['nomeAluno']); ?></strong></span>
+                                    <span class="help-inline"><strong><?php echo($dadosAluno['nomeAluno']); ?></strong></span>
                                 </div>
                             </div>
 

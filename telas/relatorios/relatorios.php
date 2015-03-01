@@ -50,9 +50,9 @@ if (!isset($_GET['opcao'])) {
                                                 <span class="caret"></span>
                                             </a>
                                             <ul class="dropdown-menu">
-                                                <li><a href="?pg=aluno&opcao=detalhes&idrel=<?php //echo $dadosRelatorio['PAturma']     ?>" class="fa-checkmark2"> Ver detalhes</a></li>
-                                                <li><a href="?pg=aluno&opcao=editar&idrel=<?php //echo $dadosRelatorio['PAturma']     ?>" class="fa-pencil"> Editar turma</a></li>
-                                                <li><a href="?pg=aluno&opcao=desativar&idrel=<?php //echo $dadosRelatorio['PAturma']     ?>"  class="fa-remove"> Desativar Turma</a></li>
+                                                <li><a href="?pg=aluno&opcao=detalhes&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>" class="fa-checkmark2"> Ver detalhes</a></li>
+                                                <li><a href="?pg=aluno&opcao=editar&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>" class="fa-pencil"> Editar turma</a></li>
+                                                <li><a href="?pg=aluno&opcao=desativar&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>"  class="fa-remove"> Desativar Turma</a></li>
                                             </ul>
                                         </div>
                                     </td>
@@ -136,6 +136,56 @@ if (!isset($_GET['opcao'])) {
                     </div>
                 </div>
 
+            </div>
+
+            <?php
+            break;
+
+
+        case'listagemTurmas':
+            ?>
+
+            <div class="well">  
+                <legend><span class="fa-search3"></span>  Listagem de turmas</legend>
+
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>PA</th>
+                            <th>Curso</th>
+                            <th>Carga Horária</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $dadosRelatorio = listagemDeTurmas($conexao);
+                        foreach ($dadosRelatorio as $rel):
+                            ?>
+                            <tr>
+                                <td><?php echo $rel['PAturma'] ?></td>
+                                <td><?php echo $rel['curso'] ?></td>
+                                <td><?php echo $rel['chTotal'] ?> horas</td>
+
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                            Ação
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="?pg=aluno&opcao=detalhes&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>" class="fa-checkmark2"> Ver detalhes</a></li>
+                                            <li><a href="?pg=aluno&opcao=editar&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>" class="fa-pencil"> Editar turma</a></li>
+                                            <li><a href="?pg=aluno&opcao=desativar&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>"  class="fa-remove"> Desativar Turma</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>    
+                            <?php
+                        endforeach;
+                        ?>
+                    </tbody>
+                </table>
             </div>
 
             <?php

@@ -91,21 +91,21 @@ function pesquisarTurmaID($conexao, $id) {
     $sqlBuscar = "SELECT * FROM turma WHERE PAturma = " . $id;
     $resultado = mysqli_query($conexao, $sqlBuscar);
     return mysqli_fetch_assoc($resultado);
-
 }
+
+function listagemDeTurmas($conexao) {
+    $sqlBuscar = 'SELECT * FROM turma';
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    $resRelatorio = array();
+    while ($registro = mysqli_fetch_assoc($resultado)) {
+        $resRelatorio[] = $registro;
+    }
+    return $resRelatorio;
+}
+
 
 function listarAviso($conexao, $id) {
     $sqlBuscar = 'SELECT * FROM aviso WHERE id = ';
-    $resultado = msyqli_query($conexao, $sqlBuscar);
-    $projeto = array();
-    while ($projeto = mysqli_fetch_assoc($resultado)) {
-        $projeto[] = $projeto;
-    }
-    return $projeto;
-}
-
-function listarRelatorio($conexao, $id) {
-    $sqlBuscar = 'SELECT * FROM relatorio WHERE id = ';
     $resultado = msyqli_query($conexao, $sqlBuscar);
     $projeto = array();
     while ($projeto = mysqli_fetch_assoc($resultado)) {
