@@ -55,16 +55,34 @@
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Turmas
+                            Cursos
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li ><a href="?pg=turmas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar Turmas</a></li>
-                            <li ><a href="?pg=turmas&opcao=Disciplina"> <i class="fa-plus"></i> Cadastrar Disciplina</a></li>
-                            <li><a href="?pg=turmas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#"><span class="fa-list2"></span> Cursos</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="?pg=turmas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar curso</a></li>
+                                    <li><a href="?pg=turmas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#"><span class="fa-list2"></span> Turmas</a>
+                                <ul class="dropdown-menu">
+                                    <li ><a href="?pg=turmas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar Turmas</a></li>
+
+                                    <li><a href="?pg=turmas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1" href="#"><span class="fa-list2"></span> Disciplinas</a>
+                                <ul class="dropdown-menu">
+                                    <li ><a href="?pg=turmas&opcao=cadastrarDisciplina"> <i class="fa-plus"></i> Cadastrar Disciplina</a></li>
+                                    <li><a href="?pg=turmas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
-
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Relatórios
