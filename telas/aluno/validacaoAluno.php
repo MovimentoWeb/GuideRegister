@@ -140,8 +140,8 @@ if (temPost() && isset($_POST['pesquisar'])) {
 
 //-------- Validaçao Editar  aluno -----------
 if (temPost() && isset($_POST['EditAluno'])) {
-    $dadosAlunos['idAluno'] = $_GET['idAluno'];
     $dadosAlunos = array();
+    $dadosAlunos['idAluno'] = $_GET['idAluno'];
 
     //Validação  NOME
     if (isset($_POST['nomeAluno']) && strlen($_POST['nomeAluno']) > 5) {
@@ -151,7 +151,7 @@ if (temPost() && isset($_POST['EditAluno'])) {
         $errosValidacao['nomeAluno'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno inválido!</h4>'
+                . '<h4>Atenção!</h4>'
                 . 'Digite corretamente o nome do aluno'
                 . '</div>';
     }
@@ -204,15 +204,13 @@ if (temPost() && isset($_POST['EditAluno'])) {
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
                 . '<h4>CPF inválido!</h4>'
-                . 'CPF inválido! Digite um número de RG no formato: <strong>111.999.888-77</strong>'
+                . 'CPF inválido! Digite um número de RG no formato: <strong>11199988877</strong>'
                 . '</div>';
     }
 
     if (!$temErros) {
         // Função de inserir no banco de dados
         editarAluno($conexao, $dadosAlunos);
-
-        die();
     }
 }
 
