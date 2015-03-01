@@ -225,12 +225,7 @@ if (!isset($_GET['opcao'])) {
                         </div>
                     </div>
                     <div class="row-fluid">
-
-                        <label for="nome">
-                            Nome professro
-                            <?php if ($temErros && isset($errosValidacao['nomePofessor'])) : ?>
-                                <span class="erro"><?php echo $errosValidacao['nomePofessor']; ?></span>
-                            <?php endif; ?><br />
+                        <label for="nome">Nome professor <br />
                             <select name="nomePofessor">
                                 <option>Selecione</option>
                                 <option>Professor2</option>

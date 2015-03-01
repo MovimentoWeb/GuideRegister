@@ -92,7 +92,6 @@ if (!isset($_GET['opcao'])) {
 
         case'editar':
             $dadosAluno = listarAlunoPorId($conexao, $_GET['idAluno']);
-            echo $dadosAluno['idAluno'];
             ?>
             <div class="conteinerAluno">
                 <form class="well" method="post">
@@ -118,35 +117,31 @@ if (!isset($_GET['opcao'])) {
                                 <?php endif; ?>
                                 <input type="text" id="matricula" name="matricula" class="input-block-level" value="<?php echo $dadosAluno['matricula']; ?>" placeholder="Data de Nascimento">
                             </label>
-                            <label class="span3">Data de Nascimento<br />
+<!--                            <label class="span3">Data de Nascimento<br />
                                 <?php if ($temErros && isset($errosValidacao['dtNascimento'])) : ?>
                                     <span class="erro">
                                         <?php echo $errosValidacao['dtNascimento']; ?>
                                     </span>
                                 <?php endif; ?>
                                 <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $dadosAluno['dtNascimento']; ?>" placeholder="Data de Nascimento">
-                            </label>
-                            <label class="span3">RG<br />
+                            </label>-->
+                            <label for="rg" class="span3">RG<br />
                                 <?php if ($temErros && isset($errosValidacao['rg'])) : ?>
                                     <span class="erro">
                                         <?php echo $errosValidacao['rg']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="rg" class="input-block-level" value="<?php echo $dadosAluno['rg']; ?>" placeholder="RG">
+                                <input type="text" name="rg" class="input-block-level" id="rg" value="<?php echo $dadosAluno['rg']; ?>" placeholder="RG">
                             </label>
-
-
-
-                            <label class="span3">CPF<br />
+                            <label for="cpf" class="span3">CPF
                                 <?php if ($temErros && isset($errosValidacao['cpf'])) : ?>
                                     <span class="erro">
                                         <?php echo $errosValidacao['cpf']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" name="cpf" class="input-block-level" value="<?php echo $dadosAluno['cpf']; ?>" placeholder="CPF">
+                                <input type="text" id="cpf" name="cpf" class="input-block-level" value="<?php echo $dadosAluno['cpf']; ?>" placeholder="CPF...">
                             </label>
                         </li>
-
                         <li>
                             <label>Informe o turno<br />
                                 <select name="selectTurno">
@@ -242,7 +237,6 @@ if (!isset($_GET['opcao'])) {
                         </table>
                         <?php
                     }else {
-
                         echo '0 - Resultados encontrados';
                     }
                     ?>

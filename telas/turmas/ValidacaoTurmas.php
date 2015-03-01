@@ -88,7 +88,7 @@ if (temPost()) {
         $errosValidacao['pesquisaTurma'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Pesquisa invalida!</h4>'
+                . '<h4>Atenção!</h4>'
                 . 'Digite sua pesquisa nos campos abaixo'
                 . '</div>';
     }
@@ -106,7 +106,7 @@ if (temPost() && isset($_POST['cadDisciplina'])) {
         $errosValidacao['nomeDisciplina'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome invalido!</h4>'
+                . '<h4>Atenção!</h4>'
                 . 'Digite um nome com mais de 5 caracteres'
                 . '</div>';
     }
@@ -118,7 +118,7 @@ if (temPost() && isset($_POST['cadDisciplina'])) {
         $errosValidacao['codigoDisciplina'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Codigo invalido!</h4>'
+                . '<h4>Atenção!</h4>'
                 . 'Digite um codigo Valido'
                 . '</div>';
     }
@@ -130,8 +130,8 @@ if (temPost() && isset($_POST['cadDisciplina'])) {
         $errosValidacao['CargaH'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Digite a carga Horaria!</h4>'
-                . 'Digite a carga horaria do curso determinado'
+                . '<h4>Atenção!</h4>'
+                . 'Digite a carga horaria do curso.'
                 . '</div>';
     }
 }

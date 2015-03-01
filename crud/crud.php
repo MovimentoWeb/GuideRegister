@@ -43,11 +43,16 @@ function editarAluno($conexao, $dadosAluno) {
     $sqlAtualizar = "UPDATE aluno SET "
             . "nomeAluno = '{$dadosAluno['nomeAluno']}', "
             . "matricula = '{$dadosAluno['matricula']}', "
-            . "dtNascimento = '{$dadosAluno['dtNascimento']}', "
+            //. "dtNascimento = '{$dadosAluno['dtNascimento']}', "
             . "rg = '{$dadosAluno['rg']}', "
-            . "cpf = '{$dadosAluno['cpf']}', "
+            . "cpf = '{$dadosAluno['cpf']}'"
             . "WHERE idAluno = {$dadosAluno['idAluno']}";
-    mysqli_query($conexao, $sqlAtualizar);
+    if (mysqli_query($conexao, $sqlAtualizar)) {
+    } else {
+        echo mysqli_error($conexao);
+        echo '<br><h1 class="label label-info">não cadastrou</h1>';
+        echo '<br><h1 class="label label-info">' . $dadosAluno['nomeAluno'] . 'não cadastrou</h1>';
+    };
 }
 
 //--------------------Funções  PROFESSOR -------------------
