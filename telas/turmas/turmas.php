@@ -11,7 +11,7 @@ if (!isset($_GET['opcao'])) {
             <div class="meioTurma ">
                 <form class="well" method="POST">
                     <legend><span class="fa-user-add"></span> Cadastrar Turma</legend>
-                    
+
                     <label for="nome">
                         PA da Turma: 
                         <?php if ($temErros && isset($errosValidacao['nome'])) : ?>
@@ -21,10 +21,6 @@ if (!isset($_GET['opcao'])) {
                         <?php endif; ?>
                         <input type="text" id="nome" class="input-block-level" placeholder="PA da turma" name="nome" value="<?php echo $projeto['nome']; ?>"><br />
                     </label>
-                    
-                   
-
-                    
 
                     <div class="row-fluid">
                         <div class="span4">
@@ -95,7 +91,7 @@ if (!isset($_GET['opcao'])) {
                                 <?php echo $errosValidacao['pesquisaTurma']; ?>
                             </span>
                         <?php endif; ?>
-                        
+
                         <legend><span class="fa-search3"></span>  Pesquisar Turmas</legend>
                         <span class="help-block">Digite a PA da turma para pesquisa</span>
 
@@ -191,13 +187,13 @@ if (!isset($_GET['opcao'])) {
 
             <?php
             break;
-            
-            case'Disciplina':
+
+        case'cadastrarDisciplina':
             ?>
             <div class="meioTurma ">
                 <form class="well" method="POST">
                     <legend><span class="fa-user-add"></span> Cadastrar Disciplina</legend>
-                    
+
                     <label for="nome">
                         Nome disciplina: 
                         <?php if ($temErros && isset($errosValidacao['nomeDisciplina'])) : ?>
@@ -207,9 +203,6 @@ if (!isset($_GET['opcao'])) {
                         <?php endif; ?>
                         <input type="text" id="nomeDisciplina" class="input-block-level" placeholder="Nome disciplina" name="nomeDisciplina" value="<?php echo $projeto['nomeDisciplina']; ?>"><br />
                     </label>
-                    
-                   
-
 
                     <div class="row-fluid">
                         <div class="span4">
@@ -237,17 +230,17 @@ if (!isset($_GET['opcao'])) {
                     </div>
                     <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
-            </di
-            <?php
-            break;
+                </di
+                <?php
+                break;
 
-        case'':
-            ?>
-            <?php
-            break;
+            case'':
+                ?>
+                <?php
+                break;
 
-        default:
-            include_once 'telas/inicial.php';
-            break;
+            default:
+                include_once 'telas/inicial.php';
+                break;
+        }
     }
-}
