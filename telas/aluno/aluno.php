@@ -257,8 +257,8 @@ if (!isset($_GET['opcao'])) {
                 <form class="well">
                     <legend><span class="fa-user4"></span> Dados do aluno</legend>
                     <div class="row-fluid">
-                        <div class="span2">Nome do aluno:</div>
-                        <div class="span9">
+                        <div class="span3">Nome do aluno:</div>
+                        <div class="span8">
                             <div class="control-group info">
                                 <div class="controls">
                                     <span class="help-inline"><strong><?php echo($dadosAluno['nomeAluno']); ?></strong></span>
@@ -268,20 +268,53 @@ if (!isset($_GET['opcao'])) {
                         </div>
                     </div>
 
-                    <strong>
-                        Disciplina: 
-                        <br />
+                    <div class="row-fluid">
+                        <div class="span3">Matricula: </div>
+                        <div class="span8">
+                            <div class="control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"><strong><?php echo($dadosAluno['matricula']); ?></strong></span>
+                                </div>
+                            </div>
 
-                        Codigo da Turma:
-                        <br />
-                        Curso: 
-                        <br />
-                        Matr: 
-                        <br />
-                        Periodo: 
-                        <br />
-                    </strong>
+                        </div>
+                    </div>
+                    
+                    <div class="row-fluid">
+                        <div class="span3">Data de Nascimento:</div>
+                        <div class="span8">
+                            <div class="control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"><strong><?php echo($dadosAluno['dtNascimento']); ?></strong></span>
+                                </div>
+                            </div>
 
+                        </div>
+                    </div>
+                    
+                    <div class="row-fluid">
+                        <div class="span3">RG:</div>
+                        <div class="span8">
+                            <div class="control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"><strong><?php echo($dadosAluno['rg']); ?></strong></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <div class="row-fluid">
+                        <div class="span3">CPF:</div>
+                        <div class="span8">
+                            <div class="control-group info">
+                                <div class="controls">
+                                    <span class="help-inline"><strong><?php echo($dadosAluno['cpf']); ?></strong></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
 
                     <a href="" class="btn btn-success"><span class="fa-backward" ></span> Voltar</a>
                     <a href="" class="btn btn-warning"><span class="fa-pencil"></span> Editar aluno</a>
