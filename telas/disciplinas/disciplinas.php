@@ -1,5 +1,5 @@
 <?php
-include_once 'telas/aluno/validacaoAluno.php';
+include_once 'telas/disciplinas/validacaoDisciplinas.php';
 if (!isset($_GET['opcao'])) {
     include_once 'telas/inicial.php';
 } else {
@@ -7,83 +7,98 @@ if (!isset($_GET['opcao'])) {
 
         case'cadastrar':
             ?>
-            <div class="conteinerAluno">
-                <form class="well" method="post">
-                    <legend><span class="fa-user-add"></span> Cadastro de alunos</legend>
-                    <span class="help-block">Preencha corretamente os campos abaixo com os dados do aluno. </span>
-                    <ul>
-                        <li>
-                            <label for="nomeAluno">Nome do aluno<br />
-                                <?php if ($temErros && isset($errosValidacao['nomeAluno'])) : ?>
+            <div class="meioTurma ">
+                <form class="well" method="POST">
+                    <legend><span class="fa-user-add"></span> Cadastrar Disciplina</legend>
+                    <div class="row-fluid">
+                        <div class="span8">  
+                            <label for="nomeDisciplina">
+                                Nome disciplina: 
+                                <?php if ($temErros && isset($errosValidacao['nomeDisciplina'])) : ?>
                                     <span class="erro">
-                                        <?php echo $errosValidacao['nomeAluno']; ?>
+                                        <?php echo $errosValidacao['nomeDisciplina']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" id="nomeAluno" name="nomeAluno" autofocus="" class="input-block-level" value="<?php echo $dadosAluno['nomeAluno']; ?>" placeholder="Nome">
+                                <input type="text" id="nomeDisciplina" class="input-block-level" placeholder="Nome disciplina" name="nomeDisciplina" value="<?php echo $dadosDiscip['nomeDisciplina']; ?>"><br />
                             </label>
-                        </li>
-                        <li class="row-fluid">
-                            <label class="span3" for="matricula">Matrícula<br />
-                                <?php if ($temErros && isset($errosValidacao['matricula'])) : ?>
-                                    <span class="erro">
-                                        <?php echo $errosValidacao['matricula']; ?>
-                                    </span>
+                        </div>
+                        <div class="span2">
+                            <label for="codigoDisciplina">
+                                Codigo da disciplina: 
+                                <?php if ($temErros && isset($errosValidacao['codDisciplina'])) : ?>
+                                    <span class="erro"><?php echo $errosValidacao['codDisciplina']; ?></span>
                                 <?php endif; ?>
-                                <input type="text" id="matricula" name="matricula" class="input-block-level" value="<?php echo $dadosAluno['matricula']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" id="codigoDisciplina" class="input-block-level" placeholder="Codigo da disciplina" name="codigoDisciplina" value="<?php echo $dadosDiscip['codDisciplina']; ?>" ><br />
                             </label>
-                            <label class="span3">Data de Nascimento<br />
-                                <?php if ($temErros && isset($errosValidacao['dtNascimento'])) : ?>
-                                    <span class="erro">
-                                        <?php echo $errosValidacao['dtNascimento']; ?>
-                                    </span>
+                        </div>
+                        <div class="span2"> 
+                            <label for="cargaHoraria">
+                                Carga Horaria: 
+                                <?php if ($temErros && isset($errosValidacao['ch'])) : ?>
+                                    <span class="erro"><?php echo $errosValidacao['ch']; ?></span>
                                 <?php endif; ?>
-                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $dadosAluno['dtNascimento']; ?>" placeholder="Data de Nascimento">
+                                <input type="text" id="cargaHoraria" class="input-block-level" placeholder="Carga Horaria" name="ch" value="<?php echo $dadosDiscip['ch']; ?>" ><br />
                             </label>
-                            <label class="span3">RG<br />
-                                <?php if ($temErros && isset($errosValidacao['rg'])) : ?>
-                                    <span class="erro">
-                                        <?php echo $errosValidacao['rg']; ?>
-                                    </span>
-                                <?php endif; ?>
-                                <input type="text" name="rg" class="input-block-level" value="<?php echo $dadosAluno['rg']; ?>" placeholder="RG">
-                            </label>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                        <label for="nome">Nome professor: <br />
+                            <select name="nomePofessor">
+                                <option>Selecione</option>
+                                <option>Professor2</option>
+                                <option>Professor3</option>
+                                <option>Professor4</option>
+                                <option>Professor5</option>
+                                <option>Gerência</option>
+                                <option>Cooredenação</option>
+                                <option>Secretaria</option>
+                                <option>Professor</option>
+                            </select>
+                            <input type="hidden" name="idProfessor"/>
+                            <input type="hidden" name="nomeProfessor"/>
+                        </label>
 
+                    </div>
+                    <div class="row-fluid">
+                        <label for="nome">Curso:<br />
+                            <select name="nomePofessor">
+                                <option>Selecione</option>
+                                <option>Professor2</option>
+                                <option>Professor3</option>
+                                <option>Professor4</option>
+                                <option>Professor5</option>
+                                <option>Gerência</option>
+                                <option>Cooredenação</option>
+                                <option>Secretaria</option>
+                                <option>Professor</option>
+                            </select>
+                            <input type="hidden" name="idCurso"/>
+                            <input type="hidden" name="nomeCurso"/>
+                        </label>
 
+                    </div>
+                    <div class="row-fluid">
+                        <label for="nome">Turma:<br />
+                            <select name="nomePofessor">
+                                <option>Selecione</option>
+                                <option>Professor2</option>
+                                <option>Professor3</option>
+                                <option>Professor4</option>
+                                <option>Professor5</option>
+                                <option>Gerência</option>
+                                <option>Cooredenação</option>
+                                <option>Secretaria</option>
+                                <option>Professor</option>
+                            </select>
+                                <input type="hidden" name="idTurma"/>
+                            <input type="hidden" name="PAturma"/>
+                        </label>
 
-                            <label class="span3">CPF<br />
-                                <?php if ($temErros && isset($errosValidacao['cpf'])) : ?>
-                                    <span class="erro">
-                                        <?php echo $errosValidacao['cpf']; ?>
-                                    </span>
-                                <?php endif; ?>
-                                <input type="text" name="cpf" class="input-block-level" value="<?php echo $dadosAluno['cpf']; ?>" placeholder="CPF">
-                            </label>
-                        </li>
+                    </div>
+                    <div class="row-fluid">
 
-                        <li>
-                            <label>Informe o turno<br />
-                                <select name="selectTurno">
-                                    <option>Selecione um turno</option>
-                                    <option>Manhã</option>
-                                    <option>Tarde</option>
-                                    <option>Noite</option>
-                                </select>
-                            </label>
-                        </li>
-
-                        <li>
-                            <label>Informe o curso<br />
-                                <select name="selectCurso">
-                                    <option>Selecione um curso</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </label>
-                        </li>
-
-                    </ul>
-                    <a href="index.php" class="btn btn-info"><span class="fa-home"></span> Voltar a página inicial</a>
-                    <input type="hidden" name="cadAluno"/>
+                    </div>
+                    <input type="hidden" name="cadDisciplina" />
                     <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
             </div>
@@ -261,26 +276,6 @@ if (!isset($_GET['opcao'])) {
 
                         </div>
                     </div>
-                    
-                    <div class="row-fluid">
-                        <div class="span3">Status do Aluno:</div>
-                        <div class="span8">
-                            <div class="control-group info">
-                                <div class="controls">
-                                    <?php
-                                        if($dadosAluno['ativo'] == 1){
-                                            $dadosAluno['ativo'] = 'Aluno Ativado';
-                                        } else {
-                                            $dadosAluno['ativo'] = 'Aluno Desativado';
-                                        }
-                                                
-                                    ?>
-                                    <span class="help-inline"><strong><?php echo($dadosAluno['ativo']); ?></strong></span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
 
                     <div class="row-fluid">
                         <div class="span3">Matricula: </div>
@@ -396,9 +391,8 @@ if (!isset($_GET['opcao'])) {
 
         case 'desativar':
             ?>
+            desativar aluno
             <?php
-            $id = $_GET['idAluno'];
-            desativarAluno($conexao, $id);
             break;
 
         default :
