@@ -33,7 +33,8 @@ if (!isset($_GET['opcao'])) {
                             <?php echo $errosValidacao['conteudoAviso']; ?>
                         </span>
                     <?php endif; ?>
-                    <textarea placeholder="Conteúdo..." rows="5" name="conteudoAviso" class="input-block-level"></textarea><br />
+                    <textarea placeholder="Conteúdo..." rows="5" value="<?php echo $dadosAviso['conteudoAviso']?>" name="conteudoAviso" class="input-block-level"></textarea><br />
+                    <input type="hidden" name="cadNovoAviso"/>
                     <button type="submit" class="btn btn-success"><span class="fa-checkmark"></span> Enviar aviso</button>
 
                 </form>
