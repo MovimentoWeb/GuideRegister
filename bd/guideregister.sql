@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-03-01 17:01:30
+Date: 2015-03-01 20:55:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -24,7 +24,7 @@ CREATE TABLE `aluno` (
   `nomeAluno` varchar(255) NOT NULL,
   `matricula` int(11) NOT NULL,
   `dtNascimento` date DEFAULT NULL,
-  `rg` int(20) DEFAULT NULL,
+  `rg` char(10) DEFAULT NULL,
   `cpf` char(11) NOT NULL,
   `dataCadastro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `dataAtualizacao` timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP,
@@ -40,7 +40,7 @@ CREATE TABLE `aluno` (
 -- ----------------------------
 -- Records of aluno
 -- ----------------------------
-INSERT INTO `aluno` VALUES ('1', 'Reginaldo', '123456', '0000-00-00', '2147483647', '2147483647', '2015-02-26 08:54:13', '0000-00-00 00:00:00', null, null, null, null, null, '');
+INSERT INTO `aluno` VALUES ('1', 'Reginaldo', '123456', '0000-00-00', '2147483647', '2147483647', '2015-02-26 08:54:13', '2015-03-01 20:49:27', null, null, null, null, null, '\0');
 INSERT INTO `aluno` VALUES ('2', 'Reginaldo', '123456', '0000-00-00', '2147483647', '2147483647', '2015-02-26 08:54:13', '0000-00-00 00:00:00', null, null, null, null, null, '');
 INSERT INTO `aluno` VALUES ('3', 'Reginaldo', '123456', '0000-00-00', '2147483647', '2147483647', '2015-02-26 08:55:13', '0000-00-00 00:00:00', null, null, null, null, null, '');
 INSERT INTO `aluno` VALUES ('4', 'Reginaldo', '123456', '0000-00-00', '2147483647', '2147483647', '2015-02-26 08:55:13', '0000-00-00 00:00:00', null, null, null, null, null, '');
@@ -138,6 +138,45 @@ CREATE TABLE `avisoejustificativa` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for curso
+-- ----------------------------
+DROP TABLE IF EXISTS `curso`;
+CREATE TABLE `curso` (
+  `idcursos` int(11) NOT NULL AUTO_INCREMENT,
+  `nomeCurso` varchar(255) DEFAULT NULL,
+  `dataCriacao` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `dataAtualizacao` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `disciplina` text,
+  PRIMARY KEY (`idcursos`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of curso
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for disciplina
+-- ----------------------------
+DROP TABLE IF EXISTS `disciplina`;
+CREATE TABLE `disciplina` (
+  `idDisciplina` int(11) NOT NULL AUTO_INCREMENT,
+  `codDisciplina` varchar(60) DEFAULT NULL,
+  `nomeDisciplina` varchar(255) DEFAULT NULL,
+  `ch` int(10) DEFAULT NULL,
+  `dataCad` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `dataAtualizacao` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `idProfessor` int(11) DEFAULT NULL,
+  `nomeProfessor` varchar(255) DEFAULT NULL,
+  `idCurso` int(11) DEFAULT NULL,
+  `nomeCurso` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`idDisciplina`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of disciplina
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for professor
 -- ----------------------------
 DROP TABLE IF EXISTS `professor`;
@@ -223,13 +262,21 @@ INSERT INTO `turma` VALUES ('10', '524', '650', null, 'Estética', '2015-02-28 2
 -- ----------------------------
 DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE `usuarios` (
-  `idUsuario` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
   `nomeUsuario` varchar(255) NOT NULL,
+  `dtNascimento` date NOT NULL,
+  `rg` varchar(20) NOT NULL,
+  `cpf` varchar(20) NOT NULL,
+  `dtAdmissao` date NOT NULL,
   `email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
+  `ativo` bit(1) NOT NULL DEFAULT b'1',
   PRIMARY KEY (`idUsuario`,`email`,`senha`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of usuarios
 -- ----------------------------
+INSERT INTO `usuarios` VALUES ('1', 'gabriel pessoa', '1997-07-20', '7654321', '12345678910', '1997-07-20', '', '', '');
+INSERT INTO `usuarios` VALUES ('2', 'reginho', '1997-07-20', '9876543', '10265173469', '1997-07-20', '', '', '\0');
+INSERT INTO `usuarios` VALUES ('3', 'marcelo', '1997-07-20', '1234567', '12345678910', '1997-07-20', '', '', '');
