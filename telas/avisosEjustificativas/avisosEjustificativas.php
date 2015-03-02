@@ -1,5 +1,5 @@
 <?php
-include_once './telas/avisosEjustificativas/ValidacaoJustificativa.php';
+include_once './telas/avisosEjustificativas/ValidacaoAvisosEJustificativa.php';
 if (!isset($_GET['opcao'])) {
     include_once 'telas/inicial.php';
 } else {

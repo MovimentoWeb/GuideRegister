@@ -59,6 +59,12 @@
                         include_once './telas/turmas/turmas.php';
                         break;
 
+// -------------------------------- Tela Disciplinas -------------------------   
+
+                    case 'disciplinas':
+                        include_once './telas/disciplinas/disciplinas.php';
+                        break;
+
 // -------------------------------- Taynara - Relatorios Inicio -------------------------       
 
                     case 'relatorios':
@@ -71,13 +77,13 @@
                     case 'avisosEjustificativas':
                         include_once './telas/avisosEjustificativas/avisosEjustificativas.php';
                         break;
-                    
+
 //--------------------------------- Gabriel - Creditos-----------------------------
-                    
+
                     case 'creditos':
                         include_once './telas/includes/creditos.php';
                         break;
-                    
+
 // -------------------------------- Default ---------------------------------               
 
                     default:

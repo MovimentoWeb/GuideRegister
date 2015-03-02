@@ -199,6 +199,9 @@ body{
 #JustificativasMinha .label{
     margin-bottom: 5px;
 }
+textArea{
+    resize: none;
+}
 /*------------------Creditos---------------------*/
 .creditos img{
     width: 20%;
