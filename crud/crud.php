@@ -154,9 +154,9 @@ function inserirDisciplina($conexao, $dados) {
             . "ch, "
             . "idProfessor, "
             . "nomeProfessor, "
-            . "idCurso"
-            . "nomeCurso"
-            . "idTurma"
+            . "idCurso, "
+            . "nomeCurso, "
+            . "idTurma, "
             . "PAturma"
             . ")"
             . "VALUES('"
@@ -169,7 +169,12 @@ function inserirDisciplina($conexao, $dados) {
             . "{$dados['nomeCurso']}','"
             . "{$dados['idTurma']}','"
             . "{$dados ['PAturma']}')";
-    mysqli_query($conexao, $sqlInserir);
+    if (mysqli_query($conexao, $sqlInserir)) {
+        echo 'fez a inserao';
+    }  else {
+        print_r(mysqli_error($conexao));    
+    }
+    
     unset($_POST);
 }
 
