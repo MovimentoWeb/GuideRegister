@@ -1,94 +1,73 @@
 <?php
+
 include_once 'crud/crud.php';
 include_once 'telas/includes/funcoesDeApoio.php';
 
 //Recuperar campos Preenchidos
-$dadosAluno = array(
+$dadosDiscip = array(
     'id' => 0,
-    'nomeAluno' => (isset($_POST['nomeAluno'])) ? $_POST['nomeAluno'] : '',
-    'dtNascimento' => (isset($_POST['dtNascimento'])) ? $_POST['dtNascimento'] : '',
-    'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
-    'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
-    'matricula' => (isset($_POST['matricula'])) ? $_POST['matricula'] : '',
-    );
+    'nomeDisciplina' => (isset($_POST['nomeDisciplina'])) ? $_POST['nomeDisciplina'] : '',
+    'codDisciplina' => (isset($_POST['codigoDisciplina'])) ? $_POST['codigoDisciplina'] : '',
+    'ch' => (isset($_POST['ch'])) ? $_POST['ch'] : '',
+    'nomePofessor' => (isset($_POST['nomePofessor'])) ? $_POST['nomePofessor'] : '',
+    'idProfessor' => (isset($_POST['idProfessor'])) ? $_POST['idProfessor'] : '',
+    'idCurso' => (isset($_POST['idCurso'])) ? $_POST['idCurso'] : '',
+    'nomeCurso' => (isset($_POST['nomeCurso'])) ? $_POST['nomeCurso'] : '',
+    'idTurma' => (isset($_POST['idTurma'])) ? $_POST['idTurma'] : '',
+    'PAturma' => (isset($_POST['PAturma'])) ? $_POST['PAturma'] : '',
+
+);
 
 $temErros = false;
 $errosValidacao = array();
 $exibirTabela = FALSE;
 
 
-//-------- Validaçao Cadastro de aluno -----------
-if (temPost() && isset($_POST['cadAluno'])) {
-    $dadosAlunos = array();
+//Validação  Cadastrar Disciplina
+if (temPost() && isset($_POST['cadDisciplina'])) {
 
-    //Validação  NOME
-    if (isset($_POST['nomeAluno']) && strlen($_POST['nomeAluno']) > 5) {
-        $dadosAlunos['nomeAluno'] = $_POST['nomeAluno'];
+//Validação da nome disciplina
+    if (isset($_POST['nomeDisciplina']) && strlen($_POST['nomeDisciplina']) > 5) {
+        $dadosDiscip['nomeDisciplina'] = $_POST['nomeDisciplina'];
     } else {
         $temErros = true;
-        $errosValidacao['nomeAluno'] = ''
+        $errosValidacao['nomeDisciplina'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno inválido!</h4>'
-                . 'Digite corretamente o nome do aluno'
+                . '<h4>Atenção!</h4>'
+                . 'Digite um nome com mais de 5 caracteres'
                 . '</div>';
     }
-
-    //Validação matricula
-    if (isset($_POST['matricula']) && strlen($_POST['matricula']) >= 2) {
-        $dadosAlunos['matricula'] = $_POST['matricula'];
-    } else {
-        $temErros = TRUE;
-        $errosValidacao['matricula'] = ''
-                . '<div class="alert alert-error">'
-                . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Matrícula inválido!</h4>'
-                . 'Digite um número de matricula correto'
-                . '</div>';
-    }
-
-    //Validação data nascimento
-    if (isset($_POST['dtNascimento']) && strlen($_POST['dtNascimento']) >= 10) {
-        $dadosAlunos['dtNascimento'] = $_POST['dtNascimento'];
+    //Validação da codigo disciplina
+    if (isset($_POST['codigoDisciplina']) ) {
+        $dadosDiscip['codigoDisciplina'] = $_POST['codigoDisciplina'];
     } else {
         $temErros = true;
-        $errosValidacao['dtNascimento'] = ''
+        $errosValidacao['codigoDisciplina'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Data de nascimento inválida!</h4>'
-                . 'Data de nascimento deve seguir o formato: <strong>00/00/0000</strong>'
+                . '<h4>Atenção!</h4>'
+                . 'Digite um codigo Valido'
                 . '</div>';
     }
-
-    //Validação rg
-    if (isset($_POST['rg']) && strlen($_POST['rg']) >= 5) {
-        $dadosAlunos['rg'] = $_POST['rg'];
+    //Validação  Carga Horaria
+    if (isset($_POST['ch'])) {
+        $dadosDiscip['ch'] = $_POST['ch'];
     } else {
-        $temErros = TRUE;
-        $errosValidacao['rg'] = ''
+        $temErros = true;
+        $errosValidacao['ch'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>RG inválido!</h4>'
-                . 'Digite um número de RG no formato: <strong>999.888.777</strong>'
+                . '<h4>Atenção!</h4>'
+                . 'Digite a carga horaria do curso.'
                 . '</div>';
     }
+    
+      $dadosDiscip['nomeProfessor'] = $_POST['nomeProfessor'];
 
-    //Validação cpf
-    if (isset($_POST['cpf']) && strlen($_POST['cpf']) >= 8) {
-        $dadosAlunos['cpf'] = $_POST['cpf'];
-    } else {
-        $temErros = TRUE;
-        $errosValidacao['cpf'] = ''
-                . '<div class="alert alert-error">'
-                . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>CPF inválido!</h4>'
-                . 'CPF inválido! Digite um número de RG no formato: <strong>111.999.888-77</strong>'
-                . '</div>';
-    }
-
+    
     if (!$temErros) {
-        // Função de inserir no banco de dados
-        inserirAluno($conexao, $dadosAlunos);
+        inserirDisciplina($conexao, $dadosDiscip);
         die();
     }
 }

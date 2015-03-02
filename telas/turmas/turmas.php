@@ -11,7 +11,7 @@ if (!isset($_GET['opcao'])) {
             <div class="meioTurma ">
                 <form class="well" method="POST">
                     <legend><span class="fa-user-add"></span> Cadastrar Turma</legend>
-                    
+
                     <label for="nome">
                         PA da Turma: 
                         <?php if ($temErros && isset($errosValidacao['nome'])) : ?>
@@ -21,10 +21,6 @@ if (!isset($_GET['opcao'])) {
                         <?php endif; ?>
                         <input type="text" id="nome" class="input-block-level" placeholder="PA da turma" name="nome" value="<?php echo $projeto['nome']; ?>"><br />
                     </label>
-                    
-                   
-
-                    
 
                     <div class="row-fluid">
                         <div class="span4">
@@ -56,7 +52,7 @@ if (!isset($_GET['opcao'])) {
                     </div>
                     <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
-            </di
+            </div>
             <?php
             break;
 
@@ -95,7 +91,7 @@ if (!isset($_GET['opcao'])) {
                                 <?php echo $errosValidacao['pesquisaTurma']; ?>
                             </span>
                         <?php endif; ?>
-                        
+
                         <legend><span class="fa-search3"></span>  Pesquisar Turmas</legend>
                         <span class="help-block">Digite a PA da turma para pesquisa</span>
 
@@ -189,55 +185,6 @@ if (!isset($_GET['opcao'])) {
                 </div>
             </div>
 
-            <?php
-            break;
-            
-            case'Disciplina':
-            ?>
-            <div class="meioTurma ">
-                <form class="well" method="POST">
-                    <legend><span class="fa-user-add"></span> Cadastrar Disciplina</legend>
-                    
-                    <label for="nome">
-                        Nome disciplina: 
-                        <?php if ($temErros && isset($errosValidacao['nomeDisciplina'])) : ?>
-                            <span class="erro">
-                                <?php echo $errosValidacao['nomeDisciplina']; ?>
-                            </span>
-                        <?php endif; ?>
-                        <input type="text" id="nomeDisciplina" class="input-block-level" placeholder="Nome disciplina" name="nomeDisciplina" value="<?php echo $projeto['nomeDisciplina']; ?>"><br />
-                    </label>
-                    
-                   
-
-
-                    <div class="row-fluid">
-                        <div class="span4">
-                            <label for="cargaHoraria">
-                                Carga Horaria: 
-                                <?php if ($temErros && isset($errosValidacao['CargaH'])) : ?>
-                                    <span class="erro">
-                                        <?php echo $errosValidacao['CargaH']; ?>
-                                    </span>
-                                <?php endif; ?>
-                                <input type="text" id="cargaHoraria" class="input-block-level" placeholder="Carga Horaria" name="CargaH" value="<?php echo $projeto['CargaH']; ?>" ><br />
-                            </label>
-                        </div>
-                        <div class="span4">
-                            <label for="cargaHoraria">
-                                Codigo da disciplina: 
-                                <?php if ($temErros && isset($errosValidacao['codigoDisciplina'])) : ?>
-                                    <span class="erro">
-                                        <?php echo $errosValidacao['codigoDisciplina']; ?>
-                                    </span>
-                                <?php endif; ?>
-                                <input type="text" id="codigoDisciplina" class="input-block-level" placeholder="Codigo da disciplina" name="codigoDisciplina" value="<?php echo $projeto['codigoDisciplina']; ?>" ><br />
-                            </label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
-                </form>
-            </di
             <?php
             break;
 
