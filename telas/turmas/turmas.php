@@ -52,7 +52,7 @@ if (!isset($_GET['opcao'])) {
                     </div>
                     <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
-            </di
+            </div>
             <?php
             break;
 
