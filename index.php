@@ -48,12 +48,21 @@
                     case 'pesquisarprofessor':
                         include_once './telas/professores/Pesquisar.php';
                         break;
+                    case 'detalhes':
+                        include_once './telas/professores/professores.php';
+                        break;
 
 
 // -------------------------------- Tela aluno -------------------------   
 
                     case 'turmas':
                         include_once './telas/turmas/turmas.php';
+                        break;
+
+// -------------------------------- Tela Disciplinas -------------------------   
+
+                    case 'disciplinas':
+                        include_once './telas/disciplinas/disciplinas.php';
                         break;
 
 // -------------------------------- Taynara - Relatorios Inicio -------------------------       
@@ -67,6 +76,12 @@
 
                     case 'avisosEjustificativas':
                         include_once './telas/avisosEjustificativas/avisosEjustificativas.php';
+                        break;
+
+//--------------------------------- Gabriel - Creditos-----------------------------
+
+                    case 'creditos':
+                        include_once './telas/includes/creditos.php';
                         break;
 
 // -------------------------------- Default ---------------------------------               

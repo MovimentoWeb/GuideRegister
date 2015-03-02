@@ -261,26 +261,6 @@ if (!isset($_GET['opcao'])) {
 
                         </div>
                     </div>
-                    
-                    <div class="row-fluid">
-                        <div class="span3">Status do Aluno:</div>
-                        <div class="span8">
-                            <div class="control-group info">
-                                <div class="controls">
-                                    <?php
-                                        if($dadosAluno['ativo'] == 1){
-                                            $dadosAluno['ativo'] = 'Aluno Ativado';
-                                        } else {
-                                            $dadosAluno['ativo'] = 'Aluno Desativado';
-                                        }
-                                                
-                                    ?>
-                                    <span class="help-inline"><strong><?php echo($dadosAluno['ativo']); ?></strong></span>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
 
                     <div class="row-fluid">
                         <div class="span3">Matricula: </div>
@@ -396,9 +376,8 @@ if (!isset($_GET['opcao'])) {
 
         case 'desativar':
             ?>
+            desativar aluno
             <?php
-            $id = $_GET['idAluno'];
-            desativarAluno($conexao, $id);
             break;
 
         default :

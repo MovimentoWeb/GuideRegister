@@ -162,6 +162,9 @@ body{
     list-style: outside none none;
     margin-left: 0;
 }
+#butaozinho .btn{
+    margin-right: 50px;
+}
 /*-------------------Alexsander - Professores -----------------------*/
 
 .professores form ul{
@@ -176,6 +179,15 @@ body{
     list-style: none;
     margin-left: 0; 
 }
+#detalhesMeus .row-fluid{
+    width: 475px;
+}
+#detalhesMeus .row-fluid .input input{
+    width: 100px;
+}
+#detalhesMeus .controls{
+    width: 200px;
+}
 /*------------------pagina ver meus avisos---------*/
 #AvisosMeus .label{
     margin-bottom: 5px;
@@ -186,4 +198,25 @@ body{
 }
 #JustificativasMinha .label{
     margin-bottom: 5px;
+}
+textArea{
+    resize: none;
+}
+/*------------------Creditos---------------------*/
+.creditos img{
+    width: 20%;
+    height: 15%;
+}
+.creditos h2{
+    padding: 2% 24%;
+}
+.creditos a{
+    text-decoration: underline;
+}
+.creditos p{
+    padding: 0 24%;
+}
+.creditos hr{
+    background: #000;
+    height: 2px;
 }

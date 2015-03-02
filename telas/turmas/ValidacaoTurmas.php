@@ -46,18 +46,7 @@ if (temPost()) {
                 . '</div>';
     }
 
-//Validação  Carga Horaria
-    if (isset($_POST['CargaH']) && strlen($_POST['CargaH']) > 5) {
-        $projeto['CargaH'] = $_POST['CargaH'];
-    } else {
-        $temErros = true;
-        $errosValidacao['CargaH'] = ''
-                . '<div class="alert alert-error">'
-                . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Digite a carga Horaria!</h4>'
-                . 'Digite a carga horaria do curso determinado'
-                . '</div>';
-    }
+
 
     //Validação  Turno
     if (isset($_POST['Turno']) && strlen($_POST['Turno']) > 5) {
@@ -92,18 +81,21 @@ if (temPost()) {
 
 
 //Validação da pesquisa
-if (isset($_POST['pesquisaTurma']) && strlen($_POST['pesquisaTurma']) > 5) {
+    if (isset($_POST['pesquisaTurma']) && strlen($_POST['pesquisaTurma']) > 5) {
         $projeto['pesquisaTurma'] = $_POST['pesquisaTurma'];
     } else {
         $temErros = true;
         $errosValidacao['pesquisaTurma'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Pesquisa invalida!</h4>'
+                . '<h4>Atenção!</h4>'
                 . 'Digite sua pesquisa nos campos abaixo'
                 . '</div>';
     }
 }
+
+
+
 $projeto = array(
     'id' => 0,
     'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',
@@ -113,4 +105,6 @@ $projeto = array(
     'Turno' => (isset($_POST['Turno'])) ? $_POST['Turno'] : '',
     'Periodo' => (isset($_POST['Periodo'])) ? $_POST['Periodo'] : '',
     'pesquisaTurma' => (isset($_POST['pesquisaTurma'])) ? $_POST['pesquisaTurma'] : '',
+    'nomeDisciplina' => (isset($_POST['nomeDisciplina'])) ? $_POST['nomeDisciplina'] : '',
+    'codigoDisciplina' => (isset($_POST['codigoDisciplina'])) ? $_POST['codigoDisciplina'] : '',
 );

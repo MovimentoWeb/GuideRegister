@@ -1,206 +1,75 @@
 
 <?php
-include_once 'telas/aluno/validacaoAluno.php';
+include_once 'telas/relatorios/ValidacaoRelatorio.php';
 if (!isset($_GET['opcao'])) {
     
 } else {
     switch ($_GET['opcao']) {
-        case'pesquisarPorAluno':
-            ?>
-
-            <div class="well">
-
-                <div class="relatorios"> 
-                    <legend><span class="fa-search3"></span>  Pesquisar Alunos</legend>
-
-                    <form class="form-search"> 
-
-                        <span class="help-block">Digite um nome de aluno para pesquisa</span>
-
-                        <ul>
-                            <li>
-                                <div class="input-append">
-                                    <input type="text" class="search-query input-block-level">
-                                    <!--                        <button type="submit" class="btn btn-primary">Busca</button>-->
-                                    <a href="?pg=dadosAluno" class="btn btn-primary"> Buscar</a>
-                                </div>
-                            </li>
-                        </ul> 
-
-                    </form>  
-
-                </div>
-
-                <div class="tabelas">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Matricula</th>
-                                <th>Nome</th>
-                                <th>Sobrenome</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-
-                            <tr>
-                                <td>00000</td>
-                                <td>Alisson</td>
-                                <td>Elias</td>
-                            </tr>
-
-                            <tr>
-                                <td>00001</td>
-                                <td>Felipe</td>
-                                <td>Reis</td>
-                            </tr>
-
-                            <tr>
-                                <td>00002</td>
-                                <td>Julia</td>
-                                <td>França</td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-
-                </div>
-
-            </div> 
-
-            <?php
-            break;
 
         case'atasPorTurmas':
             ?>
-            <div>
-                <div class="well">
-
-                    <div class="ataturmas">
-
-                        <legend><span class="fa-user-add"></span> Ata por Turmas </legend>
-                        <form class="form-search">
-                            <span class="help-block">Digite o numero da turma para pesquisa</span>
-                            <ul>
-                                <li>
-                                    <div class="input-append">
-                                        <input type="text" class="search-query input-block-level">
-                                        <!--                        <button type="submit" class="btn btn-primary">Busca</button>-->
-                                        <a href="?pg=dadosAluno" class="btn btn-primary"> Buscar</a>
-                                    </div>
-                                </li>
-                            </ul> 
-                        </form>  
-                        <div>
-
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>PA</th>
-                                        <th>Matricula</th>
-                                        <th>Nome do aluno</th>
-                                        <th>21</th>
-                                        <th>22</th>
-                                        <th>23</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-
-                                    <tr>
-                                        <td>0</td>
-                                        <td>00000</td>
-                                        <td>Nome</td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>00000</td>
-                                        <td>Nome</td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>00000</td>
-                                        <td>Nome</td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>0</td>
-                                        <td>00000</td>
-                                        <td>Nome</td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                        <td>
-                                            <label class="checkbox inline">
-                                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 
-                                            </label>
-                                        </td>
-                                    </tr>
-
-                                </tbody>
-
-                            </table>
-
+            <div class="well">
+                <div class="ataturmas">
+                    <legend><span class="fa-user-add"></span> Ata por Turmas </legend>
+                    <form class="form-search" method="POST">
+                        <?php if ($temErros && isset($errosValidacao['ataturma'])) : ?>
+                            <span class="erro">
+                                <?php echo $errosValidacao['ataturma']; ?>
+                            </span>
+                        <?php endif; ?>
+                        <span class="help-block">Digite a PA da turma para pesquisar</span>
+                        <div class="input-append">
+                            <input id="ataturma" name="ataturma" type="text" class="search-query " autofocus=""  value="">
+                            <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                         </div>
+                    </form>  
+                    <?php
+                    if ($exibirTabela == TRUE) {
+                        ?>
+                        <table class="table table-hover table-striped">
+                            <thead>
+                                <tr>
+                                    <th>PA</th>
+                                    <th>Curso</th>
+                                    <th>CH</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                //  foreach ($listarAluno as $aluno):
+                                ?>
+                                <tr>
+                                    <td><?php echo $dadosRelatorio['PAturma']; ?></td>
+                                    <td><?php echo $dadosRelatorio['curso']; ?></td>
+                                    <td><?php echo $dadosRelatorio['chTotal']; ?> horas</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                                Ação
+                                                <span class="caret"></span>
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="?pg=aluno&opcao=detalhes&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>" class="fa-checkmark2"> Ver detalhes</a></li>
+                                                <li><a href="?pg=aluno&opcao=editar&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>" class="fa-pencil"> Editar turma</a></li>
+                                                <li><a href="?pg=aluno&opcao=desativar&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>"  class="fa-remove"> Desativar Turma</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>    
+                                <?php
+                                // endforeach;
+                                ?>
+                            </tbody>
+                        </table>
+                        <?php
+                    } else {
 
-
-
-                    </div>
-
-                </div>    
-
-            </div>
+                        echo '0 - Resultados encontrados';
+                    }
+                    ?>
+                </div>
+            </div>    
             <?php
             break;
 
@@ -212,17 +81,25 @@ if (!isset($_GET['opcao'])) {
 
                 <div class="well">
                     <form class="form-search" method="POST">
-                        <legend><span class="fa-search3"></span> Pesquisar disciplinas</legend>
-                        <span class="help-block">Digite o nome da disciplina para pesquisa</span>
+
+                        <?php if ($temErros && isset($errosValidacao['atadisciplina'])) : ?>
+                            <span class="erro">
+                                <?php echo $errosValidacao['atadisciplina']; ?>
+                            </span>
+                        <?php endif; ?>
+                        <span class="help-block">Digite um nome da disciplina</span>
                         <ul>
                             <li>
                                 <div class="input-append">
-                                    <input type="text" class="search-query input-block-level">
-                                    <button nm type="submit" class="btn btn-primary">Pesuisar</button>
+                                    <input id="ataturma" name="atadisciplina" placeholder="Digite um nome para pesquisa..." type="text" class="search-query input-block-level" autofocus=""  value="<?php echo $dadosRelatorio['atadisciplina']; ?>">
+
+
+                                    <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                                 </div>
+                                <div class="btn btn-success pull-right" id="butaozinho" type="submit" >Criar Disciplina</div>
                             </li>
                         </ul>  
-                    </form>
+                    </form>  
 
                     <div class=" tabelas2">
                         <table class="table table-striped">
@@ -259,6 +136,56 @@ if (!isset($_GET['opcao'])) {
                     </div>
                 </div>
 
+            </div>
+
+            <?php
+            break;
+
+
+        case'listagemTurmas':
+            ?>
+
+            <div class="well">  
+                <legend><span class="fa-search3"></span>  Listagem de turmas</legend>
+
+                <table class="table table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>PA</th>
+                            <th>Curso</th>
+                            <th>Carga Horária</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $dadosRelatorio = listagemDeTurmas($conexao);
+                        foreach ($dadosRelatorio as $rel):
+                            ?>
+                            <tr>
+                                <td><?php echo $rel['PAturma'] ?></td>
+                                <td><?php echo $rel['curso'] ?></td>
+                                <td><?php echo $rel['chTotal'] ?> horas</td>
+
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                                            Ação
+                                            <span class="caret"></span>
+                                        </a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="?pg=aluno&opcao=detalhes&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>" class="fa-checkmark2"> Ver detalhes</a></li>
+                                            <li><a href="?pg=aluno&opcao=editar&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>" class="fa-pencil"> Editar turma</a></li>
+                                            <li><a href="?pg=aluno&opcao=desativar&idrel=<?php //echo $dadosRelatorio['PAturma']                      ?>"  class="fa-remove"> Desativar Turma</a></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>    
+                            <?php
+                        endforeach;
+                        ?>
+                    </tbody>
+                </table>
             </div>
 
             <?php
