@@ -68,7 +68,7 @@ if (temPost() && isset($_POST['cadDisciplina'])) {
     
     if (!$temErros) {
         inserirDisciplina($conexao, $dadosDiscip);
-        
+        die();
     }
 }
 
