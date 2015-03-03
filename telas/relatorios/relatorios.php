@@ -96,7 +96,7 @@ if (!isset($_GET['opcao'])) {
 
                                     <button type="submit" class="btn btn-primary"><span class="fa-search3"></span> Busca</button>
                                 </div>
-                                <div class="btn btn-success pull-right" id="butaozinho" type="submit" >Criar Disciplina</div>
+                                <a href="?pg=disciplinas&opcao=cadastrar"><div class="btn btn-success pull-right" id="butaozinho" type="submit" >Criar Disciplina</div></a>
                             </li>
                         </ul>  
                     </form>  

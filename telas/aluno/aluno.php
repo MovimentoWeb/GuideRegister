@@ -330,8 +330,8 @@ if (!isset($_GET['opcao'])) {
                         </div>
                     </div>
 
-                    <a href="" class="btn btn-success"><span class="fa-backward" ></span> Voltar</a>
-                    <a href="" class="btn btn-warning"><span class="fa-pencil"></span> Editar aluno</a>
+                    <a href="?pg=aluno&opcao=pesquisar" class="btn btn-success"><span class="fa-backward" ></span> Voltar</a>
+                    <a href="?pg=aluno&opcao=editar&idAluno=<?php echo $dadosAluno['idAluno'] ;?>" class="btn btn-warning"><span class="fa-pencil"></span> Editar aluno</a>
                 </form>
             </div>
 
