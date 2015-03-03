@@ -1,4 +1,5 @@
 <?php
+
 include_once 'crud/crud.php';
 include_once 'telas/includes/funcoesDeApoio.php';
 
@@ -10,7 +11,7 @@ $dadosAluno = array(
     'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
     'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
     'matricula' => (isset($_POST['matricula'])) ? $_POST['matricula'] : '',
-    );
+);
 
 $temErros = false;
 $errosValidacao = array();
@@ -203,9 +204,17 @@ if (isset($_GET['idAluno'])) {
 
 //-------- Validaçao Ata FREQUENCIA-----------
 if (isset($_GET['opcao']) == 'AtaFrequencia') {
+    $nomeCurso = 'Nome do curso';
+    $data = date('d') . '/' . date('m') . '/' . date('Y');
+    echo $idProfessor = $_GET['idUsuario'];
+    $nomeProfessor = listarProfessorPorId($conexao, $idProfessor);
+    $idTurma;
+    $nomeTurma;
+
+
+
+    $freqDoDia = '';
     echo 'entrou no ata frequencia';
-    
-    
-}  else {
-    echo 'não entrou';    
+} else {
+    echo 'não entrou';
 }

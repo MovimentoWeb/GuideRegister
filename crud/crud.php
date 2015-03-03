@@ -57,7 +57,7 @@ function editarAluno($conexao, $dadosAluno) {
 function desativarAluno($conexao, $id) {
     $sqlAtualizar = "UPDATE aluno SET "
             . "ativo = 0 "
-            . "WHERE idAluno = ". $id;
+            . "WHERE idAluno = " . $id;
     if (mysqli_query($conexao, $sqlAtualizar)) {
         
     } else {
@@ -86,9 +86,22 @@ function inserirProfessor($conexao, $dados) {
 }
 
 function listarProfessorPorId($conexao, $id) {
-    $sqlBuscar = "SELECT * FROM usuarios WHERE idUsuario =" . $id;
+    $sqlBuscar = "SELECT * FROM usuarios WHERE idUsuario = " . $id;
     $resultado = mysqli_query($conexao, $sqlBuscar);
-    return mysqli_fetch_assoc($resultado);
+
+    $resProfessor = array();
+    while ($registro = mysqli_fetch_assoc($resultado)) {
+        $resProfessor[] = $registro;
+    }
+    //return $resProfessor;
+    
+    if (mysqli_query($conexao, $resultado)) {
+        echo "inseriu";
+    } else {
+        echo mysqli_error($conexao);
+    }
+
+    //return mysqli_fetch_assoc($resultado);
 }
 
 function listarProfessor($conexao, $dadosProfessor) {
@@ -119,7 +132,7 @@ function editarProfessor($conexao, $dadosProfessor) {
 function desativarProfessor($conexao, $id) {
     $sqlAtualizar = "UPDATE usuarios SET "
             . "ativo = 0 "
-            . "WHERE idUsuario = ". $id;
+            . "WHERE idUsuario = " . $id;
     if (mysqli_query($conexao, $sqlAtualizar)) {
         
     } else {
@@ -171,10 +184,10 @@ function inserirDisciplina($conexao, $dados) {
             . "{$dados ['PAturma']}')";
     if (mysqli_query($conexao, $sqlInserir)) {
         echo 'fez a inserao';
-    }  else {
-        print_r(mysqli_error($conexao));    
+    } else {
+        print_r(mysqli_error($conexao));
     }
-    
+
     unset($_POST);
 }
 
