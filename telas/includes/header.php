@@ -62,8 +62,8 @@
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><span class="fa-list2"></span> Cursos</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="?pg=turmas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar curso</a></li>
-                                    <li><a href="?pg=turmas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
+                                    <li><a href="?pg=cursos&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar curso</a></li>
+                                    <li><a href="?pg=cursos&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown-submenu">

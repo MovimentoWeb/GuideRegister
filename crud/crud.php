@@ -178,6 +178,35 @@ function inserirDisciplina($conexao, $dados) {
     unset($_POST);
 }
 
+//-------------------------Funções de Turmas-------------------
+
+function inserirTurma($conexao, $dados) {
+    $sqlInserir = "insert into turma ("
+            . "paTurma, "
+            . "chTotal, "
+            . "turno, "
+            . "idCurso, "
+            . "nomeCurso, "
+            . "idDisciplina, "
+            . "nomeDisciplina "
+            . ")"
+            . "VALUES('"
+            . "{$dados['paTurma']}','"
+            . "{$dados['chTotal']}','"
+            . "{$dados['turno']}','"
+            . "{$dados['idCurso']}','"
+            . "{$dados['nomeCurso']}','"
+            . "{$dados['idDisciplina']}','"
+            . "{$dados ['nomeDisciplina']}')";
+    if (mysqli_query($conexao, $sqlInserir)) {
+        echo 'fez a inserao';
+    }  else {
+        print_r(mysqli_error($conexao));    
+    }
+    
+    unset($_POST);
+}
+
 //--------------------Funções  CURSOS -------------------
 
 

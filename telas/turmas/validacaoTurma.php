@@ -4,19 +4,16 @@ include_once 'crud/crud.php';
 include_once 'telas/includes/funcoesDeApoio.php';
 
 //Recuperar campos Preenchidos
-$dadosDiscip = array(
+$dadosTurmas = array(
     'id' => 0,
-    'nomeDisciplina' => (isset($_POST['nomeDisciplina'])) ? $_POST['nomeDisciplina'] : '',
-    'codDisciplina' => (isset($_POST['codigoDisciplina'])) ? $_POST['codigoDisciplina'] : '',
-    'ch' => (isset($_POST['ch'])) ? $_POST['ch'] : '',
-    'nomePofessor' => (isset($_POST['nomePofessor'])) ? $_POST['nomePofessor'] : '',
-    'idProfessor' => (isset($_POST['idProfessor'])) ? $_POST['idProfessor'] : '',
-    'idCurso' => (isset($_POST['idCurso'])) ? $_POST['idCurso'] : '',
-    'nomeCurso' => (isset($_POST['nomeCurso'])) ? $_POST['nomeCurso'] : '',
     'idTurma' => (isset($_POST['idTurma'])) ? $_POST['idTurma'] : '',
     'paTurma' => (isset($_POST['paTurma'])) ? $_POST['paTurma'] : '',
-
-);
+    'chTotal' => (isset($_POST['chTotal'])) ? $_POST['chTotal'] : '',
+    'idCurso' => (isset($_POST['idCurso'])) ? $_POST['idCurso'] : '',
+    'nomeCurso' => (isset($_POST['nomeCurso'])) ? $_POST['nomeCurso'] : '',
+    'idDisciplina' => (isset($_POST['idDisciplina'])) ? $_POST['idDisciplina'] : '',
+    'nomeDisciplina' => (isset($_POST['nomeDisciplina'])) ? $_POST['nomeDisciplina'] : '',
+    );
 
 $temErros = false;
 $errosValidacao = array();
@@ -24,50 +21,37 @@ $exibirTabela = FALSE;
 
 
 //Validação  Cadastrar Disciplina
-if (temPost() && isset($_POST['cadDisciplina'])) {
+if (temPost() && isset($_POST['cadTurma'])) {
 
 //Validação da nome disciplina
-    if (isset($_POST['nomeDisciplina']) && strlen($_POST['nomeDisciplina']) > 5) {
-        $dadosDiscip['nomeDisciplina'] = $_POST['nomeDisciplina'];
+    if (isset($_POST['paTurma']) && strlen($_POST['paTurma']) >= 2) {
+        $dadosTurmas['paTurma'] = $_POST['paTurma'];
     } else {
         $temErros = true;
-        $errosValidacao['nomeDisciplina'] = ''
+        $errosValidacao['paTurma'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Atenção!</h4>'
-                . 'Digite um nome com mais de 5 caracteres'
+                . '<h4>Atenção PA da turma invalida!</h4>'
+                . 'Digite uma PA com mais de 2 caracteres'
                 . '</div>';
     }
     //Validação da codigo disciplina
-    if (isset($_POST['codigoDisciplina']) ) {
-        $dadosDiscip['codigoDisciplina'] = $_POST['codigoDisciplina'];
+    if (isset($_POST['chTotal']) ) {
+        $dadosTurmas['chTotal'] = $_POST['chTotal'];
     } else {
         $temErros = true;
-        $errosValidacao['codigoDisciplina'] = ''
+        $errosValidacao['chTotal'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Atenção!</h4>'
-                . 'Digite um codigo Valido'
-                . '</div>';
-    }
-    //Validação  Carga Horaria
-    if (isset($_POST['ch'])) {
-        $dadosDiscip['ch'] = $_POST['ch'];
-    } else {
-        $temErros = true;
-        $errosValidacao['ch'] = ''
-                . '<div class="alert alert-error">'
-                . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Atenção!</h4>'
-                . 'Digite a carga horaria do curso.'
+                . '<h4>Atenção carga horaria invalida!</h4>'
+                . 'Digite uma carga horaria Valida'
                 . '</div>';
     }
     
-      $dadosDiscip['nomeProfessor'] = $_POST['nomeProfessor'];
 
     
     if (!$temErros) {
-        inserirDisciplina($conexao, $dadosDiscip);
+        inserirTurma($conexao, $dadosTurmas);
         die();
     }
 }
