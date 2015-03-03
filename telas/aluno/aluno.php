@@ -349,9 +349,10 @@ if (!isset($_GET['opcao'])) {
             <div class="well frequencia"> 
                 <form action="" method="post">
                     <legend><span class="fa-user-add"></span> Ata de frequência</legend> 
-                    <span class="label"><?php echo $nomeCurso; ?></span> |
-                    <span class="label label-info"><?php echo $nomeProfessor['nomeUsuario']; ?></span> |
-                    <span class="label label-important"><?php echo 'Data: ' . $data; ?></span>
+                    <span class="label label-important">Curso: <?php echo $nomeCurso; ?></span> |
+                    <span class="label label-success">PA: <?php echo $PAturma; ?></span> |
+                    <span class="label label-info">Professor: <?php echo $nomeProfessor['nomeUsuario']; ?></span> |
+                    <span class="label"><?php echo 'Data: ' . $data; ?></span>
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -377,7 +378,7 @@ if (!isset($_GET['opcao'])) {
                                     </label>
                                 </td>
                                 <td>
-                                    <div class="btn-group">
+                                    <div class="btn-group pull-right">
                                         <a class="label" data-toggle="dropdown" href="#">
                                             <span class="fa-comments"></span>
                                             <span class="caret"></span>
