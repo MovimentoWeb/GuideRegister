@@ -193,7 +193,6 @@ if (temPost() && isset($_POST['EditAluno'])) {
     }
 }
 
-//-------- Validaçao Excluir Aluno-----------
 //-------- Detalhes do Aluno -----------
 
 if (isset($_GET['idAluno'])) {
@@ -203,6 +202,11 @@ if (isset($_GET['idAluno'])) {
     $dadosAluno = listarAlunoPorId($conexao, $listaAluno['idAluno']);
 }
 
-
-
-
+//-------- Validaçao Ata FREQUENCIA-----------
+if (isset($_GET['opcao']) == 'AtaFrequencia') {
+    echo 'entrou no ata frequencia';
+    
+    
+}  else {
+    echo 'não entrou';    
+}

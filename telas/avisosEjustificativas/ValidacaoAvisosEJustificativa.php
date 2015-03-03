@@ -1,17 +1,16 @@
 <?php
 
 include_once 'telas/includes/funcoesDeApoio.php';
-
+$dadosAviso = array();
 $temErros = false;
 $errosValidacao = array();
 
-if (temPost()) {
-    $projeto = array();
+if (temPost() && isset($_POST['cadNovoAviso'])) {
+    $dadosAviso = array();
 
     /// Nome //
-
     if (isset($_POST['nome']) && strlen($_POST['nome']) > 5) {
-        $projeto['nome'] = $_POST['nome'];
+        $dadosAviso['nome'] = $_POST['nome'];
     } else {
         $temErros = true;
         $errosValidacao['nome'] = ''
@@ -25,7 +24,7 @@ if (temPost()) {
     // Turma //
 
     if (isset($_POST['Turma']) && strlen($_POST['Turma']) > 5) {
-        $projeto['Turma'] = $_POST['Turma'];
+        $dadosAviso['Turma'] = $_POST['Turma'];
     } else {
         $temErros = true;
         $errosValidacao['Turma'] = ''
@@ -38,7 +37,7 @@ if (temPost()) {
     // Curso //
 
     if (isset($_POST['Curso']) && strlen($_POST['Curso']) > 5) {
-        $projeto['Curso'] = $_POST['Curso'];
+        $dadosAviso['Curso'] = $_POST['Curso'];
     } else {
         $temErros = true;
         $errosValidacao['Curso'] = ''
@@ -50,7 +49,7 @@ if (temPost()) {
     }
     // Nome do professor //
     if (isset($_POST['NomeP']) && strlen($_POST['NomeP']) > 5) {
-        $projeto['NomeP'] = $_POST['NomeP'];
+        $dadosAviso['NomeP'] = $_POST['NomeP'];
     } else {
         $temErros = true;
         $errosValidacao['NomeP'] = ''
@@ -63,7 +62,7 @@ if (temPost()) {
     // Justificativas //
 
     if (isset($_POST['Just']) && strlen($_POST['Just']) > 5) {
-        $projeto['Just'] = $_POST['Just'];
+        $dadosAviso['Just'] = $_POST['Just'];
     } else {
         $temErros = true;
         $errosValidacao['Just'] = ''
@@ -74,12 +73,12 @@ if (temPost()) {
                 . '</div>';
     }
 }
-
+    //conteudo Aviso
 if (temPost()) {
-    $projeto = array();
+    $dadosAviso = array();
 
     if (isset($_POST['conteudoAviso']) && strlen($_POST['conteudoAviso']) > 0) {
-        $projeto['conteudoAviso'] = $_POST['conteudoAviso'];
+        $dadosAviso['conteudoAviso'] = $_POST['conteudoAviso'];
     } else {
         $temErros = true;
         $errosValidacao['conteudoAviso'] = ''
@@ -91,10 +90,11 @@ if (temPost()) {
     }
 }
 
-$projeto = array(
+$dadosAviso = array(
     'id' => 0,
     'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',
     'Turma' => (isset($_POST['Turma'])) ? $_POST['Turma'] : '',
     'Curso' => (isset($_POST['Curso'])) ? $_POST['Curso'] : '',
     'NomeP' => (isset($_POST['NomeP'])) ? $_POST['NomeP'] : '',
+    'conteudoAviso' => (isset($_POST['conteudoAviso'])) ? $_POST['conteudoAviso'] : '',
     'Just' => (isset($_POST['Just'])) ? $_POST['Just'] : '',);
