@@ -19,7 +19,7 @@ $exibirTabela = FALSE;
 
 
 //-------- Validaçao Cadastro de aluno -----------
-if (temPost() && isset($_POST['cadAluno'])) {
+if (temPost() && isset($_POST['cadAluno']) && isset($_GET['opcao']) == 'cadastrar') {
     $dadosAlunos = array();
 
     //Validação  NOME
@@ -204,12 +204,16 @@ if (isset($_GET['idAluno'])) {
 
 //-------- Validaçao Ata FREQUENCIA-----------
 if (isset($_GET['opcao']) == 'AtaFrequencia') {
+    echo $_GET['opcao'];
     $nomeCurso = 'Nome do curso';
     $data = date('d') . '/' . date('m') . '/' . date('Y');
+
     echo $idProfessor = $_GET['idUsuario'];
-    $nomeProfessor = listarProfessorPorId($conexao, $idProfessor);
-    $idTurma;
-    $nomeTurma;
+
+    $nomeProfessor = listarNomeUsuarioPorId($conexao, $idProfessor);
+
+    $PAturma = $_GET['PAturma'];
+
 
 
 

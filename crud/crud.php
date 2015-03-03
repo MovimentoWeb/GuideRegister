@@ -65,6 +65,7 @@ function desativarAluno($conexao, $id) {
     }
 }
 
+
 //--------------------Funções  PROFESSOR -------------------
 
 function inserirProfessor($conexao, $dados) {
@@ -88,20 +89,7 @@ function inserirProfessor($conexao, $dados) {
 function listarProfessorPorId($conexao, $id) {
     $sqlBuscar = "SELECT * FROM usuarios WHERE idUsuario = " . $id;
     $resultado = mysqli_query($conexao, $sqlBuscar);
-
-    $resProfessor = array();
-    while ($registro = mysqli_fetch_assoc($resultado)) {
-        $resProfessor[] = $registro;
-    }
-    //return $resProfessor;
-    
-    if (mysqli_query($conexao, $resultado)) {
-        echo "inseriu";
-    } else {
-        echo mysqli_error($conexao);
-    }
-
-    //return mysqli_fetch_assoc($resultado);
+    return mysqli_fetch_assoc($resultado);
 }
 
 function listarProfessor($conexao, $dadosProfessor) {
@@ -140,10 +128,17 @@ function desativarProfessor($conexao, $id) {
     }
 }
 
+
 //--------------------Funções  TURMA -------------------
 
 function pesquisarTurmaID($conexao, $id) {
     $sqlBuscar = "SELECT * FROM turma WHERE PAturma = " . $id;
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    return mysqli_fetch_assoc($resultado);
+}
+
+function listarNomeTurmaPorId($conexao, $id) {
+    $sqlBuscar = "SELECT PAturma FROM turma WHERE PAturma = " . $id;
     $resultado = mysqli_query($conexao, $sqlBuscar);
     return mysqli_fetch_assoc($resultado);
 }
@@ -230,4 +225,13 @@ function editarRelatorio($conexao, $projeto) {
             . "tiporelatorio ='{$projeto['tiporelatorio']}, "
             . "WHERE idRelatorio = '{$projeto['idRelatorio ']},";
     mysqli_query($conexao, $sqlAtualizar);
+}
+
+
+// --------------- Usuarios ----------------------
+
+function listarNomeUsuarioPorId($conexao, $id) {
+    $sqlBuscar = "SELECT nomeUsuario FROM usuarios WHERE idUsuario = " . $id;
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    return mysqli_fetch_assoc($resultado);
 }
