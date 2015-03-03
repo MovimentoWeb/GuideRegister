@@ -208,10 +208,10 @@ function inserirTurma($conexao, $dados) {
             . "{$dados ['nomeDisciplina']}')";
     if (mysqli_query($conexao, $sqlInserir)) {
         echo 'fez a inserao';
-    }  else {
-        print_r(mysqli_error($conexao));    
+    } else {
+        print_r(mysqli_error($conexao));
     }
-    
+
     unset($_POST);
 }
 
