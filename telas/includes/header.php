@@ -29,7 +29,7 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="?pg=aluno&opcao=AtaFrequencia"><span class="fa-list3"></span> Fazer frequência de aluno</a></li>
+                            <li><a href="?pg=aluno&opcao=AtaFrequencia&idCurso=3&nomeUsuario=Nomeprofessor"><span class="fa-list3"></span> Fazer frequência de aluno</a></li>
                             <li><a href="?pg=aluno&opcao=cadastrar"><span class="fa-user-add"></span> Cadastrar</a> </li>
                             <li><a href="?pg=aluno&opcao=pesquisar"><span class="fa-search3"></span> Pesquisar</a> </li>
                         </ul>

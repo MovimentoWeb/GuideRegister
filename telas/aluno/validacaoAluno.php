@@ -194,7 +194,6 @@ if (temPost() && isset($_POST['EditAluno'])) {
 }
 
 //-------- Detalhes do Aluno -----------
-
 if (isset($_GET['idAluno'])) {
     $listaAluno = array();
     $listaAluno['idAluno'] = $_GET['idAluno'];
