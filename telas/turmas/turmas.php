@@ -1,5 +1,5 @@
 <?php
-include_once 'telas/turmas/validacaoTurmas.php';
+include_once 'telas/turmas/validacaoTurma.php';
 
 if (!isset($_GET['opcao'])) {
     include_once 'telas/inicial.php';
