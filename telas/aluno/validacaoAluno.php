@@ -1,6 +1,7 @@
 <?php
 
-include_once 'crud/crud.php';
+include_once 'crud/conexao.php';
+include_once 'telas/aluno/crudAluno.php';
 include_once 'telas/includes/funcoesDeApoio.php';
 
 //Recuperar campos Preenchidos
