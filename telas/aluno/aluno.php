@@ -270,7 +270,7 @@ if (!isset($_GET['opcao'])) {
                                     <?php
                                     if ($dadosAluno['ativo'] == 1) {
                                         $dadosAluno['ativo'] = 'Aluno Ativado';
-                                    } else {
+                                    } elseif($dadosAluno['ativo'] == 0) {
                                         $dadosAluno['ativo'] = 'Aluno Desativado';
                                     }
                                     ?>
