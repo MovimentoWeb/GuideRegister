@@ -65,7 +65,6 @@ function desativarAluno($conexao, $id) {
     }
 }
 
-
 //--------------------Funções  PROFESSOR -------------------
 
 function inserirProfessor($conexao, $dados) {
@@ -127,7 +126,6 @@ function desativarProfessor($conexao, $id) {
         echo mysqli_error($conexao);
     }
 }
-
 
 //-------------------------Funções de Turmas-------------------
 
@@ -254,11 +252,41 @@ function editarRelatorio($conexao, $projeto) {
     mysqli_query($conexao, $sqlAtualizar);
 }
 
-
 // --------------- Usuarios ----------------------
 
 function listarNomeUsuarioPorId($conexao, $id) {
     $sqlBuscar = "SELECT nomeUsuario FROM usuarios WHERE idUsuario = " . $id;
     $resultado = mysqli_query($conexao, $sqlBuscar);
     return mysqli_fetch_assoc($resultado);
+}
+
+//---------------Avisos e Justificativas------------------
+
+function inserirAvisos($conexao, $dados) {
+    $sqlInserir = "insert into aviso ("
+            . "Selecione, "
+            . "Professor2, "
+            . "Professor3, "
+            . "Professor4, "
+            . "Gerência, "
+            . "Cooredenação, "
+            . "Secretaria, "
+            . "Professor"
+            . ")"
+            . "VALUES('"
+            . "{$dados['Selecione']}','"
+            . "{$dados['Professor2']}','"
+            . "{$dados['Professor3']}','"
+            . "{$dados['Professor4']}','"
+            . "{$dados['Gerência']}','"
+            . "{$dados['Cooredenação']}','"
+            . "{$dados['Secretaria']}','"
+            . "{$dados ['Professor']}')";
+    if (mysqli_query($conexao, $sqlInserir)) {
+        echo 'fez a inserao';
+    } else {
+        print_r(mysqli_error($conexao));
+    }
+
+    unset($_POST);
 }
