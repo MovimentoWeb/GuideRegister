@@ -211,28 +211,7 @@ function inserirDisciplina($conexao, $dados) {
     unset($_POST);
 }
 
-//--------------------Funções  CURSOS -------------------
-
-        function inserirCurso($conexao, $dados) {
-            $sqlInserir = "insert into curso ("
-            . "nomeDisciplina, "
-            . "codDisciplina, "
-            .")"
-            ."VALUES('"
-            ."{$dados['nomeCurso']}','"
-            ."{$dados['dataCriacao']}','"
-            ."{$dados['dataAtualizacao']}','"
-            ."{$dados['disciplinas']}','"
-            ."{$dados['nomeCurso']}','";
-    if (mysqli_query($conexao, $sqlInserir)) {
-        echo 'fez a insercao';
-    } else {
-        print_r(mysqli_error($conexao));
-    }       
-    
-    unset($_POST);
-    
-}    
+ 
 
     function listarAviso($conexao, $id) {
         $sqlBuscar = 'SELECT * FROM aviso WHERE id = ';

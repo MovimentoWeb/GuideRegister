@@ -1,15 +1,13 @@
 <?php
-include_once 'crud/crud.php';
+include_once 'crud/conexao.php';
+include_once 'telas/cursos/crudCurso.php';
 include_once 'telas/includes/funcoesDeApoio.php';
 
 //Recuperar campos Preenchidos
-$dadosAluno = array(
+$dadosCurso = array(
     'id' => 0,
-    'nomeAluno' => (isset($_POST['nomeAluno'])) ? $_POST['nomeAluno'] : '',
-    'dtNascimento' => (isset($_POST['dtNascimento'])) ? $_POST['dtNascimento'] : '',
-    'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
-    'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
-    'matricula' => (isset($_POST['matricula'])) ? $_POST['matricula'] : '',
+    'nomeCurso' => (isset($_POST['nomeCurso'])) ? $_POST['nomeCurso'] : '',
+    'chTotal' => (isset($_POST['chTotal'])) ? $_POST['chTotal'] : '',
     );
 
 $temErros = false;
@@ -18,77 +16,39 @@ $exibirTabela = FALSE;
 
 
 //-------- Validaçao Cadastro de aluno -----------
-if (temPost() && isset($_POST['cadAluno'])) {
-    $dadosAlunos = array();
+if (temPost() && isset($_POST['cadCurso'])) {
+    $dadosCurso = array();
 
-    //Validação  NOME
-    if (isset($_POST['nomeAluno']) && strlen($_POST['nomeAluno']) > 5) {
-        $dadosAlunos['nomeAluno'] = $_POST['nomeAluno'];
+    //Validação  Nome do Curso
+    if (isset($_POST['nomeCurso']) && strlen($_POST['nomeCurso']) > 5) {
+        $dadosCurso['nomeCurso'] = $_POST['nomeCurso'];
     } else {
         $temErros = true;
-        $errosValidacao['nomeAluno'] = ''
+        $errosValidacao['nomeCurso'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Nome de aluno inválido!</h4>'
-                . 'Digite corretamente o nome do aluno'
+                . '<h4>Nome de curso inválido!</h4>'
+                . 'Digite corretamente o nome do curso'
                 . '</div>';
     }
 
-    //Validação matricula
-    if (isset($_POST['matricula']) && strlen($_POST['matricula']) >= 2) {
-        $dadosAlunos['matricula'] = $_POST['matricula'];
+    //Validação Carga Horária
+    if (isset($_POST['chTotal']) && strlen($_POST['chTotal']) >= 2) {
+        $dadosCurso['chTotal'] = $_POST['chTotal'];
     } else {
         $temErros = TRUE;
-        $errosValidacao['matricula'] = ''
+        $errosValidacao['chTotal'] = ''
                 . '<div class="alert alert-error">'
                 . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Matrícula inválido!</h4>'
-                . 'Digite um número de matricula correto'
+                . '<h4>Carga Horária inválido!</h4>'
+                . 'Digite um número de Carga horária correto'
                 . '</div>';
     }
 
-    //Validação data nascimento
-    if (isset($_POST['dtNascimento']) && strlen($_POST['dtNascimento']) >= 10) {
-        $dadosAlunos['dtNascimento'] = $_POST['dtNascimento'];
-    } else {
-        $temErros = true;
-        $errosValidacao['dtNascimento'] = ''
-                . '<div class="alert alert-error">'
-                . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>Data de nascimento inválida!</h4>'
-                . 'Data de nascimento deve seguir o formato: <strong>00/00/0000</strong>'
-                . '</div>';
-    }
-
-    //Validação rg
-    if (isset($_POST['rg']) && strlen($_POST['rg']) >= 5) {
-        $dadosAlunos['rg'] = $_POST['rg'];
-    } else {
-        $temErros = TRUE;
-        $errosValidacao['rg'] = ''
-                . '<div class="alert alert-error">'
-                . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>RG inválido!</h4>'
-                . 'Digite um número de RG no formato: <strong>999.888.777</strong>'
-                . '</div>';
-    }
-
-    //Validação cpf
-    if (isset($_POST['cpf']) && strlen($_POST['cpf']) >= 8) {
-        $dadosAlunos['cpf'] = $_POST['cpf'];
-    } else {
-        $temErros = TRUE;
-        $errosValidacao['cpf'] = ''
-                . '<div class="alert alert-error">'
-                . '<button type="button" class="close" data-dismiss="alert">×</button>'
-                . '<h4>CPF inválido!</h4>'
-                . 'CPF inválido! Digite um número de RG no formato: <strong>111.999.888-77</strong>'
-                . '</div>';
-    }
 
     if (!$temErros) {
         // Função de inserir no banco de dados
-        inserirAluno($conexao, $dadosAlunos);
+        inserirCurso($conexao, $dadosCurso);
         die();
     }
 }

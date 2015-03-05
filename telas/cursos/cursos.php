@@ -1,5 +1,5 @@
 <?php
-include_once 'telas/aluno/validacaoAluno.php';
+include_once 'telas/cursos/validacaoCursos.php';
 if (!isset($_GET['opcao'])) {
     include_once 'telas/inicial.php';
 } else {
@@ -7,83 +7,34 @@ if (!isset($_GET['opcao'])) {
 
         case'cadastrar':
             ?>
-            <div class="conteinerAluno">
+            <div class="row-fluid conteinerAluno">
                 <form class="well" method="post">
-                    <legend><span class="fa-user-add"></span> Cadastro de alunos</legend>
-                    <span class="help-block">Preencha corretamente os campos abaixo com os dados do aluno. </span>
+                    <legend><span class="fa-user-add"></span> Cadastro de Curso</legend>
+                    <span class="help-block">Preencha corretamente os campos abaixo com os dados do curso. </span>
                     <ul>
-                        <li>
-                            <label for="nomeAluno">Nome do aluno<br />
-                                <?php if ($temErros && isset($errosValidacao['nomeAluno'])) : ?>
+                        <li class="span9">
+                            <label for="nomeCurso">Nome do curso<br />
+                                <?php if ($temErros && isset($errosValidacao['nomeCurso'])) : ?>
                                     <span class="erro">
-                                        <?php echo $errosValidacao['nomeAluno']; ?>
+                                        <?php echo $errosValidacao['nomeCurso']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" id="nomeAluno" name="nomeAluno" autofocus="" class="input-block-level" value="<?php echo $dadosAluno['nomeAluno']; ?>" placeholder="Nome">
+                                <input type="text" id="nomeCurso" name="nomeCurso" autofocus="" class="input-block-level" value="<?php echo $dadosCurso['nomeCurso']; ?>" placeholder="Nome do Curso">
                             </label>
                         </li>
-                        <li class="row-fluid">
-                            <label class="span3" for="matricula">Matrícula<br />
-                                <?php if ($temErros && isset($errosValidacao['matricula'])) : ?>
+                        <li class="span3">
+                            <label for="chTotal">Carga Horária<br />    
+                                <?php if ($temErros && isset($errosValidacao['chTotal'])) : ?>
                                     <span class="erro">
-                                        <?php echo $errosValidacao['matricula']; ?>
+                                        <?php echo $errosValidacao['chTotal']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" id="matricula" name="matricula" class="input-block-level" value="<?php echo $dadosAluno['matricula']; ?>" placeholder="Data de Nascimento">
-                            </label>
-                            <label class="span3">Data de Nascimento<br />
-                                <?php if ($temErros && isset($errosValidacao['dtNascimento'])) : ?>
-                                    <span class="erro">
-                                        <?php echo $errosValidacao['dtNascimento']; ?>
-                                    </span>
-                                <?php endif; ?>
-                                <input type="text" name="dtNascimento" class="input-block-level" value="<?php echo $dadosAluno['dtNascimento']; ?>" placeholder="Data de Nascimento">
-                            </label>
-                            <label class="span3">RG<br />
-                                <?php if ($temErros && isset($errosValidacao['rg'])) : ?>
-                                    <span class="erro">
-                                        <?php echo $errosValidacao['rg']; ?>
-                                    </span>
-                                <?php endif; ?>
-                                <input type="text" name="rg" class="input-block-level" value="<?php echo $dadosAluno['rg']; ?>" placeholder="RG">
-                            </label>
-
-
-
-                            <label class="span3">CPF<br />
-                                <?php if ($temErros && isset($errosValidacao['cpf'])) : ?>
-                                    <span class="erro">
-                                        <?php echo $errosValidacao['cpf']; ?>
-                                    </span>
-                                <?php endif; ?>
-                                <input type="text" name="cpf" class="input-block-level" value="<?php echo $dadosAluno['cpf']; ?>" placeholder="CPF">
+                                <input type="text" id="chTotal" name="chTotal" autofocus="" class="input-block-level" value="<?php echo $dadosCurso['chTotal']; ?>" placeholder="Carga Horaria">
                             </label>
                         </li>
-
-                        <li>
-                            <label>Informe o turno<br />
-                                <select name="selectTurno">
-                                    <option>Selecione um turno</option>
-                                    <option>Manhã</option>
-                                    <option>Tarde</option>
-                                    <option>Noite</option>
-                                </select>
-                            </label>
-                        </li>
-
-                        <li>
-                            <label>Informe o curso<br />
-                                <select name="selectCurso">
-                                    <option>Selecione um curso</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </label>
-                        </li>
-
                     </ul>
                     <a href="index.php" class="btn btn-info"><span class="fa-home"></span> Voltar a página inicial</a>
-                    <input type="hidden" name="cadAluno"/>
+                    <input type="hidden" name="cadCurso"/>
                     <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
             </div>
