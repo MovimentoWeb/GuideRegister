@@ -258,7 +258,6 @@ if (!isset($_GET['opcao'])) {
                                                 </a>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="?pg=disciplinas&opcao=detalhes&idDisciplina=<?php echo $disciplina['idDisciplina'] ?>" class="fa-delicious"> Ver detalhes</a></li>
-                                                    <li><a href="?pg=disciplinas&opcao=desativar&idDisciplina=<?php echo $disciplina['idDisciplina'] ?>"  class="fa-remove"> Desativar Disciplina</a></li>
                                                     <li><a href="?pg=disciplinas&opcao=editar&idDisciplina=<?php echo $disciplina['idDisciplina'] ?>" class="fa-pencil"> Editar Disciplina</a></li>
                                                     <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa&idAluno=<?php echo 'idDisciplina'; ?>"  class="fa-aid"> Adicionar justificativa</a></li>
                                                 </ul>
