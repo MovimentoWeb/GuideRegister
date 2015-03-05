@@ -188,7 +188,6 @@ if (!isset($_GET['opcao'])) {
                                                 </a>
                                                 <ul class="dropdown-menu">
                                                     <li><a href="?pg=professores&opcao=detalhes&idUsuario=<?php echo $professor['idUsuario'] ?>" class="fa-delicious"> Ver detalhes</a></li>
-                                                    <li><a href="?pg=professores&opcao=desativar&idUsuario=<?php echo $professor['idUsuario'] ?>"  class="fa-remove"> Desativar Professor</a></li>
                                                     <li><a href="?pg=professores&opcao=editar&idUsuario=<?php echo $professor['idUsuario'] ?>" class="fa-pencil"> Editar Professor</a></li>
                                                     <li><a href="?pg=avisosEjustificativas&opcao=novaJustificativa&idUsuario=<?php echo 'idUsuario'; ?>"  class="fa-aid"> Adicionar justificativa</a></li>
                                                 </ul>

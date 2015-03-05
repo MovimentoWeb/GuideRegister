@@ -62,6 +62,16 @@ function desativarAluno($conexao, $id) {
         echo mysqli_error($conexao);
     }
 }
+function ativarAluno($conexao, $id) {
+    $sqlAtualizar = "UPDATE aluno SET "
+            . "ativo = 1 "
+            . "WHERE idAluno = " . $id;
+    if (mysqli_query($conexao, $sqlAtualizar)) {
+        
+    } else {
+        echo mysqli_error($conexao);
+    }
+}
 
 function listarNomeUsuarioPorId($conexao, $id) {
     $sqlBuscar = "SELECT nomeUsuario FROM usuarios WHERE idUsuario = " . $id;
