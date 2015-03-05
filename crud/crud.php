@@ -211,82 +211,81 @@ function inserirDisciplina($conexao, $dados) {
     unset($_POST);
 }
 
-//--------------------Funções  CURSOS -------------------
+ 
 
-
-
-function listarAviso($conexao, $id) {
-    $sqlBuscar = 'SELECT * FROM aviso WHERE id = ';
-    $resultado = msyqli_query($conexao, $sqlBuscar);
-    $projeto = array();
-    while ($projeto = mysqli_fetch_assoc($resultado)) {
-        $projeto[] = $projeto;
+    function listarAviso($conexao, $id) {
+        $sqlBuscar = 'SELECT * FROM aviso WHERE id = ';
+        $resultado = msyqli_query($conexao, $sqlBuscar);
+        $projeto = array();
+        while ($projeto = mysqli_fetch_assoc($resultado)) {
+            $projeto[] = $projeto;
+        }
+        return $projeto;
     }
-    return $projeto;
-}
 
-function inserirAviso($conexao, $projeto) {
-    $sqlInserir = "insert into aviso("
-            . "aviso)"
-            . "VALUES ('{$projeto['aviso']}
+    function inserirAviso($conexao, $projeto) {
+        $sqlInserir = "insert into aviso("
+                . "aviso)"
+                . "VALUES ('{$projeto['aviso']}
 
     ')";
-    mysqli_query($conexao, $sqlInserir);
-}
+        mysqli_query($conexao, $sqlInserir);
+    }
 
-function editarAviso($conexao, $projeto) {
-    $sqlAtualizar = "UPDATE Aviso SET "
-            . "Aviso = '{$projeto['Aviso']},"
-            . "WHERE idAviso ='{$projeto['idAviso']}
+    function editarAviso($conexao, $projeto) {
+        $sqlAtualizar = "UPDATE Aviso SET "
+                . "Aviso = '{$projeto['Aviso']},"
+                . "WHERE idAviso ='{$projeto['idAviso']}
 
     , ";
-    mysqli_query($conexao, $sqlAtualizar
-    );
-}
+        mysqli_query($conexao, $sqlAtualizar
+        );
+    }
 
-function editarRelatorio($conexao, $projeto) {
-    $sqlAtualizar = "UPDATE Relatorio SET"
-            . "nomerelatorio = '{$projeto['nomerelatorio']},"
-            . "tiporelatorio ='{$projeto['tiporelatorio']}, "
-            . "WHERE idRelatorio = '{$projeto['idRelatorio ']},";
-    mysqli_query($conexao, $sqlAtualizar);
-}
+    function editarRelatorio($conexao, $projeto) {
+        $sqlAtualizar = "UPDATE Relatorio SET"
+                . "nomerelatorio = '{$projeto['nomerelatorio']},"
+                . "tiporelatorio ='{$projeto['tiporelatorio']}, "
+                . "WHERE idRelatorio = '{$projeto['idRelatorio ']},";
+        mysqli_query($conexao, $sqlAtualizar);
+    }
 
 // --------------- Usuarios ----------------------
 
-function listarNomeUsuarioPorId($conexao, $id) {
-    $sqlBuscar = "SELECT nomeUsuario FROM usuarios WHERE idUsuario = " . $id;
-    $resultado = mysqli_query($conexao, $sqlBuscar);
-    return mysqli_fetch_assoc($resultado);
-}
+    function listarNomeUsuarioPorId($conexao, $id) {
+        $sqlBuscar = "SELECT nomeUsuario FROM usuarios WHERE idUsuario = " . $id;
+        $resultado = mysqli_query($conexao, $sqlBuscar);
+        return mysqli_fetch_assoc($resultado);
+    }
 
 //---------------Avisos e Justificativas------------------
 
-function inserirAvisos($conexao, $dados) {
-    $sqlInserir = "insert into aviso ("
-            . "Selecione, "
-            . "Professor2, "
-            . "Professor3, "
-            . "Professor4, "
-            . "Gerência, "
-            . "Cooredenação, "
-            . "Secretaria, "
-            . "Professor"
-            . ")"
-            . "VALUES('"
-            . "{$dados['Selecione']}','"
-            . "{$dados['Professor2']}','"
-            . "{$dados['Professor3']}','"
-            . "{$dados['Professor4']}','"
-            . "{$dados['Gerência']}','"
-            . "{$dados['Cooredenação']}','"
-            . "{$dados['Secretaria']}','"
-            . "{$dados ['Professor']}')";
-    if (mysqli_query($conexao, $sqlInserir)) {
-        echo 'fez a inserao';
-    } else {
-        print_r(mysqli_error($conexao));
-    }
+    function inserirAvisos($conexao, $dados) {
+        $sqlInserir = "insert into aviso ("
+                . "Selecione, "
+                . "Professor2, "
+                . "Professor3, "
+                . "Professor4, "
+                . "Gerência, "
+                . "Cooredenação, "
+                . "Secretaria, "
+                . "Professor"
+                . ")"
+                . "VALUES('"
+                . "{$dados['Selecione']}','"
+                . "{$dados['Professor2']}','"
+                . "{$dados['Professor3']}','"
+                . "{$dados['Professor4']}','"
+                . "{$dados['Gerência']}','"
+                . "{$dados['Cooredenação']}','"
+                . "{$dados['Secretaria']}','"
+                . "{$dados ['Professor']}')";
+        if (mysqli_query($conexao, $sqlInserir)) {
+            echo 'fez a inserao';
+        } else {
+            print_r(mysqli_error($conexao));
+        }
 
-    unset($_POST);
-}
+        unset($_POST);
+    }
+    
