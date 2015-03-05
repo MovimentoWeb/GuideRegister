@@ -57,13 +57,14 @@ function editarAluno($conexao, $dadosAluno) {
 function desativarAluno($conexao, $id) {
     $sqlAtualizar = "UPDATE aluno SET "
             . "ativo = 0 "
-            . "WHERE idAluno = ". $id;
+            . "WHERE idAluno = " . $id;
     if (mysqli_query($conexao, $sqlAtualizar)) {
         
     } else {
         echo mysqli_error($conexao);
     }
 }
+
 
 //--------------------Funções  PROFESSOR -------------------
 
@@ -86,7 +87,7 @@ function inserirProfessor($conexao, $dados) {
 }
 
 function listarProfessorPorId($conexao, $id) {
-    $sqlBuscar = "SELECT * FROM usuarios WHERE idUsuario =" . $id;
+    $sqlBuscar = "SELECT * FROM usuarios WHERE idUsuario = " . $id;
     $resultado = mysqli_query($conexao, $sqlBuscar);
     return mysqli_fetch_assoc($resultado);
 }
@@ -119,7 +120,7 @@ function editarProfessor($conexao, $dadosProfessor) {
 function desativarProfessor($conexao, $id) {
     $sqlAtualizar = "UPDATE usuarios SET "
             . "ativo = 0 "
-            . "WHERE idUsuario = ". $id;
+            . "WHERE idUsuario = " . $id;
     if (mysqli_query($conexao, $sqlAtualizar)) {
         
     } else {
@@ -127,10 +128,44 @@ function desativarProfessor($conexao, $id) {
     }
 }
 
-//--------------------Funções  TURMA -------------------
+
+//-------------------------Funções de Turmas-------------------
+
+function inserirTurma($conexao, $dados) {
+    $sqlInserir = "insert into turma ("
+            . "paTurma, "
+            . "chTotal, "
+            . "turno, "
+            . "idCurso, "
+            . "nomeCurso, "
+            . "idDisciplina, "
+            . "nomeDisciplina "
+            . ")"
+            . "VALUES('"
+            . "{$dados['paTurma']}','"
+            . "{$dados['chTotal']}','"
+            . "{$dados['turno']}','"
+            . "{$dados['idCurso']}','"
+            . "{$dados['nomeCurso']}','"
+            . "{$dados['idDisciplina']}','"
+            . "{$dados ['nomeDisciplina']}')";
+    if (mysqli_query($conexao, $sqlInserir)) {
+        echo 'fez a inserao';
+    } else {
+        print_r(mysqli_error($conexao));
+    }
+
+    unset($_POST);
+}
 
 function pesquisarTurmaID($conexao, $id) {
-    $sqlBuscar = "SELECT * FROM turma WHERE PAturma = " . $id;
+    $sqlBuscar = "SELECT * FROM turma WHERE paTurma = " . $id;
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    return mysqli_fetch_assoc($resultado);
+}
+
+function listarNomeTurmaPorId($conexao, $id) {
+    $sqlBuscar = "SELECT paTurma FROM turma WHERE paTurma = " . $id;
     $resultado = mysqli_query($conexao, $sqlBuscar);
     return mysqli_fetch_assoc($resultado);
 }
@@ -171,10 +206,10 @@ function inserirDisciplina($conexao, $dados) {
             . "{$dados ['PAturma']}')";
     if (mysqli_query($conexao, $sqlInserir)) {
         echo 'fez a inserao';
-    }  else {
-        print_r(mysqli_error($conexao));    
+    } else {
+        print_r(mysqli_error($conexao));
     }
-    
+
     unset($_POST);
 }
 
@@ -217,4 +252,13 @@ function editarRelatorio($conexao, $projeto) {
             . "tiporelatorio ='{$projeto['tiporelatorio']}, "
             . "WHERE idRelatorio = '{$projeto['idRelatorio ']},";
     mysqli_query($conexao, $sqlAtualizar);
+}
+
+
+// --------------- Usuarios ----------------------
+
+function listarNomeUsuarioPorId($conexao, $id) {
+    $sqlBuscar = "SELECT nomeUsuario FROM usuarios WHERE idUsuario = " . $id;
+    $resultado = mysqli_query($conexao, $sqlBuscar);
+    return mysqli_fetch_assoc($resultado);
 }
