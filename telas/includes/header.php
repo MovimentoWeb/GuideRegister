@@ -78,7 +78,7 @@
                                 <a tabindex="-1" href="#"><span class="fa-list2"></span> Disciplinas</a>
                                 <ul class="dropdown-menu">
                                     <li ><a href="?pg=disciplinas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar Disciplina</a></li>
-                                    <li><a href="?pg=turmas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
+                                    <li><a href="?pg=disciplinas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
                                 </ul>
                             </li>
                         </ul>
