@@ -6,6 +6,15 @@ $dadosAviso = array();
 $temErros = false;
 $errosValidacao = array();
 
+$dadosAviso = array(
+    'id' => 0,
+    'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',
+    'Turma' => (isset($_POST['Turma'])) ? $_POST['Turma'] : '',
+    'Curso' => (isset($_POST['Curso'])) ? $_POST['Curso'] : '',
+    'NomeP' => (isset($_POST['NomeP'])) ? $_POST['NomeP'] : '',
+    'conteudoAviso' => (isset($_POST['conteudoAviso'])) ? $_POST['conteudoAviso'] : '',
+    'Just' => (isset($_POST['Just'])) ? $_POST['Just'] : '',);
+
 if (temPost() && isset($_POST['cadNovoAviso'])) {
     $dadosAviso = array();
 
@@ -91,11 +100,4 @@ if (temPost()) {
     }
 }
 
-$dadosAviso = array(
-    'id' => 0,
-    'nome' => (isset($_POST['nome'])) ? $_POST['nome'] : '',
-    'Turma' => (isset($_POST['Turma'])) ? $_POST['Turma'] : '',
-    'Curso' => (isset($_POST['Curso'])) ? $_POST['Curso'] : '',
-    'NomeP' => (isset($_POST['NomeP'])) ? $_POST['NomeP'] : '',
-    'conteudoAviso' => (isset($_POST['conteudoAviso'])) ? $_POST['conteudoAviso'] : '',
-    'Just' => (isset($_POST['Just'])) ? $_POST['Just'] : '',);
+
