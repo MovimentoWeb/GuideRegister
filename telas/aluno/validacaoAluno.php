@@ -1,5 +1,7 @@
 <?php
-include_once 'crud/crud.php';
+
+include_once 'crud/conexao.php';
+include_once 'telas/aluno/crudAluno.php';
 include_once 'telas/includes/funcoesDeApoio.php';
 
 //Recuperar campos Preenchidos
@@ -10,7 +12,7 @@ $dadosAluno = array(
     'rg' => (isset($_POST['rg'])) ? $_POST['rg'] : '',
     'cpf' => (isset($_POST['cpf'])) ? $_POST['cpf'] : '',
     'matricula' => (isset($_POST['matricula'])) ? $_POST['matricula'] : '',
-    );
+);
 
 $temErros = false;
 $errosValidacao = array();
@@ -18,7 +20,7 @@ $exibirTabela = FALSE;
 
 
 //-------- Validaçao Cadastro de aluno -----------
-if (temPost() && isset($_POST['cadAluno'])) {
+if (temPost() && isset($_POST['cadAluno']) && isset($_GET['opcao']) == 'cadastrar') {
     $dadosAlunos = array();
 
     //Validação  NOME
@@ -193,9 +195,7 @@ if (temPost() && isset($_POST['EditAluno'])) {
     }
 }
 
-//-------- Validaçao Excluir Aluno-----------
 //-------- Detalhes do Aluno -----------
-
 if (isset($_GET['idAluno'])) {
     $listaAluno = array();
     $listaAluno['idAluno'] = $_GET['idAluno'];
@@ -203,6 +203,23 @@ if (isset($_GET['idAluno'])) {
     $dadosAluno = listarAlunoPorId($conexao, $listaAluno['idAluno']);
 }
 
+//-------- Validaçao Ata FREQUENCIA-----------
+if (isset($_GET['opcao']) == 'AtaFrequencia') {
+    echo $_GET['opcao'];
+    $nomeCurso = 'Nome do curso';
+    $data = date('d') . '/' . date('m') . '/' . date('Y');
+
+    echo $idProfessor = $_GET['idUsuario'];
+
+    $nomeProfessor = listarNomeUsuarioPorId($conexao, $idProfessor);
+
+    $PAturma = $_GET['PAturma'];
 
 
 
+
+    $freqDoDia = '';
+    echo 'entrou no ata frequencia';
+} else {
+    echo 'não entrou';
+}

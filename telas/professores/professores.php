@@ -4,7 +4,7 @@ if (!isset($_GET['opcao'])) {
     
 } else {
     switch ($_GET['opcao']) {
-        
+
         case'cadastrar':
             ?>
             <div class="professores well">
@@ -160,7 +160,7 @@ if (!isset($_GET['opcao'])) {
                             </li>
                         </ul>  
                     </form>
-                    
+
                     <!--        Resultado das pesquisas-->
                     <?php
                     if ($exibirTabela == TRUE) {
@@ -212,7 +212,6 @@ if (!isset($_GET['opcao'])) {
             break;
 
         case 'detalhes':
-            
             ?>
             <div class="containerAluno ">
                 <form class="well">
@@ -228,19 +227,18 @@ if (!isset($_GET['opcao'])) {
 
                         </div>
                     </div>
-                    
+
                     <div class="row-fluid">
                         <div class="span3">Status do Professor:</div>
                         <div class="span8">
                             <div class="control-group info">
                                 <div class="controls">
                                     <?php
-                                        if($dadosProfessor['ativo'] == 1){
-                                            $dadosProfessor['ativo'] = 'Aluno Ativado';
-                                        } else {
-                                            $dadosProfessor['ativo'] = 'Aluno Desativado';
-                                        }
-                                                
+                                    if ($dadosProfessor['ativo'] == 1) {
+                                        $dadosProfessor['ativo'] = 'Professor Ativado';
+                                    } elseif ($dadosProfessor['ativo'] == 0) {
+                                        $dadosProfessor['ativo'] = 'Professor Desativado';
+                                    }
                                     ?>
                                     <span class="help-inline"><strong><?php echo($dadosProfessor['ativo']); ?></strong></span>
                                 </div>
@@ -297,20 +295,20 @@ if (!isset($_GET['opcao'])) {
                         </div>
                     </div>
 
-                    <a href="" class="btn btn-success"><span class="fa-backward" ></span> Voltar</a>
-                    <a href="" class="btn btn-warning"><span class="fa-pencil"></span> Editar aluno</a>
+                    <a href="?pg=professores&opcao=pesquisar" class="btn btn-success"><span class="fa-backward" ></span> Voltar</a>
+                    <a href="?pg=professores&opcao=editar&idUsuario=<?php echo $dadosProfessor['idUsuario']; ?>" class="btn btn-warning"><span class="fa-pencil"></span> Editar Professor</a>
                 </form>
             </div>
             <?php
             break;
-    
+
         case 'desativar':
             ?>
             <?php
             $id = $_GET['idUsuario'];
             desativarProfessor($conexao, $id);
             break;
-        
+
         default :
             include_once 'telas/inicial.php';
             break;
