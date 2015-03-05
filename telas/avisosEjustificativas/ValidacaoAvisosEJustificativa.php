@@ -1,5 +1,6 @@
 <?php
-
+include_once 'crud/conexao.php';
+include_once 'telas/avisosEjustificativas/crudAvisos.php';
 include_once 'telas/includes/funcoesDeApoio.php';
 $dadosAviso = array();
 $temErros = false;

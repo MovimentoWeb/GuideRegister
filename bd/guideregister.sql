@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50617
 File Encoding         : 65001
 
-Date: 2015-03-01 21:09:26
+Date: 2015-03-03 15:49:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,7 +30,7 @@ CREATE TABLE `aluno` (
   `dataAtualizacao` timestamp NOT NULL ON UPDATE CURRENT_TIMESTAMP,
   `idCurso` int(11) DEFAULT NULL,
   `curso` varchar(100) DEFAULT NULL,
-  `PA-Turma` int(11) DEFAULT NULL,
+  `PAturma` int(11) DEFAULT NULL,
   `idDisciplina` int(11) DEFAULT NULL,
   `disciplina` varchar(255) DEFAULT NULL,
   `ativo` bit(1) NOT NULL DEFAULT b'1',
@@ -114,7 +114,7 @@ INSERT INTO `aluno` VALUES ('71', 'Fuinha', '123456', '0000-00-00', '2147483647'
 INSERT INTO `aluno` VALUES ('72', 'Fuinha', '123456', '0000-00-00', '2147483647', '2147483647', '2015-02-27 09:29:55', '0000-00-00 00:00:00', null, null, null, null, null, '');
 INSERT INTO `aluno` VALUES ('73', 'JoÃ£o Victor', '123456', '0000-00-00', '2147483647', '2147483647', '2015-02-27 21:13:02', '0000-00-00 00:00:00', null, null, null, null, null, '');
 INSERT INTO `aluno` VALUES ('74', 'Gabriel Pessoa', '123456', '0000-00-00', '55555555', '2147483647', '2015-02-28 11:33:19', '0000-00-00 00:00:00', null, null, null, null, null, '');
-INSERT INTO `aluno` VALUES ('75', 'Angela', '123456', '0000-00-00', '6056218', '1234567890', '2015-02-28 19:43:14', '2015-03-01 16:55:03', null, null, null, null, null, '');
+INSERT INTO `aluno` VALUES ('75', 'Angela', '123456', '0000-00-00', '6056218', '1234567890', '2015-02-28 19:43:14', '2015-03-03 10:39:51', null, null, null, null, null, '\0');
 INSERT INTO `aluno` VALUES ('76', 'Teste teste teste teste regi', '654321', '0000-00-00', '1234567', '00000000000', '2015-03-01 16:26:06', '2015-03-01 16:58:49', null, null, null, null, null, '');
 
 -- ----------------------------
@@ -146,7 +146,7 @@ CREATE TABLE `curso` (
   `nomeCurso` varchar(255) DEFAULT NULL,
   `dataCriacao` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `dataAtualizacao` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `disciplina` text,
+  `disciplinas` text,
   PRIMARY KEY (`idcursos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -167,13 +167,25 @@ CREATE TABLE `disciplina` (
   `dataAtualizacao` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `idProfessor` int(11) DEFAULT NULL,
   `nomeProfessor` varchar(255) DEFAULT NULL,
-  `idCurso` int(11) DEFAULT NULL,
-  `nomeCurso` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`idDisciplina`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of disciplina
+-- ----------------------------
+INSERT INTO `disciplina` VALUES ('1', '511', 'conclusao do curso', '1500', '2015-03-02 14:59:09', null, '0', '');
+
+-- ----------------------------
+-- Table structure for frequencia
+-- ----------------------------
+DROP TABLE IF EXISTS `frequencia`;
+CREATE TABLE `frequencia` (
+  `idFreq` int(11) NOT NULL,
+  PRIMARY KEY (`idFreq`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of frequencia
 -- ----------------------------
 
 -- ----------------------------
@@ -232,30 +244,34 @@ INSERT INTO `relatorio` VALUES ('5', 'casa', 'casa');
 -- ----------------------------
 DROP TABLE IF EXISTS `turma`;
 CREATE TABLE `turma` (
-  `idturma` int(11) NOT NULL AUTO_INCREMENT,
-  `PAturma` varchar(20) NOT NULL,
+  `idTurma` int(11) NOT NULL AUTO_INCREMENT,
+  `paTurma` varchar(20) NOT NULL,
   `chTotal` int(5) DEFAULT NULL,
   `turno` char(255) DEFAULT NULL,
-  `curso` varchar(50) DEFAULT NULL,
+  `idCurso` int(11) NOT NULL,
+  `nomeCurso` varchar(100) DEFAULT NULL,
   `dataCriacao` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `dataAlteracao` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `nomePessoaAlteracao` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`idturma`,`PAturma`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+  `disciplinas` text NOT NULL,
+  PRIMARY KEY (`idTurma`,`paTurma`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of turma
 -- ----------------------------
-INSERT INTO `turma` VALUES ('1', '556', '1500', null, 'Redes', '2015-02-28 23:02:30', '2015-02-28 23:56:49', null);
-INSERT INTO `turma` VALUES ('2', '254', '1200', null, 'tecnico em informatica', '2015-02-28 23:02:30', '2015-02-28 23:56:51', null);
-INSERT INTO `turma` VALUES ('3', '249', '1300', null, 'Redes', '2015-02-28 23:02:30', '2015-02-28 23:56:52', null);
-INSERT INTO `turma` VALUES ('4', '689', '600', null, 'Cabelereiro', '2015-02-28 23:02:30', '2015-02-28 23:56:56', null);
-INSERT INTO `turma` VALUES ('5', '231', '640', null, 'Garsom', '2015-02-28 23:02:30', '2015-02-28 23:56:57', null);
-INSERT INTO `turma` VALUES ('6', '566', '820', null, 'Digitação', '2015-02-28 23:02:30', '2015-02-28 23:56:59', null);
-INSERT INTO `turma` VALUES ('7', '458', '730', null, 'Informática Básica', '2015-02-28 23:02:30', '2015-02-28 23:57:01', null);
-INSERT INTO `turma` VALUES ('8', '982', '400', null, 'Informática Avançada', '2015-02-28 23:02:30', '2015-02-28 23:57:03', null);
-INSERT INTO `turma` VALUES ('9', '314', '340', null, 'Massagem', '2015-02-28 23:02:30', '2015-02-28 23:57:04', null);
-INSERT INTO `turma` VALUES ('10', '524', '650', null, 'Estética', '2015-02-28 23:02:30', '2015-02-28 23:57:06', null);
+INSERT INTO `turma` VALUES ('1', '556', '1500', null, '0', 'Redes', '2015-02-28 23:02:30', '2015-02-28 23:56:49', null, '0');
+INSERT INTO `turma` VALUES ('2', '254', '1200', null, '0', 'tecnico em informatica', '2015-02-28 23:02:30', '2015-02-28 23:56:51', null, '0');
+INSERT INTO `turma` VALUES ('3', '249', '1300', null, '0', 'Redes', '2015-02-28 23:02:30', '2015-02-28 23:56:52', null, '0');
+INSERT INTO `turma` VALUES ('4', '689', '600', null, '0', 'Cabelereiro', '2015-02-28 23:02:30', '2015-02-28 23:56:56', null, '0');
+INSERT INTO `turma` VALUES ('5', '231', '640', null, '0', 'Garsom', '2015-02-28 23:02:30', '2015-02-28 23:56:57', null, '0');
+INSERT INTO `turma` VALUES ('6', '566', '820', null, '0', 'Digitação', '2015-02-28 23:02:30', '2015-02-28 23:56:59', null, '0');
+INSERT INTO `turma` VALUES ('7', '458', '730', null, '0', 'Informática Básica', '2015-02-28 23:02:30', '2015-02-28 23:57:01', null, '0');
+INSERT INTO `turma` VALUES ('8', '982', '400', null, '0', 'Informática Avançada', '2015-02-28 23:02:30', '2015-02-28 23:57:03', null, '0');
+INSERT INTO `turma` VALUES ('9', '314', '340', null, '0', 'Massagem', '2015-02-28 23:02:30', '2015-02-28 23:57:04', null, '0');
+INSERT INTO `turma` VALUES ('10', '524', '650', null, '0', 'Estética', '2015-02-28 23:02:30', '2015-02-28 23:57:06', null, '0');
+INSERT INTO `turma` VALUES ('11', '511', '1500', '', '0', '', '2015-03-03 11:52:53', '2015-03-03 11:52:53', null, '0');
+INSERT INTO `turma` VALUES ('12', '100', '1000', '', '0', '', '2015-03-03 12:41:39', '2015-03-03 12:41:39', null, '0');
 
 -- ----------------------------
 -- Table structure for usuarios

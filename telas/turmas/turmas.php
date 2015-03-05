@@ -1,5 +1,5 @@
 <?php
-include_once 'telas/turmas/validacaoTurmas.php';
+include_once 'telas/turmas/validacaoTurma.php';
 
 if (!isset($_GET['opcao'])) {
     include_once 'telas/inicial.php';
@@ -9,47 +9,81 @@ if (!isset($_GET['opcao'])) {
         case'cadastrar':
             ?>
             <div class="meioTurma ">
-                <form class="well" method="POST">
+                <form class="well" method="post">
                     <legend><span class="fa-user-add"></span> Cadastrar Turma</legend>
 
-                    <label for="nome">
-                        PA da Turma: 
-                        <?php if ($temErros && isset($errosValidacao['nome'])) : ?>
+                    <label for="paTurma">PA da Turma: 
+                        <?php if ($temErros && isset($errosValidacao['paTurma'])) : ?>
                             <span class="erro">
-                                <?php echo $errosValidacao['nome']; ?>
+                                <?php echo $errosValidacao['paTurma']; ?>
                             </span>
                         <?php endif; ?>
-                        <input type="text" id="nome" class="input-block-level" placeholder="PA da turma" name="nome" value="<?php echo $projeto['nome']; ?>"><br />
+                        <input type="text" id="paTurma" class="input-block-level" placeholder="PA da turma" name="paTurma" value="<?php echo $dadosTurmas['paTurma']; ?>"><br />
                     </label>
 
                     <div class="row-fluid">
-                        <div class="span4">
-                            <label for="cargaHoraria">
-                                Carga Horaria: 
-                                <?php if ($temErros && isset($errosValidacao['CargaH'])) : ?>
+                        <div class="span2">
+                            <label for="chTotal">Carga Horaria: 
+                                <?php if ($temErros && isset($errosValidacao['chTotal'])) : ?>
                                     <span class="erro">
-                                        <?php echo $errosValidacao['CargaH']; ?>
+                                        <?php echo $errosValidacao['chTotal']; ?>
                                     </span>
                                 <?php endif; ?>
-                                <input type="text" id="cargaHoraria" class="input-block-level" placeholder="Carga Horaria" name="CargaH" value="<?php echo $projeto['CargaH']; ?>" ><br />
+                                <input type="text" id="chTotal" class="input-block-level" placeholder="Carga Horaria" name="chTotal" value="<?php echo $dadosTurmas['chTotal']; ?>" ><br />
                             </label>
                         </div>
-                        <div class="span4">
+                        <div class="span3">
                             <label for="Turno">
                                 Turno: 
-
-
                                 <select  id="Turno" class="input-block-level" placeholder="Turno" name="Turno">
                                     <option> -- Selecione o turno --</option>
                                     <option>Manhã</option>
                                     <option>Tarde</option>
                                     <option>Noite</option>
                                 </select>
-
+                                <input type="hidden" name="turno"/>
                                 <br />
                             </label>
                         </div>
+                        
+                        <div class="row-fluid span3">
+                        <label for="nomeCurso">Curso:<br />
+                            <select name="nomeCurso">
+                                <option>Selecione</option>
+                                <option>Professor2</option>
+                                <option>Professor3</option>
+                                <option>Professor4</option>
+                                <option>Professor5</option>
+                                <option>Gerência</option>
+                                <option>Cooredenação</option>
+                                <option>Secretaria</option>
+                                <option>Professor</option>
+                            </select>
+                            <input type="hidden" name="idCurso"/>
+                            <input type="hidden" name="nomeCurso"/>
+                        </label>
                     </div>
+                        
+                    <div class="row-fluid span3">
+                        <label for="nomeDisciplina">Disciplina:<br />
+                            <select name="nomeDisciplina">
+                                <option>Selecione</option>
+                                <option>Professor2</option>
+                                <option>Professor3</option>
+                                <option>Professor4</option>
+                                <option>Professor5</option>
+                                <option>Gerência</option>
+                                <option>Cooredenação</option>
+                                <option>Secretaria</option>
+                                <option>Professor</option>
+                            </select>
+                            <input type="hidden" name="idDisciplina"/>
+                            <input type="hidden" name="nomeDisciplina"/>
+                        </label>
+                    </div>
+                    </div>
+                    <a href="index.php" class="btn btn-info"><span class="fa-home"></span> Voltar a página inicial</a>
+                    <input type="hidden" name="cadTurma"/>
                     <button type="submit" class="btn btn-primary"><span class="fa-user-add"></span> Cadastrar</button>
                 </form>
             </div>

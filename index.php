@@ -51,8 +51,11 @@
                     case 'detalhes':
                         include_once './telas/professores/professores.php';
                         break;
-
-
+                    
+// -------------------------------- Tela aluno -------------------------
+                    case 'cursos':
+                        include_once './telas/cursos/cursos.php';
+                        break;
 // -------------------------------- Tela aluno -------------------------   
 
                     case 'turmas':

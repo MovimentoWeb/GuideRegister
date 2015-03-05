@@ -29,7 +29,7 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="?pg=aluno&opcao=AtaFrequencia"><span class="fa-list3"></span> Fazer frequência de aluno</a></li>
+                            <li><a href="?pg=aluno&opcao=AtaFrequencia&idCurso=3&idUsuario=2&PAturma=556"><span class="fa-list3"></span> Fazer frequência de aluno</a></li>
                             <li><a href="?pg=aluno&opcao=cadastrar"><span class="fa-user-add"></span> Cadastrar</a> </li>
                             <li><a href="?pg=aluno&opcao=pesquisar"><span class="fa-search3"></span> Pesquisar</a> </li>
                         </ul>
@@ -62,8 +62,8 @@
                             <li class="dropdown-submenu">
                                 <a tabindex="-1" href="#"><span class="fa-list2"></span> Cursos</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="?pg=turmas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar curso</a></li>
-                                    <li><a href="?pg=turmas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
+                                    <li><a href="?pg=cursos&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar curso</a></li>
+                                    <li><a href="?pg=cursos&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown-submenu">
@@ -78,7 +78,7 @@
                                 <a tabindex="-1" href="#"><span class="fa-list2"></span> Disciplinas</a>
                                 <ul class="dropdown-menu">
                                     <li ><a href="?pg=disciplinas&opcao=cadastrar"> <i class="fa-plus"></i> Cadastrar Disciplina</a></li>
-                                    <li><a href="?pg=turmas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
+                                    <li><a href="?pg=disciplinas&opcao=pesquisar"><span class="fa-search3"></span> Pesquisa</a></li>
                                 </ul>
                             </li>
                         </ul>

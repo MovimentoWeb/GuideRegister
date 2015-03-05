@@ -261,19 +261,18 @@ if (!isset($_GET['opcao'])) {
 
                         </div>
                     </div>
-                    
+
                     <div class="row-fluid">
                         <div class="span3">Status do Aluno:</div>
                         <div class="span8">
                             <div class="control-group info">
                                 <div class="controls">
                                     <?php
-                                        if($dadosAluno['ativo'] == 1){
-                                            $dadosAluno['ativo'] = 'Aluno Ativado';
-                                        } else {
-                                            $dadosAluno['ativo'] = 'Aluno Desativado';
-                                        }
-                                                
+                                    if ($dadosAluno['ativo'] == 1) {
+                                        $dadosAluno['ativo'] = 'Aluno Ativado';
+                                    } elseif($dadosAluno['ativo'] == 0) {
+                                        $dadosAluno['ativo'] = 'Aluno Desativado';
+                                    }
                                     ?>
                                     <span class="help-inline"><strong><?php echo($dadosAluno['ativo']); ?></strong></span>
                                 </div>
@@ -330,19 +329,30 @@ if (!isset($_GET['opcao'])) {
                         </div>
                     </div>
 
-                    <a href="" class="btn btn-success"><span class="fa-backward" ></span> Voltar</a>
-                    <a href="" class="btn btn-warning"><span class="fa-pencil"></span> Editar aluno</a>
+                    <a href="?pg=aluno&opcao=pesquisar" class="btn btn-success"><span class="fa-backward" ></span> Voltar</a>
+                    <a href="?pg=aluno&opcao=editar&idAluno=<?php echo $dadosAluno['idAluno']; ?>" class="btn btn-warning"><span class="fa-pencil"></span> Editar aluno</a>
                 </form>
             </div>
 
             <?php
             break;
 
+        case 'desativar':
+            ?>
+            <?php
+            $id = $_GET['idAluno'];
+            desativarAluno($conexao, $id);
+            break;
+
         case 'AtaFrequencia':
             ?>
-            <div class="well frequencia">
-                <legend><span class="fa-user-add"></span> Ata de frequência</legend> <span class="label">Exibir Nome curso - exibir dia</span>
-                <form action="">
+            <div class="well frequencia"> 
+                <form action="" method="post">
+                    <legend><span class="fa-user-add"></span> Ata de frequência</legend> 
+                    <span class="label label-important">Curso: <?php echo $nomeCurso; ?></span> |
+                    <span class="label label-success">PA: <?php echo $PAturma; ?></span> |
+                    <span class="label label-info">Professor: <?php echo $nomeProfessor['nomeUsuario']; ?></span> |
+                    <span class="label"><?php echo 'Data: ' . $data; ?></span>
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -359,17 +369,16 @@ if (!isset($_GET['opcao'])) {
                                 <td>Reginaldo José</td>
                                 <td>
                                     <label class="radio">
-                                        <input type="radio" name="compareceu" value="">
-
+                                    <input type="radio" name="compareceu"  value="" >
                                     </label>
                                 </td>
                                 <td>
                                     <label class="radio">
-                                        <input type="radio" name="faltou"  value="" >
+                                        <input type="radio" name="compareceu"  value="" >
                                     </label>
                                 </td>
                                 <td>
-                                    <div class="btn-group">
+                                    <div class="btn-group pull-right">
                                         <a class="label" data-toggle="dropdown" href="#">
                                             <span class="fa-comments"></span>
                                             <span class="caret"></span>
@@ -392,13 +401,6 @@ if (!isset($_GET['opcao'])) {
 
             </div>
             <?php
-            break;
-
-        case 'desativar':
-            ?>
-            <?php
-            $id = $_GET['idAluno'];
-            desativarAluno($conexao, $id);
             break;
 
         default :
